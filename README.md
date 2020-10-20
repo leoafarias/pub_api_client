@@ -74,6 +74,34 @@ final results =  await client.search('query',page:2);
 print(results.packages)
 ```
 
+## Update Notification
+
+This package has a helper method if you want to notify users of your CLI of a newer version. In order to check for update you have to provide `currentVersion`.
+
+### Check Update Printer
+
+This is a helper that automatically prints a notification on console.
+
+```dart
+import 'package:pub_api_client/pub_api_client.dart';
+
+await checkUpdatePrinter('pkg_name', currentVersion:'1.0.0');
+
+// Will print out the following as an example
+# 'Update Available for pkg_name 1.0.0 → 1.0.1';
+# 'Changelog: https://pub.dev/packages/pkg_name/changelog';
+```
+
+### Custom Update Notification
+
+```dart
+final latest =  await client.checkLatest('pkg_name', currentVersion:'current_version');
+// Returns the packages that match the query
+print(latest.needUpdate) // bool if package needs update
+print(latest.packageInfo) // Returns information about the package
+print(latest.latestVersion) // Returns the latest version of the package.
+```
+
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/leoafarias/pub_api_client/issues

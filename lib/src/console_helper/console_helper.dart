@@ -1,5 +1,3 @@
-library pub_api_console_helper;
-
 import 'package:pub_api_client/pub_api_client.dart';
 
 Future<bool> checkUpdatePrinter(
