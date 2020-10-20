@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:pub_api_client/src/models/latest_version_model.dart';
 
 import 'package:pub_api_client/src/models/package_score_model.dart';
 import 'package:pub_api_client/src/models/pub_package_model.dart';
 import 'package:pub_api_client/src/models/search_results_model.dart';
 import 'package:pub_api_client/src/version.dart';
+import 'package:pub_semver/pub_semver.dart';
 
 const _urlBase = 'https://pub.dartlang.org';
 const _searchUrl = '$_urlBase/api/search';
@@ -52,5 +54,27 @@ class PubClient {
       versions.add(version);
     }
     return versions;
+  }
+
+  /// Helper method to easily check for package updates if `currentVersion`
+  /// is provided. Also returns package information.
+  Future<LatestVersion> checkLatest(
+    String name, {
+    String currentVersion,
+  }) async {
+    final package = await getPackage(name);
+    final latestVersion = Version.parse(package.version);
+    var needUpdate = false;
+    if (currentVersion != null) {
+      final current = Version.parse(currentVersion);
+      // Check as need update if latest version is higher
+      needUpdate = latestVersion > current;
+    }
+
+    return LatestVersion(
+      needUpdate: needUpdate,
+      latestVersion: package.version,
+      packageInfo: package,
+    );
   }
 }

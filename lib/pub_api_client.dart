@@ -1,6 +1,3 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library pubdev_api;
+library pub_api_client;
 
 export 'src/pub_api_client_base.dart';

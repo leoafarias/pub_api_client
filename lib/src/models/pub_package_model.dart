@@ -20,6 +20,7 @@ abstract class PubPackage implements _$PubPackage {
   String get version => _latestPubspec.version;
   String get description => _latestPubspec.description;
   String get url => 'https://pub.dev/packages/$name';
+  String get changelogUrl => '$url/changelog';
   PubSpec get _latestPubspec => versions.last.pubspec;
 }
 
