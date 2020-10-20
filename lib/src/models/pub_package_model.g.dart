@@ -32,7 +32,7 @@ _$_PackageVersion _$_$_PackageVersionFromJson(Map<String, dynamic> json) {
     version: json['version'] as String,
     pubspec: json['pubspec'] == null
         ? null
-        : PubSpec.fromJson(json['pubspec'] as Map<String, dynamic>),
+        : Pubspec.fromJson(json['pubspec'] as Map<String, dynamic>),
     archiveUrl: json['archive_url'] as String,
     published: json['published'] == null
         ? null

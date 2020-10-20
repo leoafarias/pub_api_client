@@ -13,8 +13,8 @@ void main() {
     test('Can Fetch package info', () async {
       final packageInfo = await client.getPackage(packageName);
 
-      final lastPubspec = packageInfo.latest.pubspec;
-      expect(packageInfo.version, lastPubspec.version);
+      final lastPubspec = packageInfo.latestPubspec;
+      expect(packageInfo.version, lastPubspec.version.toString());
       expect(packageInfo.description, lastPubspec.description);
       expect(packageInfo.url, 'https://pub.dev/packages/$packageName');
       expect(packageInfo.name, packageName);

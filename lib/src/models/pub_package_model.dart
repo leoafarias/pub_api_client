@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pub_api_client/src/models/pubspec_model.dart';
+
+import 'package:pubspec_parse/pubspec_parse.dart';
 
 part 'pub_package_model.freezed.dart';
 part 'pub_package_model.g.dart';
@@ -17,11 +18,11 @@ abstract class PubPackage implements _$PubPackage {
   factory PubPackage.fromJson(Map<String, dynamic> json) =>
       _$PubPackageFromJson(json);
 
-  String get version => _latestPubspec.version;
-  String get description => _latestPubspec.description;
+  String get version => latestPubspec.version.toString();
+  String get description => latestPubspec.description;
   String get url => 'https://pub.dev/packages/$name';
   String get changelogUrl => '$url/changelog';
-  PubSpec get _latestPubspec => versions.last.pubspec;
+  Pubspec get latestPubspec => versions.last.pubspec;
 }
 
 @freezed
@@ -29,7 +30,7 @@ abstract class PackageVersion with _$PackageVersion {
   @JsonSerializable(fieldRename: FieldRename.snake)
   factory PackageVersion({
     String version,
-    PubSpec pubspec,
+    Pubspec pubspec,
     String archiveUrl,
     DateTime published,
   }) = _PackageVersion;

@@ -212,7 +212,7 @@ class _$PackageVersionTearOff {
 // ignore: unused_element
   _PackageVersion call(
       {String version,
-      PubSpec pubspec,
+      Pubspec pubspec,
       String archiveUrl,
       DateTime published}) {
     return _PackageVersion(
@@ -236,7 +236,7 @@ const $PackageVersion = _$PackageVersionTearOff();
 /// @nodoc
 mixin _$PackageVersion {
   String get version;
-  PubSpec get pubspec;
+  Pubspec get pubspec;
   String get archiveUrl;
   DateTime get published;
 
@@ -250,9 +250,7 @@ abstract class $PackageVersionCopyWith<$Res> {
           PackageVersion value, $Res Function(PackageVersion) then) =
       _$PackageVersionCopyWithImpl<$Res>;
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
-
-  $PubSpecCopyWith<$Res> get pubspec;
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
@@ -273,22 +271,12 @@ class _$PackageVersionCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       version: version == freezed ? _value.version : version as String,
-      pubspec: pubspec == freezed ? _value.pubspec : pubspec as PubSpec,
+      pubspec: pubspec == freezed ? _value.pubspec : pubspec as Pubspec,
       archiveUrl:
           archiveUrl == freezed ? _value.archiveUrl : archiveUrl as String,
       published:
           published == freezed ? _value.published : published as DateTime,
     ));
-  }
-
-  @override
-  $PubSpecCopyWith<$Res> get pubspec {
-    if (_value.pubspec == null) {
-      return null;
-    }
-    return $PubSpecCopyWith<$Res>(_value.pubspec, (value) {
-      return _then(_value.copyWith(pubspec: value));
-    });
   }
 }
 
@@ -300,10 +288,7 @@ abstract class _$PackageVersionCopyWith<$Res>
       __$PackageVersionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
-
-  @override
-  $PubSpecCopyWith<$Res> get pubspec;
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
@@ -326,7 +311,7 @@ class __$PackageVersionCopyWithImpl<$Res>
   }) {
     return _then(_PackageVersion(
       version: version == freezed ? _value.version : version as String,
-      pubspec: pubspec == freezed ? _value.pubspec : pubspec as PubSpec,
+      pubspec: pubspec == freezed ? _value.pubspec : pubspec as Pubspec,
       archiveUrl:
           archiveUrl == freezed ? _value.archiveUrl : archiveUrl as String,
       published:
@@ -348,7 +333,7 @@ class _$_PackageVersion implements _PackageVersion {
   @override
   final String version;
   @override
-  final PubSpec pubspec;
+  final Pubspec pubspec;
   @override
   final String archiveUrl;
   @override
@@ -398,7 +383,7 @@ class _$_PackageVersion implements _PackageVersion {
 abstract class _PackageVersion implements PackageVersion {
   factory _PackageVersion(
       {String version,
-      PubSpec pubspec,
+      Pubspec pubspec,
       String archiveUrl,
       DateTime published}) = _$_PackageVersion;
 
@@ -408,7 +393,7 @@ abstract class _PackageVersion implements PackageVersion {
   @override
   String get version;
   @override
-  PubSpec get pubspec;
+  Pubspec get pubspec;
   @override
   String get archiveUrl;
   @override
