@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Better pubspec parsing
+
 ## 1.0.4
 
 - Added check for package update

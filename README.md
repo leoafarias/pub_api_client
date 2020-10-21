@@ -4,7 +4,27 @@
 
 ## An unofficial API client for [Pub.dev](https://www.pub.dev)
 
-Implements all `known` endpoints available on pub.dev. If any particular endpoint is missing please [open an issue][tracker].
+Aims to be the most complete and stable pub.dev API client. If any particular endpoint is missing please [open an issue][tracker].
+
+## Table of contents
+
+- [Usage](#usage)
+- [API](#api)
+  - [Packages](#packages)
+    - [Details](#get-package-info)
+    - [Score](#get-package-score)
+    - [Metrics](#get-package-metrics)
+    - [Versions](#get-package-versions)
+    - [Version Info](#get-package-version-info)
+    - [Publisher](#get-package-publisher)
+    - [Options](#get-package-options)
+    - [Documentation](#get-documentation)
+  - [Search Packages](#search-packages)
+    - [Paging Search Results](#paging-search-results)
+- [Utilities](#utilities)
+  - [Update Notification](#update-notification)
+    - [Check Update Printer](#check-update-printer)
+    - [Custom Update Notification](#custom-update-notification)
 
 ## Usage
 
@@ -18,15 +38,19 @@ main() {
 }
 ```
 
-## Get Package Info
+## API
+
+### Packages
+
+#### Get Package Info
 
 Retrieves all available information about an specific package.
 
 ```dart
-  final package =  await client.getPackage('pkg_name');
+  final package =  await client.packageInfo('pkg_name');
 ```
 
-## Get Package Score
+#### Get Package Score
 
 Returns the following score information about a package.
 
@@ -35,18 +59,59 @@ Returns the following score information about a package.
 - Likes
 
 ```dart
-  final score =  await client.getScore('pkg_name');
+  final score =  await client.packageScore('pkg_name');
 ```
 
-## Get Package Versions
+#### Get Package Metrics
 
-The method `getPackage` also returns the versions. However if all you need is versions use this method since it's lighter.
+The method 'packageMetrics' returns the package 'score' together with a 'scorecard'
 
 ```dart
-  final package =  await client.getVersions('pkg_name');
+  final metrics =  await client.packageMetrics('pkg_name');
 ```
 
-## Search Packages
+#### Get Package Versions
+
+The method 'packageVersions' also returns the versions. However if all you need is versions use this method since it's lighter.
+
+```dart
+  final versions =  await client.packageVersions('pkg_name');
+```
+
+#### Get Package Version Info
+
+The method `packageVersionInfo` returns information about a version of a specific package.
+
+```dart
+  final version =  await client.packageVersionInfo('pkg_name', 'version');
+```
+
+#### Get Package Publisher
+
+The method `packagePublisher` returns the publisherId of a specific package.
+
+```dart
+  final publisher =  await client.packagePublisher('pkg_name');
+  // publisher.publisherId
+```
+
+#### Get Package Options
+
+The method `packageOptions` returns options of a package.
+
+```dart
+  final options =  await client.packageOptions('pkg_name');
+```
+
+#### Get Documentation
+
+The method `documentation` returns all versions and their respective documentation status.
+
+```dart
+  final documentation =  await client.documentation('pkg_name');
+```
+
+### Search Packages
 
 Allows you to search for packages on pub.dev. Will return the packages that match the query.
 
@@ -56,7 +121,7 @@ final results =  await client.search('query');
 print(results.packages)
 ```
 
-### Paging Search Results
+#### Paging Search Results
 
 You are able to page search results.
 
@@ -74,11 +139,13 @@ final results =  await client.search('query',page:2);
 print(results.packages)
 ```
 
-## Update Notification
+## Utilities
+
+### Update Notification
 
 This package has a helper method if you want to notify users of your CLI of a newer version. In order to check for update you have to provide `currentVersion`.
 
-### Check Update Printer
+#### Check Update Printer
 
 This is a helper that automatically prints a notification on console.
 
@@ -92,7 +159,7 @@ await checkUpdatePrinter('pkg_name', currentVersion:'1.0.0');
 # 'Changelog: https://pub.dev/packages/pkg_name/changelog';
 ```
 
-### Custom Update Notification
+#### Custom Update Notification
 
 ```dart
 final latest =  await client.checkLatest('pkg_name', currentVersion:'current_version');
@@ -105,3 +172,7 @@ print(latest.latestVersion) // Returns the latest version of the package.
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/leoafarias/pub_api_client/issues
+
+```
+
+```

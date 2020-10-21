@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/PackageMetrics",
+  "definitions": {
+    "PackageMetrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "$ref": "#/definitions/Score"
+        },
+        "scorecard": {
+          "$ref": "#/definitions/Scorecard"
+        }
+      },
+      "required": [],
+      "title": "PackageMetrics"
+    },
+    "Score": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grantedPoints": {
+          "type": "integer"
+        },
+        "maxPoints": {
+          "type": "integer"
+        },
+        "likeCount": {
+          "type": "integer"
+        },
+        "popularityScore": {
+          "type": "number"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [],
+      "title": "Score"
+    },
+    "Scorecard": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "packageName": {
+          "type": "string"
+        },
+        "packageVersion": {
+          "type": "string"
+        },
+        "runtimeVersion": {
+          "type": "string"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "packageCreated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "packageVersionCreated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "grantedPubPoints": {
+          "type": "integer"
+        },
+        "maxPubPoints": {
+          "type": "integer"
+        },
+        "popularityScore": {
+          "type": "number"
+        },
+        "derivedTags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reportTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [],
+      "title": "Scorecard"
+    }
+  }
+}
