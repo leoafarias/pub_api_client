@@ -1,3 +1,11 @@
+## 1.0.7
+
+- Added package publisher
+- Added package options
+- Added package version info
+- Added documentation
+- Exposed models
+
 ## 1.0.5
 
 - Better pubspec parsing
