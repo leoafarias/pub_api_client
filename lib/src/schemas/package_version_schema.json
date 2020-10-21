@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/PackageVersion",
+  "definitions": {
+    "PackageVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "pubspec": {
+          "$ref": "#/definitions/Pubspec"
+        },
+        "archive_url": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".gz"]
+        },
+        "published": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [],
+      "title": "PackageVersion"
+    },
+    "Pubspec": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"]
+        },
+        "environment": {
+          "$ref": "#/definitions/Environment"
+        },
+        "executables": {
+          "$ref": "#/definitions/Executables"
+        },
+        "dependencies": {
+          "$ref": "#/definitions/Dependencies"
+        },
+        "dev_dependencies": {
+          "$ref": "#/definitions/DevDependencies"
+        }
+      },
+      "required": [],
+      "title": "Pubspec"
+    },
+    "Dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "string"
+        },
+        "pretty_json": {
+          "type": "string"
+        },
+        "pubspec_yaml": {
+          "type": "string"
+        },
+        "args": {
+          "type": "string"
+        },
+        "cli_util": {
+          "type": "string"
+        },
+        "console": {
+          "type": "string"
+        },
+        "io": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "process_run": {
+          "type": "string"
+        },
+        "http": {
+          "type": "string"
+        },
+        "date_format": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "cli_dialog": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Dependencies"
+    },
+    "DevDependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pedantic": {
+          "type": "string"
+        },
+        "test": {
+          "type": "string"
+        },
+        "test_coverage": {
+          "type": "string"
+        },
+        "build_runner": {
+          "type": "string"
+        },
+        "build_version": {
+          "type": "string"
+        },
+        "build_test": {
+          "type": "string"
+        },
+        "grinder": {
+          "type": "string"
+        },
+        "cli_pkg": {
+          "$ref": "#/definitions/CLIPkg"
+        },
+        "dotenv": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "DevDependencies"
+    },
+    "CLIPkg": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "git": {
+          "$ref": "#/definitions/Git"
+        }
+      },
+      "required": [],
+      "title": "CLIPkg"
+    },
+    "Git": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".git"]
+        },
+        "ref": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Git"
+    },
+    "Environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sdk": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Environment"
+    },
+    "Executables": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fvm": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "title": "Executables"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/PackageOptions",
+  "definitions": {
+    "PackageOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "isDiscontinued": {
+          "type": "boolean"
+        },
+        "replacedBy": {
+          "type": "string"
+        },
+        "isUnlisted": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "title": "PackageOptions"
+    }
+  }
+}
