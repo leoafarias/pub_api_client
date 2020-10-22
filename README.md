@@ -4,7 +4,7 @@
 
 ## An unofficial API client for [Pub.dev](https://www.pub.dev)
 
-Aims to be the most complete and stable pub.dev API client. If any particular endpoint is missing please [open an issue][tracker].
+Aims to be the most complete and stable pub.dev API client. If any particular endpoint is missing please [open an issue][https://github.com/leoafarias/pub_api_client/issues].
 
 ## Table of contents
 
