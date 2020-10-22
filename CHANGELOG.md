@@ -1,4 +1,7 @@
-## 1.0.8-dev
+## 1.0.8
+
+- Added search filter for `publisher` or for `dependency`
+- Added Google packages helpers
 
 ## 1.0.7
 

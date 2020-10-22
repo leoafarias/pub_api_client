@@ -1,6 +1,6 @@
 name: pub_api_client
 description: An API Client for Pub to interact with public package information.
-version: 1.0.8-dev
+version: 1.0.8
 homepage: https://github.com/leoafarias/pub_api_client
 
 environment:
