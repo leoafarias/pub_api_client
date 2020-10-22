@@ -1,4 +1,4 @@
-import 'package:pub_api_client/src/models/pub_package_model.dart';
+import 'pub_package_model.dart';
 
 /// Latest Version update for package
 class LatestVersion {

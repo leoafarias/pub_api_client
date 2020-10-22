@@ -1,8 +1,7 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart' as http;
 
 part 'search_results_model.freezed.dart';
 part 'search_results_model.g.dart';
@@ -20,7 +19,8 @@ abstract class SearchResults implements _$SearchResults {
 
   Future<SearchResults> nextResults() async {
     final response = await http.get(next);
-    return SearchResults.fromJson(jsonDecode(response.body));
+    return SearchResults.fromJson(
+        jsonDecode(response.body) as Map<String, dynamic>);
   }
 }
 
