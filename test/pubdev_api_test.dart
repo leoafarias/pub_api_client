@@ -1,7 +1,7 @@
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
-final packageName = 'fvm';
+const packageName = 'fvm';
 void main() {
   group('PubDev Client', () {
     PubClient client;

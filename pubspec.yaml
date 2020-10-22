@@ -1,25 +1,25 @@
 name: pub_api_client
 description: An API Client for Pub to interact with public package information.
-version: 1.0.7
+version: 1.0.8-dev
 homepage: https://github.com/leoafarias/pub_api_client
 
 environment:
   sdk: '>=2.8.1 <3.0.0'
 
 dependencies:
-  build_runner: ^1.10.3
-  pubspec_parse: ^0.1.5
-  pub_semver: ^1.4.4
-  http: ^0.12.2
   freezed_annotation: ^0.12.0
+  http: ^0.12.2
   json_annotation: ^3.1.0
   meta: ^1.2.3
+  pub_semver: ^1.4.4
+  pubspec_parse: ^0.1.5
 
 dev_dependencies:
-  pedantic: ^1.9.2
-  test: ^1.15.4
+  build_runner: ^1.10.3
   build_version: ^2.0.1
-  test_coverage: ^0.4.3
   freezed: ^0.12.2
   json_serializable: ^3.5.0
+  pedantic: ^1.9.2
   remove_from_coverage: ^1.0.7
+  test: ^1.15.4
+  test_coverage: ^0.4.3

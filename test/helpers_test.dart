@@ -6,7 +6,7 @@ import 'package:pub_api_client/src/helpers/google_packages.dart';
 
 import 'package:test/test.dart';
 
-final packageName = 'fvm';
+const packageName = 'fvm';
 
 final printLog = [];
 
@@ -20,7 +20,7 @@ final printLog = [];
 //   final results = await Future.wait(futures);
 // }
 
-dynamic overridePrint(Function testFn) => () {
+dynamic Function() overridePrint(dynamic Function() testFn) => () {
       final spec = ZoneSpecification(
         print: (_, __, ___, String msg) {
           // Add to log instead of printing to stdout

@@ -1,4 +1,4 @@
-import 'package:pub_api_client/pub_api_client.dart';
+import '../../pub_api_client.dart';
 
 Future<bool> checkUpdatePrinter(
   String name, {
@@ -9,7 +9,8 @@ Future<bool> checkUpdatePrinter(
 
   if (latest.needUpdate) {
     print(
-        'Update Available for $name: ${currentVersion} → ${latest.latestVersion}');
+      'Update Available for $name: $currentVersion → ${latest.latestVersion}',
+    );
     print('Changelog: ${latest.packageInfo.changelogUrl}');
   }
 
