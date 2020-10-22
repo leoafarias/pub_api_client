@@ -37,5 +37,11 @@ void main() {
       await checkUpdatePrinter(packageName, currentVersion: '1.0.0');
       expect(printLog.length, 2);
     }));
+
+    test('Get all Google packages', () async {
+      final googleDeps = await getGooglePackages();
+      // TODO: Better test for this [40] is a random number
+      expect(googleDeps.length, greaterThan(100));
+    });
   });
 }
