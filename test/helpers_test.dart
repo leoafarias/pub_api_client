@@ -1,11 +1,24 @@
 import 'dart:async';
 
-import 'package:pub_api_client/src/console_helper/console_helper.dart';
+import 'package:pub_api_client/pub_api_client.dart';
+import 'package:pub_api_client/src/helpers/console_helper.dart';
+import 'package:pub_api_client/src/helpers/google_packages.dart';
+
 import 'package:test/test.dart';
 
 final packageName = 'fvm';
 
-var printLog = [];
+final printLog = [];
+
+// Future<bool> _testGooglePackges(List<String> packages) async {
+//   final client = PubClient();
+//   final futures = <Future<PubPackage>>[];
+//   for (var package in packages) {
+//     futures.add(client.packageInfo(package));
+//   }
+
+//   final results = await Future.wait(futures);
+// }
 
 dynamic overridePrint(Function testFn) => () {
       final spec = ZoneSpecification(

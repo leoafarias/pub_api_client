@@ -113,10 +113,10 @@ The method `documentation` returns all versions and their respective documentati
 
 ### Search Packages
 
-Allows you to search for packages on pub.dev. Will return the packages that match the query.
+Search for packages on pub.dev. Will return the packages that match the query. You can filter the search to a specific `publisher`, or packages with a certain `dependency`.
 
 ```dart
-final results =  await client.search('query');
+final results =  await client.search('query', publisher:'publisher_id', dependency:'dependency_name');
 // Returns the packages that match the query
 print(results.packages)
 ```

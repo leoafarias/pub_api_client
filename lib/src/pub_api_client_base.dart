@@ -36,37 +36,37 @@ class PubClient {
     this.fetch = _baseFetch,
   }) : endpoint = Endpoint(pubUrl);
 
-  /// Returns the package information for `packageName`
+  /// Returns the `PubPackage` information for [packageName]
   Future<PubPackage> packageInfo(String packageName) async {
     final data = await fetch(endpoint.packageInfo(packageName));
     return PubPackage.fromJson(data);
   }
 
-  /// Returns the score for package `packageName`
+  /// Returns the `PackageScore` for package [packageName]
   Future<PackageScore> packageScore(String packageName) async {
     final data = await fetch(endpoint.packageScore(packageName));
     return PackageScore.fromJson(data);
   }
 
-  /// Returns the metrics for package `packageName`
+  /// Returns the `PackageMetrics` for package [packageName]
   Future<PackageMetrics> packageMetrics(String packageName) async {
     final data = await fetch(endpoint.packageMetrics(packageName));
     return PackageMetrics.fromJson(data);
   }
 
-  /// Returns the options for package `packageName`
+  /// Returns the `PackageOptions` for package [packageName]
   Future<PackageOptions> packageOptions(String packageName) async {
     final data = await fetch(endpoint.packageOptions(packageName));
     return PackageOptions.fromJson(data);
   }
 
-  /// Returns the publisher for package `packageName`
+  /// Returns the `PackagePublisher` for package [packageName]
   Future<PackagePublisher> packagePublisher(String packageName) async {
     final data = await fetch(endpoint.packagePublisher(packageName));
     return PackagePublisher.fromJson(data);
   }
 
-  /// Returns the versions that are published for package `packageName`
+  /// Returns a list of versions that are published for package [packageName]
   Future<List<String>> packageVersions(String packageName) async {
     final data = await fetch(endpoint.packageVersions(packageName));
     final json = data;
@@ -77,27 +77,37 @@ class PubClient {
     return versions;
   }
 
-  /// Returns info for a `version` of an specific `packageName`;
+  /// Returns `PackageVersion` of an specific [packageName];
   Future<PackageVersion> packageVersionInfo(
       String packageName, String version) async {
     final data = await fetch(endpoint.packageVersionInfo(packageName, version));
     return PackageVersion.fromJson(data);
   }
 
-  /// Searches pub for `query` and can `page` results.
-  Future<SearchResults> search(String query, {int page = 1}) async {
-    final data = await fetch(endpoint.search(query, page));
+  /// Searches pub for [query] and can [page] results.
+  /// Can filter to [publisher] and/or a [dependency]
+  /// returns `SearchResults`
+  Future<SearchResults> search(
+    String query, {
+    int page = 1,
+    String publisher,
+    String dependency,
+  }) async {
+    final publisherQuery = publisher != null ? 'publisher:$publisher ' : '';
+    final dependencyQuery = dependency != null ? 'dependency:$dependency ' : '';
+    final data = await fetch(
+        endpoint.search('$publisherQuery$dependencyQuery$query', page));
     return SearchResults.fromJson(data);
   }
 
-  /// Lists documentation versions
+  /// Returns `PackageDocumentation` for a [packageName]
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await fetch(endpoint.packageDocumentation(packageName));
     return PackageDocumentation.fromJson(data);
   }
 
-  /// Helper method to easily check for package updates if `currentVersion`
-  /// is provided. Also returns package information.
+  /// Helper method to easily check for updates on [packageName]
+  /// comparing with [currentVersion] returns `LatestVersion`
   Future<LatestVersion> checkLatest(
     String packageName, {
     String currentVersion,

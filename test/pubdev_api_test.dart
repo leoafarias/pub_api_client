@@ -72,6 +72,14 @@ void main() {
       expect(nextPagePayload.packages.length, greaterThan(1));
     });
 
+    test('Search for packages of a publisher', () async {
+      final payload = await client.search('', publisher: 'fvm.app');
+      final nextPagePayload =
+          await client.search('', dependency: 'pub_api_client');
+      expect(payload.packages.length, equals(2));
+      expect(nextPagePayload.packages.length, greaterThan(0));
+    });
+
     test('Get documentation', () async {
       final packageInfo = await client.packageInfo(packageName);
       final documentation = await client.documentation(packageName);
