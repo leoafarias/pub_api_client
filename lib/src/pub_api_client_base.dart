@@ -1,27 +1,27 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:pub_api_client/src/endpoints.dart';
-import 'package:pub_api_client/src/models/latest_version_model.dart';
-import 'package:pub_api_client/src/models/package_documentation_model.dart';
-import 'package:pub_api_client/src/models/package_metrics_model.dart';
-import 'package:pub_api_client/src/models/package_options_model.dart';
-import 'package:pub_api_client/src/models/package_publisher_model.dart';
-
-import 'package:pub_api_client/src/models/package_score_model.dart';
-import 'package:pub_api_client/src/models/pub_credentials_model.dart';
-import 'package:pub_api_client/src/models/pub_package_model.dart';
-import 'package:pub_api_client/src/models/search_results_model.dart';
-import 'package:pub_api_client/src/version.dart';
 import 'package:pub_semver/pub_semver.dart';
 
-final _httpHeaders = {'User-Agent': 'package:pub_client/$packageVersion'};
+import 'endpoints.dart';
+import 'models/latest_version_model.dart';
+import 'models/package_documentation_model.dart';
+import 'models/package_metrics_model.dart';
+import 'models/package_options_model.dart';
+import 'models/package_publisher_model.dart';
+import 'models/package_score_model.dart';
+import 'models/pub_credentials_model.dart';
+import 'models/pub_package_model.dart';
+import 'models/search_results_model.dart';
+import 'version.dart';
+
+const _httpHeaders = {'User-Agent': 'package:pub_client/$packageVersion'};
 
 typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 
 Future<Map<String, dynamic>> _baseFetch(String url) async {
   final response = await http.get(url, headers: _httpHeaders);
-  return jsonDecode(response.body);
+  return jsonDecode(response.body) as Map<String, dynamic>;
 }
 
 /// Pub API Client
@@ -30,6 +30,7 @@ class PubClient {
   final FetchFunction fetch;
   final PubCredentials credentials;
   final Endpoint endpoint;
+
   PubClient({
     this.pubUrl,
     this.credentials,
@@ -71,8 +72,8 @@ class PubClient {
     final data = await fetch(endpoint.packageVersions(packageName));
     final json = data;
     final versions = <String>[];
-    for (var version in json['versions']) {
-      versions.add(version);
+    for (var version in json['versions'] as List) {
+      versions.add(version as String);
     }
     return versions;
   }

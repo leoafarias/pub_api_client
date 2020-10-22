@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pub_api_client/pub_api_client.dart';
+import '../../pub_api_client.dart';
 
 part 'package_metrics_model.freezed.dart';
 part 'package_metrics_model.g.dart';

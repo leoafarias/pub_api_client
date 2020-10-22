@@ -47,7 +47,7 @@ main() {
 Retrieves all available information about an specific package.
 
 ```dart
-  final package =  await client.packageInfo('pkg_name');
+final package =  await client.packageInfo('pkg_name');
 ```
 
 #### Get Package Score
@@ -59,7 +59,7 @@ Returns the following score information about a package.
 - Likes
 
 ```dart
-  final score =  await client.packageScore('pkg_name');
+final score =  await client.packageScore('pkg_name');
 ```
 
 #### Get Package Metrics
@@ -67,7 +67,7 @@ Returns the following score information about a package.
 The method 'packageMetrics' returns the package 'score' together with a 'scorecard'
 
 ```dart
-  final metrics =  await client.packageMetrics('pkg_name');
+final metrics =  await client.packageMetrics('pkg_name');
 ```
 
 #### Get Package Versions
@@ -75,7 +75,7 @@ The method 'packageMetrics' returns the package 'score' together with a 'scoreca
 The method 'packageVersions' also returns the versions. However if all you need is versions use this method since it's lighter.
 
 ```dart
-  final versions =  await client.packageVersions('pkg_name');
+final versions =  await client.packageVersions('pkg_name');
 ```
 
 #### Get Package Version Info
@@ -83,7 +83,7 @@ The method 'packageVersions' also returns the versions. However if all you need 
 The method `packageVersionInfo` returns information about a version of a specific package.
 
 ```dart
-  final version =  await client.packageVersionInfo('pkg_name', 'version');
+final version =  await client.packageVersionInfo('pkg_name', 'version');
 ```
 
 #### Get Package Publisher
@@ -91,8 +91,8 @@ The method `packageVersionInfo` returns information about a version of a specifi
 The method `packagePublisher` returns the publisherId of a specific package.
 
 ```dart
-  final publisher =  await client.packagePublisher('pkg_name');
-  // publisher.publisherId
+final publisher =  await client.packagePublisher('pkg_name');
+// publisher.publisherId
 ```
 
 #### Get Package Options
@@ -100,7 +100,7 @@ The method `packagePublisher` returns the publisherId of a specific package.
 The method `packageOptions` returns options of a package.
 
 ```dart
-  final options =  await client.packageOptions('pkg_name');
+final options =  await client.packageOptions('pkg_name');
 ```
 
 #### Get Documentation
@@ -108,7 +108,7 @@ The method `packageOptions` returns options of a package.
 The method `documentation` returns all versions and their respective documentation status.
 
 ```dart
-  final documentation =  await client.documentation('pkg_name');
+final documentation =  await client.documentation('pkg_name');
 ```
 
 ### Search Packages
@@ -167,12 +167,4 @@ final latest =  await client.checkLatest('pkg_name', currentVersion:'current_ver
 print(latest.needUpdate) // bool if package needs update
 print(latest.packageInfo) // Returns information about the package
 print(latest.latestVersion) // Returns the latest version of the package.
-```
-
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: https://github.com/leoafarias/pub_api_client/issues
-
-```
-
 ```
