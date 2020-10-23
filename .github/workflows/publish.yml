@@ -1,38 +1,38 @@
-# name: Publish
+# Do not run workflow for now
+name: Publish
+on:
+  push:
+    tags:
+    - 'NOT_VALID*'
 
-# on:
-#   push:
-#     tags:
-#     - 'v*'
+jobs:
+  build:
 
-# jobs:
-#   build:
+    runs-on: ubuntu-latest
 
-#     runs-on: ubuntu-latest
+    container:
+      image:  google/dart:latest
 
-#     container:
-#       image:  google/dart:latest
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Install dependencies
-#       run: pub get
-#     - name: Build Runner
-#       run: pub run build_runner build --delete-conflicting-outputs
-#     - name: Run tests
-#       run: pub run test
-#     - name: Publish Dart/Flutter package
-#       uses: sakebook/actions-flutter-pub-publisher@v1.3.1
-#       with:
-#         credential: ${{ secrets.PUB_CREDENTIALS }}
-#         flutter_package: false
-#     - name: Create Release
-#       id: create_release
-#       uses: actions/create-release@v1
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-#       with:
-#         tag_name: ${{ github.ref }}
-#         release_name: ${{ github.ref }}
-#         draft: false
-#         prerelease: false
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pub get
+    - name: Build Runner
+      run: pub run build_runner build --delete-conflicting-outputs
+    - name: Run tests
+      run: pub run test
+    - name: Publish Dart/Flutter package
+      uses: sakebook/actions-flutter-pub-publisher@v1.3.1
+      with:
+        credential: ${{ secrets.PUB_CREDENTIALS }}
+        flutter_package: false
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        draft: false
+        prerelease: false
