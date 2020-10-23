@@ -1,6 +1,8 @@
-import 'package:pub_api_client/pub_api_client.dart';
-import 'package:pub_api_client/src/helpers/google_packages_list.dart';
+import '../models/search_results_model.dart';
+import '../pub_api_client_base.dart';
+import 'google_packages_list.dart';
 
+/// List of Google publishers on pub.dev
 const _publishers = [
   'flutter.dev',
   'dart.dev',
@@ -10,10 +12,13 @@ const _publishers = [
 
 final _googleDependencies = {for (var v in googlePackagesList) v: true};
 
-bool isGooglePubPackage(String packageName) {
-  return _googleDependencies[packageName] == true;
-}
+/// Check is [package] is from Google
+bool isGooglePubPackage(String package) => _googleDependencies[package] == true;
 
+/// Retrieves all Google packages from pub.dev
+/// Mostly used as an internal tool to generate
+/// google_packages_list.dart
+/// You should probably use that instead
 Future<List<String>> getGooglePackages() async {
   final futures = <Future<List<PackageResult>>>[];
   for (var publisher in _publishers) {

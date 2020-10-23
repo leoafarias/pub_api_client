@@ -5,6 +5,7 @@ import 'package:pubspec_parse/pubspec_parse.dart';
 part 'pub_package_model.freezed.dart';
 part 'pub_package_model.g.dart';
 
+/// Package Model
 @freezed
 abstract class PubPackage implements _$PubPackage {
   const PubPackage._();
@@ -25,6 +26,7 @@ abstract class PubPackage implements _$PubPackage {
   Pubspec get latestPubspec => versions.last.pubspec;
 }
 
+/// Package Version Model
 @freezed
 abstract class PackageVersion with _$PackageVersion {
   @JsonSerializable(fieldRename: FieldRename.snake)

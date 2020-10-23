@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pub_api_client/src/helpers/console_helper.dart';
 import 'package:pub_api_client/src/helpers/google_packages.dart';
+import 'package:pub_api_client/src/helpers/google_packages_list.dart';
 
 import 'package:test/test.dart';
 
@@ -40,8 +41,8 @@ void main() {
 
     test('Get all Google packages', () async {
       final googleDeps = await getGooglePackages();
-      // TODO: Better test for this [40] is a random number
-      expect(googleDeps.length, greaterThan(100));
+
+      expect(googleDeps.length, googlePackagesList.length);
     });
   });
 }

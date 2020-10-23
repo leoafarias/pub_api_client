@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'pub_credentials_model.freezed.dart';
 part 'pub_credentials_model.g.dart';
 
+/// Pub Credentials Model
 @freezed
 abstract class PubCredentials with _$PubCredentials {
   factory PubCredentials({

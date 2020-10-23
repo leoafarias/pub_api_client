@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'package_documentation_model.freezed.dart';
 part 'package_documentation_model.g.dart';
 
+/// Package Documentation Model
 @freezed
 abstract class PackageDocumentation with _$PackageDocumentation {
   factory PackageDocumentation({
@@ -15,6 +16,7 @@ abstract class PackageDocumentation with _$PackageDocumentation {
       _$PackageDocumentationFromJson(json);
 }
 
+/// Package Documentation Version Model
 @freezed
 abstract class PackageDocumentationVersion with _$PackageDocumentationVersion {
   factory PackageDocumentationVersion({

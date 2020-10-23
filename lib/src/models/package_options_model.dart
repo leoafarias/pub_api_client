@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'package_options_model.freezed.dart';
 part 'package_options_model.g.dart';
 
+/// Package Options Model
 @freezed
 abstract class PackageOptions with _$PackageOptions {
   factory PackageOptions({

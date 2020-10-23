@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'package_score_model.freezed.dart';
 part 'package_score_model.g.dart';
 
+/// Package Score Model
 @freezed
 abstract class PackageScore with _$PackageScore {
   factory PackageScore({
@@ -17,6 +18,7 @@ abstract class PackageScore with _$PackageScore {
       _$PackageScoreFromJson(json);
 }
 
+/// Package Score Card Model
 @freezed
 abstract class PackageScoreCard with _$PackageScoreCard {
   factory PackageScoreCard({

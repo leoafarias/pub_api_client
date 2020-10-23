@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 part 'search_results_model.freezed.dart';
 part 'search_results_model.g.dart';
 
+/// Search Results Model
 @freezed
 abstract class SearchResults implements _$SearchResults {
   const SearchResults._();
@@ -24,6 +25,7 @@ abstract class SearchResults implements _$SearchResults {
   }
 }
 
+/// Package Result Model returns within a `SearchResult`
 @freezed
 abstract class PackageResult with _$PackageResult {
   factory PackageResult({String package}) = _PackageResult;

@@ -1,15 +1,18 @@
 import '../../pub_api_client.dart';
 
+/// Checks and prints if [currentVersion] of a [package]
+/// is not the latest version.
 Future<bool> checkUpdatePrinter(
-  String name, {
+  String package, {
   String currentVersion,
 }) async {
   final api = PubClient();
-  final latest = await api.checkLatest(name, currentVersion: currentVersion);
+  final latest = await api.checkLatest(package, currentVersion: currentVersion);
+  final latestVersion = latest.latestVersion;
 
   if (latest.needUpdate) {
     print(
-      'Update Available for $name: $currentVersion → ${latest.latestVersion}',
+      'Update Available for $package: $currentVersion → $latestVersion',
     );
     print('Changelog: ${latest.packageInfo.changelogUrl}');
   }

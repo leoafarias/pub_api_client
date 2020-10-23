@@ -1,3 +1,6 @@
+/// List of all Google packages.
+/// Packages published by flutter.dev, dart.dev,
+/// material.io, and firebase.google.com
 const googlePackagesList = [
   'url_launcher',
   'video_player',
@@ -18,14 +21,14 @@ const googlePackagesList = [
   'local_auth',
   'android_intent',
   'android_alarm_manager',
-  'path_provider',
   'quick_actions',
+  'path_provider',
   'in_app_purchase',
   'flutter_plugin_android_lifecycle',
   'devtools',
   'extension_google_sign_in_as_googleapis_auth',
-  'device_info_platform_interface',
   'shared_preferences_windows',
+  'device_info_platform_interface',
   'path_provider_windows',
   'ios_platform_images',
   'espresso',
@@ -74,6 +77,7 @@ const googlePackagesList = [
   'test_core',
   'built_value_test',
   '_fe_analyzer_shared',
+  'os_detect',
   'adaptive_breakpoints',
   'google_fonts',
   'adaptive_navigation',
@@ -102,5 +106,5 @@ const googlePackagesList = [
   'firebase_core_web',
   'firebase_auth_web',
   'cloud_functions_web',
-  'firebase_analytics_web'
+  'firebase_analytics_web',
 ];
