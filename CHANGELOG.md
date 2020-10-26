@@ -1,3 +1,7 @@
+## 1.0.9-dev
+
+- Ability to pass custom http Client as param.
+
 ## 1.0.8
 
 - Added search filter for `publisher` or for `dependency`

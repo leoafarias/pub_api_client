@@ -95,7 +95,7 @@ void main() {
       expect(latestWithoutCurrent.latestVersion, packageInfo.version);
       expect(
         latestWithoutCurrent.latestVersion,
-        packageInfo.versions.last.version,
+        packageInfo.latest.version,
       );
       expect(latestWithoutCurrent.packageInfo.name, packageName);
 
