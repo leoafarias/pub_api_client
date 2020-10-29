@@ -1,6 +1,7 @@
-## 1.0.9-dev
+## 1.0.9
 
 - Ability to pass custom http Client as param.
+- Changed latest version to display stable version only
 
 ## 1.0.8
 
