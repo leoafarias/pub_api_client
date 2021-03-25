@@ -1,7 +1,7 @@
-## 1.1.0
+## 2.0.0-beta.1
 
 - Deprecated checkUpdatePrinter
-- Changed latest version to display stable version only
+- Null safety
 
 ## 1.0.9
 
