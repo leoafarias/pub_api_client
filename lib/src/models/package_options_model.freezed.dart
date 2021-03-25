@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'package_options_model.dart';
 
@@ -8,6 +8,10 @@ part of 'package_options_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PackageOptions _$PackageOptionsFromJson(Map<String, dynamic> json) {
   return _PackageOptions.fromJson(json);
 }
@@ -16,34 +20,35 @@ PackageOptions _$PackageOptionsFromJson(Map<String, dynamic> json) {
 class _$PackageOptionsTearOff {
   const _$PackageOptionsTearOff();
 
-// ignore: unused_element
   _PackageOptions call(
-      {bool isDiscontinued, String replacedBy, bool isUnlisted}) {
+      {bool isDiscontinued = false,
+      bool isUnlisted = false,
+      String? replacedBy}) {
     return _PackageOptions(
       isDiscontinued: isDiscontinued,
-      replacedBy: replacedBy,
       isUnlisted: isUnlisted,
+      replacedBy: replacedBy,
     );
   }
 
-// ignore: unused_element
   PackageOptions fromJson(Map<String, Object> json) {
     return PackageOptions.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackageOptions = _$PackageOptionsTearOff();
 
 /// @nodoc
 mixin _$PackageOptions {
-  bool get isDiscontinued;
-  String get replacedBy;
-  bool get isUnlisted;
+  bool get isDiscontinued => throw _privateConstructorUsedError;
+  bool get isUnlisted => throw _privateConstructorUsedError;
+  String? get replacedBy => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackageOptionsCopyWith<PackageOptions> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackageOptionsCopyWith<PackageOptions> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -51,7 +56,7 @@ abstract class $PackageOptionsCopyWith<$Res> {
   factory $PackageOptionsCopyWith(
           PackageOptions value, $Res Function(PackageOptions) then) =
       _$PackageOptionsCopyWithImpl<$Res>;
-  $Res call({bool isDiscontinued, String replacedBy, bool isUnlisted});
+  $Res call({bool isDiscontinued, bool isUnlisted, String? replacedBy});
 }
 
 /// @nodoc
@@ -65,18 +70,23 @@ class _$PackageOptionsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isDiscontinued = freezed,
-    Object replacedBy = freezed,
-    Object isUnlisted = freezed,
+    Object? isDiscontinued = freezed,
+    Object? isUnlisted = freezed,
+    Object? replacedBy = freezed,
   }) {
     return _then(_value.copyWith(
       isDiscontinued: isDiscontinued == freezed
           ? _value.isDiscontinued
-          : isDiscontinued as bool,
-      replacedBy:
-          replacedBy == freezed ? _value.replacedBy : replacedBy as String,
-      isUnlisted:
-          isUnlisted == freezed ? _value.isUnlisted : isUnlisted as bool,
+          : isDiscontinued // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUnlisted: isUnlisted == freezed
+          ? _value.isUnlisted
+          : isUnlisted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      replacedBy: replacedBy == freezed
+          ? _value.replacedBy
+          : replacedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -88,7 +98,7 @@ abstract class _$PackageOptionsCopyWith<$Res>
           _PackageOptions value, $Res Function(_PackageOptions) then) =
       __$PackageOptionsCopyWithImpl<$Res>;
   @override
-  $Res call({bool isDiscontinued, String replacedBy, bool isUnlisted});
+  $Res call({bool isDiscontinued, bool isUnlisted, String? replacedBy});
 }
 
 /// @nodoc
@@ -104,18 +114,23 @@ class __$PackageOptionsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isDiscontinued = freezed,
-    Object replacedBy = freezed,
-    Object isUnlisted = freezed,
+    Object? isDiscontinued = freezed,
+    Object? isUnlisted = freezed,
+    Object? replacedBy = freezed,
   }) {
     return _then(_PackageOptions(
       isDiscontinued: isDiscontinued == freezed
           ? _value.isDiscontinued
-          : isDiscontinued as bool,
-      replacedBy:
-          replacedBy == freezed ? _value.replacedBy : replacedBy as String,
-      isUnlisted:
-          isUnlisted == freezed ? _value.isUnlisted : isUnlisted as bool,
+          : isDiscontinued // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUnlisted: isUnlisted == freezed
+          ? _value.isUnlisted
+          : isUnlisted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      replacedBy: replacedBy == freezed
+          ? _value.replacedBy
+          : replacedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -124,21 +139,24 @@ class __$PackageOptionsCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_PackageOptions implements _PackageOptions {
-  _$_PackageOptions({this.isDiscontinued, this.replacedBy, this.isUnlisted});
+  _$_PackageOptions(
+      {this.isDiscontinued = false, this.isUnlisted = false, this.replacedBy});
 
   factory _$_PackageOptions.fromJson(Map<String, dynamic> json) =>
       _$_$_PackageOptionsFromJson(json);
 
+  @JsonKey(defaultValue: false)
   @override
   final bool isDiscontinued;
-  @override
-  final String replacedBy;
+  @JsonKey(defaultValue: false)
   @override
   final bool isUnlisted;
+  @override
+  final String? replacedBy;
 
   @override
   String toString() {
-    return 'PackageOptions(isDiscontinued: $isDiscontinued, replacedBy: $replacedBy, isUnlisted: $isUnlisted)';
+    return 'PackageOptions(isDiscontinued: $isDiscontinued, isUnlisted: $isUnlisted, replacedBy: $replacedBy)';
   }
 
   @override
@@ -148,21 +166,22 @@ class _$_PackageOptions implements _PackageOptions {
             (identical(other.isDiscontinued, isDiscontinued) ||
                 const DeepCollectionEquality()
                     .equals(other.isDiscontinued, isDiscontinued)) &&
-            (identical(other.replacedBy, replacedBy) ||
-                const DeepCollectionEquality()
-                    .equals(other.replacedBy, replacedBy)) &&
             (identical(other.isUnlisted, isUnlisted) ||
                 const DeepCollectionEquality()
-                    .equals(other.isUnlisted, isUnlisted)));
+                    .equals(other.isUnlisted, isUnlisted)) &&
+            (identical(other.replacedBy, replacedBy) ||
+                const DeepCollectionEquality()
+                    .equals(other.replacedBy, replacedBy)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isDiscontinued) ^
-      const DeepCollectionEquality().hash(replacedBy) ^
-      const DeepCollectionEquality().hash(isUnlisted);
+      const DeepCollectionEquality().hash(isUnlisted) ^
+      const DeepCollectionEquality().hash(replacedBy);
 
+  @JsonKey(ignore: true)
   @override
   _$PackageOptionsCopyWith<_PackageOptions> get copyWith =>
       __$PackageOptionsCopyWithImpl<_PackageOptions>(this, _$identity);
@@ -176,18 +195,20 @@ class _$_PackageOptions implements _PackageOptions {
 abstract class _PackageOptions implements PackageOptions {
   factory _PackageOptions(
       {bool isDiscontinued,
-      String replacedBy,
-      bool isUnlisted}) = _$_PackageOptions;
+      bool isUnlisted,
+      String? replacedBy}) = _$_PackageOptions;
 
   factory _PackageOptions.fromJson(Map<String, dynamic> json) =
       _$_PackageOptions.fromJson;
 
   @override
-  bool get isDiscontinued;
+  bool get isDiscontinued => throw _privateConstructorUsedError;
   @override
-  String get replacedBy;
+  bool get isUnlisted => throw _privateConstructorUsedError;
   @override
-  bool get isUnlisted;
+  String? get replacedBy => throw _privateConstructorUsedError;
   @override
-  _$PackageOptionsCopyWith<_PackageOptions> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackageOptionsCopyWith<_PackageOptions> get copyWith =>
+      throw _privateConstructorUsedError;
 }

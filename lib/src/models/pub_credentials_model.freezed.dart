@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'pub_credentials_model.dart';
 
@@ -8,6 +8,10 @@ part of 'pub_credentials_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PubCredentials _$PubCredentialsFromJson(Map<String, dynamic> json) {
   return _PubCredentials.fromJson(json);
 }
@@ -16,14 +20,13 @@ PubCredentials _$PubCredentialsFromJson(Map<String, dynamic> json) {
 class _$PubCredentialsTearOff {
   const _$PubCredentialsTearOff();
 
-// ignore: unused_element
   _PubCredentials call(
-      {String accessToken,
-      String refreshToken,
-      String idToken,
-      double tokenEndpoint,
-      List<String> scopes,
-      int expiration}) {
+      {required String accessToken,
+      required String refreshToken,
+      required String idToken,
+      required double tokenEndpoint,
+      required List<String> scopes,
+      required int expiration}) {
     return _PubCredentials(
       accessToken: accessToken,
       refreshToken: refreshToken,
@@ -34,27 +37,27 @@ class _$PubCredentialsTearOff {
     );
   }
 
-// ignore: unused_element
   PubCredentials fromJson(Map<String, Object> json) {
     return PubCredentials.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PubCredentials = _$PubCredentialsTearOff();
 
 /// @nodoc
 mixin _$PubCredentials {
-  String get accessToken;
-  String get refreshToken;
-  String get idToken;
-  double get tokenEndpoint;
-  List<String> get scopes;
-  int get expiration;
+  String get accessToken => throw _privateConstructorUsedError;
+  String get refreshToken => throw _privateConstructorUsedError;
+  String get idToken => throw _privateConstructorUsedError;
+  double get tokenEndpoint => throw _privateConstructorUsedError;
+  List<String> get scopes => throw _privateConstructorUsedError;
+  int get expiration => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PubCredentialsCopyWith<PubCredentials> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PubCredentialsCopyWith<PubCredentials> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -82,25 +85,38 @@ class _$PubCredentialsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object accessToken = freezed,
-    Object refreshToken = freezed,
-    Object idToken = freezed,
-    Object tokenEndpoint = freezed,
-    Object scopes = freezed,
-    Object expiration = freezed,
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
+    Object? idToken = freezed,
+    Object? tokenEndpoint = freezed,
+    Object? scopes = freezed,
+    Object? expiration = freezed,
   }) {
     return _then(_value.copyWith(
-      accessToken:
-          accessToken == freezed ? _value.accessToken : accessToken as String,
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
       refreshToken: refreshToken == freezed
           ? _value.refreshToken
-          : refreshToken as String,
-      idToken: idToken == freezed ? _value.idToken : idToken as String,
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      idToken: idToken == freezed
+          ? _value.idToken
+          : idToken // ignore: cast_nullable_to_non_nullable
+              as String,
       tokenEndpoint: tokenEndpoint == freezed
           ? _value.tokenEndpoint
-          : tokenEndpoint as double,
-      scopes: scopes == freezed ? _value.scopes : scopes as List<String>,
-      expiration: expiration == freezed ? _value.expiration : expiration as int,
+          : tokenEndpoint // ignore: cast_nullable_to_non_nullable
+              as double,
+      scopes: scopes == freezed
+          ? _value.scopes
+          : scopes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      expiration: expiration == freezed
+          ? _value.expiration
+          : expiration // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -134,25 +150,38 @@ class __$PubCredentialsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object accessToken = freezed,
-    Object refreshToken = freezed,
-    Object idToken = freezed,
-    Object tokenEndpoint = freezed,
-    Object scopes = freezed,
-    Object expiration = freezed,
+    Object? accessToken = freezed,
+    Object? refreshToken = freezed,
+    Object? idToken = freezed,
+    Object? tokenEndpoint = freezed,
+    Object? scopes = freezed,
+    Object? expiration = freezed,
   }) {
     return _then(_PubCredentials(
-      accessToken:
-          accessToken == freezed ? _value.accessToken : accessToken as String,
+      accessToken: accessToken == freezed
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
+              as String,
       refreshToken: refreshToken == freezed
           ? _value.refreshToken
-          : refreshToken as String,
-      idToken: idToken == freezed ? _value.idToken : idToken as String,
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
+      idToken: idToken == freezed
+          ? _value.idToken
+          : idToken // ignore: cast_nullable_to_non_nullable
+              as String,
       tokenEndpoint: tokenEndpoint == freezed
           ? _value.tokenEndpoint
-          : tokenEndpoint as double,
-      scopes: scopes == freezed ? _value.scopes : scopes as List<String>,
-      expiration: expiration == freezed ? _value.expiration : expiration as int,
+          : tokenEndpoint // ignore: cast_nullable_to_non_nullable
+              as double,
+      scopes: scopes == freezed
+          ? _value.scopes
+          : scopes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      expiration: expiration == freezed
+          ? _value.expiration
+          : expiration // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -162,12 +191,12 @@ class __$PubCredentialsCopyWithImpl<$Res>
 /// @nodoc
 class _$_PubCredentials implements _PubCredentials {
   _$_PubCredentials(
-      {this.accessToken,
-      this.refreshToken,
-      this.idToken,
-      this.tokenEndpoint,
-      this.scopes,
-      this.expiration});
+      {required this.accessToken,
+      required this.refreshToken,
+      required this.idToken,
+      required this.tokenEndpoint,
+      required this.scopes,
+      required this.expiration});
 
   factory _$_PubCredentials.fromJson(Map<String, dynamic> json) =>
       _$_$_PubCredentialsFromJson(json);
@@ -223,6 +252,7 @@ class _$_PubCredentials implements _PubCredentials {
       const DeepCollectionEquality().hash(scopes) ^
       const DeepCollectionEquality().hash(expiration);
 
+  @JsonKey(ignore: true)
   @override
   _$PubCredentialsCopyWith<_PubCredentials> get copyWith =>
       __$PubCredentialsCopyWithImpl<_PubCredentials>(this, _$identity);
@@ -235,28 +265,30 @@ class _$_PubCredentials implements _PubCredentials {
 
 abstract class _PubCredentials implements PubCredentials {
   factory _PubCredentials(
-      {String accessToken,
-      String refreshToken,
-      String idToken,
-      double tokenEndpoint,
-      List<String> scopes,
-      int expiration}) = _$_PubCredentials;
+      {required String accessToken,
+      required String refreshToken,
+      required String idToken,
+      required double tokenEndpoint,
+      required List<String> scopes,
+      required int expiration}) = _$_PubCredentials;
 
   factory _PubCredentials.fromJson(Map<String, dynamic> json) =
       _$_PubCredentials.fromJson;
 
   @override
-  String get accessToken;
+  String get accessToken => throw _privateConstructorUsedError;
   @override
-  String get refreshToken;
+  String get refreshToken => throw _privateConstructorUsedError;
   @override
-  String get idToken;
+  String get idToken => throw _privateConstructorUsedError;
   @override
-  double get tokenEndpoint;
+  double get tokenEndpoint => throw _privateConstructorUsedError;
   @override
-  List<String> get scopes;
+  List<String> get scopes => throw _privateConstructorUsedError;
   @override
-  int get expiration;
+  int get expiration => throw _privateConstructorUsedError;
   @override
-  _$PubCredentialsCopyWith<_PubCredentials> get copyWith;
+  @JsonKey(ignore: true)
+  _$PubCredentialsCopyWith<_PubCredentials> get copyWith =>
+      throw _privateConstructorUsedError;
 }

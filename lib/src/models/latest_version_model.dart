@@ -8,8 +8,8 @@ class LatestVersion {
 
   /// Constructor
   LatestVersion({
-    this.needUpdate,
-    this.latestVersion,
-    this.packageInfo,
+    required this.needUpdate,
+    required this.latestVersion,
+    required this.packageInfo,
   });
 }

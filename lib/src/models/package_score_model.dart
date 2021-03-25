@@ -5,13 +5,13 @@ part 'package_score_model.g.dart';
 
 /// Package Score Model
 @freezed
-abstract class PackageScore with _$PackageScore {
+class PackageScore with _$PackageScore {
   factory PackageScore({
-    final int grantedPoints,
-    final int maxPoints,
-    final int likeCount,
-    final double popularityScore,
-    final DateTime lastUpdated,
+    required final int grantedPoints,
+    required final int maxPoints,
+    required final int likeCount,
+    required final double popularityScore,
+    required final DateTime lastUpdated,
   }) = _PackageScore;
 
   factory PackageScore.fromJson(Map<String, dynamic> json) =>
@@ -20,20 +20,20 @@ abstract class PackageScore with _$PackageScore {
 
 /// Package Score Card Model
 @freezed
-abstract class PackageScoreCard with _$PackageScoreCard {
+class PackageScoreCard with _$PackageScoreCard {
   factory PackageScoreCard({
-    final String packageName,
-    final String packageVersion,
-    final String runtimeVersion,
-    final DateTime updated,
-    final DateTime packageCreated,
-    final DateTime packageVersionCreated,
-    final int grantedPubPoints,
-    final int maxPubPoints,
-    final double popularityScore,
-    final List<String> derivedTags,
-    final List<String> flags,
-    final List<String> reportTypes,
+    required final String packageName,
+    required final String packageVersion,
+    required final String runtimeVersion,
+    required final DateTime updated,
+    required final DateTime packageCreated,
+    required final DateTime packageVersionCreated,
+    required final int grantedPubPoints,
+    required final int maxPubPoints,
+    required final double popularityScore,
+    @Default([]) final List<String> derivedTags,
+    @Default([]) final List<String> flags,
+    @Default([]) final List<String> reportTypes,
   }) = _PackageScoreCard;
 
   factory PackageScoreCard.fromJson(Map<String, dynamic> json) =>

@@ -11,11 +11,11 @@ _$_PackageDocumentation _$_$_PackageDocumentationFromJson(
   return _$_PackageDocumentation(
     name: json['name'] as String,
     latestStableVersion: json['latestStableVersion'] as String,
-    versions: (json['versions'] as List)
-        ?.map((e) => e == null
-            ? null
-            : PackageDocumentationVersion.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    versions: (json['versions'] as List<dynamic>?)
+            ?.map((e) =>
+                PackageDocumentationVersion.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
   );
 }
 

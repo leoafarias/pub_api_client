@@ -8,15 +8,15 @@ part of 'package_options_model.dart';
 
 _$_PackageOptions _$_$_PackageOptionsFromJson(Map<String, dynamic> json) {
   return _$_PackageOptions(
-    isDiscontinued: json['isDiscontinued'] as bool,
-    replacedBy: json['replacedBy'] as String,
-    isUnlisted: json['isUnlisted'] as bool,
+    isDiscontinued: json['isDiscontinued'] as bool? ?? false,
+    isUnlisted: json['isUnlisted'] as bool? ?? false,
+    replacedBy: json['replacedBy'] as String?,
   );
 }
 
 Map<String, dynamic> _$_$_PackageOptionsToJson(_$_PackageOptions instance) =>
     <String, dynamic>{
       'isDiscontinued': instance.isDiscontinued,
-      'replacedBy': instance.replacedBy,
       'isUnlisted': instance.isUnlisted,
+      'replacedBy': instance.replacedBy,
     };

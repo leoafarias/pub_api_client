@@ -2,14 +2,9 @@ import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
 const packageName = 'fvm';
+final client = PubClient();
 void main() {
   group('PubDev Client', () {
-    PubClient client;
-
-    setUp(() {
-      client = PubClient();
-    });
-
     test('Can Fetch package info', () async {
       final packageInfo = await client.packageInfo(packageName);
 
@@ -67,7 +62,7 @@ void main() {
 
     test('Search for packages', () async {
       final payload = await client.search('json');
-      final nextPagePayload = await payload.nextResults();
+      final nextPagePayload = await client.nextPage(payload.next ?? '');
       expect(payload.packages.length, greaterThan(1));
       expect(nextPagePayload.packages.length, greaterThan(1));
     });
@@ -85,29 +80,6 @@ void main() {
       final documentation = await client.documentation(packageName);
       expect(documentation.latestStableVersion, packageInfo.version);
       expect(documentation.versions.length, packageInfo.versions.length);
-    });
-
-    test('Check package update', () async {
-      final packageInfo = await client.packageInfo(packageName);
-      final latestWithoutCurrent = await client.checkLatest(packageName);
-
-      expect(latestWithoutCurrent.needUpdate, false);
-      expect(latestWithoutCurrent.latestVersion, packageInfo.version);
-      expect(
-        latestWithoutCurrent.latestVersion,
-        packageInfo.latest.version,
-      );
-      expect(latestWithoutCurrent.packageInfo.name, packageName);
-
-      final latestNeedUpdate =
-          await client.checkLatest(packageName, currentVersion: '1.0.0');
-
-      expect(latestNeedUpdate.needUpdate, true);
-
-      final latestCurrent = await client.checkLatest(packageName,
-          currentVersion: packageInfo.version);
-
-      expect(latestCurrent.needUpdate, false);
     });
   });
 }

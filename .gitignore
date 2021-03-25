@@ -32,3 +32,4 @@ coverage/lcov.info
 .fvm
 .vscode/settings.json
 _notes.md
+.env

@@ -8,12 +8,9 @@ part of 'package_metrics_model.dart';
 
 _$_PackageMetrics _$_$_PackageMetricsFromJson(Map<String, dynamic> json) {
   return _$_PackageMetrics(
-    score: json['score'] == null
-        ? null
-        : PackageScore.fromJson(json['score'] as Map<String, dynamic>),
-    scorecard: json['scorecard'] == null
-        ? null
-        : PackageScoreCard.fromJson(json['scorecard'] as Map<String, dynamic>),
+    score: PackageScore.fromJson(json['score'] as Map<String, dynamic>),
+    scorecard:
+        PackageScoreCard.fromJson(json['scorecard'] as Map<String, dynamic>),
   );
 }
 

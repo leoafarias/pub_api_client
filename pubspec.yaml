@@ -4,23 +4,23 @@ version: 1.0.9
 homepage: https://github.com/leoafarias/pub_api_client
 
 environment:
-  sdk: '>=2.8.1 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  freezed_annotation: ^0.12.0
-  http: ^0.12.2
-  json_annotation: ^3.1.0
-  meta: ^1.2.3
-  pub_semver: ^1.4.4
-  pubspec_parse: ^0.1.5
+  pub_semver: ^2.0.0
+  freezed_annotation: ^0.14.1
+  http: ^0.13.1
+  json_annotation: ^4.0.1
+  pubspec: ^2.0.1
+  
+
 
 dev_dependencies:
-  build_runner: ^1.10.3
-  build_version: ^2.0.1
-  freezed: ^0.12.2
-  json_serializable: ^3.5.0
-  pedantic: ^1.9.2
-  pubspec_yaml: ^2.0.1
-  remove_from_coverage: ^1.0.7
-  test: ^1.15.4
-  test_coverage: ^0.4.3
+  build_runner: ^1.12.2
+  build_version: ^2.0.2
+  freezed: ^0.14.1+1
+  json_serializable: ^4.1.0
+  pedantic: ^1.11.0
+  
+  test: ^1.16.8
+  test_cov: ^1.0.1

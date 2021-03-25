@@ -5,11 +5,11 @@ part 'package_options_model.g.dart';
 
 /// Package Options Model
 @freezed
-abstract class PackageOptions with _$PackageOptions {
+class PackageOptions with _$PackageOptions {
   factory PackageOptions({
-    final bool isDiscontinued,
-    final String replacedBy,
-    final bool isUnlisted,
+    @Default(false) final bool isDiscontinued,
+    @Default(false) final bool isUnlisted,
+    final String? replacedBy,
   }) = _PackageOptions;
 
   factory PackageOptions.fromJson(Map<String, dynamic> json) =>

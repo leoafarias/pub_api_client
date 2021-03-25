@@ -1,3 +1,8 @@
+## 1.1.0
+
+- Deprecated checkUpdatePrinter
+- Changed latest version to display stable version only
+
 ## 1.0.9
 
 - Ability to pass custom http Client as param.

@@ -1,12 +1,14 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pub_api_client/src/helpers/console_helper.dart';
+
 import 'package:pub_api_client/src/helpers/google_packages.dart';
 import 'package:pub_api_client/src/helpers/google_packages_list.dart';
 import 'package:pub_api_client/src/version.dart';
-import 'package:pubspec_yaml/pubspec_yaml.dart';
+import 'package:pubspec/pubspec.dart';
 
 import 'package:test/test.dart';
 
@@ -36,23 +38,22 @@ dynamic Function() overridePrint(dynamic Function() testFn) => () {
 void main() {
   group('Helpers', () {
     test('Check Update Printer', overridePrint(() async {
-      await checkUpdatePrinter(packageName);
+      await checkUpdatePrinter(packageName, currentVersion: '10.0.0');
       expect(printLog.isEmpty, true);
       await checkUpdatePrinter(packageName, currentVersion: '1.0.0');
       expect(printLog.length, 2);
     }));
-
     test('Get all Google packages', () async {
       final googleDeps = await getGooglePackages();
-      // print(googleDeps);
+      print(jsonEncode(googleDeps));
       expect(googleDeps.length, googlePackagesList.length);
     });
 
     test('Does Package version match', () async {
-      final pubspec = File(
+      final pubspec = PubSpec.fromYamlString(File(
         '${Directory.current.path}/pubspec.yaml',
-      ).readAsStringSync().toPubspecYaml();
-      expect(pubspec.version.valueOr(() => null), packageVersion);
+      ).readAsStringSync());
+      expect(pubspec.version.toString(), packageVersion);
     });
   });
 }

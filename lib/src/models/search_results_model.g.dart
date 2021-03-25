@@ -8,12 +8,10 @@ part of 'search_results_model.dart';
 
 _$_SearchResults _$_$_SearchResultsFromJson(Map<String, dynamic> json) {
   return _$_SearchResults(
-    packages: (json['packages'] as List)
-        ?.map((e) => e == null
-            ? null
-            : PackageResult.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    next: json['next'] as String,
+    packages: (json['packages'] as List<dynamic>)
+        .map((e) => PackageResult.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    next: json['next'] as String?,
   );
 }
 

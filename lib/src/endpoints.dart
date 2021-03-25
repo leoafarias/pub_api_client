@@ -1,13 +1,13 @@
 /// Pub.dev api Endpoints
 class Endpoint {
-  String baseUrl;
-  String apiUrl;
-  String searchUrl;
-  String packageUrl;
-  String accountUrl;
+  late String baseUrl;
+  late String apiUrl;
+  late String searchUrl;
+  late String packageUrl;
+  late String accountUrl;
 
   /// Constructor for API endpoints based on an [url]
-  Endpoint(String url) {
+  Endpoint(String? url) {
     baseUrl = url ?? 'https://pub.dartlang.org'; // Use pub.dev instead?
     apiUrl = '$baseUrl/api';
     searchUrl = '$apiUrl/search';

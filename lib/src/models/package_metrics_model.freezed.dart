@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'package_metrics_model.dart';
 
@@ -8,6 +8,10 @@ part of 'package_metrics_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PackageMetrics _$PackageMetricsFromJson(Map<String, dynamic> json) {
   return _PackageMetrics.fromJson(json);
 }
@@ -16,31 +20,31 @@ PackageMetrics _$PackageMetricsFromJson(Map<String, dynamic> json) {
 class _$PackageMetricsTearOff {
   const _$PackageMetricsTearOff();
 
-// ignore: unused_element
-  _PackageMetrics call({PackageScore score, PackageScoreCard scorecard}) {
+  _PackageMetrics call(
+      {required PackageScore score, required PackageScoreCard scorecard}) {
     return _PackageMetrics(
       score: score,
       scorecard: scorecard,
     );
   }
 
-// ignore: unused_element
   PackageMetrics fromJson(Map<String, Object> json) {
     return PackageMetrics.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackageMetrics = _$PackageMetricsTearOff();
 
 /// @nodoc
 mixin _$PackageMetrics {
-  PackageScore get score;
-  PackageScoreCard get scorecard;
+  PackageScore get score => throw _privateConstructorUsedError;
+  PackageScoreCard get scorecard => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackageMetricsCopyWith<PackageMetrics> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackageMetricsCopyWith<PackageMetrics> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -65,22 +69,23 @@ class _$PackageMetricsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object score = freezed,
-    Object scorecard = freezed,
+    Object? score = freezed,
+    Object? scorecard = freezed,
   }) {
     return _then(_value.copyWith(
-      score: score == freezed ? _value.score : score as PackageScore,
+      score: score == freezed
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as PackageScore,
       scorecard: scorecard == freezed
           ? _value.scorecard
-          : scorecard as PackageScoreCard,
+          : scorecard // ignore: cast_nullable_to_non_nullable
+              as PackageScoreCard,
     ));
   }
 
   @override
   $PackageScoreCopyWith<$Res> get score {
-    if (_value.score == null) {
-      return null;
-    }
     return $PackageScoreCopyWith<$Res>(_value.score, (value) {
       return _then(_value.copyWith(score: value));
     });
@@ -88,9 +93,6 @@ class _$PackageMetricsCopyWithImpl<$Res>
 
   @override
   $PackageScoreCardCopyWith<$Res> get scorecard {
-    if (_value.scorecard == null) {
-      return null;
-    }
     return $PackageScoreCardCopyWith<$Res>(_value.scorecard, (value) {
       return _then(_value.copyWith(scorecard: value));
     });
@@ -125,14 +127,18 @@ class __$PackageMetricsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object score = freezed,
-    Object scorecard = freezed,
+    Object? score = freezed,
+    Object? scorecard = freezed,
   }) {
     return _then(_PackageMetrics(
-      score: score == freezed ? _value.score : score as PackageScore,
+      score: score == freezed
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as PackageScore,
       scorecard: scorecard == freezed
           ? _value.scorecard
-          : scorecard as PackageScoreCard,
+          : scorecard // ignore: cast_nullable_to_non_nullable
+              as PackageScoreCard,
     ));
   }
 }
@@ -141,7 +147,7 @@ class __$PackageMetricsCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_PackageMetrics implements _PackageMetrics {
-  _$_PackageMetrics({this.score, this.scorecard});
+  _$_PackageMetrics({required this.score, required this.scorecard});
 
   factory _$_PackageMetrics.fromJson(Map<String, dynamic> json) =>
       _$_$_PackageMetricsFromJson(json);
@@ -173,6 +179,7 @@ class _$_PackageMetrics implements _PackageMetrics {
       const DeepCollectionEquality().hash(score) ^
       const DeepCollectionEquality().hash(scorecard);
 
+  @JsonKey(ignore: true)
   @override
   _$PackageMetricsCopyWith<_PackageMetrics> get copyWith =>
       __$PackageMetricsCopyWithImpl<_PackageMetrics>(this, _$identity);
@@ -184,16 +191,19 @@ class _$_PackageMetrics implements _PackageMetrics {
 }
 
 abstract class _PackageMetrics implements PackageMetrics {
-  factory _PackageMetrics({PackageScore score, PackageScoreCard scorecard}) =
-      _$_PackageMetrics;
+  factory _PackageMetrics(
+      {required PackageScore score,
+      required PackageScoreCard scorecard}) = _$_PackageMetrics;
 
   factory _PackageMetrics.fromJson(Map<String, dynamic> json) =
       _$_PackageMetrics.fromJson;
 
   @override
-  PackageScore get score;
+  PackageScore get score => throw _privateConstructorUsedError;
   @override
-  PackageScoreCard get scorecard;
+  PackageScoreCard get scorecard => throw _privateConstructorUsedError;
   @override
-  _$PackageMetricsCopyWith<_PackageMetrics> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackageMetricsCopyWith<_PackageMetrics> get copyWith =>
+      throw _privateConstructorUsedError;
 }

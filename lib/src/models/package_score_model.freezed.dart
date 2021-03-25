@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'package_score_model.dart';
 
@@ -8,6 +8,10 @@ part of 'package_score_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PackageScore _$PackageScoreFromJson(Map<String, dynamic> json) {
   return _PackageScore.fromJson(json);
 }
@@ -16,13 +20,12 @@ PackageScore _$PackageScoreFromJson(Map<String, dynamic> json) {
 class _$PackageScoreTearOff {
   const _$PackageScoreTearOff();
 
-// ignore: unused_element
   _PackageScore call(
-      {int grantedPoints,
-      int maxPoints,
-      int likeCount,
-      double popularityScore,
-      DateTime lastUpdated}) {
+      {required int grantedPoints,
+      required int maxPoints,
+      required int likeCount,
+      required double popularityScore,
+      required DateTime lastUpdated}) {
     return _PackageScore(
       grantedPoints: grantedPoints,
       maxPoints: maxPoints,
@@ -32,26 +35,26 @@ class _$PackageScoreTearOff {
     );
   }
 
-// ignore: unused_element
   PackageScore fromJson(Map<String, Object> json) {
     return PackageScore.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackageScore = _$PackageScoreTearOff();
 
 /// @nodoc
 mixin _$PackageScore {
-  int get grantedPoints;
-  int get maxPoints;
-  int get likeCount;
-  double get popularityScore;
-  DateTime get lastUpdated;
+  int get grantedPoints => throw _privateConstructorUsedError;
+  int get maxPoints => throw _privateConstructorUsedError;
+  int get likeCount => throw _privateConstructorUsedError;
+  double get popularityScore => throw _privateConstructorUsedError;
+  DateTime get lastUpdated => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackageScoreCopyWith<PackageScore> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackageScoreCopyWith<PackageScore> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -77,23 +80,33 @@ class _$PackageScoreCopyWithImpl<$Res> implements $PackageScoreCopyWith<$Res> {
 
   @override
   $Res call({
-    Object grantedPoints = freezed,
-    Object maxPoints = freezed,
-    Object likeCount = freezed,
-    Object popularityScore = freezed,
-    Object lastUpdated = freezed,
+    Object? grantedPoints = freezed,
+    Object? maxPoints = freezed,
+    Object? likeCount = freezed,
+    Object? popularityScore = freezed,
+    Object? lastUpdated = freezed,
   }) {
     return _then(_value.copyWith(
       grantedPoints: grantedPoints == freezed
           ? _value.grantedPoints
-          : grantedPoints as int,
-      maxPoints: maxPoints == freezed ? _value.maxPoints : maxPoints as int,
-      likeCount: likeCount == freezed ? _value.likeCount : likeCount as int,
+          : grantedPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxPoints: maxPoints == freezed
+          ? _value.maxPoints
+          : maxPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      likeCount: likeCount == freezed
+          ? _value.likeCount
+          : likeCount // ignore: cast_nullable_to_non_nullable
+              as int,
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
-          : popularityScore as double,
-      lastUpdated:
-          lastUpdated == freezed ? _value.lastUpdated : lastUpdated as DateTime,
+          : popularityScore // ignore: cast_nullable_to_non_nullable
+              as double,
+      lastUpdated: lastUpdated == freezed
+          ? _value.lastUpdated
+          : lastUpdated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -125,23 +138,33 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object grantedPoints = freezed,
-    Object maxPoints = freezed,
-    Object likeCount = freezed,
-    Object popularityScore = freezed,
-    Object lastUpdated = freezed,
+    Object? grantedPoints = freezed,
+    Object? maxPoints = freezed,
+    Object? likeCount = freezed,
+    Object? popularityScore = freezed,
+    Object? lastUpdated = freezed,
   }) {
     return _then(_PackageScore(
       grantedPoints: grantedPoints == freezed
           ? _value.grantedPoints
-          : grantedPoints as int,
-      maxPoints: maxPoints == freezed ? _value.maxPoints : maxPoints as int,
-      likeCount: likeCount == freezed ? _value.likeCount : likeCount as int,
+          : grantedPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxPoints: maxPoints == freezed
+          ? _value.maxPoints
+          : maxPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      likeCount: likeCount == freezed
+          ? _value.likeCount
+          : likeCount // ignore: cast_nullable_to_non_nullable
+              as int,
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
-          : popularityScore as double,
-      lastUpdated:
-          lastUpdated == freezed ? _value.lastUpdated : lastUpdated as DateTime,
+          : popularityScore // ignore: cast_nullable_to_non_nullable
+              as double,
+      lastUpdated: lastUpdated == freezed
+          ? _value.lastUpdated
+          : lastUpdated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -151,11 +174,11 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
 /// @nodoc
 class _$_PackageScore implements _PackageScore {
   _$_PackageScore(
-      {this.grantedPoints,
-      this.maxPoints,
-      this.likeCount,
-      this.popularityScore,
-      this.lastUpdated});
+      {required this.grantedPoints,
+      required this.maxPoints,
+      required this.likeCount,
+      required this.popularityScore,
+      required this.lastUpdated});
 
   factory _$_PackageScore.fromJson(Map<String, dynamic> json) =>
       _$_$_PackageScoreFromJson(json);
@@ -206,6 +229,7 @@ class _$_PackageScore implements _PackageScore {
       const DeepCollectionEquality().hash(popularityScore) ^
       const DeepCollectionEquality().hash(lastUpdated);
 
+  @JsonKey(ignore: true)
   @override
   _$PackageScoreCopyWith<_PackageScore> get copyWith =>
       __$PackageScoreCopyWithImpl<_PackageScore>(this, _$identity);
@@ -218,27 +242,29 @@ class _$_PackageScore implements _PackageScore {
 
 abstract class _PackageScore implements PackageScore {
   factory _PackageScore(
-      {int grantedPoints,
-      int maxPoints,
-      int likeCount,
-      double popularityScore,
-      DateTime lastUpdated}) = _$_PackageScore;
+      {required int grantedPoints,
+      required int maxPoints,
+      required int likeCount,
+      required double popularityScore,
+      required DateTime lastUpdated}) = _$_PackageScore;
 
   factory _PackageScore.fromJson(Map<String, dynamic> json) =
       _$_PackageScore.fromJson;
 
   @override
-  int get grantedPoints;
+  int get grantedPoints => throw _privateConstructorUsedError;
   @override
-  int get maxPoints;
+  int get maxPoints => throw _privateConstructorUsedError;
   @override
-  int get likeCount;
+  int get likeCount => throw _privateConstructorUsedError;
   @override
-  double get popularityScore;
+  double get popularityScore => throw _privateConstructorUsedError;
   @override
-  DateTime get lastUpdated;
+  DateTime get lastUpdated => throw _privateConstructorUsedError;
   @override
-  _$PackageScoreCopyWith<_PackageScore> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackageScoreCopyWith<_PackageScore> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PackageScoreCard _$PackageScoreCardFromJson(Map<String, dynamic> json) {
@@ -249,20 +275,19 @@ PackageScoreCard _$PackageScoreCardFromJson(Map<String, dynamic> json) {
 class _$PackageScoreCardTearOff {
   const _$PackageScoreCardTearOff();
 
-// ignore: unused_element
   _PackageScoreCard call(
-      {String packageName,
-      String packageVersion,
-      String runtimeVersion,
-      DateTime updated,
-      DateTime packageCreated,
-      DateTime packageVersionCreated,
-      int grantedPubPoints,
-      int maxPubPoints,
-      double popularityScore,
-      List<String> derivedTags,
-      List<String> flags,
-      List<String> reportTypes}) {
+      {required String packageName,
+      required String packageVersion,
+      required String runtimeVersion,
+      required DateTime updated,
+      required DateTime packageCreated,
+      required DateTime packageVersionCreated,
+      required int grantedPubPoints,
+      required int maxPubPoints,
+      required double popularityScore,
+      List<String> derivedTags = const [],
+      List<String> flags = const [],
+      List<String> reportTypes = const []}) {
     return _PackageScoreCard(
       packageName: packageName,
       packageVersion: packageVersion,
@@ -279,33 +304,33 @@ class _$PackageScoreCardTearOff {
     );
   }
 
-// ignore: unused_element
   PackageScoreCard fromJson(Map<String, Object> json) {
     return PackageScoreCard.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackageScoreCard = _$PackageScoreCardTearOff();
 
 /// @nodoc
 mixin _$PackageScoreCard {
-  String get packageName;
-  String get packageVersion;
-  String get runtimeVersion;
-  DateTime get updated;
-  DateTime get packageCreated;
-  DateTime get packageVersionCreated;
-  int get grantedPubPoints;
-  int get maxPubPoints;
-  double get popularityScore;
-  List<String> get derivedTags;
-  List<String> get flags;
-  List<String> get reportTypes;
+  String get packageName => throw _privateConstructorUsedError;
+  String get packageVersion => throw _privateConstructorUsedError;
+  String get runtimeVersion => throw _privateConstructorUsedError;
+  DateTime get updated => throw _privateConstructorUsedError;
+  DateTime get packageCreated => throw _privateConstructorUsedError;
+  DateTime get packageVersionCreated => throw _privateConstructorUsedError;
+  int get grantedPubPoints => throw _privateConstructorUsedError;
+  int get maxPubPoints => throw _privateConstructorUsedError;
+  double get popularityScore => throw _privateConstructorUsedError;
+  List<String> get derivedTags => throw _privateConstructorUsedError;
+  List<String> get flags => throw _privateConstructorUsedError;
+  List<String> get reportTypes => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackageScoreCardCopyWith<PackageScoreCard> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackageScoreCardCopyWith<PackageScoreCard> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -339,50 +364,68 @@ class _$PackageScoreCardCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object packageName = freezed,
-    Object packageVersion = freezed,
-    Object runtimeVersion = freezed,
-    Object updated = freezed,
-    Object packageCreated = freezed,
-    Object packageVersionCreated = freezed,
-    Object grantedPubPoints = freezed,
-    Object maxPubPoints = freezed,
-    Object popularityScore = freezed,
-    Object derivedTags = freezed,
-    Object flags = freezed,
-    Object reportTypes = freezed,
+    Object? packageName = freezed,
+    Object? packageVersion = freezed,
+    Object? runtimeVersion = freezed,
+    Object? updated = freezed,
+    Object? packageCreated = freezed,
+    Object? packageVersionCreated = freezed,
+    Object? grantedPubPoints = freezed,
+    Object? maxPubPoints = freezed,
+    Object? popularityScore = freezed,
+    Object? derivedTags = freezed,
+    Object? flags = freezed,
+    Object? reportTypes = freezed,
   }) {
     return _then(_value.copyWith(
-      packageName:
-          packageName == freezed ? _value.packageName : packageName as String,
+      packageName: packageName == freezed
+          ? _value.packageName
+          : packageName // ignore: cast_nullable_to_non_nullable
+              as String,
       packageVersion: packageVersion == freezed
           ? _value.packageVersion
-          : packageVersion as String,
+          : packageVersion // ignore: cast_nullable_to_non_nullable
+              as String,
       runtimeVersion: runtimeVersion == freezed
           ? _value.runtimeVersion
-          : runtimeVersion as String,
-      updated: updated == freezed ? _value.updated : updated as DateTime,
+          : runtimeVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      updated: updated == freezed
+          ? _value.updated
+          : updated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       packageCreated: packageCreated == freezed
           ? _value.packageCreated
-          : packageCreated as DateTime,
+          : packageCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       packageVersionCreated: packageVersionCreated == freezed
           ? _value.packageVersionCreated
-          : packageVersionCreated as DateTime,
+          : packageVersionCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       grantedPubPoints: grantedPubPoints == freezed
           ? _value.grantedPubPoints
-          : grantedPubPoints as int,
-      maxPubPoints:
-          maxPubPoints == freezed ? _value.maxPubPoints : maxPubPoints as int,
+          : grantedPubPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxPubPoints: maxPubPoints == freezed
+          ? _value.maxPubPoints
+          : maxPubPoints // ignore: cast_nullable_to_non_nullable
+              as int,
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
-          : popularityScore as double,
+          : popularityScore // ignore: cast_nullable_to_non_nullable
+              as double,
       derivedTags: derivedTags == freezed
           ? _value.derivedTags
-          : derivedTags as List<String>,
-      flags: flags == freezed ? _value.flags : flags as List<String>,
+          : derivedTags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      flags: flags == freezed
+          ? _value.flags
+          : flags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       reportTypes: reportTypes == freezed
           ? _value.reportTypes
-          : reportTypes as List<String>,
+          : reportTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -422,50 +465,68 @@ class __$PackageScoreCardCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object packageName = freezed,
-    Object packageVersion = freezed,
-    Object runtimeVersion = freezed,
-    Object updated = freezed,
-    Object packageCreated = freezed,
-    Object packageVersionCreated = freezed,
-    Object grantedPubPoints = freezed,
-    Object maxPubPoints = freezed,
-    Object popularityScore = freezed,
-    Object derivedTags = freezed,
-    Object flags = freezed,
-    Object reportTypes = freezed,
+    Object? packageName = freezed,
+    Object? packageVersion = freezed,
+    Object? runtimeVersion = freezed,
+    Object? updated = freezed,
+    Object? packageCreated = freezed,
+    Object? packageVersionCreated = freezed,
+    Object? grantedPubPoints = freezed,
+    Object? maxPubPoints = freezed,
+    Object? popularityScore = freezed,
+    Object? derivedTags = freezed,
+    Object? flags = freezed,
+    Object? reportTypes = freezed,
   }) {
     return _then(_PackageScoreCard(
-      packageName:
-          packageName == freezed ? _value.packageName : packageName as String,
+      packageName: packageName == freezed
+          ? _value.packageName
+          : packageName // ignore: cast_nullable_to_non_nullable
+              as String,
       packageVersion: packageVersion == freezed
           ? _value.packageVersion
-          : packageVersion as String,
+          : packageVersion // ignore: cast_nullable_to_non_nullable
+              as String,
       runtimeVersion: runtimeVersion == freezed
           ? _value.runtimeVersion
-          : runtimeVersion as String,
-      updated: updated == freezed ? _value.updated : updated as DateTime,
+          : runtimeVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      updated: updated == freezed
+          ? _value.updated
+          : updated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       packageCreated: packageCreated == freezed
           ? _value.packageCreated
-          : packageCreated as DateTime,
+          : packageCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       packageVersionCreated: packageVersionCreated == freezed
           ? _value.packageVersionCreated
-          : packageVersionCreated as DateTime,
+          : packageVersionCreated // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       grantedPubPoints: grantedPubPoints == freezed
           ? _value.grantedPubPoints
-          : grantedPubPoints as int,
-      maxPubPoints:
-          maxPubPoints == freezed ? _value.maxPubPoints : maxPubPoints as int,
+          : grantedPubPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxPubPoints: maxPubPoints == freezed
+          ? _value.maxPubPoints
+          : maxPubPoints // ignore: cast_nullable_to_non_nullable
+              as int,
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
-          : popularityScore as double,
+          : popularityScore // ignore: cast_nullable_to_non_nullable
+              as double,
       derivedTags: derivedTags == freezed
           ? _value.derivedTags
-          : derivedTags as List<String>,
-      flags: flags == freezed ? _value.flags : flags as List<String>,
+          : derivedTags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      flags: flags == freezed
+          ? _value.flags
+          : flags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       reportTypes: reportTypes == freezed
           ? _value.reportTypes
-          : reportTypes as List<String>,
+          : reportTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -475,18 +536,18 @@ class __$PackageScoreCardCopyWithImpl<$Res>
 /// @nodoc
 class _$_PackageScoreCard implements _PackageScoreCard {
   _$_PackageScoreCard(
-      {this.packageName,
-      this.packageVersion,
-      this.runtimeVersion,
-      this.updated,
-      this.packageCreated,
-      this.packageVersionCreated,
-      this.grantedPubPoints,
-      this.maxPubPoints,
-      this.popularityScore,
-      this.derivedTags,
-      this.flags,
-      this.reportTypes});
+      {required this.packageName,
+      required this.packageVersion,
+      required this.runtimeVersion,
+      required this.updated,
+      required this.packageCreated,
+      required this.packageVersionCreated,
+      required this.grantedPubPoints,
+      required this.maxPubPoints,
+      required this.popularityScore,
+      this.derivedTags = const [],
+      this.flags = const [],
+      this.reportTypes = const []});
 
   factory _$_PackageScoreCard.fromJson(Map<String, dynamic> json) =>
       _$_$_PackageScoreCardFromJson(json);
@@ -509,10 +570,13 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   final int maxPubPoints;
   @override
   final double popularityScore;
+  @JsonKey(defaultValue: const [])
   @override
   final List<String> derivedTags;
+  @JsonKey(defaultValue: const [])
   @override
   final List<String> flags;
+  @JsonKey(defaultValue: const [])
   @override
   final List<String> reportTypes;
 
@@ -578,6 +642,7 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       const DeepCollectionEquality().hash(flags) ^
       const DeepCollectionEquality().hash(reportTypes);
 
+  @JsonKey(ignore: true)
   @override
   _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith =>
       __$PackageScoreCardCopyWithImpl<_PackageScoreCard>(this, _$identity);
@@ -590,15 +655,15 @@ class _$_PackageScoreCard implements _PackageScoreCard {
 
 abstract class _PackageScoreCard implements PackageScoreCard {
   factory _PackageScoreCard(
-      {String packageName,
-      String packageVersion,
-      String runtimeVersion,
-      DateTime updated,
-      DateTime packageCreated,
-      DateTime packageVersionCreated,
-      int grantedPubPoints,
-      int maxPubPoints,
-      double popularityScore,
+      {required String packageName,
+      required String packageVersion,
+      required String runtimeVersion,
+      required DateTime updated,
+      required DateTime packageCreated,
+      required DateTime packageVersionCreated,
+      required int grantedPubPoints,
+      required int maxPubPoints,
+      required double popularityScore,
       List<String> derivedTags,
       List<String> flags,
       List<String> reportTypes}) = _$_PackageScoreCard;
@@ -607,29 +672,31 @@ abstract class _PackageScoreCard implements PackageScoreCard {
       _$_PackageScoreCard.fromJson;
 
   @override
-  String get packageName;
+  String get packageName => throw _privateConstructorUsedError;
   @override
-  String get packageVersion;
+  String get packageVersion => throw _privateConstructorUsedError;
   @override
-  String get runtimeVersion;
+  String get runtimeVersion => throw _privateConstructorUsedError;
   @override
-  DateTime get updated;
+  DateTime get updated => throw _privateConstructorUsedError;
   @override
-  DateTime get packageCreated;
+  DateTime get packageCreated => throw _privateConstructorUsedError;
   @override
-  DateTime get packageVersionCreated;
+  DateTime get packageVersionCreated => throw _privateConstructorUsedError;
   @override
-  int get grantedPubPoints;
+  int get grantedPubPoints => throw _privateConstructorUsedError;
   @override
-  int get maxPubPoints;
+  int get maxPubPoints => throw _privateConstructorUsedError;
   @override
-  double get popularityScore;
+  double get popularityScore => throw _privateConstructorUsedError;
   @override
-  List<String> get derivedTags;
+  List<String> get derivedTags => throw _privateConstructorUsedError;
   @override
-  List<String> get flags;
+  List<String> get flags => throw _privateConstructorUsedError;
   @override
-  List<String> get reportTypes;
+  List<String> get reportTypes => throw _privateConstructorUsedError;
   @override
-  _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith =>
+      throw _privateConstructorUsedError;
 }

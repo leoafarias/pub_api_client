@@ -6,10 +6,10 @@ part 'package_metrics_model.g.dart';
 
 /// Package Metrics Model
 @freezed
-abstract class PackageMetrics with _$PackageMetrics {
+class PackageMetrics with _$PackageMetrics {
   factory PackageMetrics({
-    final PackageScore score,
-    final PackageScoreCard scorecard,
+    required final PackageScore score,
+    required final PackageScoreCard scorecard,
   }) = _PackageMetrics;
 
   factory PackageMetrics.fromJson(Map<String, dynamic> json) =>

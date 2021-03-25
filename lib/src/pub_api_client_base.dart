@@ -6,6 +6,7 @@ import 'package:pub_semver/pub_semver.dart';
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
 import 'models/latest_version_model.dart';
+
 import 'models/package_documentation_model.dart';
 import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
@@ -19,12 +20,11 @@ typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 
 /// Pub API Client
 class PubClient {
-  final String pubUrl;
-
-  final PubCredentials credentials;
   final Endpoint endpoint;
-  final Client client;
-  PubApiHttpClient _client;
+  final String? pubUrl;
+  final Client? client;
+  final PubCredentials? credentials;
+  late PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
@@ -34,7 +34,7 @@ class PubClient {
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
-    final response = await _client.get(url);
+    final response = await _client.get(Uri.parse(url));
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
@@ -59,6 +59,7 @@ class PubClient {
   /// Returns the `PackageOptions` for package [packageName]
   Future<PackageOptions> packageOptions(String packageName) async {
     final data = await _fetch(endpoint.packageOptions(packageName));
+
     return PackageOptions.fromJson(data);
   }
 
@@ -93,8 +94,8 @@ class PubClient {
   Future<SearchResults> search(
     String query, {
     int page = 1,
-    String publisher,
-    String dependency,
+    String? publisher,
+    String? dependency,
   }) async {
     final publisherQuery = publisher != null ? 'publisher:$publisher ' : '';
     final dependencyQuery = dependency != null ? 'dependency:$dependency ' : '';
@@ -102,6 +103,15 @@ class PubClient {
         endpoint.search('$publisherQuery$dependencyQuery$query', page));
     return SearchResults.fromJson(data);
   }
+
+  /// Receives [nextPageUrl]
+  /// returns `SearchResults`
+  Future<SearchResults> nextPage(String nextPageUrl) async {
+    final data = await _fetch(nextPageUrl);
+    return SearchResults.fromJson(data);
+  }
+
+  // Future<SearchResults> _nextSearchPage() async {}
 
   /// Returns `PackageDocumentation` for a [packageName]
   Future<PackageDocumentation> documentation(String packageName) async {
@@ -113,16 +123,15 @@ class PubClient {
   /// comparing with [currentVersion] returns `LatestVersion`
   Future<LatestVersion> checkLatest(
     String packageName, {
-    String currentVersion,
+    required String currentVersion,
   }) async {
     final package = await packageInfo(packageName);
     final latestVersion = Version.parse(package.version);
     var needUpdate = false;
-    if (currentVersion != null) {
-      final current = Version.parse(currentVersion);
-      // Check as need update if latest version is higher
-      needUpdate = latestVersion > current;
-    }
+
+    final current = Version.parse(currentVersion);
+    // Check as need update if latest version is higher
+    needUpdate = latestVersion > current;
 
     return LatestVersion(
       needUpdate: needUpdate,

@@ -7,12 +7,12 @@ part 'pub_credentials_model.g.dart';
 @freezed
 abstract class PubCredentials with _$PubCredentials {
   factory PubCredentials({
-    final String accessToken,
-    final String refreshToken,
-    final String idToken,
-    final double tokenEndpoint,
-    final List<String> scopes,
-    final int expiration,
+    required final String accessToken,
+    required final String refreshToken,
+    required final String idToken,
+    required final double tokenEndpoint,
+    required final List<String> scopes,
+    required final int expiration,
   }) = _PubCredentials;
 
   factory PubCredentials.fromJson(Map<String, dynamic> json) =>

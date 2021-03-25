@@ -1,0 +1,14 @@
+# # Read about `build.yaml` at https://pub.dev/packages/build_config
+# targets:
+#   $default:
+#     builders:
+#       build_google_deps:
+#         enabled: false
+
+# builders:
+#   build_google_deps:
+#     import: "package:pub_api_client/src/helpers/deps_builder.dart"
+#     builder_factories: ["googleDepsBuilder"]
+#     build_extensions: {"$lib$": ["src/helpers/google_packages_list.dart"]}
+#     build_to: source
+#     auto_apply: dependents

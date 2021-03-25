@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'search_results_model.dart';
 
@@ -8,6 +8,10 @@ part of 'search_results_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 SearchResults _$SearchResultsFromJson(Map<String, dynamic> json) {
   return _SearchResults.fromJson(json);
 }
@@ -16,31 +20,30 @@ SearchResults _$SearchResultsFromJson(Map<String, dynamic> json) {
 class _$SearchResultsTearOff {
   const _$SearchResultsTearOff();
 
-// ignore: unused_element
-  _SearchResults call({List<PackageResult> packages, String next}) {
+  _SearchResults call({required List<PackageResult> packages, String? next}) {
     return _SearchResults(
       packages: packages,
       next: next,
     );
   }
 
-// ignore: unused_element
   SearchResults fromJson(Map<String, Object> json) {
     return SearchResults.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SearchResults = _$SearchResultsTearOff();
 
 /// @nodoc
 mixin _$SearchResults {
-  List<PackageResult> get packages;
-  String get next;
+  List<PackageResult> get packages => throw _privateConstructorUsedError;
+  String? get next => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $SearchResultsCopyWith<SearchResults> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SearchResultsCopyWith<SearchResults> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -48,7 +51,7 @@ abstract class $SearchResultsCopyWith<$Res> {
   factory $SearchResultsCopyWith(
           SearchResults value, $Res Function(SearchResults) then) =
       _$SearchResultsCopyWithImpl<$Res>;
-  $Res call({List<PackageResult> packages, String next});
+  $Res call({List<PackageResult> packages, String? next});
 }
 
 /// @nodoc
@@ -62,14 +65,18 @@ class _$SearchResultsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object packages = freezed,
-    Object next = freezed,
+    Object? packages = freezed,
+    Object? next = freezed,
   }) {
     return _then(_value.copyWith(
       packages: packages == freezed
           ? _value.packages
-          : packages as List<PackageResult>,
-      next: next == freezed ? _value.next : next as String,
+          : packages // ignore: cast_nullable_to_non_nullable
+              as List<PackageResult>,
+      next: next == freezed
+          ? _value.next
+          : next // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -81,7 +88,7 @@ abstract class _$SearchResultsCopyWith<$Res>
           _SearchResults value, $Res Function(_SearchResults) then) =
       __$SearchResultsCopyWithImpl<$Res>;
   @override
-  $Res call({List<PackageResult> packages, String next});
+  $Res call({List<PackageResult> packages, String? next});
 }
 
 /// @nodoc
@@ -97,14 +104,18 @@ class __$SearchResultsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object packages = freezed,
-    Object next = freezed,
+    Object? packages = freezed,
+    Object? next = freezed,
   }) {
     return _then(_SearchResults(
       packages: packages == freezed
           ? _value.packages
-          : packages as List<PackageResult>,
-      next: next == freezed ? _value.next : next as String,
+          : packages // ignore: cast_nullable_to_non_nullable
+              as List<PackageResult>,
+      next: next == freezed
+          ? _value.next
+          : next // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -113,7 +124,7 @@ class __$SearchResultsCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_SearchResults extends _SearchResults {
-  _$_SearchResults({this.packages, this.next}) : super._();
+  _$_SearchResults({required this.packages, this.next}) : super._();
 
   factory _$_SearchResults.fromJson(Map<String, dynamic> json) =>
       _$_$_SearchResultsFromJson(json);
@@ -121,7 +132,7 @@ class _$_SearchResults extends _SearchResults {
   @override
   final List<PackageResult> packages;
   @override
-  final String next;
+  final String? next;
 
   @override
   String toString() {
@@ -145,6 +156,7 @@ class _$_SearchResults extends _SearchResults {
       const DeepCollectionEquality().hash(packages) ^
       const DeepCollectionEquality().hash(next);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchResultsCopyWith<_SearchResults> get copyWith =>
       __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
@@ -156,19 +168,21 @@ class _$_SearchResults extends _SearchResults {
 }
 
 abstract class _SearchResults extends SearchResults {
+  factory _SearchResults(
+      {required List<PackageResult> packages, String? next}) = _$_SearchResults;
   _SearchResults._() : super._();
-  factory _SearchResults({List<PackageResult> packages, String next}) =
-      _$_SearchResults;
 
   factory _SearchResults.fromJson(Map<String, dynamic> json) =
       _$_SearchResults.fromJson;
 
   @override
-  List<PackageResult> get packages;
+  List<PackageResult> get packages => throw _privateConstructorUsedError;
   @override
-  String get next;
+  String? get next => throw _privateConstructorUsedError;
   @override
-  _$SearchResultsCopyWith<_SearchResults> get copyWith;
+  @JsonKey(ignore: true)
+  _$SearchResultsCopyWith<_SearchResults> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PackageResult _$PackageResultFromJson(Map<String, dynamic> json) {
@@ -179,29 +193,28 @@ PackageResult _$PackageResultFromJson(Map<String, dynamic> json) {
 class _$PackageResultTearOff {
   const _$PackageResultTearOff();
 
-// ignore: unused_element
-  _PackageResult call({String package}) {
+  _PackageResult call({required String package}) {
     return _PackageResult(
       package: package,
     );
   }
 
-// ignore: unused_element
   PackageResult fromJson(Map<String, Object> json) {
     return PackageResult.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackageResult = _$PackageResultTearOff();
 
 /// @nodoc
 mixin _$PackageResult {
-  String get package;
+  String get package => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackageResultCopyWith<PackageResult> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackageResultCopyWith<PackageResult> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -223,10 +236,13 @@ class _$PackageResultCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object package = freezed,
+    Object? package = freezed,
   }) {
     return _then(_value.copyWith(
-      package: package == freezed ? _value.package : package as String,
+      package: package == freezed
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -254,10 +270,13 @@ class __$PackageResultCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object package = freezed,
+    Object? package = freezed,
   }) {
     return _then(_PackageResult(
-      package: package == freezed ? _value.package : package as String,
+      package: package == freezed
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -266,7 +285,7 @@ class __$PackageResultCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_PackageResult implements _PackageResult {
-  _$_PackageResult({this.package});
+  _$_PackageResult({required this.package});
 
   factory _$_PackageResult.fromJson(Map<String, dynamic> json) =>
       _$_$_PackageResultFromJson(json);
@@ -291,6 +310,7 @@ class _$_PackageResult implements _PackageResult {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(package);
 
+  @JsonKey(ignore: true)
   @override
   _$PackageResultCopyWith<_PackageResult> get copyWith =>
       __$PackageResultCopyWithImpl<_PackageResult>(this, _$identity);
@@ -302,13 +322,15 @@ class _$_PackageResult implements _PackageResult {
 }
 
 abstract class _PackageResult implements PackageResult {
-  factory _PackageResult({String package}) = _$_PackageResult;
+  factory _PackageResult({required String package}) = _$_PackageResult;
 
   factory _PackageResult.fromJson(Map<String, dynamic> json) =
       _$_PackageResult.fromJson;
 
   @override
-  String get package;
+  String get package => throw _privateConstructorUsedError;
   @override
-  _$PackageResultCopyWith<_PackageResult> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackageResultCopyWith<_PackageResult> get copyWith =>
+      throw _privateConstructorUsedError;
 }

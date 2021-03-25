@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'package_publisher_model.dart';
 
@@ -8,6 +8,10 @@ part of 'package_publisher_model.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 PackagePublisher _$PackagePublisherFromJson(Map<String, dynamic> json) {
   return _PackagePublisher.fromJson(json);
 }
@@ -16,29 +20,28 @@ PackagePublisher _$PackagePublisherFromJson(Map<String, dynamic> json) {
 class _$PackagePublisherTearOff {
   const _$PackagePublisherTearOff();
 
-// ignore: unused_element
-  _PackagePublisher call({String publisherId}) {
+  _PackagePublisher call({required String publisherId}) {
     return _PackagePublisher(
       publisherId: publisherId,
     );
   }
 
-// ignore: unused_element
   PackagePublisher fromJson(Map<String, Object> json) {
     return PackagePublisher.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $PackagePublisher = _$PackagePublisherTearOff();
 
 /// @nodoc
 mixin _$PackagePublisher {
-  String get publisherId;
+  String get publisherId => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PackagePublisherCopyWith<PackagePublisher> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PackagePublisherCopyWith<PackagePublisher> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,11 +63,13 @@ class _$PackagePublisherCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object publisherId = freezed,
+    Object? publisherId = freezed,
   }) {
     return _then(_value.copyWith(
-      publisherId:
-          publisherId == freezed ? _value.publisherId : publisherId as String,
+      publisherId: publisherId == freezed
+          ? _value.publisherId
+          : publisherId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -92,11 +97,13 @@ class __$PackagePublisherCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object publisherId = freezed,
+    Object? publisherId = freezed,
   }) {
     return _then(_PackagePublisher(
-      publisherId:
-          publisherId == freezed ? _value.publisherId : publisherId as String,
+      publisherId: publisherId == freezed
+          ? _value.publisherId
+          : publisherId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -105,7 +112,7 @@ class __$PackagePublisherCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_PackagePublisher implements _PackagePublisher {
-  _$_PackagePublisher({this.publisherId});
+  _$_PackagePublisher({required this.publisherId});
 
   factory _$_PackagePublisher.fromJson(Map<String, dynamic> json) =>
       _$_$_PackagePublisherFromJson(json);
@@ -131,6 +138,7 @@ class _$_PackagePublisher implements _PackagePublisher {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(publisherId);
 
+  @JsonKey(ignore: true)
   @override
   _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>
       __$PackagePublisherCopyWithImpl<_PackagePublisher>(this, _$identity);
@@ -142,13 +150,16 @@ class _$_PackagePublisher implements _PackagePublisher {
 }
 
 abstract class _PackagePublisher implements PackagePublisher {
-  factory _PackagePublisher({String publisherId}) = _$_PackagePublisher;
+  factory _PackagePublisher({required String publisherId}) =
+      _$_PackagePublisher;
 
   factory _PackagePublisher.fromJson(Map<String, dynamic> json) =
       _$_PackagePublisher.fromJson;
 
   @override
-  String get publisherId;
+  String get publisherId => throw _privateConstructorUsedError;
   @override
-  _$PackagePublisherCopyWith<_PackagePublisher> get copyWith;
+  @JsonKey(ignore: true)
+  _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>
+      throw _privateConstructorUsedError;
 }
