@@ -33,3 +33,4 @@ coverage/lcov.info
 .vscode/settings.json
 _notes.md
 .env
+test/.test_cov.dart
