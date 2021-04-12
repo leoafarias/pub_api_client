@@ -81,5 +81,10 @@ void main() {
       expect(documentation.latestStableVersion, packageInfo.version);
       expect(documentation.versions.length, packageInfo.versions.length);
     });
+
+    test('Get package names', () async {
+      final packages = await client.packageNameCompletion();
+      expect(packages.length, greaterThan(20000));
+    });
   });
 }

@@ -85,6 +85,15 @@ class PubClient {
     return PackageVersion.fromJson(data);
   }
 
+  /// Returns a `List<String>` of all packages listed on pub.dev
+  Future<List<String>> packageNameCompletion() async {
+    final data = await _fetch(endpoint.packageNames);
+    final packages = data['packages'] as List<dynamic>;
+
+    /// Need to map to convert dynamic into String
+    return packages.map((item) => item as String).toList();
+  }
+
   /// Searches pub for [query] and can [page] results.
   /// Can filter to [publisher] and/or a [dependency]
   /// returns `SearchResults`
@@ -107,8 +116,6 @@ class PubClient {
     final data = await _fetch(nextPageUrl);
     return SearchResults.fromJson(data);
   }
-
-  // Future<SearchResults> _nextSearchPage() async {}
 
   /// Returns `PackageDocumentation` for a [packageName]
   Future<PackageDocumentation> documentation(String packageName) async {

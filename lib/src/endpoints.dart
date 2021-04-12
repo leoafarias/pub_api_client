@@ -30,7 +30,7 @@ class Endpoint {
   /// Package publisher endpoint
   String packagePublisher(String name) => '$packageUrl/$name/publisher';
 
-  /// Package documentaiton endpoint
+  /// Package documentation endpoint
   String packageDocumentation(String name) => '$apiUrl/documentation/$name';
 
   // Not part of API endpoint
@@ -40,6 +40,9 @@ class Endpoint {
   /// Package version info endpoint
   String packageVersionInfo(String name, String version) =>
       '$packageUrl/$name/versions/$version';
+
+  /// Retrieve all package names on pub.dev
+  String get packageNames => '$apiUrl/package-names';
 
   /// Search endpoint
   String search(String query, int page) => '$searchUrl?q=$query&page=$page';
