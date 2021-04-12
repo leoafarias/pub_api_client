@@ -27,7 +27,7 @@ Map<String, dynamic> _$_$_PubPackageToJson(_$_PubPackage instance) =>
 _$_PackageVersion _$_$_PackageVersionFromJson(Map<String, dynamic> json) {
   return _$_PackageVersion(
     version: json['version'] as String,
-    pubspec: Pubspec.fromJson(json['pubspec'] as Map<String, dynamic>),
+    pubspec: PubSpec.fromJson(json['pubspec'] as Map<String, dynamic>?),
     archiveUrl: json['archive_url'] as String,
     published: DateTime.parse(json['published'] as String),
   );
