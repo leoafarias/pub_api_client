@@ -23,4 +23,19 @@ void build() {
 }
 
 @Task()
+void buildFavorites() {
+  // final args = context.invocation.arguments;
+  final packages = waitFor(buildFlutterFavorites());
+
+  joinFile(
+    Directory.current,
+    ['static', 'flutter_favorites.json'],
+  ).writeAsStringSync(
+    jsonEncode({
+      'packages': packages,
+    }),
+  );
+}
+
+@Task()
 void clean() => defaultClean();

@@ -32,6 +32,12 @@ Future<List<String>> buildGooglePackages() async {
   return flatResults.map((r) => r.package).toList();
 }
 
+/// Retrieves all the flutter favorites
+Future<List<PackageResult>> buildFlutterFavorites() async {
+  final results = await PubClient().search('is:flutter-favorite');
+  return _recursivePaging(results);
+}
+
 /// Retrieves google packages from static file that is generated daily
 Future<List<String>> getGooglePackages() async {
   final response = await http.get(Uri.parse(_googleDepsUrl));
