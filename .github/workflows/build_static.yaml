@@ -1,0 +1,27 @@
+name: Build Static API
+
+on:
+  workflow_dispatch:
+  schedule:
+    - 0 0 * * *
+
+jobs:
+  build-static:
+    runs-on: ubuntu-latest
+
+    container:
+      image: google/dart:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pub get
+        # Grind task to build static files
+      - name: Build static files
+        run: grind
+        # Store static files
+      - name: Save static files for storage
+        uses: sylvanld/action-storage@v1
+        with:
+          src: static
+          dst: static
