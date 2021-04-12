@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   freezed_annotation: ^0.14.1
-
   http: ^0.13.1
   json_annotation: ^4.0.1
   pubspec: ^2.0.1

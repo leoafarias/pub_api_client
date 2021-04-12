@@ -25,5 +25,5 @@ jobs:
       - name: Save static files for storage
         uses: sylvanld/action-storage@v1
         with:
-          src: static
+          src: static/google_deps.json
           dst: static
