@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 import '../models/search_results_model.dart';
 import '../pub_api_client_base.dart';
+
+const _googleDepsUrl =
+    'https://github.com/leoafarias/pub_api_client/blob/main/static/google_deps.json?raw=true';
 
 /// List of Google publishers on pub.dev
 const _publishers = [
@@ -17,7 +22,7 @@ const _publishers = [
 /// Mostly used as an internal tool to generate
 /// google_packages_list.dart
 /// You should probably use that instead
-Future<List<String>> getGooglePackages() async {
+Future<List<String>> buildGooglePackages() async {
   final futures = <Future<List<PackageResult>>>[];
   for (var publisher in _publishers) {
     futures.add(getPublisherPackages(publisher));
@@ -27,11 +32,11 @@ Future<List<String>> getGooglePackages() async {
   return flatResults.map((r) => r.package).toList();
 }
 
-Future<List<PackageResult>> fetchGooglePackages() async {
-  final packages = await http.get(Uri(
-    host:
-        'https://github.com/leoafarias/pub_api_client/blob/main/static/google_deps.json?raw=true',
-  ));
+/// Retrieves google packages from static file that is generated daily
+Future<List<String>> getGooglePackages() async {
+  final response = await http.get(Uri.parse(_googleDepsUrl));
+  final json = jsonDecode(response.body);
+  return json['packages'] as List<String>;
 }
 
 Future<List<PackageResult>> getPublisherPackages(String publisherName) async {
