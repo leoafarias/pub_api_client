@@ -21,9 +21,3 @@ jobs:
         run: pub global activate grinder
       - name: Build static files
         run: pub run grinder
-        # Store static files
-      - name: Save static files for storage
-        uses: sylvanld/action-storage@v1
-        with:
-          src: static/google_deps.json
-          dst: static

@@ -6,7 +6,7 @@ import '../models/search_results_model.dart';
 import '../pub_api_client_base.dart';
 
 const _googleDepsUrl =
-    'https://github.com/leoafarias/pub_api_client/blob/main/static/google_deps.json?raw=true';
+    'http://raw.githubusercontent.com/leoafarias/pub_api_client/main/static/google_deps.json';
 
 /// List of Google publishers on pub.dev
 const _publishers = [
