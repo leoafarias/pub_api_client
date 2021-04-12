@@ -2,13 +2,8 @@ name: Build Static API
 
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Reason to run"
-        required: false
-        default: ""
   schedule:
-    - 0 0 * * *
+    - cron: 0 0 * * *
 
 jobs:
   build-static:
