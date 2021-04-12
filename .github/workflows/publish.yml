@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: pub get
       - name: Install Cider
-        run: flutter pub global activate cider
+        run: pub global activate cider
       - name: Set new version
         run: cider version ${{ github.event.release.tag_name }}
       - name: Set a new release
