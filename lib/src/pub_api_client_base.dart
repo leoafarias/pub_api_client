@@ -1,12 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:pub_semver/pub_semver.dart';
 
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
-import 'models/latest_version_model.dart';
-
 import 'models/package_documentation_model.dart';
 import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
@@ -117,26 +114,5 @@ class PubClient {
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
     return PackageDocumentation.fromJson(data);
-  }
-
-  /// Helper method to easily check for updates on [packageName]
-  /// comparing with [currentVersion] returns `LatestVersion`
-  Future<LatestVersion> checkLatest(
-    String packageName, {
-    required String currentVersion,
-  }) async {
-    final package = await packageInfo(packageName);
-    final latestVersion = Version.parse(package.version);
-    var needUpdate = false;
-
-    final current = Version.parse(currentVersion);
-    // Check as need update if latest version is higher
-    needUpdate = latestVersion > current;
-
-    return LatestVersion(
-      needUpdate: needUpdate,
-      latestVersion: package.version,
-      packageInfo: package,
-    );
   }
 }

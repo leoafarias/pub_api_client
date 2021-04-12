@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Removed deprecations for smaller dependency tree
+
 ## 2.0.0
 
 - Deprecated checkUpdatePrinter
