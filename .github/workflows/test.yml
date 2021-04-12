@@ -1,4 +1,4 @@
-name: Build
+name: Test
 
 on:
   push:
@@ -26,6 +26,9 @@ jobs:
         # Get coverage
       - name: Test Coverage
         run: pub run test_cov
+        # Activate remove coverage
+      - name: Remove Coverage activate
+        run: pub global activate remove_from_coverage
         # Remove build files from coverage report
       - name: Remove generated files from Coverage
         run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
