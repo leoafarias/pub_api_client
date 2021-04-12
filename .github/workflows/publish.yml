@@ -18,9 +18,9 @@ jobs:
       - name: Install Cider
         run: pub global activate cider
       - name: Set new version
-        run: cider version ${{ github.event.release.tag_name }}
+        run: pub global run cider version ${{ github.event.release.tag_name }}
       - name: Set a new release
-        run: cider release
+        run: pub global run cider release
       - name: Build Runner
         run: pub run build_runner build --delete-conflicting-outputs
       - name: Run tests
