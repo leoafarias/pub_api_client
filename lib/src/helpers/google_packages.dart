@@ -36,7 +36,10 @@ Future<List<String>> buildGooglePackages() async {
 Future<List<String>> getGooglePackages() async {
   final response = await http.get(Uri.parse(_googleDepsUrl));
   final json = jsonDecode(response.body);
-  return json['packages'] as List<String>;
+  final list = json['packages'] as List<dynamic>;
+
+  /// Need to map to convert dynamic into String
+  return list.map((item) => item as String).toList();
 }
 
 Future<List<PackageResult>> getPublisherPackages(String publisherName) async {

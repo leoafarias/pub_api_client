@@ -1,4 +1,4 @@
-name: Test
+name: Build Static API
 
 on:
   push:
@@ -10,32 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: google/dart:latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: pub get
-        # Builder
-      - name: Build Runner
-        run: pub run build_runner build --delete-conflicting-outputs
-        # Run test
-      - name: Run tests
-        run: pub run test
-        # Get coverage
-      - name: Test Coverage
-        run: pub run test_cov
-        # Activate remove coverage
-      - name: Remove Coverage activate
-        run: pub global activate remove_from_coverage
-        # Remove build files from coverage report
-      - name: Remove generated files from Coverage
-        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
-      - name: Remove freezed files from Coverage
-        run: pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
-        # Upload coverage report
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1.1.2
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file_pattern: static/*.json
