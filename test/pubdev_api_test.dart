@@ -1,13 +1,12 @@
 import 'package:pub_api_client/pub_api_client.dart';
+import 'package:pub_api_client/src/constants.dart';
 import 'package:test/test.dart';
-
-import 'test_utils.dart';
 
 const packageName = 'fvm';
 final client = PubClient();
-final credentials = getPubCredentials();
+
 final authedClient = PubClient(
-  credentials: credentials,
+  credentials: pubCredentials,
 );
 void main() {
   group('PubDev Client', () {

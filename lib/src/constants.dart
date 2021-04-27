@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:path/path.dart';
+import 'package:pub_api_client/pub_api_client.dart';
 
 final kEnvVars = Platform.environment;
 
@@ -33,4 +34,20 @@ class PubAuth {
       '818368855108-8grd2eg9tj9f38os6f1urbcvsq399u8n.apps.'
       'googleusercontent.com';
   static String secret = 'SWeqj8seoJW0w7_CpEPFLX0K';
+}
+
+final _env = Platform.environment;
+
+Credentials? get pubCredentials {
+  // Get credentials from Env var if it exists
+  if (_env['PUB_CREDENTIALS'] != null) {
+    return Credentials.fromJson(_env['PUB_CREDENTIALS'] as String);
+  }
+
+  // If not try to get from credentials file
+  if (!credentialsFile.existsSync()) {
+    return null;
+  }
+  final json = credentialsFile.readAsStringSync();
+  return Credentials.fromJson(json);
 }

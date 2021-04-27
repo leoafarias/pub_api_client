@@ -1,4 +1,11 @@
-## [2.0.1] - 2021-04-12
+## 2.0.2
+
+### Added
+
+- Ability to list liked packages
+- Like and unlike a package
+
+## 2.0.1
 
 ### Added
 
