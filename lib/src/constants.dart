@@ -1,8 +1,8 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart';
-import 'package:pub_api_client/pub_api_client.dart';
+
+import '../pub_api_client.dart';
 
 final kEnvVars = Platform.environment;
 
@@ -40,14 +40,10 @@ class PubAuth {
 final _env = Platform.environment;
 
 Credentials? get pubCredentials {
+  final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
-  if (_env['PUB_CREDENTIALS'] != null) {
-    /// Does not load correctly json from env
-    return Credentials.fromJson(
-      jsonEncode(
-        jsonDecode(_env['PUB_CREDENTIALS'] as String),
-      ),
-    );
+  if (credEnv != null) {
+    return Credentials.fromJson(credEnv);
   }
 
   // If not try to get from credentials file
