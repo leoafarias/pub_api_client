@@ -142,9 +142,8 @@ class __$PackageDocumentationCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageDocumentation implements _PackageDocumentation {
   _$_PackageDocumentation(
       {required this.name,
@@ -350,9 +349,8 @@ class __$PackageDocumentationVersionCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageDocumentationVersion implements _PackageDocumentationVersion {
   _$_PackageDocumentationVersion(
       {required this.version,

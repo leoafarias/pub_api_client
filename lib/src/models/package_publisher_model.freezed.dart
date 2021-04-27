@@ -108,9 +108,8 @@ class __$PackagePublisherCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackagePublisher implements _PackagePublisher {
   _$_PackagePublisher({required this.publisherId});
 

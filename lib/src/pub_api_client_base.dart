@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'package:oauth2/oauth2.dart';
 
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
@@ -9,7 +10,6 @@ import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
 import 'models/package_publisher_model.dart';
 import 'models/package_score_model.dart';
-import 'models/pub_credentials_model.dart';
 import 'models/pub_package_model.dart';
 import 'models/search_results_model.dart';
 
@@ -17,21 +17,44 @@ typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 
 /// Pub API Client
 class PubClient {
-  final Endpoint endpoint;
+  late Endpoint endpoint;
   final String? pubUrl;
   final Client? client;
-  final PubCredentials? credentials;
+  final Credentials? credentials;
   late PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
     this.client,
-  }) : endpoint = Endpoint(pubUrl) {
-    _client = PubApiHttpClient(client ?? Client());
+  }) {
+    endpoint = Endpoint(pubUrl);
+    http.Client httpClient;
+    if (credentials == null) {
+      httpClient = http.Client();
+    } else {
+      httpClient = Client(credentials!);
+    }
+
+    _client = PubApiHttpClient(
+      client ?? httpClient,
+      // credentials: credentials,
+    );
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
     final response = await _client.get(Uri.parse(url));
+    return jsonDecode(response.body) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> _put(String url) async {
+    _credentialsOrThrow(credentials);
+    final response = await _client.put(Uri.parse(url));
+    return jsonDecode(response.body) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> _delete(String url) async {
+    _credentialsOrThrow(credentials);
+    final response = await _client.delete(Uri.parse(url));
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
@@ -121,5 +144,31 @@ class PubClient {
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
     return PackageDocumentation.fromJson(data);
+  }
+
+  /// Like a package
+
+  Future<Map<String, dynamic>> likePackage(String name) async {
+    final data = await _put(endpoint.likePackage(name));
+    return data;
+  }
+
+  /// Unlike a package
+  Future<Map<String, dynamic>> unlikePackage(String name) async {
+    final data = await _delete(endpoint.likePackage(name));
+    return data;
+  }
+
+  /// List package likes
+  Future<Map<String, dynamic>> listPackageLikes(String name) {
+    final data = _fetch(endpoint.likedPackages);
+    return data;
+  }
+
+  /// Checks if credentials exist and are valid
+  void _credentialsOrThrow(Credentials? credentials) {
+    if (credentials == null) {
+      throw Exception('No pub.dev crdentials found to make this API call');
+    }
   }
 }

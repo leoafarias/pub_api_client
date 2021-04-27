@@ -135,9 +135,8 @@ class __$PackageOptionsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageOptions implements _PackageOptions {
   _$_PackageOptions(
       {this.isDiscontinued = false, this.isUnlisted = false, this.replacedBy});

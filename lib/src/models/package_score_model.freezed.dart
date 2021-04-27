@@ -169,9 +169,8 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageScore implements _PackageScore {
   _$_PackageScore(
       {required this.grantedPoints,
@@ -531,9 +530,8 @@ class __$PackageScoreCardCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageScoreCard implements _PackageScoreCard {
   _$_PackageScoreCard(
       {required this.packageName,

@@ -1,6 +1,8 @@
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
+import 'test_utils.dart';
+
 const packageName = 'fvm';
 final client = PubClient();
 void main() {
@@ -85,6 +87,35 @@ void main() {
     test('Get package names', () async {
       final packages = await client.packageNameCompletion();
       expect(packages.length, greaterThan(20000));
+    });
+
+    test('Get credentials', () async {
+      final credentials = await getPubCredentials();
+      final authedClient = PubClient(
+        credentials: credentials,
+      );
+
+      // final original = credentials!.idToken;
+
+      final data = await authedClient.likePackage('fvm');
+
+      // /// The pub client's OAuth2 identifier.
+      // const _identifier = '818368855108-8grd2eg9tj9f38os6f1urbcvsq399u8n.apps.'
+      //     'googleusercontent.com';
+
+      // /// The pub client's OAuth2 secret.
+      // ///
+      // /// This isn't actually meant to be kept a secret.
+      // const _secret = 'SWeqj8seoJW0w7_CpEPFLX0K';
+      // await authedClient.credentials!.refresh(
+      //   identifier: _identifier,
+      //   secret: _secret,
+      // );
+      // final refreshed = credentials.idToken;
+
+      // expect(original, isNot(refreshed));
+      expect(credentials, isNotNull);
+      expect(data, isNotNull);
     });
   });
 }

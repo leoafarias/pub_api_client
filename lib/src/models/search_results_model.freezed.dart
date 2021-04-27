@@ -120,9 +120,8 @@ class __$SearchResultsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SearchResults extends _SearchResults {
   _$_SearchResults({required this.packages, this.next}) : super._();
 
@@ -281,9 +280,8 @@ class __$PackageResultCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageResult implements _PackageResult {
   _$_PackageResult({required this.package});
 
