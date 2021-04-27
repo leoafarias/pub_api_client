@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
-import 'package:pub_api_client/src/constants.dart';
-import 'package:pub_api_client/src/models/package_like_model.dart';
 
+import 'constants.dart';
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
 import 'models/package_documentation_model.dart';
+import 'models/package_like_model.dart';
 import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
 import 'models/package_publisher_model.dart';
