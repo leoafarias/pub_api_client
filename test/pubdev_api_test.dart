@@ -95,7 +95,7 @@ void main() {
     test('Can like and unlike packages', () async {
       await authedClient.unlikePackage('fvm');
 
-      final unlikeRes = await authedClient.isPackageLiked('fvm');
+      final unlikeRes = await authedClient.likePackageStatus('fvm');
       final likeRes = await authedClient.likePackage('fvm');
 
       expect(unlikeRes.liked, false);

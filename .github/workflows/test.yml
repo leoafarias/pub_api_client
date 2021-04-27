@@ -8,6 +8,8 @@ on:
 
 jobs:
   test:
+    env:
+      PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
     runs-on: ubuntu-latest
 
     container:

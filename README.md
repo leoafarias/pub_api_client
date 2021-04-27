@@ -109,6 +109,43 @@ The method `documentation` returns all versions and their respective documentati
 
 ```dart
 final documentation =  await client.documentation('pkg_name');
+
+```
+
+### Package Likes
+
+All requests for likes require pub.dev authentication.
+
+#### List liked packages
+
+Displays list of of packages you have liked. Returns list of `packageLikes`
+
+```dart
+final likes =  await client.listPackageLikes();
+```
+
+#### Package Like Status
+
+Returns like status of a package.
+
+```dart
+final like =  await client.likePackageStatus();
+```
+
+#### Like a Package
+
+Likes a package. The method returns `packageLike` payload
+
+```dart
+final like =  await client.likePackage('pkg_name');
+```
+
+#### Unlike a Package
+
+Unlikes a package. The method returns `packageLike` payload
+
+```dart
+final like =  await client.unlikePackage('pkg_name');
 ```
 
 ### Search Packages

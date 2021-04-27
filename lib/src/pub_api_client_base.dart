@@ -53,13 +53,13 @@ class PubClient {
   }
 
   Future<Map<String, dynamic>> _put(String url) async {
-    _credentialsOrThrow(credentials);
+    _credentialsOrThrow();
     final response = await _client.put(Uri.parse(url));
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<void> _delete(String url) async {
-    _credentialsOrThrow(credentials);
+    _credentialsOrThrow();
     await _client.delete(Uri.parse(url));
   }
 
@@ -151,24 +151,25 @@ class PubClient {
     return PackageDocumentation.fromJson(data);
   }
 
-  /// Like a package
-  Future<PackageLike> isPackageLiked(String name) async {
+  /// Displays like status of a package
+  Future<PackageLike> likePackageStatus(String name) async {
     final data = await _fetch(endpoint.likePackage(name));
     return PackageLike.fromJson(data);
   }
 
-  /// Like a package
+  /// Likes a package
   Future<PackageLike> likePackage(String name) async {
     final data = await _put(endpoint.likePackage(name));
     return PackageLike.fromJson(data);
   }
 
-  /// Unlike a package
+  /// Unlikes a package
   Future<void> unlikePackage(String name) =>
       _delete(endpoint.likePackage(name));
 
   /// List package likes
   Future<List<PackageLike>> listPackageLikes() async {
+    _credentialsOrThrow();
     final response = await _fetch(endpoint.likedPackages);
 
     final likes = response['likedPackages'] as List<dynamic>;
@@ -178,9 +179,9 @@ class PubClient {
   }
 
   /// Checks if credentials exist and are valid
-  void _credentialsOrThrow(Credentials? credentials) {
+  void _credentialsOrThrow() {
     if (credentials == null) {
-      throw Exception('No pub.dev crdentials found to make this API call');
+      throw Exception('No pub.dev credentials found to make this API call');
     }
   }
 }
