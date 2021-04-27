@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
+import 'package:pub_api_client/src/constants.dart';
 
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
@@ -32,7 +33,11 @@ class PubClient {
     if (credentials == null) {
       httpClient = http.Client();
     } else {
-      httpClient = Client(credentials!);
+      httpClient = Client(
+        credentials!,
+        identifier: PubAuth.identifier,
+        secret: PubAuth.secret,
+      );
     }
 
     _client = PubApiHttpClient(

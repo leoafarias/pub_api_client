@@ -99,14 +99,6 @@ void main() {
 
       final data = await authedClient.likePackage('fvm');
 
-      // /// The pub client's OAuth2 identifier.
-      // const _identifier = '818368855108-8grd2eg9tj9f38os6f1urbcvsq399u8n.apps.'
-      //     'googleusercontent.com';
-
-      // /// The pub client's OAuth2 secret.
-      // ///
-      // /// This isn't actually meant to be kept a secret.
-      // const _secret = 'SWeqj8seoJW0w7_CpEPFLX0K';
       // await authedClient.credentials!.refresh(
       //   identifier: _identifier,
       //   secret: _secret,

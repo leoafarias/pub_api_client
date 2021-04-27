@@ -22,3 +22,15 @@ Directory get pubCacheDir => Directory(
 File get credentialsFile => File(
       join(pubCacheDir.path, 'credentials.json'),
     );
+
+/// The pub client's OAuth2 secret.
+///
+/// This isn't actually meant to be kept a secret.
+/// https://github.com/dart-lang/pub/blob/master/lib/src/oauth2.dart
+class PubAuth {
+  const PubAuth._();
+  static String identifier =
+      '818368855108-8grd2eg9tj9f38os6f1urbcvsq399u8n.apps.'
+      'googleusercontent.com';
+  static String secret = 'SWeqj8seoJW0w7_CpEPFLX0K';
+}
