@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
 import 'package:pub_api_client/src/constants.dart';
+import 'package:pub_api_client/src/models/package_like_model.dart';
 
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
@@ -57,10 +58,9 @@ class PubClient {
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
-  Future<Map<String, dynamic>> _delete(String url) async {
+  Future<void> _delete(String url) async {
     _credentialsOrThrow(credentials);
-    final response = await _client.delete(Uri.parse(url));
-    return jsonDecode(response.body) as Map<String, dynamic>;
+    await _client.delete(Uri.parse(url));
   }
 
   /// Returns the `PubPackage` information for [packageName]
@@ -152,22 +152,29 @@ class PubClient {
   }
 
   /// Like a package
+  Future<PackageLike> isPackageLiked(String name) async {
+    final data = await _fetch(endpoint.likePackage(name));
+    return PackageLike.fromJson(data);
+  }
 
-  Future<Map<String, dynamic>> likePackage(String name) async {
+  /// Like a package
+  Future<PackageLike> likePackage(String name) async {
     final data = await _put(endpoint.likePackage(name));
-    return data;
+    return PackageLike.fromJson(data);
   }
 
   /// Unlike a package
-  Future<Map<String, dynamic>> unlikePackage(String name) async {
-    final data = await _delete(endpoint.likePackage(name));
-    return data;
-  }
+  Future<void> unlikePackage(String name) =>
+      _delete(endpoint.likePackage(name));
 
   /// List package likes
-  Future<Map<String, dynamic>> listPackageLikes(String name) {
-    final data = _fetch(endpoint.likedPackages);
-    return data;
+  Future<List<PackageLike>> listPackageLikes() async {
+    final response = await _fetch(endpoint.likedPackages);
+
+    final likes = response['likedPackages'] as List<dynamic>;
+    return likes
+        .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
+        .toList();
   }
 
   /// Checks if credentials exist and are valid

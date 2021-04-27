@@ -14,10 +14,10 @@ String get kUserHome {
   }
 }
 
-Future<Credentials?> getPubCredentials() async {
-  if (!await credentialsFile.exists()) {
+Credentials? getPubCredentials() {
+  if (!credentialsFile.existsSync()) {
     return null;
   }
-  final json = await credentialsFile.readAsString();
+  final json = credentialsFile.readAsStringSync();
   return Credentials.fromJson(json);
 }

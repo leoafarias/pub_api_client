@@ -5,6 +5,10 @@ import 'test_utils.dart';
 
 const packageName = 'fvm';
 final client = PubClient();
+final credentials = getPubCredentials();
+final authedClient = PubClient(
+  credentials: credentials,
+);
 void main() {
   group('PubDev Client', () {
     test('Can Fetch package info', () async {
@@ -89,25 +93,22 @@ void main() {
       expect(packages.length, greaterThan(20000));
     });
 
-    test('Get credentials', () async {
-      final credentials = await getPubCredentials();
-      final authedClient = PubClient(
-        credentials: credentials,
-      );
+    test('Can like and unlike packages', () async {
+      await authedClient.unlikePackage('fvm');
 
-      // final original = credentials!.idToken;
+      final unlikeRes = await authedClient.isPackageLiked('fvm');
+      final likeRes = await authedClient.likePackage('fvm');
 
-      final data = await authedClient.likePackage('fvm');
+      expect(unlikeRes.liked, false);
+      expect(likeRes.liked, true);
+    });
 
-      // await authedClient.credentials!.refresh(
-      //   identifier: _identifier,
-      //   secret: _secret,
-      // );
-      // final refreshed = credentials.idToken;
+    test('View liked packages', () async {
+      // Can make an authenticated request
+      final likedPackages = await authedClient.listPackageLikes();
 
-      // expect(original, isNot(refreshed));
-      expect(credentials, isNotNull);
-      expect(data, isNotNull);
+      expect(likedPackages, isNotNull);
+      expect(likedPackages.length, greaterThan(1));
     });
   });
 }
