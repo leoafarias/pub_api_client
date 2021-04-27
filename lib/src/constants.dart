@@ -42,7 +42,7 @@ final _env = Platform.environment;
 Credentials? get pubCredentials {
   final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
-  print('CREDENV:')
+  print('CREDENV:');
   print(credEnv);
   if (credEnv != null) {
     return Credentials.fromJson(credEnv);
