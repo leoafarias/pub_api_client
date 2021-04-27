@@ -42,7 +42,12 @@ final _env = Platform.environment;
 Credentials? get pubCredentials {
   // Get credentials from Env var if it exists
   if (_env['PUB_CREDENTIALS'] != null) {
-    return Credentials.fromJson(jsonEncode(_env['PUB_CREDENTIALS']));
+    /// Does not load correctly json from env
+    return Credentials.fromJson(
+      jsonEncode(
+        jsonDecode(_env['PUB_CREDENTIALS'] as String),
+      ),
+    );
   }
 
   // If not try to get from credentials file
