@@ -6,19 +6,25 @@ import '../pub_api_client.dart';
 
 final kEnvVars = Platform.environment;
 
-/// User Home Path
-String get kUserHome {
-  if (Platform.isWindows) {
-    return kEnvVars['UserProfile']!;
+/// Directory for .pub-cache
+Directory pubCacheDir = _pubCacheDir();
+
+Directory _pubCacheDir() {
+  if (Platform.environment.containsKey('PUB_CACHE')) {
+    return Directory(Platform.environment['PUB_CACHE']!);
+  } else if (Platform.isWindows) {
+    /// Taken from system_cache.dart on pub
+    final appData = Platform.environment['APPDATA'];
+    final appDataCacheDir = Directory(join(appData!, 'Pub', 'Cache'));
+    if (appDataCacheDir.existsSync()) {
+      return appDataCacheDir;
+    }
+    final localAppData = Platform.environment['LOCALAPPDATA'];
+    return Directory(join(localAppData!, 'Pub', 'Cache'));
   } else {
-    return kEnvVars['HOME']!;
+    return Directory('${Platform.environment['HOME']}/.pub-cache');
   }
 }
-
-/// Directory for .pub-cache
-Directory get pubCacheDir => Directory(
-      join(kUserHome, '.pub-cache'),
-    );
 
 /// Credentials json
 File get credentialsFile => File(
@@ -26,7 +32,6 @@ File get credentialsFile => File(
     );
 
 /// The pub client's OAuth2 secret.
-///
 /// This isn't actually meant to be kept a secret.
 /// https://github.com/dart-lang/pub/blob/master/lib/src/oauth2.dart
 class PubAuth {
@@ -39,7 +44,9 @@ class PubAuth {
 
 final _env = Platform.environment;
 
-Credentials? get pubCredentials {
+Credentials? pubCredentials = _pubCredentials();
+
+Credentials? _pubCredentials() {
   final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
   if (credEnv != null) {

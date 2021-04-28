@@ -5,6 +5,7 @@ import 'package:oauth2/oauth2.dart';
 
 import 'constants.dart';
 import 'endpoints.dart';
+import 'helpers/exceptions.dart';
 import 'helpers/http_client.dart';
 import 'models/package_documentation_model.dart';
 import 'models/package_like_model.dart';
@@ -49,18 +50,19 @@ class PubClient {
 
   Future<Map<String, dynamic>> _fetch(String url) async {
     final response = await _client.get(Uri.parse(url));
+    responseValidOrThrow(response);
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> _put(String url) async {
-    _credentialsOrThrow();
     final response = await _client.put(Uri.parse(url));
+    responseValidOrThrow(response);
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<void> _delete(String url) async {
-    _credentialsOrThrow();
-    await _client.delete(Uri.parse(url));
+    final response = await _client.delete(Uri.parse(url));
+    responseValidOrThrow(response);
   }
 
   /// Returns the `PubPackage` information for [packageName]
@@ -169,19 +171,11 @@ class PubClient {
 
   /// List package likes
   Future<List<PackageLike>> listPackageLikes() async {
-    _credentialsOrThrow();
     final response = await _fetch(endpoint.likedPackages);
 
     final likes = response['likedPackages'] as List<dynamic>;
     return likes
         .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
         .toList();
-  }
-
-  /// Checks if credentials exist and are valid
-  void _credentialsOrThrow() {
-    if (credentials == null) {
-      throw Exception('No pub.dev credentials found to make this API call');
-    }
   }
 }
