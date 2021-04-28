@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart';
@@ -43,9 +42,8 @@ final _env = Platform.environment;
 Credentials? get pubCredentials {
   final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
-
   if (credEnv != null) {
-    return Credentials.fromJson(jsonEncode(jsonDecode(credEnv)));
+    return Credentials.fromJson(credEnv);
   }
 
   // If not try to get from credentials file

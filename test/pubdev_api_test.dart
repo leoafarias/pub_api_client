@@ -76,7 +76,7 @@ void main() {
       final payload = await client.search('', publisher: 'fvm.app');
       final nextPagePayload =
           await client.search('', dependency: 'pub_api_client');
-      expect(payload.packages.length, equals(2));
+      expect(payload.packages.length, equals(3));
       expect(nextPagePayload.packages.length, greaterThan(0));
     });
 
