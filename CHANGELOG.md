@@ -1,3 +1,9 @@
+## 2.0.3
+
+### Added
+
+- Support for retrieve pub credentials on windows
+
 ## 2.0.2
 
 ### Added
