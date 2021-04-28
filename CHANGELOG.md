@@ -1,3 +1,9 @@
+## 2.0.4
+
+### Added
+
+- Better exception messaging
+
 ## 2.0.3
 
 ### Added
