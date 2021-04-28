@@ -43,11 +43,9 @@ final _env = Platform.environment;
 Credentials? get pubCredentials {
   final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
-  var bytes = utf8.encode('$credEnv DISPLAY');
-  var base64Str = base64.encode(bytes);
-  print(base64Str);
+
   if (credEnv != null) {
-    return Credentials.fromJson(credEnv);
+    return Credentials.fromJson(jsonEncode(jsonDecode(credEnv)));
   }
 
   // If not try to get from credentials file

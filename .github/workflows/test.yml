@@ -8,13 +8,12 @@ on:
 
 jobs:
   test:
-    env:
-      PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
     runs-on: ubuntu-latest
 
     container:
       image: google/dart:latest
-
+    env:
+      PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
