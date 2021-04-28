@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:http/http.dart';
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pub_api_client/src/constants.dart';
 import 'package:test/test.dart';
@@ -108,6 +111,29 @@ void main() {
 
       expect(likedPackages, isNotNull);
       expect(likedPackages.length, greaterThan(1));
+    });
+
+    test('Exceptions', () async {
+      void mockRes(int code) {
+        final res = Response('{error:{message:"test"}}', code);
+        responseValidOrThrow(res);
+      }
+
+      void ok() => mockRes(HttpStatus.ok);
+      void badRequest() => mockRes(HttpStatus.badRequest);
+      void notFound() => mockRes(HttpStatus.notFound);
+      void unauthorized() => mockRes(HttpStatus.unauthorized);
+      void unknown() => mockRes(541);
+      void forbidden() => mockRes(HttpStatus.forbidden);
+      void internalServerError() => mockRes(HttpStatus.internalServerError);
+
+      expect(ok, returnsNormally);
+      expect(badRequest, throwsA(isA<BadRequestException>()));
+      expect(notFound, throwsA(isA<NotFoundException>()));
+      expect(unauthorized, throwsA(isA<UnauthorizedException>()));
+      expect(unknown, throwsA(isA<UnknownException>()));
+      expect(forbidden, throwsA(isA<ForbiddenException>()));
+      expect(internalServerError, throwsA(isA<InternalServerError>()));
     });
   });
 }

@@ -33,8 +33,8 @@ class NotFoundException extends PubClientException {
   NotFoundException(Response response) : super(response);
 }
 
-class ClientError extends PubClientException {
-  ClientError(Response response) : super(response);
+class InternalServerError extends PubClientException {
+  InternalServerError(Response response) : super(response);
 }
 
 class UnknownException extends PubClientException {
@@ -57,6 +57,8 @@ void responseValidOrThrow(Response res) {
       throw UnauthorizedException(res);
     case HttpStatus.badRequest:
       throw BadRequestException(res);
+    case HttpStatus.internalServerError:
+      throw InternalServerError(res);
     default:
       throw UnknownException(res);
   }
