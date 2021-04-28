@@ -1,4 +1,11 @@
-## Unreleased
+## 2.0.2
+
+### Added
+
+- Ability to list liked packages
+- Like and unlike a package
+
+## 2.0.1
 
 ### Added
 
@@ -80,3 +87,6 @@
 ### Changed
 
 - Initial version
+
+[Unreleased]:
+[2.0.1]:

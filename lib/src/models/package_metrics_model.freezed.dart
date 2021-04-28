@@ -143,9 +143,8 @@ class __$PackageMetricsCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PackageMetrics implements _PackageMetrics {
   _$_PackageMetrics({required this.score, required this.scorecard});
 

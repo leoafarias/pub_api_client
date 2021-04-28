@@ -44,6 +44,12 @@ class Endpoint {
   /// Retrieve all package names on pub.dev
   String get packageNames => '$apiUrl/package-names';
 
+  /// Url to add and remove likes
+  String likePackage(String name) => '$accountUrl/likes/$name';
+
+  /// Liked packages
+  String get likedPackages => '$accountUrl/likes';
+
   /// Search endpoint
   String search(String query, int page) => '$searchUrl?q=$query&page=$page';
 }

@@ -1,15 +1,17 @@
 import 'dart:convert';
 
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'package:oauth2/oauth2.dart';
 
+import 'constants.dart';
 import 'endpoints.dart';
 import 'helpers/http_client.dart';
 import 'models/package_documentation_model.dart';
+import 'models/package_like_model.dart';
 import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
 import 'models/package_publisher_model.dart';
 import 'models/package_score_model.dart';
-import 'models/pub_credentials_model.dart';
 import 'models/pub_package_model.dart';
 import 'models/search_results_model.dart';
 
@@ -17,22 +19,48 @@ typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 
 /// Pub API Client
 class PubClient {
-  final Endpoint endpoint;
+  late Endpoint endpoint;
   final String? pubUrl;
   final Client? client;
-  final PubCredentials? credentials;
+  final Credentials? credentials;
   late PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
     this.client,
-  }) : endpoint = Endpoint(pubUrl) {
-    _client = PubApiHttpClient(client ?? Client());
+  }) {
+    endpoint = Endpoint(pubUrl);
+    http.Client httpClient;
+    if (credentials == null) {
+      httpClient = http.Client();
+    } else {
+      httpClient = Client(
+        credentials!,
+        identifier: PubAuth.identifier,
+        secret: PubAuth.secret,
+      );
+    }
+
+    _client = PubApiHttpClient(
+      client ?? httpClient,
+      // credentials: credentials,
+    );
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
     final response = await _client.get(Uri.parse(url));
     return jsonDecode(response.body) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> _put(String url) async {
+    _credentialsOrThrow();
+    final response = await _client.put(Uri.parse(url));
+    return jsonDecode(response.body) as Map<String, dynamic>;
+  }
+
+  Future<void> _delete(String url) async {
+    _credentialsOrThrow();
+    await _client.delete(Uri.parse(url));
   }
 
   /// Returns the `PubPackage` information for [packageName]
@@ -121,5 +149,39 @@ class PubClient {
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
     return PackageDocumentation.fromJson(data);
+  }
+
+  /// Displays like status of a package
+  Future<PackageLike> likePackageStatus(String name) async {
+    final data = await _fetch(endpoint.likePackage(name));
+    return PackageLike.fromJson(data);
+  }
+
+  /// Likes a package
+  Future<PackageLike> likePackage(String name) async {
+    final data = await _put(endpoint.likePackage(name));
+    return PackageLike.fromJson(data);
+  }
+
+  /// Unlikes a package
+  Future<void> unlikePackage(String name) =>
+      _delete(endpoint.likePackage(name));
+
+  /// List package likes
+  Future<List<PackageLike>> listPackageLikes() async {
+    _credentialsOrThrow();
+    final response = await _fetch(endpoint.likedPackages);
+
+    final likes = response['likedPackages'] as List<dynamic>;
+    return likes
+        .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// Checks if credentials exist and are valid
+  void _credentialsOrThrow() {
+    if (credentials == null) {
+      throw Exception('No pub.dev credentials found to make this API call');
+    }
   }
 }

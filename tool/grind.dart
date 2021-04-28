@@ -10,7 +10,7 @@ void main(List<String> args) => grind(args);
 @DefaultTask()
 void build() {
   // final args = context.invocation.arguments;
-  final packages = waitFor(buildGooglePackages());
+  final packages = waitFor(buildGooglePackages())..sort();
 
   joinFile(
     Directory.current,

@@ -146,9 +146,8 @@ class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_PubPackage extends _PubPackage {
   _$_PubPackage(
       {required this.name, required this.latest, this.versions = const []})
@@ -361,9 +360,9 @@ class __$PackageVersionCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
-
 /// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_PackageVersion implements _PackageVersion {
   _$_PackageVersion(
       {required this.version,

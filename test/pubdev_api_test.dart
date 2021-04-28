@@ -1,8 +1,13 @@
 import 'package:pub_api_client/pub_api_client.dart';
+import 'package:pub_api_client/src/constants.dart';
 import 'package:test/test.dart';
 
 const packageName = 'fvm';
 final client = PubClient();
+
+final authedClient = PubClient(
+  credentials: pubCredentials,
+);
 void main() {
   group('PubDev Client', () {
     test('Can Fetch package info', () async {
@@ -71,7 +76,7 @@ void main() {
       final payload = await client.search('', publisher: 'fvm.app');
       final nextPagePayload =
           await client.search('', dependency: 'pub_api_client');
-      expect(payload.packages.length, equals(2));
+      expect(payload.packages.length, equals(3));
       expect(nextPagePayload.packages.length, greaterThan(0));
     });
 
@@ -85,6 +90,24 @@ void main() {
     test('Get package names', () async {
       final packages = await client.packageNameCompletion();
       expect(packages.length, greaterThan(20000));
+    });
+
+    test('Can like and unlike packages', () async {
+      await authedClient.unlikePackage('fvm');
+
+      final unlikeRes = await authedClient.likePackageStatus('fvm');
+      final likeRes = await authedClient.likePackage('fvm');
+
+      expect(unlikeRes.liked, false);
+      expect(likeRes.liked, true);
+    });
+
+    test('View liked packages', () async {
+      // Can make an authenticated request
+      final likedPackages = await authedClient.listPackageLikes();
+
+      expect(likedPackages, isNotNull);
+      expect(likedPackages.length, greaterThan(1));
     });
   });
 }

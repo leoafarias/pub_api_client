@@ -29,7 +29,7 @@ abstract class PubPackage implements _$PubPackage {
 
 /// Package Version Model
 @freezed
-abstract class PackageVersion with _$PackageVersion {
+class PackageVersion with _$PackageVersion {
   @JsonSerializable(fieldRename: FieldRename.snake)
   factory PackageVersion({
     required String version,
