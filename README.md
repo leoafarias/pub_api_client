@@ -21,6 +21,7 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
     - [Documentation](#get-documentation)
   - [Search Packages](#search-packages)
     - [Paging Search Results](#paging-search-results)
+  - [Like Packages](#like-packages)
 - [Utilities](#utilities)
   - [Update Notification](#update-notification)
     - [Check Update Printer](#check-update-printer)
@@ -112,7 +113,7 @@ final documentation =  await client.documentation('pkg_name');
 
 ```
 
-### Package Likes
+### Like Packages
 
 All requests for likes require pub.dev authentication.
 
