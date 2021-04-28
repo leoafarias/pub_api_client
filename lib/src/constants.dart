@@ -40,6 +40,7 @@ class PubAuth {
 final _env = Platform.environment;
 
 Credentials? get pubCredentials {
+  print(_env);
   final credEnv = _env['PUB_CREDENTIALS'];
   // Get credentials from Env var if it exists
   // print(credEnv)
