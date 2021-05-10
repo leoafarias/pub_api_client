@@ -59,6 +59,13 @@ void main() {
       final publisher = await client.packagePublisher(packageName);
       expect(publisher.publisherId, 'fvm.app');
     });
+
+    test('Get package publisher if unregistered', () async {
+      final unregisterPublisher =
+          await client.packagePublisher('freezed_annotation');
+      expect(unregisterPublisher.publisherId, null);
+    });
+
     test('Get Package Score', () async {
       final payload = await client.packageScore(packageName);
 

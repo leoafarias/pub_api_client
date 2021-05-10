@@ -8,7 +8,7 @@ part of 'package_publisher_model.dart';
 
 _$_PackagePublisher _$_$_PackagePublisherFromJson(Map<String, dynamic> json) {
   return _$_PackagePublisher(
-    publisherId: json['publisherId'] as String,
+    publisherId: json['publisherId'] as String?,
   );
 }
 
