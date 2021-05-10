@@ -5,6 +5,7 @@ class Endpoint {
   late String searchUrl;
   late String packageUrl;
   late String accountUrl;
+  late String publishersUrl;
 
   /// Constructor for API endpoints based on an [url]
   Endpoint(String? url) {
@@ -13,6 +14,7 @@ class Endpoint {
     searchUrl = '$apiUrl/search';
     packageUrl = '$apiUrl/packages';
     accountUrl = '$apiUrl/account';
+    publishersUrl = '$apiUrl/account';
   }
 
   /// Package info endpoint
@@ -44,12 +46,23 @@ class Endpoint {
   /// Retrieve all package names on pub.dev
   String get packageNames => '$apiUrl/package-names';
 
+  /// Search endpoint
+  String search(String query, int page) => '$searchUrl?q=$query&page=$page';
+
+  /// Account endpoints
   /// Url to add and remove likes
   String likePackage(String name) => '$accountUrl/likes/$name';
 
   /// Liked packages
   String get likedPackages => '$accountUrl/likes';
 
-  /// Search endpoint
-  String search(String query, int page) => '$searchUrl?q=$query&page=$page';
+  String invitePackageUploader(String packageName, String email) =>
+      '$packageUrl/uploaders/$email';
+
+  /// Publishers endpoints
+  String invitePublisherMember(String publisherId) =>
+      '$publishersUrl/$publisherId/invite-member';
+
+  String listPublisherMembers(String publisherId) =>
+      '$publishersUrl/$publisherId/members';
 }
