@@ -20,7 +20,7 @@ PackagePublisher _$PackagePublisherFromJson(Map<String, dynamic> json) {
 class _$PackagePublisherTearOff {
   const _$PackagePublisherTearOff();
 
-  _PackagePublisher call({required String publisherId}) {
+  _PackagePublisher call({required String? publisherId}) {
     return _PackagePublisher(
       publisherId: publisherId,
     );
@@ -36,7 +36,7 @@ const $PackagePublisher = _$PackagePublisherTearOff();
 
 /// @nodoc
 mixin _$PackagePublisher {
-  String get publisherId => throw _privateConstructorUsedError;
+  String? get publisherId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +49,7 @@ abstract class $PackagePublisherCopyWith<$Res> {
   factory $PackagePublisherCopyWith(
           PackagePublisher value, $Res Function(PackagePublisher) then) =
       _$PackagePublisherCopyWithImpl<$Res>;
-  $Res call({String publisherId});
+  $Res call({String? publisherId});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$PackagePublisherCopyWithImpl<$Res>
       publisherId: publisherId == freezed
           ? _value.publisherId
           : publisherId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -81,7 +81,7 @@ abstract class _$PackagePublisherCopyWith<$Res>
           _PackagePublisher value, $Res Function(_PackagePublisher) then) =
       __$PackagePublisherCopyWithImpl<$Res>;
   @override
-  $Res call({String publisherId});
+  $Res call({String? publisherId});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$PackagePublisherCopyWithImpl<$Res>
       publisherId: publisherId == freezed
           ? _value.publisherId
           : publisherId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -117,7 +117,7 @@ class _$_PackagePublisher implements _PackagePublisher {
       _$_$_PackagePublisherFromJson(json);
 
   @override
-  final String publisherId;
+  final String? publisherId;
 
   @override
   String toString() {
@@ -149,14 +149,14 @@ class _$_PackagePublisher implements _PackagePublisher {
 }
 
 abstract class _PackagePublisher implements PackagePublisher {
-  factory _PackagePublisher({required String publisherId}) =
+  factory _PackagePublisher({required String? publisherId}) =
       _$_PackagePublisher;
 
   factory _PackagePublisher.fromJson(Map<String, dynamic> json) =
       _$_PackagePublisher.fromJson;
 
   @override
-  String get publisherId => throw _privateConstructorUsedError;
+  String? get publisherId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>

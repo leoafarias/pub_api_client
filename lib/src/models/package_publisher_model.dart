@@ -7,7 +7,7 @@ part 'package_publisher_model.g.dart';
 @freezed
 abstract class PackagePublisher with _$PackagePublisher {
   factory PackagePublisher({
-    required final String publisherId,
+    required final String? publisherId,
   }) = _PackagePublisher;
 
   factory PackagePublisher.fromJson(Map<String, dynamic> json) =>
