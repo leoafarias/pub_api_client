@@ -5,6 +5,8 @@ import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pub_api_client/src/constants.dart';
 import 'package:test/test.dart';
 
+import 'test_utils.dart';
+
 const packageName = 'fvm';
 final client = PubClient();
 
@@ -36,7 +38,7 @@ void main() {
 
       expect(metrics.score, score);
       expect(metrics.scorecard.packageName, 'fvm');
-      expect(metrics.scorecard.maxPubPoints, 110);
+      expect(metrics.scorecard.maxPubPoints, maxPoints);
     });
 
     test('Get package version info', () async {
@@ -72,7 +74,7 @@ void main() {
       expect(payload.lastUpdated, isNotNull);
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
-      expect(payload.maxPoints, 110);
+      expect(payload.maxPoints, maxPoints);
     });
 
     test('Search for packages', () async {
@@ -86,7 +88,7 @@ void main() {
       final payload = await client.search('', publisher: 'fvm.app');
       final nextPagePayload =
           await client.search('', dependency: 'pub_api_client');
-      expect(payload.packages.length, equals(3));
+      expect(payload.packages.length, greaterThan(0));
       expect(nextPagePayload.packages.length, greaterThan(0));
     });
 
