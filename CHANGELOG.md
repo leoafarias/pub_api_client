@@ -1,3 +1,9 @@
+## 2.0.5
+
+### Changed
+
+- PublisherId is now a nullable string
+
 ## 2.0.4
 
 ### Added
