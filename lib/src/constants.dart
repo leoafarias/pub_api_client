@@ -19,7 +19,7 @@ Directory _pubCacheDir() {
     if (appDataCacheDir.existsSync()) {
       return appDataCacheDir;
     }
-    final localAppData = Platform.environment['LOCALAPPDATA'];
+    final localAppData = Platform.environment['APPDATA'];
     return Directory(join(localAppData!, 'Pub', 'Cache'));
   } else {
     return Directory('${Platform.environment['HOME']}/.pub-cache');
