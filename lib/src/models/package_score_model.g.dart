@@ -8,10 +8,10 @@ part of 'package_score_model.dart';
 
 _$_PackageScore _$_$_PackageScoreFromJson(Map<String, dynamic> json) {
   return _$_PackageScore(
-    grantedPoints: json['grantedPoints'] as int,
-    maxPoints: json['maxPoints'] as int,
+    grantedPoints: json['grantedPoints'] as int?,
+    maxPoints: json['maxPoints'] as int?,
     likeCount: json['likeCount'] as int,
-    popularityScore: (json['popularityScore'] as num).toDouble(),
+    popularityScore: (json['popularityScore'] as num?)?.toDouble(),
     lastUpdated: DateTime.parse(json['lastUpdated'] as String),
   );
 }

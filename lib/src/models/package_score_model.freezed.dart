@@ -21,10 +21,10 @@ class _$PackageScoreTearOff {
   const _$PackageScoreTearOff();
 
   _PackageScore call(
-      {required int grantedPoints,
-      required int maxPoints,
+      {required int? grantedPoints,
+      required int? maxPoints,
       required int likeCount,
-      required double popularityScore,
+      required double? popularityScore,
       required DateTime lastUpdated}) {
     return _PackageScore(
       grantedPoints: grantedPoints,
@@ -45,10 +45,10 @@ const $PackageScore = _$PackageScoreTearOff();
 
 /// @nodoc
 mixin _$PackageScore {
-  int get grantedPoints => throw _privateConstructorUsedError;
-  int get maxPoints => throw _privateConstructorUsedError;
+  int? get grantedPoints => throw _privateConstructorUsedError;
+  int? get maxPoints => throw _privateConstructorUsedError;
   int get likeCount => throw _privateConstructorUsedError;
-  double get popularityScore => throw _privateConstructorUsedError;
+  double? get popularityScore => throw _privateConstructorUsedError;
   DateTime get lastUpdated => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,10 +63,10 @@ abstract class $PackageScoreCopyWith<$Res> {
           PackageScore value, $Res Function(PackageScore) then) =
       _$PackageScoreCopyWithImpl<$Res>;
   $Res call(
-      {int grantedPoints,
-      int maxPoints,
+      {int? grantedPoints,
+      int? maxPoints,
       int likeCount,
-      double popularityScore,
+      double? popularityScore,
       DateTime lastUpdated});
 }
 
@@ -90,11 +90,11 @@ class _$PackageScoreCopyWithImpl<$Res> implements $PackageScoreCopyWith<$Res> {
       grantedPoints: grantedPoints == freezed
           ? _value.grantedPoints
           : grantedPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       maxPoints: maxPoints == freezed
           ? _value.maxPoints
           : maxPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       likeCount: likeCount == freezed
           ? _value.likeCount
           : likeCount // ignore: cast_nullable_to_non_nullable
@@ -102,7 +102,7 @@ class _$PackageScoreCopyWithImpl<$Res> implements $PackageScoreCopyWith<$Res> {
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
           : popularityScore // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       lastUpdated: lastUpdated == freezed
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -119,10 +119,10 @@ abstract class _$PackageScoreCopyWith<$Res>
       __$PackageScoreCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int grantedPoints,
-      int maxPoints,
+      {int? grantedPoints,
+      int? maxPoints,
       int likeCount,
-      double popularityScore,
+      double? popularityScore,
       DateTime lastUpdated});
 }
 
@@ -148,11 +148,11 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
       grantedPoints: grantedPoints == freezed
           ? _value.grantedPoints
           : grantedPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       maxPoints: maxPoints == freezed
           ? _value.maxPoints
           : maxPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       likeCount: likeCount == freezed
           ? _value.likeCount
           : likeCount // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ class __$PackageScoreCopyWithImpl<$Res> extends _$PackageScoreCopyWithImpl<$Res>
       popularityScore: popularityScore == freezed
           ? _value.popularityScore
           : popularityScore // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       lastUpdated: lastUpdated == freezed
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
@@ -183,13 +183,13 @@ class _$_PackageScore implements _PackageScore {
       _$_$_PackageScoreFromJson(json);
 
   @override
-  final int grantedPoints;
+  final int? grantedPoints;
   @override
-  final int maxPoints;
+  final int? maxPoints;
   @override
   final int likeCount;
   @override
-  final double popularityScore;
+  final double? popularityScore;
   @override
   final DateTime lastUpdated;
 
@@ -241,23 +241,23 @@ class _$_PackageScore implements _PackageScore {
 
 abstract class _PackageScore implements PackageScore {
   factory _PackageScore(
-      {required int grantedPoints,
-      required int maxPoints,
+      {required int? grantedPoints,
+      required int? maxPoints,
       required int likeCount,
-      required double popularityScore,
+      required double? popularityScore,
       required DateTime lastUpdated}) = _$_PackageScore;
 
   factory _PackageScore.fromJson(Map<String, dynamic> json) =
       _$_PackageScore.fromJson;
 
   @override
-  int get grantedPoints => throw _privateConstructorUsedError;
+  int? get grantedPoints => throw _privateConstructorUsedError;
   @override
-  int get maxPoints => throw _privateConstructorUsedError;
+  int? get maxPoints => throw _privateConstructorUsedError;
   @override
   int get likeCount => throw _privateConstructorUsedError;
   @override
-  double get popularityScore => throw _privateConstructorUsedError;
+  double? get popularityScore => throw _privateConstructorUsedError;
   @override
   DateTime get lastUpdated => throw _privateConstructorUsedError;
   @override
