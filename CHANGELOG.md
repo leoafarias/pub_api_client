@@ -1,3 +1,9 @@
+## 2.0.6
+
+### Changed
+
+- PackageScore nullable fields. Package metrics does not return fields when package is being processed. [#10](https://github.com/leoafarias/pub_api_client/issues/10)
+
 ## 2.0.5
 
 ### Changed
