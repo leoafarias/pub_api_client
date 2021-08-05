@@ -36,9 +36,11 @@ void main() {
       final score = await client.packageScore(packageName);
       final metrics = await client.packageMetrics(packageName);
 
-      expect(metrics.score, score);
-      expect(metrics.scorecard.packageName, 'fvm');
-      expect(metrics.scorecard.maxPubPoints, maxPoints);
+      if (metrics != null) {
+        expect(metrics.score, score);
+        expect(metrics.scorecard.packageName, 'fvm');
+        expect(metrics.scorecard.maxPubPoints, maxPoints);
+      }
     });
 
     test('Get package version info', () async {

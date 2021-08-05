@@ -7,10 +7,10 @@ part 'package_score_model.g.dart';
 @freezed
 class PackageScore with _$PackageScore {
   factory PackageScore({
-    required final int grantedPoints,
-    required final int maxPoints,
+    required final int? grantedPoints,
+    required final int? maxPoints,
     required final int likeCount,
-    required final double popularityScore,
+    required final double? popularityScore,
     required final DateTime lastUpdated,
   }) = _PackageScore;
 

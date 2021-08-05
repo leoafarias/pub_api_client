@@ -78,9 +78,14 @@ class PubClient {
   }
 
   /// Returns the `PackageMetrics` for package [packageName]
-  Future<PackageMetrics> packageMetrics(String packageName) async {
-    final data = await _fetch(endpoint.packageMetrics(packageName));
-    return PackageMetrics.fromJson(data);
+  Future<PackageMetrics?> packageMetrics(String packageName) async {
+    try {
+      final data = await _fetch(endpoint.packageMetrics(packageName));
+      return PackageMetrics.fromJson(data);
+    } on NotFoundException {
+      // If the package has not been scanned, the server will return 404
+      return null;
+    }
   }
 
   /// Returns the `PackageOptions` for package [packageName]
