@@ -1,3 +1,9 @@
+## 2.1.0
+
+### Fixed
+
+- Exposed SearchOrder for sorting
+
 ## 2.0.7
 
 ### Added
