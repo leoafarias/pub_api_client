@@ -1,3 +1,9 @@
+## 2.0.7
+
+### Added
+
+- Ability to sort search results.
+
 ## 2.0.6
 
 ### Changed

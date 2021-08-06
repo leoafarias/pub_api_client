@@ -160,6 +160,44 @@ final results =  await client.search('query', publisher:'publisher_id', dependen
 print(results.packages)
 ```
 
+#### Sorting search results
+
+You are able to sort search results by the following:
+
+##### Top
+
+Search score should be a weighted value of [text], [popularity], [points] and [like], ordered decreasing.
+
+##### Text
+
+Search score should depend only on text match similarity, ordered decreasing.
+
+##### Created
+
+Search order should be in decreasing last package creation time.
+
+##### Updated
+
+Search order should be in decreasing last package updated time.
+
+##### Popularity
+
+Search order should be in decreasing popularity score.
+
+##### Like
+
+Search order should be in decreasing like count.
+
+##### Points
+
+Search order should be in decreasing pub points.
+
+```dart
+final results =  await client.search('query', sort: SearchOrder.updated);
+
+print(results.packages)
+```
+
 #### Paging Search Results
 
 You are able to page search results.

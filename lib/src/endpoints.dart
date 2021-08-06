@@ -1,3 +1,5 @@
+import 'package:pub_api_client/src/models/search_order.dart';
+
 /// Pub.dev api Endpoints
 class Endpoint {
   late String baseUrl;
@@ -51,5 +53,10 @@ class Endpoint {
   String get likedPackages => '$accountUrl/likes';
 
   /// Search endpoint
-  String search(String query, int page) => '$searchUrl?q=$query&page=$page';
+  String search(
+    String query,
+    int page,
+    SearchOrder sort,
+  ) =>
+      '$searchUrl?q=$query&page=$page&sort=${sort.value}';
 }

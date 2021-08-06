@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pub_api_client/src/constants.dart';
+import 'package:pub_api_client/src/models/search_order.dart';
 import 'package:test/test.dart';
 
 import 'test_utils.dart';
@@ -84,6 +85,34 @@ void main() {
       final nextPagePayload = await client.nextPage(payload.next ?? '');
       expect(payload.packages.length, greaterThan(1));
       expect(nextPagePayload.packages.length, greaterThan(1));
+    });
+
+    test('Sort search results for packages', () async {
+      final updated = await client.search('', sort: SearchOrder.updated);
+      final popularity = await client.search('', sort: SearchOrder.popularity);
+      final points = await client.search('', sort: SearchOrder.points);
+      final created = await client.search('', sort: SearchOrder.created);
+      final text = await client.search('', sort: SearchOrder.text);
+      final top = await client.search('');
+
+      final updatedCopy = await client.search('', sort: SearchOrder.updated);
+
+      expect(updated, isNot(popularity));
+      expect(popularity, isNot(points));
+      expect(points, isNot(updated));
+      expect(updated, isNot(created));
+      expect(created, isNot(text));
+      expect(text, isNot(top));
+      expect(top, isNot(updated));
+
+      expect(updated, updatedCopy);
+
+      expect(SearchOrder.points.value, 'points');
+      expect(SearchOrder.popularity.value, 'popularity');
+      expect(SearchOrder.created.value, 'created');
+      expect(SearchOrder.text.value, 'text');
+      expect(SearchOrder.top.value, 'top');
+      expect(SearchOrder.like.value, 'like');
     });
 
     test('Search for packages of a publisher', () async {

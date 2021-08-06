@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
+import 'package:pub_api_client/src/models/search_order.dart';
 
 import 'constants.dart';
 import 'endpoints.dart';
@@ -135,13 +136,17 @@ class PubClient {
   Future<SearchResults> search(
     String query, {
     int page = 1,
+    SearchOrder sort = SearchOrder.top,
     String? publisher,
     String? dependency,
   }) async {
     final publisherQuery = publisher != null ? 'publisher:$publisher ' : '';
     final dependencyQuery = dependency != null ? 'dependency:$dependency ' : '';
-    final data = await _fetch(
-        endpoint.search('$publisherQuery$dependencyQuery$query', page));
+    final data = await _fetch(endpoint.search(
+      '$publisherQuery$dependencyQuery$query',
+      page,
+      sort,
+    ));
     return SearchResults.fromJson(data);
   }
 
