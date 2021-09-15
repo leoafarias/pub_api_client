@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
-import 'package:pub_api_client/src/models/search_order.dart';
 
 import 'constants.dart';
 import 'endpoints.dart';
@@ -15,6 +14,7 @@ import 'models/package_options_model.dart';
 import 'models/package_publisher_model.dart';
 import 'models/package_score_model.dart';
 import 'models/pub_package_model.dart';
+import 'models/search_order.dart';
 import 'models/search_results_model.dart';
 
 typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
@@ -187,5 +187,9 @@ class PubClient {
     return likes
         .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
         .toList();
+  }
+
+  void close() {
+    client?.close();
   }
 }
