@@ -1,3 +1,7 @@
+## 2.1.1
+
+- Added `close` method to PubClient
+
 ## 2.1.0
 
 ### Fixed
