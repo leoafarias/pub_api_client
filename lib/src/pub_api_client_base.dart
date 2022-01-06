@@ -23,7 +23,7 @@ typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 class PubClient {
   late Endpoint endpoint;
   final String? pubUrl;
-  final Client? client;
+  final http.Client? client;
   final Credentials? credentials;
   late PubApiHttpClient _client;
   PubClient({
