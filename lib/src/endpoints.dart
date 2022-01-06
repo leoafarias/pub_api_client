@@ -1,4 +1,4 @@
-import 'package:pub_api_client/src/models/search_order.dart';
+import 'models/search_order.dart';
 
 /// Pub.dev api Endpoints
 class Endpoint {

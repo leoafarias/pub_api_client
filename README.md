@@ -24,6 +24,9 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
     - [Paging Search Results](#paging-search-results)
   - [Like Packages](#like-packages)
 - [Utilities](#utilities)
+  - [Flutter Favorites](#flutter-favorites)
+  - [Google Packages](#google-packages)
+  - [Publisher Packages](#publisher-packages)
   - [Update Notification](#update-notification)
     - [Check Update Printer](#check-update-printer)
     - [Custom Update Notification](#custom-update-notification)
@@ -217,6 +220,33 @@ print(results.packages)
 ```
 
 ## Utilities
+
+### Flutter Favorites
+
+Returns all Flutter favorites on pub.dev
+
+```dart
+
+final results = await client.fetchFlutterFavorites();
+```
+
+### Google Packages
+
+Returns all official Google packages. This will be a large payload with hundreds of packages.
+
+```dart
+
+final results = await client.fetchGooglePackages();
+```
+
+### Publisher Packages
+
+Returns all packages for a specific publisher
+
+```dart
+
+final results = await client.fetchPublisherPackages();
+```
 
 ### Update Notification
 

@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:pub_api_client/pub_api_client.dart';
-import 'package:pub_api_client/src/constants.dart';
-import 'package:pub_api_client/src/models/search_order.dart';
 import 'package:test/test.dart';
 
 import 'test_utils.dart';
@@ -66,8 +64,7 @@ void main() {
     });
 
     test('Get package publisher if unregistered', () async {
-      final unregisterPublisher =
-          await client.packagePublisher('freezed_annotation');
+      final unregisterPublisher = await client.packagePublisher('p');
       expect(unregisterPublisher.publisherId, null);
     });
 

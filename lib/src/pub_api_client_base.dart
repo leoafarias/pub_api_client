@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
+import 'package:pub_api_client/src/helpers/recursive_paging.dart';
 
 import 'constants.dart';
 import 'endpoints.dart';
@@ -187,6 +188,43 @@ class PubClient {
     return likes
         .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
         .toList();
+  }
+
+  /// Retrieves all Google packages from pub.dev
+  /// Mostly used as an internal tool to generate
+  /// google_packages_list.dart
+  /// You should probably use that instead
+  Future<List<String>> fetchGooglePackages() async {
+    /// List of Google publishers on pub.dev
+    const _publishers = [
+      'flutter.dev',
+      'dart.dev',
+      'material.io',
+      'firebase.google.com',
+      'google.dev',
+      'tools.dart.dev ',
+    ];
+
+    final futures = <Future<List<PackageResult>>>[];
+    for (var publisher in _publishers) {
+      futures.add(fetchPublisherPackages(publisher));
+    }
+    final results = await Future.wait(futures);
+    final flatResults = results.expand((r) => r).toList();
+    return flatResults.map((r) => r.package).toList();
+  }
+
+  /// Retrieves all the flutter favorites
+  Future<List<String>> fetchFlutterFavorites() async {
+    final searchResults = await search('is:flutter-favorite');
+    final results = await recursivePaging(searchResults);
+    return results.map((r) => r.package).toList();
+  }
+
+  Future<List<PackageResult>> fetchPublisherPackages(
+      String publisherName) async {
+    final results = await search('', publisher: publisherName);
+    return recursivePaging(results);
   }
 
   void close() {
