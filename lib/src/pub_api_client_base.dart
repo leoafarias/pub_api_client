@@ -157,7 +157,7 @@ class PubClient {
   /// Receives [nextPageUrl]
   /// returns `SearchResults`
   Future<SearchResults> nextPage(String nextPageUrl) async {
-    final data = await _fetch(nextPageUrl);
+    final data = await _fetch(endpoint.nextPage(nextPageUrl));
     return SearchResults.fromJson(data);
   }
 

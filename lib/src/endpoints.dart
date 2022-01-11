@@ -59,4 +59,8 @@ class Endpoint {
     SearchOrder sort,
   ) =>
       '$searchUrl?q=$query&page=$page&sort=${sort.value}';
+
+  /// Next search page
+  String nextPage(String nextPageUrl) =>
+      nextPageUrl.replaceFirst('https://pub.dev', baseUrl);
 }
