@@ -1,6 +1,6 @@
 ## 2.2.0
 
-- Fixed `Client` interace for custom HTTP Client by @Rexios90 [#17](https://github.com/leoafarias/pub_api_client/pull/17)
+- Fixed `Client` interace for custom HTTP Client by @Rexios80 [#17](https://github.com/leoafarias/pub_api_client/pull/17)
 - Added Flutter Favorites, Google Packages and Publisher Package request helpers.
 
 ## 2.1.1
