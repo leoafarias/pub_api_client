@@ -2,7 +2,8 @@ import 'models/search_order.dart';
 
 /// Pub.dev api Endpoints
 class Endpoint {
-  static const defaultBaseUrl = 'https://pub.dartlang.org';
+  static const defaultBaseUrl =
+      'https://pub.dartlang.org'; // Use pub.dev instead?
 
   final String baseUrl;
   late final String apiUrl;
@@ -11,9 +12,7 @@ class Endpoint {
   late final String accountUrl;
 
   /// Constructor for API endpoints based on an [url]
-  Endpoint(String? url)
-      : baseUrl = url ?? defaultBaseUrl // Use pub.dev instead?
-  {
+  Endpoint(String? url) : baseUrl = url ?? defaultBaseUrl {
     apiUrl = '$baseUrl/api';
     searchUrl = '$apiUrl/search';
     packageUrl = '$apiUrl/packages';

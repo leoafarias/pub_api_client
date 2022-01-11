@@ -31,7 +31,7 @@ class PubClient {
     this.pubUrl,
     this.credentials,
     this.client,
-  }): endpoint = Endpoint(pubUrl) {
+  }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
     if (credentials == null) {
       httpClient = http.Client();
