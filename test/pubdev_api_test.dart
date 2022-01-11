@@ -9,9 +9,6 @@ import 'test_utils.dart';
 const packageName = 'fvm';
 final client = PubClient();
 
-final authedClient = PubClient(
-  credentials: pubCredentials,
-);
 void main() {
   group('PubDev Client', () {
     test('Can Fetch package info', () async {
@@ -132,7 +129,15 @@ void main() {
       expect(packages.length, greaterThan(20000));
     });
 
-    test('Can like and unlike packages', () async {
+    test('Can like, unlike, and view liked packages', () async {
+      if (pubCredentials == null) {
+        print('Skipping test. No credentials found.');
+        return;
+      }
+      final authedClient = PubClient(
+        credentials: pubCredentials,
+      );
+
       await authedClient.unlikePackage('fvm');
 
       final unlikeRes = await authedClient.likePackageStatus('fvm');
@@ -140,9 +145,6 @@ void main() {
 
       expect(unlikeRes.liked, false);
       expect(likeRes.liked, true);
-    });
-
-    test('View liked packages', () async {
       // Can make an authenticated request
       final likedPackages = await authedClient.listPackageLikes();
 
