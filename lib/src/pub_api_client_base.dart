@@ -134,9 +134,6 @@ class PubClient {
   /// Searches pub for [query] and can [page] results.
   /// Can filter to [publisher] and/or a [dependency]
   /// returns `SearchResults`
-  ///
-  /// Searching without a [query], [publisher], or [dependency]
-  /// will return all packages
   Future<SearchResults> search(
     String query, {
     int page = 1,
