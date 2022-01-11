@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'package_metrics_model.dart';
 
@@ -28,7 +30,7 @@ class _$PackageMetricsTearOff {
     );
   }
 
-  PackageMetrics fromJson(Map<String, Object> json) {
+  PackageMetrics fromJson(Map<String, Object?> json) {
     return PackageMetrics.fromJson(json);
   }
 }
@@ -149,7 +151,7 @@ class _$_PackageMetrics implements _PackageMetrics {
   _$_PackageMetrics({required this.score, required this.scorecard});
 
   factory _$_PackageMetrics.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageMetricsFromJson(json);
+      _$$_PackageMetricsFromJson(json);
 
   @override
   final PackageScore score;
@@ -164,19 +166,17 @@ class _$_PackageMetrics implements _PackageMetrics {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageMetrics &&
-            (identical(other.score, score) ||
-                const DeepCollectionEquality().equals(other.score, score)) &&
-            (identical(other.scorecard, scorecard) ||
-                const DeepCollectionEquality()
-                    .equals(other.scorecard, scorecard)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageMetrics &&
+            const DeepCollectionEquality().equals(other.score, score) &&
+            const DeepCollectionEquality().equals(other.scorecard, scorecard));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(score) ^
-      const DeepCollectionEquality().hash(scorecard);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(score),
+      const DeepCollectionEquality().hash(scorecard));
 
   @JsonKey(ignore: true)
   @override
@@ -185,7 +185,7 @@ class _$_PackageMetrics implements _PackageMetrics {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageMetricsToJson(this);
+    return _$$_PackageMetricsToJson(this);
   }
 }
 
@@ -198,9 +198,9 @@ abstract class _PackageMetrics implements PackageMetrics {
       _$_PackageMetrics.fromJson;
 
   @override
-  PackageScore get score => throw _privateConstructorUsedError;
+  PackageScore get score;
   @override
-  PackageScoreCard get scorecard => throw _privateConstructorUsedError;
+  PackageScoreCard get scorecard;
   @override
   @JsonKey(ignore: true)
   _$PackageMetricsCopyWith<_PackageMetrics> get copyWith =>

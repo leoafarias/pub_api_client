@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'package_score_model.dart';
 
@@ -35,7 +37,7 @@ class _$PackageScoreTearOff {
     );
   }
 
-  PackageScore fromJson(Map<String, Object> json) {
+  PackageScore fromJson(Map<String, Object?> json) {
     return PackageScore.fromJson(json);
   }
 }
@@ -180,7 +182,7 @@ class _$_PackageScore implements _PackageScore {
       required this.lastUpdated});
 
   factory _$_PackageScore.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageScoreFromJson(json);
+      _$$_PackageScoreFromJson(json);
 
   @override
   final int? grantedPoints;
@@ -201,32 +203,26 @@ class _$_PackageScore implements _PackageScore {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageScore &&
-            (identical(other.grantedPoints, grantedPoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.grantedPoints, grantedPoints)) &&
-            (identical(other.maxPoints, maxPoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxPoints, maxPoints)) &&
-            (identical(other.likeCount, likeCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.likeCount, likeCount)) &&
-            (identical(other.popularityScore, popularityScore) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularityScore, popularityScore)) &&
-            (identical(other.lastUpdated, lastUpdated) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastUpdated, lastUpdated)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageScore &&
+            const DeepCollectionEquality()
+                .equals(other.grantedPoints, grantedPoints) &&
+            const DeepCollectionEquality().equals(other.maxPoints, maxPoints) &&
+            const DeepCollectionEquality().equals(other.likeCount, likeCount) &&
+            const DeepCollectionEquality()
+                .equals(other.popularityScore, popularityScore) &&
+            const DeepCollectionEquality()
+                .equals(other.lastUpdated, lastUpdated));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(grantedPoints) ^
-      const DeepCollectionEquality().hash(maxPoints) ^
-      const DeepCollectionEquality().hash(likeCount) ^
-      const DeepCollectionEquality().hash(popularityScore) ^
-      const DeepCollectionEquality().hash(lastUpdated);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(grantedPoints),
+      const DeepCollectionEquality().hash(maxPoints),
+      const DeepCollectionEquality().hash(likeCount),
+      const DeepCollectionEquality().hash(popularityScore),
+      const DeepCollectionEquality().hash(lastUpdated));
 
   @JsonKey(ignore: true)
   @override
@@ -235,7 +231,7 @@ class _$_PackageScore implements _PackageScore {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageScoreToJson(this);
+    return _$$_PackageScoreToJson(this);
   }
 }
 
@@ -251,15 +247,15 @@ abstract class _PackageScore implements PackageScore {
       _$_PackageScore.fromJson;
 
   @override
-  int? get grantedPoints => throw _privateConstructorUsedError;
+  int? get grantedPoints;
   @override
-  int? get maxPoints => throw _privateConstructorUsedError;
+  int? get maxPoints;
   @override
-  int get likeCount => throw _privateConstructorUsedError;
+  int get likeCount;
   @override
-  double? get popularityScore => throw _privateConstructorUsedError;
+  double? get popularityScore;
   @override
-  DateTime get lastUpdated => throw _privateConstructorUsedError;
+  DateTime get lastUpdated;
   @override
   @JsonKey(ignore: true)
   _$PackageScoreCopyWith<_PackageScore> get copyWith =>
@@ -303,7 +299,7 @@ class _$PackageScoreCardTearOff {
     );
   }
 
-  PackageScoreCard fromJson(Map<String, Object> json) {
+  PackageScoreCard fromJson(Map<String, Object?> json) {
     return PackageScoreCard.fromJson(json);
   }
 }
@@ -548,7 +544,7 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       this.reportTypes = const []});
 
   factory _$_PackageScoreCard.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageScoreCardFromJson(json);
+      _$$_PackageScoreCardFromJson(json);
 
   @override
   final String packageName;
@@ -568,13 +564,13 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   final int maxPubPoints;
   @override
   final double popularityScore;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
   @override
   final List<String> derivedTags;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
   @override
   final List<String> flags;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
   @override
   final List<String> reportTypes;
 
@@ -586,59 +582,47 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageScoreCard &&
-            (identical(other.packageName, packageName) ||
-                const DeepCollectionEquality()
-                    .equals(other.packageName, packageName)) &&
-            (identical(other.packageVersion, packageVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.packageVersion, packageVersion)) &&
-            (identical(other.runtimeVersion, runtimeVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.runtimeVersion, runtimeVersion)) &&
-            (identical(other.updated, updated) ||
-                const DeepCollectionEquality()
-                    .equals(other.updated, updated)) &&
-            (identical(other.packageCreated, packageCreated) ||
-                const DeepCollectionEquality()
-                    .equals(other.packageCreated, packageCreated)) &&
-            (identical(other.packageVersionCreated, packageVersionCreated) ||
-                const DeepCollectionEquality().equals(
-                    other.packageVersionCreated, packageVersionCreated)) &&
-            (identical(other.grantedPubPoints, grantedPubPoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.grantedPubPoints, grantedPubPoints)) &&
-            (identical(other.maxPubPoints, maxPubPoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxPubPoints, maxPubPoints)) &&
-            (identical(other.popularityScore, popularityScore) ||
-                const DeepCollectionEquality()
-                    .equals(other.popularityScore, popularityScore)) &&
-            (identical(other.derivedTags, derivedTags) ||
-                const DeepCollectionEquality()
-                    .equals(other.derivedTags, derivedTags)) &&
-            (identical(other.flags, flags) ||
-                const DeepCollectionEquality().equals(other.flags, flags)) &&
-            (identical(other.reportTypes, reportTypes) ||
-                const DeepCollectionEquality()
-                    .equals(other.reportTypes, reportTypes)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageScoreCard &&
+            const DeepCollectionEquality()
+                .equals(other.packageName, packageName) &&
+            const DeepCollectionEquality()
+                .equals(other.packageVersion, packageVersion) &&
+            const DeepCollectionEquality()
+                .equals(other.runtimeVersion, runtimeVersion) &&
+            const DeepCollectionEquality().equals(other.updated, updated) &&
+            const DeepCollectionEquality()
+                .equals(other.packageCreated, packageCreated) &&
+            const DeepCollectionEquality()
+                .equals(other.packageVersionCreated, packageVersionCreated) &&
+            const DeepCollectionEquality()
+                .equals(other.grantedPubPoints, grantedPubPoints) &&
+            const DeepCollectionEquality()
+                .equals(other.maxPubPoints, maxPubPoints) &&
+            const DeepCollectionEquality()
+                .equals(other.popularityScore, popularityScore) &&
+            const DeepCollectionEquality()
+                .equals(other.derivedTags, derivedTags) &&
+            const DeepCollectionEquality().equals(other.flags, flags) &&
+            const DeepCollectionEquality()
+                .equals(other.reportTypes, reportTypes));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(packageName) ^
-      const DeepCollectionEquality().hash(packageVersion) ^
-      const DeepCollectionEquality().hash(runtimeVersion) ^
-      const DeepCollectionEquality().hash(updated) ^
-      const DeepCollectionEquality().hash(packageCreated) ^
-      const DeepCollectionEquality().hash(packageVersionCreated) ^
-      const DeepCollectionEquality().hash(grantedPubPoints) ^
-      const DeepCollectionEquality().hash(maxPubPoints) ^
-      const DeepCollectionEquality().hash(popularityScore) ^
-      const DeepCollectionEquality().hash(derivedTags) ^
-      const DeepCollectionEquality().hash(flags) ^
-      const DeepCollectionEquality().hash(reportTypes);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(packageName),
+      const DeepCollectionEquality().hash(packageVersion),
+      const DeepCollectionEquality().hash(runtimeVersion),
+      const DeepCollectionEquality().hash(updated),
+      const DeepCollectionEquality().hash(packageCreated),
+      const DeepCollectionEquality().hash(packageVersionCreated),
+      const DeepCollectionEquality().hash(grantedPubPoints),
+      const DeepCollectionEquality().hash(maxPubPoints),
+      const DeepCollectionEquality().hash(popularityScore),
+      const DeepCollectionEquality().hash(derivedTags),
+      const DeepCollectionEquality().hash(flags),
+      const DeepCollectionEquality().hash(reportTypes));
 
   @JsonKey(ignore: true)
   @override
@@ -647,7 +631,7 @@ class _$_PackageScoreCard implements _PackageScoreCard {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageScoreCardToJson(this);
+    return _$$_PackageScoreCardToJson(this);
   }
 }
 
@@ -670,29 +654,29 @@ abstract class _PackageScoreCard implements PackageScoreCard {
       _$_PackageScoreCard.fromJson;
 
   @override
-  String get packageName => throw _privateConstructorUsedError;
+  String get packageName;
   @override
-  String get packageVersion => throw _privateConstructorUsedError;
+  String get packageVersion;
   @override
-  String get runtimeVersion => throw _privateConstructorUsedError;
+  String get runtimeVersion;
   @override
-  DateTime get updated => throw _privateConstructorUsedError;
+  DateTime get updated;
   @override
-  DateTime get packageCreated => throw _privateConstructorUsedError;
+  DateTime get packageCreated;
   @override
-  DateTime get packageVersionCreated => throw _privateConstructorUsedError;
+  DateTime get packageVersionCreated;
   @override
-  int get grantedPubPoints => throw _privateConstructorUsedError;
+  int get grantedPubPoints;
   @override
-  int get maxPubPoints => throw _privateConstructorUsedError;
+  int get maxPubPoints;
   @override
-  double get popularityScore => throw _privateConstructorUsedError;
+  double get popularityScore;
   @override
-  List<String> get derivedTags => throw _privateConstructorUsedError;
+  List<String> get derivedTags;
   @override
-  List<String> get flags => throw _privateConstructorUsedError;
+  List<String> get flags;
   @override
-  List<String> get reportTypes => throw _privateConstructorUsedError;
+  List<String> get reportTypes;
   @override
   @JsonKey(ignore: true)
   _$PackageScoreCardCopyWith<_PackageScoreCard> get copyWith =>

@@ -6,17 +6,16 @@ part of 'package_like_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PackageLike _$_$_PackageLikeFromJson(Map<String, dynamic> json) {
-  return _$_PackageLike(
-    package: json['package'] as String,
-    liked: json['liked'] as bool,
-    created: json['created'] == null
-        ? null
-        : DateTime.parse(json['created'] as String),
-  );
-}
+_$_PackageLike _$$_PackageLikeFromJson(Map<String, dynamic> json) =>
+    _$_PackageLike(
+      package: json['package'] as String,
+      liked: json['liked'] as bool,
+      created: json['created'] == null
+          ? null
+          : DateTime.parse(json['created'] as String),
+    );
 
-Map<String, dynamic> _$_$_PackageLikeToJson(_$_PackageLike instance) =>
+Map<String, dynamic> _$$_PackageLikeToJson(_$_PackageLike instance) =>
     <String, dynamic>{
       'package': instance.package,
       'liked': instance.liked,
