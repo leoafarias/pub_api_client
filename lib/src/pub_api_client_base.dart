@@ -134,17 +134,20 @@ class PubClient {
   /// Searches pub for [query] and can [page] results.
   /// Can filter to [publisher] and/or a [dependency]
   /// returns `SearchResults`
-  Future<SearchResults> search(
-    String query, {
+  /// 
+  /// Searching without a [query], [publisher], or [dependency]
+  /// will return all packages
+  Future<SearchResults> search({
+    String? query,
     int page = 1,
     SearchOrder sort = SearchOrder.top,
     String? publisher,
     String? dependency,
   }) async {
     final queryParameters = [
+      if (query != null) query,
       if (publisher != null) 'publisher:$publisher',
       if (dependency != null) 'dependency:$dependency',
-      query,
     ];
     final data = await _fetch(endpoint.search(
       queryParameters.join('+'),
