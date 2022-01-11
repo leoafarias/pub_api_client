@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
-import 'package:pub_api_client/src/helpers/recursive_paging.dart';
 
 import 'constants.dart';
 import 'endpoints.dart';
 import 'helpers/exceptions.dart';
 import 'helpers/http_client.dart';
+import 'helpers/recursive_paging.dart';
 import 'models/package_documentation_model.dart';
 import 'models/package_like_model.dart';
 import 'models/package_metrics_model.dart';
