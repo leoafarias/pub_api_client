@@ -173,4 +173,9 @@ void main() {
       expect(internalServerError, throwsA(isA<InternalServerError>()));
     });
   });
+
+  test('Fetch publisher packages', () async {
+    final packages = await client.fetchPublisherPackages('dart.dev');
+    expect(packages.length, greaterThan(0));
+  });
 }

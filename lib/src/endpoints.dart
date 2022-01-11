@@ -2,6 +2,8 @@ import 'models/search_order.dart';
 
 /// Pub.dev api Endpoints
 class Endpoint {
+  static const defaultBaseUrl = 'https://pub.dartlang.org';
+
   late String baseUrl;
   late String apiUrl;
   late String searchUrl;
@@ -10,7 +12,7 @@ class Endpoint {
 
   /// Constructor for API endpoints based on an [url]
   Endpoint(String? url) {
-    baseUrl = url ?? 'https://pub.dartlang.org'; // Use pub.dev instead?
+    baseUrl = url ?? defaultBaseUrl; // Use pub.dev instead?
     apiUrl = '$baseUrl/api';
     searchUrl = '$apiUrl/search';
     packageUrl = '$apiUrl/packages';
@@ -62,5 +64,5 @@ class Endpoint {
 
   /// Next search page
   String nextPage(String nextPageUrl) =>
-      nextPageUrl.replaceFirst('https://pub.dev', baseUrl);
+      nextPageUrl.replaceFirst(defaultBaseUrl, baseUrl);
 }
