@@ -1,3 +1,7 @@
+## Next
+
+- Updated dependencies
+
 ## 2.2.0
 
 - Fixed `Client` interace for custom HTTP Client by @Rexios80 [#17](https://github.com/leoafarias/pub_api_client/pull/17)
