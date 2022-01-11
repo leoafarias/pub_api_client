@@ -22,17 +22,16 @@ typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
 
 /// Pub API Client
 class PubClient {
-  late Endpoint endpoint;
+  final Endpoint endpoint;
   final String? pubUrl;
   final http.Client? client;
   final Credentials? credentials;
-  late PubApiHttpClient _client;
+  late final PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
     this.client,
-  }) {
-    endpoint = Endpoint(pubUrl);
+  }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
     if (credentials == null) {
       httpClient = http.Client();
@@ -154,7 +153,7 @@ class PubClient {
   /// Receives [nextPageUrl]
   /// returns `SearchResults`
   Future<SearchResults> nextPage(String nextPageUrl) async {
-    final data = await _fetch(nextPageUrl);
+    final data = await _fetch(endpoint.nextPage(nextPageUrl));
     return SearchResults.fromJson(data);
   }
 
@@ -217,14 +216,14 @@ class PubClient {
   /// Retrieves all the flutter favorites
   Future<List<String>> fetchFlutterFavorites() async {
     final searchResults = await search('is:flutter-favorite');
-    final results = await recursivePaging(searchResults);
+    final results = await recursivePaging(this, searchResults);
     return results.map((r) => r.package).toList();
   }
 
   Future<List<PackageResult>> fetchPublisherPackages(
       String publisherName) async {
     final results = await search('', publisher: publisherName);
-    return recursivePaging(results);
+    return recursivePaging(this, results);
   }
 
   void close() {
