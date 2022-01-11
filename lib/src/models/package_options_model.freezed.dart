@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'package_options_model.dart';
 
@@ -31,7 +33,7 @@ class _$PackageOptionsTearOff {
     );
   }
 
-  PackageOptions fromJson(Map<String, Object> json) {
+  PackageOptions fromJson(Map<String, Object?> json) {
     return PackageOptions.fromJson(json);
   }
 }
@@ -142,12 +144,12 @@ class _$_PackageOptions implements _PackageOptions {
       {this.isDiscontinued = false, this.isUnlisted = false, this.replacedBy});
 
   factory _$_PackageOptions.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageOptionsFromJson(json);
+      _$$_PackageOptionsFromJson(json);
 
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isDiscontinued;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isUnlisted;
   @override
@@ -161,24 +163,22 @@ class _$_PackageOptions implements _PackageOptions {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageOptions &&
-            (identical(other.isDiscontinued, isDiscontinued) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDiscontinued, isDiscontinued)) &&
-            (identical(other.isUnlisted, isUnlisted) ||
-                const DeepCollectionEquality()
-                    .equals(other.isUnlisted, isUnlisted)) &&
-            (identical(other.replacedBy, replacedBy) ||
-                const DeepCollectionEquality()
-                    .equals(other.replacedBy, replacedBy)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageOptions &&
+            const DeepCollectionEquality()
+                .equals(other.isDiscontinued, isDiscontinued) &&
+            const DeepCollectionEquality()
+                .equals(other.isUnlisted, isUnlisted) &&
+            const DeepCollectionEquality()
+                .equals(other.replacedBy, replacedBy));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isDiscontinued) ^
-      const DeepCollectionEquality().hash(isUnlisted) ^
-      const DeepCollectionEquality().hash(replacedBy);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(isDiscontinued),
+      const DeepCollectionEquality().hash(isUnlisted),
+      const DeepCollectionEquality().hash(replacedBy));
 
   @JsonKey(ignore: true)
   @override
@@ -187,7 +187,7 @@ class _$_PackageOptions implements _PackageOptions {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageOptionsToJson(this);
+    return _$$_PackageOptionsToJson(this);
   }
 }
 
@@ -201,11 +201,11 @@ abstract class _PackageOptions implements PackageOptions {
       _$_PackageOptions.fromJson;
 
   @override
-  bool get isDiscontinued => throw _privateConstructorUsedError;
+  bool get isDiscontinued;
   @override
-  bool get isUnlisted => throw _privateConstructorUsedError;
+  bool get isUnlisted;
   @override
-  String? get replacedBy => throw _privateConstructorUsedError;
+  String? get replacedBy;
   @override
   @JsonKey(ignore: true)
   _$PackageOptionsCopyWith<_PackageOptions> get copyWith =>

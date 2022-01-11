@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'search_results_model.dart';
 
@@ -27,7 +29,7 @@ class _$SearchResultsTearOff {
     );
   }
 
-  SearchResults fromJson(Map<String, Object> json) {
+  SearchResults fromJson(Map<String, Object?> json) {
     return SearchResults.fromJson(json);
   }
 }
@@ -126,7 +128,7 @@ class _$_SearchResults extends _SearchResults {
   _$_SearchResults({required this.packages, this.next}) : super._();
 
   factory _$_SearchResults.fromJson(Map<String, dynamic> json) =>
-      _$_$_SearchResultsFromJson(json);
+      _$$_SearchResultsFromJson(json);
 
   @override
   final List<PackageResult> packages;
@@ -141,19 +143,17 @@ class _$_SearchResults extends _SearchResults {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchResults &&
-            (identical(other.packages, packages) ||
-                const DeepCollectionEquality()
-                    .equals(other.packages, packages)) &&
-            (identical(other.next, next) ||
-                const DeepCollectionEquality().equals(other.next, next)));
+        (other.runtimeType == runtimeType &&
+            other is _SearchResults &&
+            const DeepCollectionEquality().equals(other.packages, packages) &&
+            const DeepCollectionEquality().equals(other.next, next));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(packages) ^
-      const DeepCollectionEquality().hash(next);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(packages),
+      const DeepCollectionEquality().hash(next));
 
   @JsonKey(ignore: true)
   @override
@@ -162,7 +162,7 @@ class _$_SearchResults extends _SearchResults {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SearchResultsToJson(this);
+    return _$$_SearchResultsToJson(this);
   }
 }
 
@@ -175,9 +175,9 @@ abstract class _SearchResults extends SearchResults {
       _$_SearchResults.fromJson;
 
   @override
-  List<PackageResult> get packages => throw _privateConstructorUsedError;
+  List<PackageResult> get packages;
   @override
-  String? get next => throw _privateConstructorUsedError;
+  String? get next;
   @override
   @JsonKey(ignore: true)
   _$SearchResultsCopyWith<_SearchResults> get copyWith =>
@@ -198,7 +198,7 @@ class _$PackageResultTearOff {
     );
   }
 
-  PackageResult fromJson(Map<String, Object> json) {
+  PackageResult fromJson(Map<String, Object?> json) {
     return PackageResult.fromJson(json);
   }
 }
@@ -286,7 +286,7 @@ class _$_PackageResult implements _PackageResult {
   _$_PackageResult({required this.package});
 
   factory _$_PackageResult.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageResultFromJson(json);
+      _$$_PackageResultFromJson(json);
 
   @override
   final String package;
@@ -299,14 +299,14 @@ class _$_PackageResult implements _PackageResult {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageResult &&
-            (identical(other.package, package) ||
-                const DeepCollectionEquality().equals(other.package, package)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageResult &&
+            const DeepCollectionEquality().equals(other.package, package));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(package);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(package));
 
   @JsonKey(ignore: true)
   @override
@@ -315,7 +315,7 @@ class _$_PackageResult implements _PackageResult {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageResultToJson(this);
+    return _$$_PackageResultToJson(this);
   }
 }
 
@@ -326,7 +326,7 @@ abstract class _PackageResult implements PackageResult {
       _$_PackageResult.fromJson;
 
   @override
-  String get package => throw _privateConstructorUsedError;
+  String get package;
   @override
   @JsonKey(ignore: true)
   _$PackageResultCopyWith<_PackageResult> get copyWith =>

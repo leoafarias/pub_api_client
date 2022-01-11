@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'pub_package_model.dart';
 
@@ -31,7 +33,7 @@ class _$PubPackageTearOff {
     );
   }
 
-  PubPackage fromJson(Map<String, Object> json) {
+  PubPackage fromJson(Map<String, Object?> json) {
     return PubPackage.fromJson(json);
   }
 }
@@ -154,13 +156,13 @@ class _$_PubPackage extends _PubPackage {
       : super._();
 
   factory _$_PubPackage.fromJson(Map<String, dynamic> json) =>
-      _$_$_PubPackageFromJson(json);
+      _$$_PubPackageFromJson(json);
 
   @override
   final String name;
   @override
   final PackageVersion latest;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
   @override
   final List<PackageVersion> versions;
 
@@ -172,22 +174,19 @@ class _$_PubPackage extends _PubPackage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PubPackage &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.latest, latest) ||
-                const DeepCollectionEquality().equals(other.latest, latest)) &&
-            (identical(other.versions, versions) ||
-                const DeepCollectionEquality()
-                    .equals(other.versions, versions)));
+        (other.runtimeType == runtimeType &&
+            other is _PubPackage &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.latest, latest) &&
+            const DeepCollectionEquality().equals(other.versions, versions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(latest) ^
-      const DeepCollectionEquality().hash(versions);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(latest),
+      const DeepCollectionEquality().hash(versions));
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +195,7 @@ class _$_PubPackage extends _PubPackage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PubPackageToJson(this);
+    return _$$_PubPackageToJson(this);
   }
 }
 
@@ -211,11 +210,11 @@ abstract class _PubPackage extends PubPackage {
       _$_PubPackage.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  PackageVersion get latest => throw _privateConstructorUsedError;
+  PackageVersion get latest;
   @override
-  List<PackageVersion> get versions => throw _privateConstructorUsedError;
+  List<PackageVersion> get versions;
   @override
   @JsonKey(ignore: true)
   _$PubPackageCopyWith<_PubPackage> get copyWith =>
@@ -243,7 +242,7 @@ class _$PackageVersionTearOff {
     );
   }
 
-  PackageVersion fromJson(Map<String, Object> json) {
+  PackageVersion fromJson(Map<String, Object?> json) {
     return PackageVersion.fromJson(json);
   }
 }
@@ -371,7 +370,7 @@ class _$_PackageVersion implements _PackageVersion {
       required this.published});
 
   factory _$_PackageVersion.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageVersionFromJson(json);
+      _$$_PackageVersionFromJson(json);
 
   @override
   final String version;
@@ -390,28 +389,22 @@ class _$_PackageVersion implements _PackageVersion {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageVersion &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.pubspec, pubspec) ||
-                const DeepCollectionEquality()
-                    .equals(other.pubspec, pubspec)) &&
-            (identical(other.archiveUrl, archiveUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.archiveUrl, archiveUrl)) &&
-            (identical(other.published, published) ||
-                const DeepCollectionEquality()
-                    .equals(other.published, published)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageVersion &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.pubspec, pubspec) &&
+            const DeepCollectionEquality()
+                .equals(other.archiveUrl, archiveUrl) &&
+            const DeepCollectionEquality().equals(other.published, published));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(pubspec) ^
-      const DeepCollectionEquality().hash(archiveUrl) ^
-      const DeepCollectionEquality().hash(published);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(version),
+      const DeepCollectionEquality().hash(pubspec),
+      const DeepCollectionEquality().hash(archiveUrl),
+      const DeepCollectionEquality().hash(published));
 
   @JsonKey(ignore: true)
   @override
@@ -420,7 +413,7 @@ class _$_PackageVersion implements _PackageVersion {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageVersionToJson(this);
+    return _$$_PackageVersionToJson(this);
   }
 }
 
@@ -435,13 +428,13 @@ abstract class _PackageVersion implements PackageVersion {
       _$_PackageVersion.fromJson;
 
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  PubSpec get pubspec => throw _privateConstructorUsedError;
+  PubSpec get pubspec;
   @override
-  String get archiveUrl => throw _privateConstructorUsedError;
+  String get archiveUrl;
   @override
-  DateTime get published => throw _privateConstructorUsedError;
+  DateTime get published;
   @override
   @JsonKey(ignore: true)
   _$PackageVersionCopyWith<_PackageVersion> get copyWith =>

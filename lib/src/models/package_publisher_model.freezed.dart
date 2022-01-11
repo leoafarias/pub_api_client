@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'package_publisher_model.dart';
 
@@ -26,7 +28,7 @@ class _$PackagePublisherTearOff {
     );
   }
 
-  PackagePublisher fromJson(Map<String, Object> json) {
+  PackagePublisher fromJson(Map<String, Object?> json) {
     return PackagePublisher.fromJson(json);
   }
 }
@@ -114,7 +116,7 @@ class _$_PackagePublisher implements _PackagePublisher {
   _$_PackagePublisher({required this.publisherId});
 
   factory _$_PackagePublisher.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackagePublisherFromJson(json);
+      _$$_PackagePublisherFromJson(json);
 
   @override
   final String? publisherId;
@@ -127,15 +129,15 @@ class _$_PackagePublisher implements _PackagePublisher {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackagePublisher &&
-            (identical(other.publisherId, publisherId) ||
-                const DeepCollectionEquality()
-                    .equals(other.publisherId, publisherId)));
+        (other.runtimeType == runtimeType &&
+            other is _PackagePublisher &&
+            const DeepCollectionEquality()
+                .equals(other.publisherId, publisherId));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(publisherId);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(publisherId));
 
   @JsonKey(ignore: true)
   @override
@@ -144,7 +146,7 @@ class _$_PackagePublisher implements _PackagePublisher {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackagePublisherToJson(this);
+    return _$$_PackagePublisherToJson(this);
   }
 }
 
@@ -156,7 +158,7 @@ abstract class _PackagePublisher implements PackagePublisher {
       _$_PackagePublisher.fromJson;
 
   @override
-  String? get publisherId => throw _privateConstructorUsedError;
+  String? get publisherId;
   @override
   @JsonKey(ignore: true)
   _$PackagePublisherCopyWith<_PackagePublisher> get copyWith =>

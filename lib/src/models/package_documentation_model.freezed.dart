@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'package_documentation_model.dart';
 
@@ -31,7 +33,7 @@ class _$PackageDocumentationTearOff {
     );
   }
 
-  PackageDocumentation fromJson(Map<String, Object> json) {
+  PackageDocumentation fromJson(Map<String, Object?> json) {
     return PackageDocumentation.fromJson(json);
   }
 }
@@ -151,13 +153,13 @@ class _$_PackageDocumentation implements _PackageDocumentation {
       this.versions = const []});
 
   factory _$_PackageDocumentation.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageDocumentationFromJson(json);
+      _$$_PackageDocumentationFromJson(json);
 
   @override
   final String name;
   @override
   final String latestStableVersion;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
   @override
   final List<PackageDocumentationVersion> versions;
 
@@ -169,23 +171,20 @@ class _$_PackageDocumentation implements _PackageDocumentation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageDocumentation &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.latestStableVersion, latestStableVersion) ||
-                const DeepCollectionEquality()
-                    .equals(other.latestStableVersion, latestStableVersion)) &&
-            (identical(other.versions, versions) ||
-                const DeepCollectionEquality()
-                    .equals(other.versions, versions)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageDocumentation &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.latestStableVersion, latestStableVersion) &&
+            const DeepCollectionEquality().equals(other.versions, versions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(latestStableVersion) ^
-      const DeepCollectionEquality().hash(versions);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(latestStableVersion),
+      const DeepCollectionEquality().hash(versions));
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +194,7 @@ class _$_PackageDocumentation implements _PackageDocumentation {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageDocumentationToJson(this);
+    return _$$_PackageDocumentationToJson(this);
   }
 }
 
@@ -209,12 +208,11 @@ abstract class _PackageDocumentation implements PackageDocumentation {
       _$_PackageDocumentation.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get latestStableVersion => throw _privateConstructorUsedError;
+  String get latestStableVersion;
   @override
-  List<PackageDocumentationVersion> get versions =>
-      throw _privateConstructorUsedError;
+  List<PackageDocumentationVersion> get versions;
   @override
   @JsonKey(ignore: true)
   _$PackageDocumentationCopyWith<_PackageDocumentation> get copyWith =>
@@ -241,7 +239,7 @@ class _$PackageDocumentationVersionTearOff {
     );
   }
 
-  PackageDocumentationVersion fromJson(Map<String, Object> json) {
+  PackageDocumentationVersion fromJson(Map<String, Object?> json) {
     return PackageDocumentationVersion.fromJson(json);
   }
 }
@@ -358,7 +356,7 @@ class _$_PackageDocumentationVersion implements _PackageDocumentationVersion {
       required this.hasDocumentation});
 
   factory _$_PackageDocumentationVersion.fromJson(Map<String, dynamic> json) =>
-      _$_$_PackageDocumentationVersionFromJson(json);
+      _$$_PackageDocumentationVersionFromJson(json);
 
   @override
   final String version;
@@ -375,23 +373,20 @@ class _$_PackageDocumentationVersion implements _PackageDocumentationVersion {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PackageDocumentationVersion &&
-            (identical(other.version, version) ||
-                const DeepCollectionEquality()
-                    .equals(other.version, version)) &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.hasDocumentation, hasDocumentation) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasDocumentation, hasDocumentation)));
+        (other.runtimeType == runtimeType &&
+            other is _PackageDocumentationVersion &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.hasDocumentation, hasDocumentation));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(hasDocumentation);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(version),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(hasDocumentation));
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +396,7 @@ class _$_PackageDocumentationVersion implements _PackageDocumentationVersion {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_PackageDocumentationVersionToJson(this);
+    return _$$_PackageDocumentationVersionToJson(this);
   }
 }
 
@@ -416,11 +411,11 @@ abstract class _PackageDocumentationVersion
       _$_PackageDocumentationVersion.fromJson;
 
   @override
-  String get version => throw _privateConstructorUsedError;
+  String get version;
   @override
-  String get status => throw _privateConstructorUsedError;
+  String get status;
   @override
-  bool get hasDocumentation => throw _privateConstructorUsedError;
+  bool get hasDocumentation;
   @override
   @JsonKey(ignore: true)
   _$PackageDocumentationVersionCopyWith<_PackageDocumentationVersion>
