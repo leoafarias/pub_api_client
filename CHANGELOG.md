@@ -1,10 +1,10 @@
-## Next
+## 2.2.1
 
 Thank you [@Rexios80](https://github.com/Rexios80) for all the great contributions
 
-- Updated dependencies
+- chore: Updated dependencies
 - fix: Recursive paging shares client
-- More tests
+- added: More tests
 
 ## 2.2.0
 
