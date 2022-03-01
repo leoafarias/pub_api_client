@@ -27,9 +27,6 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
   - [Flutter Favorites](#flutter-favorites)
   - [Google Packages](#google-packages)
   - [Publisher Packages](#publisher-packages)
-  - [Update Notification](#update-notification)
-    - [Check Update Printer](#check-update-printer)
-    - [Custom Update Notification](#custom-update-notification)
 
 ## Usage
 
