@@ -27,9 +27,6 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
   - [Flutter Favorites](#flutter-favorites)
   - [Google Packages](#google-packages)
   - [Publisher Packages](#publisher-packages)
-  - [Update Notification](#update-notification)
-    - [Check Update Printer](#check-update-printer)
-    - [Custom Update Notification](#custom-update-notification)
 
 ## Usage
 
@@ -246,49 +243,4 @@ Returns all packages for a specific publisher
 ```dart
 
 final results = await client.fetchPublisherPackages();
-```
-
-### Update Notification
-
-#### Custom Update Notification
-
-```dart
-final latest =  await client.checkLatest('pkg_name', currentVersion:'current_version');
-// Returns the packages that match the query
-print(latest.needUpdate) // bool if package needs update
-print(latest.packageInfo) // Returns information about the package
-print(latest.latestVersion) // Returns the latest version of the package.
-```
-
-This package has a helper method if you want to notify users of your CLI of a newer version. In order to check for update you have to provide `currentVersion`.
-
-### Check Update Printer
-
-Snippet for implementation of check update functionality
-
-```dart
-/// Checks and prints if [currentVersion] of a [package]
-/// is not the latest version.
-
-Future<bool> checkUpdatePrinter(
-  String package, {
-  required String currentVersion,
-}) async {
-  final latest = await PubClient().checkLatest(
-    package,
-    currentVersion: currentVersion,
-  );
-  final latestVersion = latest.latestVersion;
-
-  if (latest.needUpdate) {
-    print(
-      'Update Available for $package: $currentVersion → $latestVersion',
-    );
-    print('Changelog: ${latest.packageInfo.changelogUrl}');
-  }
-
-  return latest.needUpdate;
-}
-
-
 ```
