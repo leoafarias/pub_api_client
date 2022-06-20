@@ -277,9 +277,6 @@ class _$PackageScoreCardTearOff {
       required DateTime updated,
       required DateTime packageCreated,
       required DateTime packageVersionCreated,
-      required int grantedPubPoints,
-      required int maxPubPoints,
-      required double popularityScore,
       List<String> derivedTags = const [],
       List<String> flags = const [],
       List<String> reportTypes = const []}) {
@@ -290,9 +287,6 @@ class _$PackageScoreCardTearOff {
       updated: updated,
       packageCreated: packageCreated,
       packageVersionCreated: packageVersionCreated,
-      grantedPubPoints: grantedPubPoints,
-      maxPubPoints: maxPubPoints,
-      popularityScore: popularityScore,
       derivedTags: derivedTags,
       flags: flags,
       reportTypes: reportTypes,
@@ -315,9 +309,6 @@ mixin _$PackageScoreCard {
   DateTime get updated => throw _privateConstructorUsedError;
   DateTime get packageCreated => throw _privateConstructorUsedError;
   DateTime get packageVersionCreated => throw _privateConstructorUsedError;
-  int get grantedPubPoints => throw _privateConstructorUsedError;
-  int get maxPubPoints => throw _privateConstructorUsedError;
-  double get popularityScore => throw _privateConstructorUsedError;
   List<String> get derivedTags => throw _privateConstructorUsedError;
   List<String> get flags => throw _privateConstructorUsedError;
   List<String> get reportTypes => throw _privateConstructorUsedError;
@@ -340,9 +331,6 @@ abstract class $PackageScoreCardCopyWith<$Res> {
       DateTime updated,
       DateTime packageCreated,
       DateTime packageVersionCreated,
-      int grantedPubPoints,
-      int maxPubPoints,
-      double popularityScore,
       List<String> derivedTags,
       List<String> flags,
       List<String> reportTypes});
@@ -365,9 +353,6 @@ class _$PackageScoreCardCopyWithImpl<$Res>
     Object? updated = freezed,
     Object? packageCreated = freezed,
     Object? packageVersionCreated = freezed,
-    Object? grantedPubPoints = freezed,
-    Object? maxPubPoints = freezed,
-    Object? popularityScore = freezed,
     Object? derivedTags = freezed,
     Object? flags = freezed,
     Object? reportTypes = freezed,
@@ -397,18 +382,6 @@ class _$PackageScoreCardCopyWithImpl<$Res>
           ? _value.packageVersionCreated
           : packageVersionCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      grantedPubPoints: grantedPubPoints == freezed
-          ? _value.grantedPubPoints
-          : grantedPubPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxPubPoints: maxPubPoints == freezed
-          ? _value.maxPubPoints
-          : maxPubPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-      popularityScore: popularityScore == freezed
-          ? _value.popularityScore
-          : popularityScore // ignore: cast_nullable_to_non_nullable
-              as double,
       derivedTags: derivedTags == freezed
           ? _value.derivedTags
           : derivedTags // ignore: cast_nullable_to_non_nullable
@@ -439,9 +412,6 @@ abstract class _$PackageScoreCardCopyWith<$Res>
       DateTime updated,
       DateTime packageCreated,
       DateTime packageVersionCreated,
-      int grantedPubPoints,
-      int maxPubPoints,
-      double popularityScore,
       List<String> derivedTags,
       List<String> flags,
       List<String> reportTypes});
@@ -466,9 +436,6 @@ class __$PackageScoreCardCopyWithImpl<$Res>
     Object? updated = freezed,
     Object? packageCreated = freezed,
     Object? packageVersionCreated = freezed,
-    Object? grantedPubPoints = freezed,
-    Object? maxPubPoints = freezed,
-    Object? popularityScore = freezed,
     Object? derivedTags = freezed,
     Object? flags = freezed,
     Object? reportTypes = freezed,
@@ -498,18 +465,6 @@ class __$PackageScoreCardCopyWithImpl<$Res>
           ? _value.packageVersionCreated
           : packageVersionCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      grantedPubPoints: grantedPubPoints == freezed
-          ? _value.grantedPubPoints
-          : grantedPubPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxPubPoints: maxPubPoints == freezed
-          ? _value.maxPubPoints
-          : maxPubPoints // ignore: cast_nullable_to_non_nullable
-              as int,
-      popularityScore: popularityScore == freezed
-          ? _value.popularityScore
-          : popularityScore // ignore: cast_nullable_to_non_nullable
-              as double,
       derivedTags: derivedTags == freezed
           ? _value.derivedTags
           : derivedTags // ignore: cast_nullable_to_non_nullable
@@ -536,9 +491,6 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       required this.updated,
       required this.packageCreated,
       required this.packageVersionCreated,
-      required this.grantedPubPoints,
-      required this.maxPubPoints,
-      required this.popularityScore,
       this.derivedTags = const [],
       this.flags = const [],
       this.reportTypes = const []});
@@ -558,12 +510,6 @@ class _$_PackageScoreCard implements _PackageScoreCard {
   final DateTime packageCreated;
   @override
   final DateTime packageVersionCreated;
-  @override
-  final int grantedPubPoints;
-  @override
-  final int maxPubPoints;
-  @override
-  final double popularityScore;
   @JsonKey()
   @override
   final List<String> derivedTags;
@@ -576,7 +522,7 @@ class _$_PackageScoreCard implements _PackageScoreCard {
 
   @override
   String toString() {
-    return 'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, packageCreated: $packageCreated, packageVersionCreated: $packageVersionCreated, grantedPubPoints: $grantedPubPoints, maxPubPoints: $maxPubPoints, popularityScore: $popularityScore, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
+    return 'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, packageCreated: $packageCreated, packageVersionCreated: $packageVersionCreated, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
   }
 
   @override
@@ -596,12 +542,6 @@ class _$_PackageScoreCard implements _PackageScoreCard {
             const DeepCollectionEquality()
                 .equals(other.packageVersionCreated, packageVersionCreated) &&
             const DeepCollectionEquality()
-                .equals(other.grantedPubPoints, grantedPubPoints) &&
-            const DeepCollectionEquality()
-                .equals(other.maxPubPoints, maxPubPoints) &&
-            const DeepCollectionEquality()
-                .equals(other.popularityScore, popularityScore) &&
-            const DeepCollectionEquality()
                 .equals(other.derivedTags, derivedTags) &&
             const DeepCollectionEquality().equals(other.flags, flags) &&
             const DeepCollectionEquality()
@@ -617,9 +557,6 @@ class _$_PackageScoreCard implements _PackageScoreCard {
       const DeepCollectionEquality().hash(updated),
       const DeepCollectionEquality().hash(packageCreated),
       const DeepCollectionEquality().hash(packageVersionCreated),
-      const DeepCollectionEquality().hash(grantedPubPoints),
-      const DeepCollectionEquality().hash(maxPubPoints),
-      const DeepCollectionEquality().hash(popularityScore),
       const DeepCollectionEquality().hash(derivedTags),
       const DeepCollectionEquality().hash(flags),
       const DeepCollectionEquality().hash(reportTypes));
@@ -643,9 +580,6 @@ abstract class _PackageScoreCard implements PackageScoreCard {
       required DateTime updated,
       required DateTime packageCreated,
       required DateTime packageVersionCreated,
-      required int grantedPubPoints,
-      required int maxPubPoints,
-      required double popularityScore,
       List<String> derivedTags,
       List<String> flags,
       List<String> reportTypes}) = _$_PackageScoreCard;
@@ -665,12 +599,6 @@ abstract class _PackageScoreCard implements PackageScoreCard {
   DateTime get packageCreated;
   @override
   DateTime get packageVersionCreated;
-  @override
-  int get grantedPubPoints;
-  @override
-  int get maxPubPoints;
-  @override
-  double get popularityScore;
   @override
   List<String> get derivedTags;
   @override

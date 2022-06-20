@@ -35,7 +35,7 @@ void main() {
       if (metrics != null) {
         expect(metrics.score, score);
         expect(metrics.scorecard.packageName, 'fvm');
-        expect(metrics.scorecard.maxPubPoints, maxPoints);
+        expect(metrics.score.maxPoints, maxPoints);
       }
     });
 

@@ -33,9 +33,6 @@ _$_PackageScoreCard _$$_PackageScoreCardFromJson(Map<String, dynamic> json) =>
       packageCreated: DateTime.parse(json['packageCreated'] as String),
       packageVersionCreated:
           DateTime.parse(json['packageVersionCreated'] as String),
-      grantedPubPoints: json['grantedPubPoints'] as int,
-      maxPubPoints: json['maxPubPoints'] as int,
-      popularityScore: (json['popularityScore'] as num).toDouble(),
       derivedTags: (json['derivedTags'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -57,9 +54,6 @@ Map<String, dynamic> _$$_PackageScoreCardToJson(_$_PackageScoreCard instance) =>
       'updated': instance.updated.toIso8601String(),
       'packageCreated': instance.packageCreated.toIso8601String(),
       'packageVersionCreated': instance.packageVersionCreated.toIso8601String(),
-      'grantedPubPoints': instance.grantedPubPoints,
-      'maxPubPoints': instance.maxPubPoints,
-      'popularityScore': instance.popularityScore,
       'derivedTags': instance.derivedTags,
       'flags': instance.flags,
       'reportTypes': instance.reportTypes,
