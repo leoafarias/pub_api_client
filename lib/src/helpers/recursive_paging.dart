@@ -1,5 +1,5 @@
-import 'package:pub_api_client/src/models/search_results_model.dart';
-import 'package:pub_api_client/src/pub_api_client_base.dart';
+import '../models/search_results_model.dart';
+import '../pub_api_client_base.dart';
 
 Future<List<PackageResult>> recursivePaging(
     PubClient client, SearchResults prevResults) async {
