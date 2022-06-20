@@ -231,7 +231,7 @@ class _$PackageVersionTearOff {
 
   _PackageVersion call(
       {required String version,
-      required PubSpec pubspec,
+      required Pubspec pubspec,
       required String archiveUrl,
       required DateTime published}) {
     return _PackageVersion(
@@ -253,7 +253,7 @@ const $PackageVersion = _$PackageVersionTearOff();
 /// @nodoc
 mixin _$PackageVersion {
   String get version => throw _privateConstructorUsedError;
-  PubSpec get pubspec => throw _privateConstructorUsedError;
+  Pubspec get pubspec => throw _privateConstructorUsedError;
   String get archiveUrl => throw _privateConstructorUsedError;
   DateTime get published => throw _privateConstructorUsedError;
 
@@ -269,7 +269,7 @@ abstract class $PackageVersionCopyWith<$Res> {
           PackageVersion value, $Res Function(PackageVersion) then) =
       _$PackageVersionCopyWithImpl<$Res>;
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
@@ -296,7 +296,7 @@ class _$PackageVersionCopyWithImpl<$Res>
       pubspec: pubspec == freezed
           ? _value.pubspec
           : pubspec // ignore: cast_nullable_to_non_nullable
-              as PubSpec,
+              as Pubspec,
       archiveUrl: archiveUrl == freezed
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
@@ -317,7 +317,7 @@ abstract class _$PackageVersionCopyWith<$Res>
       __$PackageVersionCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
@@ -346,7 +346,7 @@ class __$PackageVersionCopyWithImpl<$Res>
       pubspec: pubspec == freezed
           ? _value.pubspec
           : pubspec // ignore: cast_nullable_to_non_nullable
-              as PubSpec,
+              as Pubspec,
       archiveUrl: archiveUrl == freezed
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
@@ -375,7 +375,7 @@ class _$_PackageVersion implements _PackageVersion {
   @override
   final String version;
   @override
-  final PubSpec pubspec;
+  final Pubspec pubspec;
   @override
   final String archiveUrl;
   @override
@@ -420,7 +420,7 @@ class _$_PackageVersion implements _PackageVersion {
 abstract class _PackageVersion implements PackageVersion {
   factory _PackageVersion(
       {required String version,
-      required PubSpec pubspec,
+      required Pubspec pubspec,
       required String archiveUrl,
       required DateTime published}) = _$_PackageVersion;
 
@@ -430,7 +430,7 @@ abstract class _PackageVersion implements PackageVersion {
   @override
   String get version;
   @override
-  PubSpec get pubspec;
+  Pubspec get pubspec;
   @override
   String get archiveUrl;
   @override
