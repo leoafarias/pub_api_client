@@ -1,7 +1,7 @@
 <img src="https://github.com/leoafarias/pub_api_client/blob/main/assets/logo.png?raw=true" alt="drawing" width="320"/>
 
-[![Pub Version](https://img.shields.io/pub/v/pub_api_client?label=version&style=flat-square)](https://pub.dev/packages/pub_api_client/changelog) [![Likes](https://badges.bar/pub_api_client/likes)](https://pub.dev/packages/pub_api_client/score)
-[![Pub points](https://badges.bar/pub_api_client/pub%20points)](https://pub.dev/packages/pub_api_client/score) [![Coverage Status](https://coveralls.io/repos/github/leoafarias/pub_api_client/badge.svg?branch=main)](https://coveralls.io/github/leoafarias/pub_api_client?branch=main) [![MIT Licence](https://img.shields.io/github/license/leoafarias/pub_api_client?style=flat-square&longCache=true)](https://opensource.org/licenses/mit-license.php)
+[![Pub Version](https://img.shields.io/pub/v/pub_api_client?label=version&style=flat-square)](https://pub.dev/packages/pub_api_client/changelog) ![Pub Likes](https://img.shields.io/pub/likes/pub_api_client?label=Pub%20Likes&style=fflat-squaree)
+![Pub Points](https://img.shields.io/pub/points/pub_api_client?label=Pub%20Points&style=fflat-squaree) [![Coverage Status](https://coveralls.io/repos/github/leoafarias/pub_api_client/badge.svg?branch=main)](https://coveralls.io/github/leoafarias/pub_api_client?branch=main) [![MIT Licence](https://img.shields.io/github/license/leoafarias/pub_api_client?style=flat-square&longCache=true)](https://opensource.org/licenses/mit-license.php)
 
 ## An unofficial API client for [Pub.dev](https://www.pub.dev)
 
