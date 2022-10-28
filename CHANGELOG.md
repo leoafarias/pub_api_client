@@ -1,3 +1,7 @@
+## 2.2.2
+- chore: Updated dependencies
+- Updated min SDK Version to 2.17
+
 ## 2.2.1
 
 Thank you [@Rexios80](https://github.com/Rexios80) for all the great contributions
