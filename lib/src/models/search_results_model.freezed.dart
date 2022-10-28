@@ -12,30 +12,11 @@ part of 'search_results_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SearchResults _$SearchResultsFromJson(Map<String, dynamic> json) {
   return _SearchResults.fromJson(json);
 }
-
-/// @nodoc
-class _$SearchResultsTearOff {
-  const _$SearchResultsTearOff();
-
-  _SearchResults call({required List<PackageResult> packages, String? next}) {
-    return _SearchResults(
-      packages: packages,
-      next: next,
-    );
-  }
-
-  SearchResults fromJson(Map<String, Object?> json) {
-    return SearchResults.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SearchResults = _$SearchResultsTearOff();
 
 /// @nodoc
 mixin _$SearchResults {
@@ -52,69 +33,71 @@ mixin _$SearchResults {
 abstract class $SearchResultsCopyWith<$Res> {
   factory $SearchResultsCopyWith(
           SearchResults value, $Res Function(SearchResults) then) =
-      _$SearchResultsCopyWithImpl<$Res>;
+      _$SearchResultsCopyWithImpl<$Res, SearchResults>;
+  @useResult
   $Res call({List<PackageResult> packages, String? next});
 }
 
 /// @nodoc
-class _$SearchResultsCopyWithImpl<$Res>
+class _$SearchResultsCopyWithImpl<$Res, $Val extends SearchResults>
     implements $SearchResultsCopyWith<$Res> {
   _$SearchResultsCopyWithImpl(this._value, this._then);
 
-  final SearchResults _value;
   // ignore: unused_field
-  final $Res Function(SearchResults) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? packages = freezed,
+    Object? packages = null,
     Object? next = freezed,
   }) {
     return _then(_value.copyWith(
-      packages: packages == freezed
+      packages: null == packages
           ? _value.packages
           : packages // ignore: cast_nullable_to_non_nullable
               as List<PackageResult>,
-      next: next == freezed
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SearchResultsCopyWith<$Res>
+abstract class _$$_SearchResultsCopyWith<$Res>
     implements $SearchResultsCopyWith<$Res> {
-  factory _$SearchResultsCopyWith(
-          _SearchResults value, $Res Function(_SearchResults) then) =
-      __$SearchResultsCopyWithImpl<$Res>;
+  factory _$$_SearchResultsCopyWith(
+          _$_SearchResults value, $Res Function(_$_SearchResults) then) =
+      __$$_SearchResultsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<PackageResult> packages, String? next});
 }
 
 /// @nodoc
-class __$SearchResultsCopyWithImpl<$Res>
-    extends _$SearchResultsCopyWithImpl<$Res>
-    implements _$SearchResultsCopyWith<$Res> {
-  __$SearchResultsCopyWithImpl(
-      _SearchResults _value, $Res Function(_SearchResults) _then)
-      : super(_value, (v) => _then(v as _SearchResults));
+class __$$_SearchResultsCopyWithImpl<$Res>
+    extends _$SearchResultsCopyWithImpl<$Res, _$_SearchResults>
+    implements _$$_SearchResultsCopyWith<$Res> {
+  __$$_SearchResultsCopyWithImpl(
+      _$_SearchResults _value, $Res Function(_$_SearchResults) _then)
+      : super(_value, _then);
 
-  @override
-  _SearchResults get _value => super._value as _SearchResults;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? packages = freezed,
+    Object? packages = null,
     Object? next = freezed,
   }) {
-    return _then(_SearchResults(
-      packages: packages == freezed
-          ? _value.packages
+    return _then(_$_SearchResults(
+      packages: null == packages
+          ? _value._packages
           : packages // ignore: cast_nullable_to_non_nullable
               as List<PackageResult>,
-      next: next == freezed
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -125,13 +108,20 @@ class __$SearchResultsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SearchResults extends _SearchResults {
-  _$_SearchResults({required this.packages, this.next}) : super._();
+  _$_SearchResults({required final List<PackageResult> packages, this.next})
+      : _packages = packages,
+        super._();
 
   factory _$_SearchResults.fromJson(Map<String, dynamic> json) =>
       _$$_SearchResultsFromJson(json);
 
+  final List<PackageResult> _packages;
   @override
-  final List<PackageResult> packages;
+  List<PackageResult> get packages {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_packages);
+  }
+
   @override
   final String? next;
 
@@ -144,31 +134,34 @@ class _$_SearchResults extends _SearchResults {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchResults &&
-            const DeepCollectionEquality().equals(other.packages, packages) &&
-            const DeepCollectionEquality().equals(other.next, next));
+            other is _$_SearchResults &&
+            const DeepCollectionEquality().equals(other._packages, _packages) &&
+            (identical(other.next, next) || other.next == next));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(packages),
-      const DeepCollectionEquality().hash(next));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchResultsCopyWith<_SearchResults> get copyWith =>
-      __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_packages), next);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SearchResultsCopyWith<_$_SearchResults> get copyWith =>
+      __$$_SearchResultsCopyWithImpl<_$_SearchResults>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SearchResultsToJson(this);
+    return _$$_SearchResultsToJson(
+      this,
+    );
   }
 }
 
 abstract class _SearchResults extends SearchResults {
   factory _SearchResults(
-      {required List<PackageResult> packages, String? next}) = _$_SearchResults;
+      {required final List<PackageResult> packages,
+      final String? next}) = _$_SearchResults;
   _SearchResults._() : super._();
 
   factory _SearchResults.fromJson(Map<String, dynamic> json) =
@@ -180,31 +173,13 @@ abstract class _SearchResults extends SearchResults {
   String? get next;
   @override
   @JsonKey(ignore: true)
-  _$SearchResultsCopyWith<_SearchResults> get copyWith =>
+  _$$_SearchResultsCopyWith<_$_SearchResults> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 PackageResult _$PackageResultFromJson(Map<String, dynamic> json) {
   return _PackageResult.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageResultTearOff {
-  const _$PackageResultTearOff();
-
-  _PackageResult call({required String package}) {
-    return _PackageResult(
-      package: package,
-    );
-  }
-
-  PackageResult fromJson(Map<String, Object?> json) {
-    return PackageResult.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageResult = _$PackageResultTearOff();
 
 /// @nodoc
 mixin _$PackageResult {
@@ -220,59 +195,61 @@ mixin _$PackageResult {
 abstract class $PackageResultCopyWith<$Res> {
   factory $PackageResultCopyWith(
           PackageResult value, $Res Function(PackageResult) then) =
-      _$PackageResultCopyWithImpl<$Res>;
+      _$PackageResultCopyWithImpl<$Res, PackageResult>;
+  @useResult
   $Res call({String package});
 }
 
 /// @nodoc
-class _$PackageResultCopyWithImpl<$Res>
+class _$PackageResultCopyWithImpl<$Res, $Val extends PackageResult>
     implements $PackageResultCopyWith<$Res> {
   _$PackageResultCopyWithImpl(this._value, this._then);
 
-  final PackageResult _value;
   // ignore: unused_field
-  final $Res Function(PackageResult) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? package = freezed,
+    Object? package = null,
   }) {
     return _then(_value.copyWith(
-      package: package == freezed
+      package: null == package
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PackageResultCopyWith<$Res>
+abstract class _$$_PackageResultCopyWith<$Res>
     implements $PackageResultCopyWith<$Res> {
-  factory _$PackageResultCopyWith(
-          _PackageResult value, $Res Function(_PackageResult) then) =
-      __$PackageResultCopyWithImpl<$Res>;
+  factory _$$_PackageResultCopyWith(
+          _$_PackageResult value, $Res Function(_$_PackageResult) then) =
+      __$$_PackageResultCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String package});
 }
 
 /// @nodoc
-class __$PackageResultCopyWithImpl<$Res>
-    extends _$PackageResultCopyWithImpl<$Res>
-    implements _$PackageResultCopyWith<$Res> {
-  __$PackageResultCopyWithImpl(
-      _PackageResult _value, $Res Function(_PackageResult) _then)
-      : super(_value, (v) => _then(v as _PackageResult));
+class __$$_PackageResultCopyWithImpl<$Res>
+    extends _$PackageResultCopyWithImpl<$Res, _$_PackageResult>
+    implements _$$_PackageResultCopyWith<$Res> {
+  __$$_PackageResultCopyWithImpl(
+      _$_PackageResult _value, $Res Function(_$_PackageResult) _then)
+      : super(_value, _then);
 
-  @override
-  _PackageResult get _value => super._value as _PackageResult;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? package = freezed,
+    Object? package = null,
   }) {
-    return _then(_PackageResult(
-      package: package == freezed
+    return _then(_$_PackageResult(
+      package: null == package
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String,
@@ -300,27 +277,30 @@ class _$_PackageResult implements _PackageResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageResult &&
-            const DeepCollectionEquality().equals(other.package, package));
+            other is _$_PackageResult &&
+            (identical(other.package, package) || other.package == package));
   }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(package));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageResultCopyWith<_PackageResult> get copyWith =>
-      __$PackageResultCopyWithImpl<_PackageResult>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, package);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PackageResultCopyWith<_$_PackageResult> get copyWith =>
+      __$$_PackageResultCopyWithImpl<_$_PackageResult>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageResultToJson(this);
+    return _$$_PackageResultToJson(
+      this,
+    );
   }
 }
 
 abstract class _PackageResult implements PackageResult {
-  factory _PackageResult({required String package}) = _$_PackageResult;
+  factory _PackageResult({required final String package}) = _$_PackageResult;
 
   factory _PackageResult.fromJson(Map<String, dynamic> json) =
       _$_PackageResult.fromJson;
@@ -329,6 +309,6 @@ abstract class _PackageResult implements PackageResult {
   String get package;
   @override
   @JsonKey(ignore: true)
-  _$PackageResultCopyWith<_PackageResult> get copyWith =>
+  _$$_PackageResultCopyWith<_$_PackageResult> get copyWith =>
       throw _privateConstructorUsedError;
 }

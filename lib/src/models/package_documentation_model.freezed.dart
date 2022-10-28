@@ -12,34 +12,11 @@ part of 'package_documentation_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackageDocumentation _$PackageDocumentationFromJson(Map<String, dynamic> json) {
   return _PackageDocumentation.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageDocumentationTearOff {
-  const _$PackageDocumentationTearOff();
-
-  _PackageDocumentation call(
-      {required String name,
-      required String latestStableVersion,
-      List<PackageDocumentationVersion> versions = const []}) {
-    return _PackageDocumentation(
-      name: name,
-      latestStableVersion: latestStableVersion,
-      versions: versions,
-    );
-  }
-
-  PackageDocumentation fromJson(Map<String, Object?> json) {
-    return PackageDocumentation.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageDocumentation = _$PackageDocumentationTearOff();
 
 /// @nodoc
 mixin _$PackageDocumentation {
@@ -58,7 +35,8 @@ mixin _$PackageDocumentation {
 abstract class $PackageDocumentationCopyWith<$Res> {
   factory $PackageDocumentationCopyWith(PackageDocumentation value,
           $Res Function(PackageDocumentation) then) =
-      _$PackageDocumentationCopyWithImpl<$Res>;
+      _$PackageDocumentationCopyWithImpl<$Res, PackageDocumentation>;
+  @useResult
   $Res call(
       {String name,
       String latestStableVersion,
@@ -66,44 +44,48 @@ abstract class $PackageDocumentationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PackageDocumentationCopyWithImpl<$Res>
+class _$PackageDocumentationCopyWithImpl<$Res,
+        $Val extends PackageDocumentation>
     implements $PackageDocumentationCopyWith<$Res> {
   _$PackageDocumentationCopyWithImpl(this._value, this._then);
 
-  final PackageDocumentation _value;
   // ignore: unused_field
-  final $Res Function(PackageDocumentation) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? latestStableVersion = freezed,
-    Object? versions = freezed,
+    Object? name = null,
+    Object? latestStableVersion = null,
+    Object? versions = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      latestStableVersion: latestStableVersion == freezed
+      latestStableVersion: null == latestStableVersion
           ? _value.latestStableVersion
           : latestStableVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      versions: versions == freezed
+      versions: null == versions
           ? _value.versions
           : versions // ignore: cast_nullable_to_non_nullable
               as List<PackageDocumentationVersion>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PackageDocumentationCopyWith<$Res>
+abstract class _$$_PackageDocumentationCopyWith<$Res>
     implements $PackageDocumentationCopyWith<$Res> {
-  factory _$PackageDocumentationCopyWith(_PackageDocumentation value,
-          $Res Function(_PackageDocumentation) then) =
-      __$PackageDocumentationCopyWithImpl<$Res>;
+  factory _$$_PackageDocumentationCopyWith(_$_PackageDocumentation value,
+          $Res Function(_$_PackageDocumentation) then) =
+      __$$_PackageDocumentationCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String latestStableVersion,
@@ -111,33 +93,31 @@ abstract class _$PackageDocumentationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PackageDocumentationCopyWithImpl<$Res>
-    extends _$PackageDocumentationCopyWithImpl<$Res>
-    implements _$PackageDocumentationCopyWith<$Res> {
-  __$PackageDocumentationCopyWithImpl(
-      _PackageDocumentation _value, $Res Function(_PackageDocumentation) _then)
-      : super(_value, (v) => _then(v as _PackageDocumentation));
+class __$$_PackageDocumentationCopyWithImpl<$Res>
+    extends _$PackageDocumentationCopyWithImpl<$Res, _$_PackageDocumentation>
+    implements _$$_PackageDocumentationCopyWith<$Res> {
+  __$$_PackageDocumentationCopyWithImpl(_$_PackageDocumentation _value,
+      $Res Function(_$_PackageDocumentation) _then)
+      : super(_value, _then);
 
-  @override
-  _PackageDocumentation get _value => super._value as _PackageDocumentation;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? latestStableVersion = freezed,
-    Object? versions = freezed,
+    Object? name = null,
+    Object? latestStableVersion = null,
+    Object? versions = null,
   }) {
-    return _then(_PackageDocumentation(
-      name: name == freezed
+    return _then(_$_PackageDocumentation(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      latestStableVersion: latestStableVersion == freezed
+      latestStableVersion: null == latestStableVersion
           ? _value.latestStableVersion
           : latestStableVersion // ignore: cast_nullable_to_non_nullable
               as String,
-      versions: versions == freezed
-          ? _value.versions
+      versions: null == versions
+          ? _value._versions
           : versions // ignore: cast_nullable_to_non_nullable
               as List<PackageDocumentationVersion>,
     ));
@@ -150,7 +130,8 @@ class _$_PackageDocumentation implements _PackageDocumentation {
   _$_PackageDocumentation(
       {required this.name,
       required this.latestStableVersion,
-      this.versions = const []});
+      final List<PackageDocumentationVersion> versions = const []})
+      : _versions = versions;
 
   factory _$_PackageDocumentation.fromJson(Map<String, dynamic> json) =>
       _$$_PackageDocumentationFromJson(json);
@@ -159,9 +140,13 @@ class _$_PackageDocumentation implements _PackageDocumentation {
   final String name;
   @override
   final String latestStableVersion;
-  @JsonKey()
+  final List<PackageDocumentationVersion> _versions;
   @override
-  final List<PackageDocumentationVersion> versions;
+  @JsonKey()
+  List<PackageDocumentationVersion> get versions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_versions);
+  }
 
   @override
   String toString() {
@@ -172,37 +157,39 @@ class _$_PackageDocumentation implements _PackageDocumentation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageDocumentation &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.latestStableVersion, latestStableVersion) &&
-            const DeepCollectionEquality().equals(other.versions, versions));
+            other is _$_PackageDocumentation &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.latestStableVersion, latestStableVersion) ||
+                other.latestStableVersion == latestStableVersion) &&
+            const DeepCollectionEquality().equals(other._versions, _versions));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(latestStableVersion),
-      const DeepCollectionEquality().hash(versions));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageDocumentationCopyWith<_PackageDocumentation> get copyWith =>
-      __$PackageDocumentationCopyWithImpl<_PackageDocumentation>(
+  int get hashCode => Object.hash(runtimeType, name, latestStableVersion,
+      const DeepCollectionEquality().hash(_versions));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PackageDocumentationCopyWith<_$_PackageDocumentation> get copyWith =>
+      __$$_PackageDocumentationCopyWithImpl<_$_PackageDocumentation>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageDocumentationToJson(this);
+    return _$$_PackageDocumentationToJson(
+      this,
+    );
   }
 }
 
 abstract class _PackageDocumentation implements PackageDocumentation {
   factory _PackageDocumentation(
-      {required String name,
-      required String latestStableVersion,
-      List<PackageDocumentationVersion> versions}) = _$_PackageDocumentation;
+          {required final String name,
+          required final String latestStableVersion,
+          final List<PackageDocumentationVersion> versions}) =
+      _$_PackageDocumentation;
 
   factory _PackageDocumentation.fromJson(Map<String, dynamic> json) =
       _$_PackageDocumentation.fromJson;
@@ -215,7 +202,7 @@ abstract class _PackageDocumentation implements PackageDocumentation {
   List<PackageDocumentationVersion> get versions;
   @override
   @JsonKey(ignore: true)
-  _$PackageDocumentationCopyWith<_PackageDocumentation> get copyWith =>
+  _$$_PackageDocumentationCopyWith<_$_PackageDocumentation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -223,29 +210,6 @@ PackageDocumentationVersion _$PackageDocumentationVersionFromJson(
     Map<String, dynamic> json) {
   return _PackageDocumentationVersion.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageDocumentationVersionTearOff {
-  const _$PackageDocumentationVersionTearOff();
-
-  _PackageDocumentationVersion call(
-      {required String version,
-      required String status,
-      required bool hasDocumentation}) {
-    return _PackageDocumentationVersion(
-      version: version,
-      status: status,
-      hasDocumentation: hasDocumentation,
-    );
-  }
-
-  PackageDocumentationVersion fromJson(Map<String, Object?> json) {
-    return PackageDocumentationVersion.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageDocumentationVersion = _$PackageDocumentationVersionTearOff();
 
 /// @nodoc
 mixin _$PackageDocumentationVersion {
@@ -264,82 +228,86 @@ abstract class $PackageDocumentationVersionCopyWith<$Res> {
   factory $PackageDocumentationVersionCopyWith(
           PackageDocumentationVersion value,
           $Res Function(PackageDocumentationVersion) then) =
-      _$PackageDocumentationVersionCopyWithImpl<$Res>;
+      _$PackageDocumentationVersionCopyWithImpl<$Res,
+          PackageDocumentationVersion>;
+  @useResult
   $Res call({String version, String status, bool hasDocumentation});
 }
 
 /// @nodoc
-class _$PackageDocumentationVersionCopyWithImpl<$Res>
+class _$PackageDocumentationVersionCopyWithImpl<$Res,
+        $Val extends PackageDocumentationVersion>
     implements $PackageDocumentationVersionCopyWith<$Res> {
   _$PackageDocumentationVersionCopyWithImpl(this._value, this._then);
 
-  final PackageDocumentationVersion _value;
   // ignore: unused_field
-  final $Res Function(PackageDocumentationVersion) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? status = freezed,
-    Object? hasDocumentation = freezed,
+    Object? version = null,
+    Object? status = null,
+    Object? hasDocumentation = null,
   }) {
     return _then(_value.copyWith(
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      hasDocumentation: hasDocumentation == freezed
+      hasDocumentation: null == hasDocumentation
           ? _value.hasDocumentation
           : hasDocumentation // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PackageDocumentationVersionCopyWith<$Res>
+abstract class _$$_PackageDocumentationVersionCopyWith<$Res>
     implements $PackageDocumentationVersionCopyWith<$Res> {
-  factory _$PackageDocumentationVersionCopyWith(
-          _PackageDocumentationVersion value,
-          $Res Function(_PackageDocumentationVersion) then) =
-      __$PackageDocumentationVersionCopyWithImpl<$Res>;
+  factory _$$_PackageDocumentationVersionCopyWith(
+          _$_PackageDocumentationVersion value,
+          $Res Function(_$_PackageDocumentationVersion) then) =
+      __$$_PackageDocumentationVersionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String version, String status, bool hasDocumentation});
 }
 
 /// @nodoc
-class __$PackageDocumentationVersionCopyWithImpl<$Res>
-    extends _$PackageDocumentationVersionCopyWithImpl<$Res>
-    implements _$PackageDocumentationVersionCopyWith<$Res> {
-  __$PackageDocumentationVersionCopyWithImpl(
-      _PackageDocumentationVersion _value,
-      $Res Function(_PackageDocumentationVersion) _then)
-      : super(_value, (v) => _then(v as _PackageDocumentationVersion));
+class __$$_PackageDocumentationVersionCopyWithImpl<$Res>
+    extends _$PackageDocumentationVersionCopyWithImpl<$Res,
+        _$_PackageDocumentationVersion>
+    implements _$$_PackageDocumentationVersionCopyWith<$Res> {
+  __$$_PackageDocumentationVersionCopyWithImpl(
+      _$_PackageDocumentationVersion _value,
+      $Res Function(_$_PackageDocumentationVersion) _then)
+      : super(_value, _then);
 
-  @override
-  _PackageDocumentationVersion get _value =>
-      super._value as _PackageDocumentationVersion;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? status = freezed,
-    Object? hasDocumentation = freezed,
+    Object? version = null,
+    Object? status = null,
+    Object? hasDocumentation = null,
   }) {
-    return _then(_PackageDocumentationVersion(
-      version: version == freezed
+    return _then(_$_PackageDocumentationVersion(
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      hasDocumentation: hasDocumentation == freezed
+      hasDocumentation: null == hasDocumentation
           ? _value.hasDocumentation
           : hasDocumentation // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -374,38 +342,39 @@ class _$_PackageDocumentationVersion implements _PackageDocumentationVersion {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageDocumentationVersion &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality()
-                .equals(other.hasDocumentation, hasDocumentation));
+            other is _$_PackageDocumentationVersion &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.hasDocumentation, hasDocumentation) ||
+                other.hasDocumentation == hasDocumentation));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(version),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(hasDocumentation));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageDocumentationVersionCopyWith<_PackageDocumentationVersion>
-      get copyWith => __$PackageDocumentationVersionCopyWithImpl<
-          _PackageDocumentationVersion>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, version, status, hasDocumentation);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PackageDocumentationVersionCopyWith<_$_PackageDocumentationVersion>
+      get copyWith => __$$_PackageDocumentationVersionCopyWithImpl<
+          _$_PackageDocumentationVersion>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageDocumentationVersionToJson(this);
+    return _$$_PackageDocumentationVersionToJson(
+      this,
+    );
   }
 }
 
 abstract class _PackageDocumentationVersion
     implements PackageDocumentationVersion {
   factory _PackageDocumentationVersion(
-      {required String version,
-      required String status,
-      required bool hasDocumentation}) = _$_PackageDocumentationVersion;
+      {required final String version,
+      required final String status,
+      required final bool hasDocumentation}) = _$_PackageDocumentationVersion;
 
   factory _PackageDocumentationVersion.fromJson(Map<String, dynamic> json) =
       _$_PackageDocumentationVersion.fromJson;
@@ -418,6 +387,6 @@ abstract class _PackageDocumentationVersion
   bool get hasDocumentation;
   @override
   @JsonKey(ignore: true)
-  _$PackageDocumentationVersionCopyWith<_PackageDocumentationVersion>
+  _$$_PackageDocumentationVersionCopyWith<_$_PackageDocumentationVersion>
       get copyWith => throw _privateConstructorUsedError;
 }

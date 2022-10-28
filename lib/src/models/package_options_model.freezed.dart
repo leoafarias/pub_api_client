@@ -12,34 +12,11 @@ part of 'package_options_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PackageOptions _$PackageOptionsFromJson(Map<String, dynamic> json) {
   return _PackageOptions.fromJson(json);
 }
-
-/// @nodoc
-class _$PackageOptionsTearOff {
-  const _$PackageOptionsTearOff();
-
-  _PackageOptions call(
-      {bool isDiscontinued = false,
-      bool isUnlisted = false,
-      String? replacedBy}) {
-    return _PackageOptions(
-      isDiscontinued: isDiscontinued,
-      isUnlisted: isUnlisted,
-      replacedBy: replacedBy,
-    );
-  }
-
-  PackageOptions fromJson(Map<String, Object?> json) {
-    return PackageOptions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageOptions = _$PackageOptionsTearOff();
 
 /// @nodoc
 mixin _$PackageOptions {
@@ -57,79 +34,81 @@ mixin _$PackageOptions {
 abstract class $PackageOptionsCopyWith<$Res> {
   factory $PackageOptionsCopyWith(
           PackageOptions value, $Res Function(PackageOptions) then) =
-      _$PackageOptionsCopyWithImpl<$Res>;
+      _$PackageOptionsCopyWithImpl<$Res, PackageOptions>;
+  @useResult
   $Res call({bool isDiscontinued, bool isUnlisted, String? replacedBy});
 }
 
 /// @nodoc
-class _$PackageOptionsCopyWithImpl<$Res>
+class _$PackageOptionsCopyWithImpl<$Res, $Val extends PackageOptions>
     implements $PackageOptionsCopyWith<$Res> {
   _$PackageOptionsCopyWithImpl(this._value, this._then);
 
-  final PackageOptions _value;
   // ignore: unused_field
-  final $Res Function(PackageOptions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isDiscontinued = freezed,
-    Object? isUnlisted = freezed,
+    Object? isDiscontinued = null,
+    Object? isUnlisted = null,
     Object? replacedBy = freezed,
   }) {
     return _then(_value.copyWith(
-      isDiscontinued: isDiscontinued == freezed
+      isDiscontinued: null == isDiscontinued
           ? _value.isDiscontinued
           : isDiscontinued // ignore: cast_nullable_to_non_nullable
               as bool,
-      isUnlisted: isUnlisted == freezed
+      isUnlisted: null == isUnlisted
           ? _value.isUnlisted
           : isUnlisted // ignore: cast_nullable_to_non_nullable
               as bool,
-      replacedBy: replacedBy == freezed
+      replacedBy: freezed == replacedBy
           ? _value.replacedBy
           : replacedBy // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PackageOptionsCopyWith<$Res>
+abstract class _$$_PackageOptionsCopyWith<$Res>
     implements $PackageOptionsCopyWith<$Res> {
-  factory _$PackageOptionsCopyWith(
-          _PackageOptions value, $Res Function(_PackageOptions) then) =
-      __$PackageOptionsCopyWithImpl<$Res>;
+  factory _$$_PackageOptionsCopyWith(
+          _$_PackageOptions value, $Res Function(_$_PackageOptions) then) =
+      __$$_PackageOptionsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool isDiscontinued, bool isUnlisted, String? replacedBy});
 }
 
 /// @nodoc
-class __$PackageOptionsCopyWithImpl<$Res>
-    extends _$PackageOptionsCopyWithImpl<$Res>
-    implements _$PackageOptionsCopyWith<$Res> {
-  __$PackageOptionsCopyWithImpl(
-      _PackageOptions _value, $Res Function(_PackageOptions) _then)
-      : super(_value, (v) => _then(v as _PackageOptions));
+class __$$_PackageOptionsCopyWithImpl<$Res>
+    extends _$PackageOptionsCopyWithImpl<$Res, _$_PackageOptions>
+    implements _$$_PackageOptionsCopyWith<$Res> {
+  __$$_PackageOptionsCopyWithImpl(
+      _$_PackageOptions _value, $Res Function(_$_PackageOptions) _then)
+      : super(_value, _then);
 
-  @override
-  _PackageOptions get _value => super._value as _PackageOptions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isDiscontinued = freezed,
-    Object? isUnlisted = freezed,
+    Object? isDiscontinued = null,
+    Object? isUnlisted = null,
     Object? replacedBy = freezed,
   }) {
-    return _then(_PackageOptions(
-      isDiscontinued: isDiscontinued == freezed
+    return _then(_$_PackageOptions(
+      isDiscontinued: null == isDiscontinued
           ? _value.isDiscontinued
           : isDiscontinued // ignore: cast_nullable_to_non_nullable
               as bool,
-      isUnlisted: isUnlisted == freezed
+      isUnlisted: null == isUnlisted
           ? _value.isUnlisted
           : isUnlisted // ignore: cast_nullable_to_non_nullable
               as bool,
-      replacedBy: replacedBy == freezed
+      replacedBy: freezed == replacedBy
           ? _value.replacedBy
           : replacedBy // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -146,11 +125,11 @@ class _$_PackageOptions implements _PackageOptions {
   factory _$_PackageOptions.fromJson(Map<String, dynamic> json) =>
       _$$_PackageOptionsFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isDiscontinued;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isUnlisted;
   @override
   final String? replacedBy;
@@ -164,38 +143,39 @@ class _$_PackageOptions implements _PackageOptions {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageOptions &&
-            const DeepCollectionEquality()
-                .equals(other.isDiscontinued, isDiscontinued) &&
-            const DeepCollectionEquality()
-                .equals(other.isUnlisted, isUnlisted) &&
-            const DeepCollectionEquality()
-                .equals(other.replacedBy, replacedBy));
+            other is _$_PackageOptions &&
+            (identical(other.isDiscontinued, isDiscontinued) ||
+                other.isDiscontinued == isDiscontinued) &&
+            (identical(other.isUnlisted, isUnlisted) ||
+                other.isUnlisted == isUnlisted) &&
+            (identical(other.replacedBy, replacedBy) ||
+                other.replacedBy == replacedBy));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isDiscontinued),
-      const DeepCollectionEquality().hash(isUnlisted),
-      const DeepCollectionEquality().hash(replacedBy));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageOptionsCopyWith<_PackageOptions> get copyWith =>
-      __$PackageOptionsCopyWithImpl<_PackageOptions>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, isDiscontinued, isUnlisted, replacedBy);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PackageOptionsCopyWith<_$_PackageOptions> get copyWith =>
+      __$$_PackageOptionsCopyWithImpl<_$_PackageOptions>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageOptionsToJson(this);
+    return _$$_PackageOptionsToJson(
+      this,
+    );
   }
 }
 
 abstract class _PackageOptions implements PackageOptions {
   factory _PackageOptions(
-      {bool isDiscontinued,
-      bool isUnlisted,
-      String? replacedBy}) = _$_PackageOptions;
+      {final bool isDiscontinued,
+      final bool isUnlisted,
+      final String? replacedBy}) = _$_PackageOptions;
 
   factory _PackageOptions.fromJson(Map<String, dynamic> json) =
       _$_PackageOptions.fromJson;
@@ -208,6 +188,6 @@ abstract class _PackageOptions implements PackageOptions {
   String? get replacedBy;
   @override
   @JsonKey(ignore: true)
-  _$PackageOptionsCopyWith<_PackageOptions> get copyWith =>
+  _$$_PackageOptionsCopyWith<_$_PackageOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }

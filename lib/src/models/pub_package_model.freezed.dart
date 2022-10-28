@@ -12,34 +12,11 @@ part of 'pub_package_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PubPackage _$PubPackageFromJson(Map<String, dynamic> json) {
   return _PubPackage.fromJson(json);
 }
-
-/// @nodoc
-class _$PubPackageTearOff {
-  const _$PubPackageTearOff();
-
-  _PubPackage call(
-      {required String name,
-      required PackageVersion latest,
-      List<PackageVersion> versions = const []}) {
-    return _PubPackage(
-      name: name,
-      latest: latest,
-      versions: versions,
-    );
-  }
-
-  PubPackage fromJson(Map<String, Object?> json) {
-    return PubPackage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PubPackage = _$PubPackageTearOff();
 
 /// @nodoc
 mixin _$PubPackage {
@@ -57,7 +34,8 @@ mixin _$PubPackage {
 abstract class $PubPackageCopyWith<$Res> {
   factory $PubPackageCopyWith(
           PubPackage value, $Res Function(PubPackage) then) =
-      _$PubPackageCopyWithImpl<$Res>;
+      _$PubPackageCopyWithImpl<$Res, PubPackage>;
+  @useResult
   $Res call(
       {String name, PackageVersion latest, List<PackageVersion> versions});
 
@@ -65,49 +43,55 @@ abstract class $PubPackageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PubPackageCopyWithImpl<$Res> implements $PubPackageCopyWith<$Res> {
+class _$PubPackageCopyWithImpl<$Res, $Val extends PubPackage>
+    implements $PubPackageCopyWith<$Res> {
   _$PubPackageCopyWithImpl(this._value, this._then);
 
-  final PubPackage _value;
   // ignore: unused_field
-  final $Res Function(PubPackage) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? latest = freezed,
-    Object? versions = freezed,
+    Object? name = null,
+    Object? latest = null,
+    Object? versions = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      latest: latest == freezed
+      latest: null == latest
           ? _value.latest
           : latest // ignore: cast_nullable_to_non_nullable
               as PackageVersion,
-      versions: versions == freezed
+      versions: null == versions
           ? _value.versions
           : versions // ignore: cast_nullable_to_non_nullable
               as List<PackageVersion>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PackageVersionCopyWith<$Res> get latest {
     return $PackageVersionCopyWith<$Res>(_value.latest, (value) {
-      return _then(_value.copyWith(latest: value));
+      return _then(_value.copyWith(latest: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PubPackageCopyWith<$Res> implements $PubPackageCopyWith<$Res> {
-  factory _$PubPackageCopyWith(
-          _PubPackage value, $Res Function(_PubPackage) then) =
-      __$PubPackageCopyWithImpl<$Res>;
+abstract class _$$_PubPackageCopyWith<$Res>
+    implements $PubPackageCopyWith<$Res> {
+  factory _$$_PubPackageCopyWith(
+          _$_PubPackage value, $Res Function(_$_PubPackage) then) =
+      __$$_PubPackageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name, PackageVersion latest, List<PackageVersion> versions});
 
@@ -116,32 +100,31 @@ abstract class _$PubPackageCopyWith<$Res> implements $PubPackageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
-    implements _$PubPackageCopyWith<$Res> {
-  __$PubPackageCopyWithImpl(
-      _PubPackage _value, $Res Function(_PubPackage) _then)
-      : super(_value, (v) => _then(v as _PubPackage));
+class __$$_PubPackageCopyWithImpl<$Res>
+    extends _$PubPackageCopyWithImpl<$Res, _$_PubPackage>
+    implements _$$_PubPackageCopyWith<$Res> {
+  __$$_PubPackageCopyWithImpl(
+      _$_PubPackage _value, $Res Function(_$_PubPackage) _then)
+      : super(_value, _then);
 
-  @override
-  _PubPackage get _value => super._value as _PubPackage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? latest = freezed,
-    Object? versions = freezed,
+    Object? name = null,
+    Object? latest = null,
+    Object? versions = null,
   }) {
-    return _then(_PubPackage(
-      name: name == freezed
+    return _then(_$_PubPackage(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      latest: latest == freezed
+      latest: null == latest
           ? _value.latest
           : latest // ignore: cast_nullable_to_non_nullable
               as PackageVersion,
-      versions: versions == freezed
-          ? _value.versions
+      versions: null == versions
+          ? _value._versions
           : versions // ignore: cast_nullable_to_non_nullable
               as List<PackageVersion>,
     ));
@@ -152,8 +135,11 @@ class __$PubPackageCopyWithImpl<$Res> extends _$PubPackageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PubPackage extends _PubPackage {
   _$_PubPackage(
-      {required this.name, required this.latest, this.versions = const []})
-      : super._();
+      {required this.name,
+      required this.latest,
+      final List<PackageVersion> versions = const []})
+      : _versions = versions,
+        super._();
 
   factory _$_PubPackage.fromJson(Map<String, dynamic> json) =>
       _$$_PubPackageFromJson(json);
@@ -162,9 +148,13 @@ class _$_PubPackage extends _PubPackage {
   final String name;
   @override
   final PackageVersion latest;
-  @JsonKey()
+  final List<PackageVersion> _versions;
   @override
-  final List<PackageVersion> versions;
+  @JsonKey()
+  List<PackageVersion> get versions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_versions);
+  }
 
   @override
   String toString() {
@@ -175,35 +165,36 @@ class _$_PubPackage extends _PubPackage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PubPackage &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.latest, latest) &&
-            const DeepCollectionEquality().equals(other.versions, versions));
+            other is _$_PubPackage &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.latest, latest) || other.latest == latest) &&
+            const DeepCollectionEquality().equals(other._versions, _versions));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(latest),
-      const DeepCollectionEquality().hash(versions));
 
   @JsonKey(ignore: true)
   @override
-  _$PubPackageCopyWith<_PubPackage> get copyWith =>
-      __$PubPackageCopyWithImpl<_PubPackage>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, name, latest,
+      const DeepCollectionEquality().hash(_versions));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PubPackageCopyWith<_$_PubPackage> get copyWith =>
+      __$$_PubPackageCopyWithImpl<_$_PubPackage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PubPackageToJson(this);
+    return _$$_PubPackageToJson(
+      this,
+    );
   }
 }
 
 abstract class _PubPackage extends PubPackage {
   factory _PubPackage(
-      {required String name,
-      required PackageVersion latest,
-      List<PackageVersion> versions}) = _$_PubPackage;
+      {required final String name,
+      required final PackageVersion latest,
+      final List<PackageVersion> versions}) = _$_PubPackage;
   _PubPackage._() : super._();
 
   factory _PubPackage.fromJson(Map<String, dynamic> json) =
@@ -217,7 +208,7 @@ abstract class _PubPackage extends PubPackage {
   List<PackageVersion> get versions;
   @override
   @JsonKey(ignore: true)
-  _$PubPackageCopyWith<_PubPackage> get copyWith =>
+  _$$_PubPackageCopyWith<_$_PubPackage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -226,34 +217,9 @@ PackageVersion _$PackageVersionFromJson(Map<String, dynamic> json) {
 }
 
 /// @nodoc
-class _$PackageVersionTearOff {
-  const _$PackageVersionTearOff();
-
-  _PackageVersion call(
-      {required String version,
-      required PubSpec pubspec,
-      required String archiveUrl,
-      required DateTime published}) {
-    return _PackageVersion(
-      version: version,
-      pubspec: pubspec,
-      archiveUrl: archiveUrl,
-      published: published,
-    );
-  }
-
-  PackageVersion fromJson(Map<String, Object?> json) {
-    return PackageVersion.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PackageVersion = _$PackageVersionTearOff();
-
-/// @nodoc
 mixin _$PackageVersion {
   String get version => throw _privateConstructorUsedError;
-  PubSpec get pubspec => throw _privateConstructorUsedError;
+  Pubspec get pubspec => throw _privateConstructorUsedError;
   String get archiveUrl => throw _privateConstructorUsedError;
   DateTime get published => throw _privateConstructorUsedError;
 
@@ -267,91 +233,93 @@ mixin _$PackageVersion {
 abstract class $PackageVersionCopyWith<$Res> {
   factory $PackageVersionCopyWith(
           PackageVersion value, $Res Function(PackageVersion) then) =
-      _$PackageVersionCopyWithImpl<$Res>;
+      _$PackageVersionCopyWithImpl<$Res, PackageVersion>;
+  @useResult
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
-class _$PackageVersionCopyWithImpl<$Res>
+class _$PackageVersionCopyWithImpl<$Res, $Val extends PackageVersion>
     implements $PackageVersionCopyWith<$Res> {
   _$PackageVersionCopyWithImpl(this._value, this._then);
 
-  final PackageVersion _value;
   // ignore: unused_field
-  final $Res Function(PackageVersion) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? pubspec = freezed,
-    Object? archiveUrl = freezed,
-    Object? published = freezed,
+    Object? version = null,
+    Object? pubspec = null,
+    Object? archiveUrl = null,
+    Object? published = null,
   }) {
     return _then(_value.copyWith(
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      pubspec: pubspec == freezed
+      pubspec: null == pubspec
           ? _value.pubspec
           : pubspec // ignore: cast_nullable_to_non_nullable
-              as PubSpec,
-      archiveUrl: archiveUrl == freezed
+              as Pubspec,
+      archiveUrl: null == archiveUrl
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      published: published == freezed
+      published: null == published
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$PackageVersionCopyWith<$Res>
+abstract class _$$_PackageVersionCopyWith<$Res>
     implements $PackageVersionCopyWith<$Res> {
-  factory _$PackageVersionCopyWith(
-          _PackageVersion value, $Res Function(_PackageVersion) then) =
-      __$PackageVersionCopyWithImpl<$Res>;
+  factory _$$_PackageVersionCopyWith(
+          _$_PackageVersion value, $Res Function(_$_PackageVersion) then) =
+      __$$_PackageVersionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {String version, PubSpec pubspec, String archiveUrl, DateTime published});
+      {String version, Pubspec pubspec, String archiveUrl, DateTime published});
 }
 
 /// @nodoc
-class __$PackageVersionCopyWithImpl<$Res>
-    extends _$PackageVersionCopyWithImpl<$Res>
-    implements _$PackageVersionCopyWith<$Res> {
-  __$PackageVersionCopyWithImpl(
-      _PackageVersion _value, $Res Function(_PackageVersion) _then)
-      : super(_value, (v) => _then(v as _PackageVersion));
+class __$$_PackageVersionCopyWithImpl<$Res>
+    extends _$PackageVersionCopyWithImpl<$Res, _$_PackageVersion>
+    implements _$$_PackageVersionCopyWith<$Res> {
+  __$$_PackageVersionCopyWithImpl(
+      _$_PackageVersion _value, $Res Function(_$_PackageVersion) _then)
+      : super(_value, _then);
 
-  @override
-  _PackageVersion get _value => super._value as _PackageVersion;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? version = freezed,
-    Object? pubspec = freezed,
-    Object? archiveUrl = freezed,
-    Object? published = freezed,
+    Object? version = null,
+    Object? pubspec = null,
+    Object? archiveUrl = null,
+    Object? published = null,
   }) {
-    return _then(_PackageVersion(
-      version: version == freezed
+    return _then(_$_PackageVersion(
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      pubspec: pubspec == freezed
+      pubspec: null == pubspec
           ? _value.pubspec
           : pubspec // ignore: cast_nullable_to_non_nullable
-              as PubSpec,
-      archiveUrl: archiveUrl == freezed
+              as Pubspec,
+      archiveUrl: null == archiveUrl
           ? _value.archiveUrl
           : archiveUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      published: published == freezed
+      published: null == published
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -375,7 +343,7 @@ class _$_PackageVersion implements _PackageVersion {
   @override
   final String version;
   @override
-  final PubSpec pubspec;
+  final Pubspec pubspec;
   @override
   final String archiveUrl;
   @override
@@ -390,39 +358,40 @@ class _$_PackageVersion implements _PackageVersion {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PackageVersion &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.pubspec, pubspec) &&
-            const DeepCollectionEquality()
-                .equals(other.archiveUrl, archiveUrl) &&
-            const DeepCollectionEquality().equals(other.published, published));
+            other is _$_PackageVersion &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.pubspec, pubspec) || other.pubspec == pubspec) &&
+            (identical(other.archiveUrl, archiveUrl) ||
+                other.archiveUrl == archiveUrl) &&
+            (identical(other.published, published) ||
+                other.published == published));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(version),
-      const DeepCollectionEquality().hash(pubspec),
-      const DeepCollectionEquality().hash(archiveUrl),
-      const DeepCollectionEquality().hash(published));
 
   @JsonKey(ignore: true)
   @override
-  _$PackageVersionCopyWith<_PackageVersion> get copyWith =>
-      __$PackageVersionCopyWithImpl<_PackageVersion>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, version, pubspec, archiveUrl, published);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PackageVersionCopyWith<_$_PackageVersion> get copyWith =>
+      __$$_PackageVersionCopyWithImpl<_$_PackageVersion>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackageVersionToJson(this);
+    return _$$_PackageVersionToJson(
+      this,
+    );
   }
 }
 
 abstract class _PackageVersion implements PackageVersion {
   factory _PackageVersion(
-      {required String version,
-      required PubSpec pubspec,
-      required String archiveUrl,
-      required DateTime published}) = _$_PackageVersion;
+      {required final String version,
+      required final Pubspec pubspec,
+      required final String archiveUrl,
+      required final DateTime published}) = _$_PackageVersion;
 
   factory _PackageVersion.fromJson(Map<String, dynamic> json) =
       _$_PackageVersion.fromJson;
@@ -430,13 +399,13 @@ abstract class _PackageVersion implements PackageVersion {
   @override
   String get version;
   @override
-  PubSpec get pubspec;
+  Pubspec get pubspec;
   @override
   String get archiveUrl;
   @override
   DateTime get published;
   @override
   @JsonKey(ignore: true)
-  _$PackageVersionCopyWith<_PackageVersion> get copyWith =>
+  _$$_PackageVersionCopyWith<_$_PackageVersion> get copyWith =>
       throw _privateConstructorUsedError;
 }
