@@ -48,7 +48,8 @@ String get _configHome {
     final appdata = Platform.environment['APPDATA'];
     if (appdata == null) {
       throw EnvironmentNotFoundException(
-          'Environment variable %APPDATA% is not defined!');
+        'Environment variable %APPDATA% is not defined!',
+      );
     }
     return appdata;
   }
