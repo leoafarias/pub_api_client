@@ -1,17 +1,20 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'package_like_model.freezed.dart';
-part 'package_like_model.g.dart';
-
 /// Package like
-@freezed
-class PackageLike with _$PackageLike {
-  const factory PackageLike({
-    required String package,
-    required bool liked,
-    DateTime? created,
-  }) = _PackageLike;
 
-  factory PackageLike.fromJson(Map<String, dynamic> json) =>
-      _$PackageLikeFromJson(json);
+class PackageLike {
+  final String package;
+  final bool liked;
+  const PackageLike({
+    required this.package,
+    required this.liked,
+  });
+
+  Map<String, dynamic> toMap() => {
+        'package': package,
+        'liked': liked,
+      };
+
+  factory PackageLike.fromMap(Map<String, dynamic> map) => PackageLike(
+        package: map['package'] as String? ?? '',
+        liked: map['liked'] as bool? ?? false,
+      );
 }

@@ -12,4 +12,18 @@ class LatestVersion {
     required this.latestVersion,
     required this.packageInfo,
   });
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is LatestVersion &&
+        other.needUpdate == needUpdate &&
+        other.latestVersion == latestVersion &&
+        other.packageInfo == packageInfo;
+  }
+
+  @override
+  int get hashCode =>
+      needUpdate.hashCode ^ latestVersion.hashCode ^ packageInfo.hashCode;
 }
