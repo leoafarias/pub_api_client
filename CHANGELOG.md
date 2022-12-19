@@ -1,3 +1,7 @@
+## 2.3.0
+- Updated dependencies
+- Removed freezed
+
 ## 2.2.2
 - chore: Updated dependencies
 - Updated min SDK Version to 2.17
