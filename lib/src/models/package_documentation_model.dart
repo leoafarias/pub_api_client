@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
+
 /// Package Documentation Model
 
 class PackageDocumentation {
@@ -37,6 +39,21 @@ class PackageDocumentation {
 
   factory PackageDocumentation.fromJson(String source) =>
       PackageDocumentation.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
+
+    return other is PackageDocumentation &&
+        other.name == name &&
+        other.latestStableVersion == latestStableVersion &&
+        listEquals(other.versions, versions);
+  }
+
+  @override
+  int get hashCode =>
+      name.hashCode ^ latestStableVersion.hashCode ^ versions.hashCode;
 }
 
 /// Package Documentation Version Model
@@ -69,4 +86,18 @@ class PackageDocumentationVersion {
   factory PackageDocumentationVersion.fromJson(String source) =>
       PackageDocumentationVersion.fromMap(
           json.decode(source) as Map<String, dynamic>);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is PackageDocumentationVersion &&
+        other.version == version &&
+        other.status == status &&
+        other.hasDocumentation == hasDocumentation;
+  }
+
+  @override
+  int get hashCode =>
+      version.hashCode ^ status.hashCode ^ hasDocumentation.hashCode;
 }

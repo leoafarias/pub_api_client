@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 /// Package Score Model
 class PackageScore {
   final int? grantedPoints;
@@ -28,6 +30,26 @@ class PackageScore {
         popularityScore: map['popularityScore'] as double? ?? 0.0,
         lastUpdated: DateTime.parse(map['lastUpdated'] as String? ?? ''),
       );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is PackageScore &&
+        other.grantedPoints == grantedPoints &&
+        other.maxPoints == maxPoints &&
+        other.likeCount == likeCount &&
+        other.popularityScore == popularityScore &&
+        other.lastUpdated == lastUpdated;
+  }
+
+  @override
+  int get hashCode =>
+      grantedPoints.hashCode ^
+      maxPoints.hashCode ^
+      likeCount.hashCode ^
+      popularityScore.hashCode ^
+      lastUpdated.hashCode;
 }
 
 /// Package Score Card Model
@@ -80,4 +102,33 @@ class PackageScoreCard {
         reportTypes:
             List<String>.from(map['reportTypes'] as List<dynamic>? ?? []),
       );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
+
+    return other is PackageScoreCard &&
+        other.packageName == packageName &&
+        other.packageVersion == packageVersion &&
+        other.runtimeVersion == runtimeVersion &&
+        other.updated == updated &&
+        other.packageCreated == packageCreated &&
+        other.packageVersionCreated == packageVersionCreated &&
+        listEquals(other.derivedTags, derivedTags) &&
+        listEquals(other.flags, flags) &&
+        listEquals(other.reportTypes, reportTypes);
+  }
+
+  @override
+  int get hashCode =>
+      packageName.hashCode ^
+      packageVersion.hashCode ^
+      runtimeVersion.hashCode ^
+      updated.hashCode ^
+      packageCreated.hashCode ^
+      packageVersionCreated.hashCode ^
+      derivedTags.hashCode ^
+      flags.hashCode ^
+      reportTypes.hashCode;
 }
