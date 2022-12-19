@@ -69,20 +69,20 @@ class PubClient {
   /// Returns the `PubPackage` information for [packageName]
   Future<PubPackage> packageInfo(String packageName) async {
     final data = await _fetch(endpoint.packageInfo(packageName));
-    return PubPackage.fromJson(data);
+    return PubPackage.fromMap(data);
   }
 
   /// Returns the `PackageScore` for package [packageName]
   Future<PackageScore> packageScore(String packageName) async {
     final data = await _fetch(endpoint.packageScore(packageName));
-    return PackageScore.fromJson(data);
+    return PackageScore.fromMap(data);
   }
 
   /// Returns the `PackageMetrics` for package [packageName]
   Future<PackageMetrics?> packageMetrics(String packageName) async {
     try {
       final data = await _fetch(endpoint.packageMetrics(packageName));
-      return PackageMetrics.fromJson(data);
+      return PackageMetrics.fromMap(data);
     } on NotFoundException {
       // If the package has not been scanned, the server will return 404
       return null;
@@ -93,13 +93,13 @@ class PubClient {
   Future<PackageOptions> packageOptions(String packageName) async {
     final data = await _fetch(endpoint.packageOptions(packageName));
 
-    return PackageOptions.fromJson(data);
+    return PackageOptions.fromMap(data);
   }
 
   /// Returns the `PackagePublisher` for package [packageName]
   Future<PackagePublisher> packagePublisher(String packageName) async {
     final data = await _fetch(endpoint.packagePublisher(packageName));
-    return PackagePublisher.fromJson(data);
+    return PackagePublisher.fromMap(data);
   }
 
   /// Returns a list of versions that are published for package [packageName]
@@ -118,7 +118,7 @@ class PubClient {
       String packageName, String version) async {
     final data =
         await _fetch(endpoint.packageVersionInfo(packageName, version));
-    return PackageVersion.fromJson(data);
+    return PackageVersion.fromMap(data);
   }
 
   /// Returns a `List<String>` of all packages listed on pub.dev
@@ -147,32 +147,32 @@ class PubClient {
       page,
       sort,
     ));
-    return SearchResults.fromJson(data);
+    return SearchResults.fromMap(data);
   }
 
   /// Receives [nextPageUrl]
   /// returns `SearchResults`
   Future<SearchResults> nextPage(String nextPageUrl) async {
     final data = await _fetch(endpoint.nextPage(nextPageUrl));
-    return SearchResults.fromJson(data);
+    return SearchResults.fromMap(data);
   }
 
   /// Returns `PackageDocumentation` for a [packageName]
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
-    return PackageDocumentation.fromJson(data);
+    return PackageDocumentation.fromMap(data);
   }
 
   /// Displays like status of a package
   Future<PackageLike> likePackageStatus(String name) async {
     final data = await _fetch(endpoint.likePackage(name));
-    return PackageLike.fromJson(data);
+    return PackageLike.fromMap(data);
   }
 
   /// Likes a package
   Future<PackageLike> likePackage(String name) async {
     final data = await _put(endpoint.likePackage(name));
-    return PackageLike.fromJson(data);
+    return PackageLike.fromMap(data);
   }
 
   /// Unlikes a package
@@ -185,7 +185,7 @@ class PubClient {
 
     final likes = response['likedPackages'] as List<dynamic>;
     return likes
-        .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
+        .map((like) => PackageLike.fromMap(like as Map<String, dynamic>))
         .toList();
   }
 

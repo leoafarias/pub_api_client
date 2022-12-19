@@ -1,26 +1,40 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'search_results_model.freezed.dart';
-part 'search_results_model.g.dart';
-
 /// Search Results Model
-@freezed
-abstract class SearchResults implements _$SearchResults {
-  const SearchResults._();
-  factory SearchResults({
-    required final List<PackageResult> packages,
-    final String? next,
-  }) = _SearchResults;
+class SearchResults {
+  final List<PackageResult> packages;
+  final String? next;
+  const SearchResults({
+    required this.packages,
+    this.next,
+  });
 
-  factory SearchResults.fromJson(Map<String, dynamic> json) =>
-      _$SearchResultsFromJson(json);
+  Map<String, dynamic> toMap() => {
+        'packages': packages.map((x) => x.toMap()).toList(),
+        'next': next,
+      };
+
+  factory SearchResults.fromMap(Map<String, dynamic> map) {
+    final packagesMap = map['packages'] as List<dynamic>? ?? [];
+    return SearchResults(
+      packages: List<PackageResult>.from(
+        packagesMap.map(
+          (x) => PackageResult.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+      next: map['next'] as String?,
+    );
+  }
 }
 
 /// Package Result Model returns within a `SearchResult`
-@freezed
-class PackageResult with _$PackageResult {
-  factory PackageResult({required String package}) = _PackageResult;
+class PackageResult {
+  final String package;
+  const PackageResult({required this.package});
 
-  factory PackageResult.fromJson(Map<String, dynamic> json) =>
-      _$PackageResultFromJson(json);
+  Map<String, dynamic> toMap() => {
+        'package': package,
+      };
+
+  factory PackageResult.fromMap(Map<String, dynamic> map) => PackageResult(
+        package: map['package'] as String? ?? '',
+      );
 }
