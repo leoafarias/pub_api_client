@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: google/dart:latest
+      image: dart:latest
 
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: pub get
+        run: dart pub get
         # Grind task to build static files
       - name: Activate Grinder
-        run: pub global activate grinder
+        run: dart pub global activate grinder
       - name: Build static files
-        run: pub run grinder
+        run: dart pub run grinder

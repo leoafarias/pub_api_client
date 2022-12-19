@@ -3,7 +3,7 @@ import '../pub_api_client_base.dart';
 
 Future<List<PackageResult>> recursivePaging(
     PubClient client, SearchResults prevResults) async {
-  final packages = prevResults.packages;
+  final packages = [...prevResults.packages];
   final nextPage = prevResults.next;
   if (nextPage != null) {
     final results = await client.nextPage(nextPage);

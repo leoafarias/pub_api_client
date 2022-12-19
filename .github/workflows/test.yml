@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: google/dart:latest
+      image: dart:latest
     env:
       PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: pub get
+        run: dart pub get
         # Builder
       - name: Build Runner
-        run: pub run build_runner build --delete-conflicting-outputs
+        run: dart pub run build_runner build --delete-conflicting-outputs
         # Run test
       - name: Run tests
-        run: pub run test
+        run: dart pub run test
       #   # Get coverage
       # - name: Test Coverage
       #   run: pub run test_cov
