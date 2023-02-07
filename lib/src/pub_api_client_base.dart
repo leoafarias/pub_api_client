@@ -131,22 +131,19 @@ class PubClient {
   }
 
   /// Searches pub for [query] and can [page] results.
-  /// Can filter to [publisher] and/or a [dependency]
+  /// Can specify [tags] to filter results.
   /// returns `SearchResults`
   Future<SearchResults> search(
     String query, {
     int page = 1,
     SearchOrder sort = SearchOrder.top,
-    String? publisher,
-    String? dependency,
+    List<String> tags = const [],
   }) async {
-    final publisherQuery = publisher != null ? 'publisher:$publisher ' : '';
-    final dependencyQuery = dependency != null ? 'dependency:$dependency ' : '';
-    final data = await _fetch(endpoint.search(
-      '$publisherQuery$dependencyQuery$query',
-      page,
-      sort,
-    ));
+    final buffer = StringBuffer(query);
+    for (final tag in tags) {
+      buffer.write(' $tag');
+    }
+    final data = await _fetch(endpoint.search(buffer.toString(), page, sort));
     return SearchResults.fromMap(data);
   }
 
@@ -193,7 +190,9 @@ class PubClient {
   /// Mostly used as an internal tool to generate
   /// google_packages_list.dart
   /// You should probably use that instead
-  Future<List<String>> fetchGooglePackages() async {
+  Future<List<String>> fetchGooglePackages({
+    List<String> tags = const [],
+  }) async {
     /// List of Google publishers on pub.dev
     const _publishers = [
       'flutter.dev',
@@ -206,7 +205,7 @@ class PubClient {
 
     final futures = <Future<List<PackageResult>>>[];
     for (var publisher in _publishers) {
-      futures.add(fetchPublisherPackages(publisher));
+      futures.add(fetchPublisherPackages(publisher, tags: tags));
     }
     final results = await Future.wait(futures);
     final flatResults = results.expand((r) => r).toList();
@@ -221,8 +220,13 @@ class PubClient {
   }
 
   Future<List<PackageResult>> fetchPublisherPackages(
-      String publisherName) async {
-    final results = await search('', publisher: publisherName);
+    String publisherName, {
+    List<String> tags = const [],
+  }) async {
+    final results = await search('', tags: [
+      PackageTag.publisher(publisherName),
+      ...tags,
+    ]);
     return recursivePaging(this, results);
   }
 

@@ -109,9 +109,10 @@ void main() {
     });
 
     test('Search for packages of a publisher', () async {
-      final payload = await client.search('', publisher: 'fvm.app');
-      final nextPagePayload =
-          await client.search('', dependency: 'pub_api_client');
+      final payload =
+          await client.search('', tags: [PackageTag.publisher('fvm.app')]);
+      final nextPagePayload = await client
+          .search('', tags: [PackageTag.dependency('pub_api_client')]);
       expect(payload.packages.length, greaterThan(0));
       expect(nextPagePayload.packages.length, greaterThan(0));
     });
