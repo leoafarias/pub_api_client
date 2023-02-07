@@ -131,7 +131,7 @@ class PubClient {
   }
 
   /// Searches pub for [query] and can [page] results.
-  /// Can specify [tags] to filter results.
+  /// Can specify [tags] to filter results. See [PackageTag] for details.
   /// returns `SearchResults`
   Future<SearchResults> search(
     String query, {
