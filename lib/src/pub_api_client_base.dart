@@ -214,7 +214,8 @@ class PubClient {
 
   /// Retrieves all the flutter favorites
   Future<List<String>> fetchFlutterFavorites() async {
-    final searchResults = await search('is:flutter-favorite');
+    final searchResults =
+        await search('', tags: [PackageTag.isFlutterFavorite]);
     final results = await recursivePaging(this, searchResults);
     return results.map((r) => r.package).toList();
   }
