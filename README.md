@@ -152,10 +152,17 @@ final like =  await client.unlikePackage('pkg_name');
 
 ### Search Packages
 
-Search for packages on pub.dev. Will return the packages that match the query. You can filter the search to a specific `publisher`, or packages with a certain `dependency`.
+Search for packages on pub.dev. Will return the packages that match the query. You can filter the search with tags.
 
 ```dart
-final results =  await client.search('query', publisher:'publisher_id', dependency:'dependency_name');
+final results =  await client.search(
+  'query',
+  tags: [
+    PackageTag.publisher('publisher_id'),
+    PackageTag.dependency('dependency_name'),
+    'another:tag',
+  ],
+);
 // Returns the packages that match the query
 print(results.packages)
 ```

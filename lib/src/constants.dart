@@ -88,3 +88,73 @@ class EnvironmentNotFoundException implements Exception {
   @override
   String toString() => message;
 }
+
+// ignore: avoid_classes_with_only_static_members
+/// Tags used for filtering package searches
+class PackageTag {
+  /// Filter by publisher
+  static String publisher(String publisher) => 'publisher:$publisher';
+
+  /// Filter by dependency
+  static String dependency(String dependency) => 'dependency:$dependency';
+
+  /// Filter packages that are something
+  static String isTag(String isTag) => 'is:$isTag';
+
+  /// Filter packages by supported platform
+  static String platform(String platform) => 'platform:$platform';
+
+  /// Filter packages by sdk
+  static String sdk(String sdk) => 'sdk:$sdk';
+
+  /// Filter packages by license
+  static String license(String license) => 'license:$license';
+
+  /// Show packages that are something
+  static String show(String show) => 'show:$show';
+
+  /// Filter packages that have something
+  static String has(String has) => 'has:$has';
+
+  /// Supports android platform
+  static String platformAndroid = platform('android');
+
+  /// Supports ios platform
+  static String platformIos = platform('ios');
+
+  /// Supports linux platform
+  static String platformLinux = platform('linux');
+
+  /// Supports macos platform
+  static String platformMacos = platform('macos');
+
+  /// Supports web platform
+  static String platformWeb = platform('web');
+
+  /// Supports windows platform
+  static String platformWindows = platform('windows');
+
+  /// Uses dart sdk
+  static String sdkDart = sdk('dart');
+
+  /// Uses flutter sdk
+  static String sdkFlutter = sdk('flutter');
+
+  /// Uses an OSI approved license
+  static String licenseOsiApproved = license('osi-approved');
+
+  /// Is a flutter favorite
+  static String isFlutterFavorite = isTag('flutter-favorite');
+
+  /// Show unlisted packages
+  static String showUnlisted = show('unlisted');
+
+  /// Is null-safe
+  static String isNullSafe = isTag('null-safe');
+
+  /// Has screenshots
+  static String hasScreenshot = has('screenshot');
+
+  /// Is Dart 3 ready
+  static String isDart3Ready = isTag('dart3-ready');
+}
