@@ -1,3 +1,7 @@
+## 2.4.0
+- Add the ability to search with any tags [32](https://github.com/fluttertools/pub_api_client/pull/32) thanks @Rexios80
+
+
 ## 2.3.0
 - Updated dependencies
 - Removed freezed
