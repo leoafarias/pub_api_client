@@ -14,6 +14,7 @@
 
 - Fix: `analysis_options.yaml`
   - Was referencing `pedantic` but should reference `lints`.
+  - Adjusted to keep the same rules but for package `lints` and Dart 3.
 - Minor lint fix `pub_api_client_base.dart`.
 
 ## 2.4.0
