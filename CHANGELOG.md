@@ -1,31 +1,22 @@
 ## 2.5.0
 
-- Set the minimum Dart SDK version to `3.0.0`.
-  - sdk: ">=3.0.0 <4.0.0"
-
-- Update dependencies:
-  - collection: ^1.17.2
-  - http: ^1.1.0
-  - oauth2: ^2.0.2
-  - path: ^1.8.3
-  - build_runner: ^2.4.6
-  - lints: ^2.1.1
-  - test: ^1.24.4
-
-- Fix: `analysis_options.yaml`
-  - Was referencing `pedantic` but should reference `lints`.
-  - Adjusted to keep the same rules but for package `lints` and Dart 3.
-- Minor lint fix `pub_api_client_base.dart`.
+- Feature: Ability to customize user-agent
+- Fix: Handle invalid json on exception
+- Chore: Set the minimum Dart SDK version to `3.0.0`. by @gmpassos
+- Chore:Update dependencies by @gmpassos 
+- Chore: switched analysis to use `lints` by @gmpassos
 
 ## 2.4.0
 
 - Add the ability to search with any tags [32](https://github.com/fluttertools/pub_api_client/pull/32) thanks @Rexios80
 
 ## 2.3.0
+
 - Updated dependencies
 - Removed freezed
 
 ## 2.2.2
+
 - chore: Updated dependencies
 - Updated min SDK Version to 2.17
 
