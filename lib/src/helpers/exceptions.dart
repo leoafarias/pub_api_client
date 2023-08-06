@@ -10,10 +10,13 @@ class PubClientException implements Exception {
 
   @override
   String toString() {
-    final data = jsonDecode(_response.body);
-    final message = data?['error']?['message'];
-
-    return '${_response.reasonPhrase}: $message';
+    try {
+      final data = jsonDecode(_response.body);
+      final message = data?['error']?['message'];
+      return '${_response.reasonPhrase}: $message';
+    } catch (e) {
+      return '${_response.reasonPhrase}';
+    }
   }
 }
 
