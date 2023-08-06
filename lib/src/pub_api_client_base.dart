@@ -25,12 +25,14 @@ class PubClient {
   final Endpoint endpoint;
   final String? pubUrl;
   final http.Client? client;
+  final String? userAgent;
   final Credentials? credentials;
   late final PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
     this.client,
+    this.userAgent,
   }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
     if (credentials == null) {
@@ -45,6 +47,7 @@ class PubClient {
 
     _client = PubApiHttpClient(
       client ?? httpClient,
+      userAgent: userAgent,
       // credentials: credentials,
     );
   }
@@ -116,8 +119,9 @@ class PubClient {
   /// Returns `PackageVersion` of an specific [packageName];
   Future<PackageVersion> packageVersionInfo(
       String packageName, String version) async {
-    final data =
-        await _fetch(endpoint.packageVersionInfo(packageName, version));
+    final data = await _fetch(
+      endpoint.packageVersionInfo(packageName, version),
+    );
     return PackageVersion.fromMap(data);
   }
 
