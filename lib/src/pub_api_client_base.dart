@@ -194,7 +194,7 @@ class PubClient {
     List<String> tags = const [],
   }) async {
     /// List of Google publishers on pub.dev
-    const _publishers = [
+    const publishers = [
       'flutter.dev',
       'dart.dev',
       'material.io',
@@ -204,7 +204,7 @@ class PubClient {
     ];
 
     final futures = <Future<List<PackageResult>>>[];
-    for (var publisher in _publishers) {
+    for (var publisher in publishers) {
       futures.add(fetchPublisherPackages(publisher, tags: tags));
     }
     final results = await Future.wait(futures);
