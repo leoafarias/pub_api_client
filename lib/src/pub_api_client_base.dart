@@ -25,12 +25,14 @@ class PubClient {
   final Endpoint endpoint;
   final String? pubUrl;
   final http.Client? client;
+  final String? userAgent;
   final Credentials? credentials;
   late final PubApiHttpClient _client;
   PubClient({
     this.pubUrl,
     this.credentials,
     this.client,
+    this.userAgent,
   }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
     if (credentials == null) {
@@ -45,6 +47,7 @@ class PubClient {
 
     _client = PubApiHttpClient(
       client ?? httpClient,
+      userAgent: userAgent,
     );
   }
 
@@ -115,8 +118,9 @@ class PubClient {
   /// Returns `PackageVersion` of an specific [packageName];
   Future<PackageVersion> packageVersionInfo(
       String packageName, String version) async {
-    final data =
-        await _fetch(endpoint.packageVersionInfo(packageName, version));
+    final data = await _fetch(
+      endpoint.packageVersionInfo(packageName, version),
+    );
     return PackageVersion.fromMap(data);
   }
 
@@ -193,7 +197,7 @@ class PubClient {
     List<String> tags = const [],
   }) async {
     /// List of Google publishers on pub.dev
-    const _publishers = [
+    const publishers = [
       'flutter.dev',
       'dart.dev',
       'material.io',
@@ -203,7 +207,7 @@ class PubClient {
     ];
 
     final futures = <Future<List<PackageResult>>>[];
-    for (var publisher in _publishers) {
+    for (var publisher in publishers) {
       futures.add(fetchPublisherPackages(publisher, tags: tags));
     }
     final results = await Future.wait(futures);
