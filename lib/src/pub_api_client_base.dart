@@ -45,7 +45,6 @@ class PubClient {
 
     _client = PubApiHttpClient(
       client ?? httpClient,
-      // credentials: credentials,
     );
   }
 
