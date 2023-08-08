@@ -46,6 +46,9 @@ class PackageDocumentation {
 
   @override
   int get hashCode => name.hashCode ^ versions.hashCode;
+
+  @override
+  String toString() => 'PackageDocumentation(name: $name, versions: $versions)';
 }
 
 /// Package Documentation Version Model
@@ -92,4 +95,8 @@ class PackageDocumentationVersion {
   @override
   int get hashCode =>
       version.hashCode ^ status.hashCode ^ hasDocumentation.hashCode;
+
+  @override
+  String toString() =>
+      'PackageDocumentationVersion(version: $version, status: $status, hasDocumentation: $hasDocumentation)';
 }

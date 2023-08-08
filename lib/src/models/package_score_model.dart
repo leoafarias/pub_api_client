@@ -1,5 +1,7 @@
 import 'package:collection/collection.dart';
 
+// ignore_for_file: lines_longer_than_80_chars
+
 /// Package Score Model
 class PackageScore {
   final int? grantedPoints;
@@ -30,6 +32,10 @@ class PackageScore {
         popularityScore: map['popularityScore'] as double? ?? 0.0,
         lastUpdated: DateTime.parse(map['lastUpdated'] as String? ?? ''),
       );
+
+  @override
+  String toString() =>
+      'PackageScore(grantedPoints: $grantedPoints, maxPoints: $maxPoints, likeCount: $likeCount, popularityScore: $popularityScore, lastUpdated: $lastUpdated)';
 
   @override
   bool operator ==(Object other) {
@@ -102,6 +108,10 @@ class PackageScoreCard {
         reportTypes:
             List<String>.from(map['reportTypes'] as List<dynamic>? ?? []),
       );
+
+  @override
+  String toString() =>
+      'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, packageCreated: $packageCreated, packageVersionCreated: $packageVersionCreated, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
 
   @override
   bool operator ==(Object other) {
