@@ -6,7 +6,6 @@ import 'package:oauth2/oauth2.dart';
 import 'constants.dart';
 import 'endpoints.dart';
 import 'helpers/exceptions.dart';
-import 'helpers/http_client.dart';
 import 'helpers/recursive_paging.dart';
 import 'models/package_documentation_model.dart';
 import 'models/package_like_model.dart';
@@ -17,54 +16,67 @@ import 'models/package_score_model.dart';
 import 'models/pub_package_model.dart';
 import 'models/search_order.dart';
 import 'models/search_results_model.dart';
-
-typedef FetchFunction = Future<Map<String, dynamic>> Function(String url);
+import 'version.dart';
 
 /// Pub API Client
 class PubClient {
   final Endpoint endpoint;
   final String? pubUrl;
-  final http.Client? client;
-  final String? userAgent;
-  final Credentials? credentials;
-  late final PubApiHttpClient _client;
+  late http.Client _client;
+  late Map<String, String> _headers = {};
+
   PubClient({
     this.pubUrl,
-    this.credentials,
-    this.client,
-    this.userAgent,
+    Credentials? credentials,
+    http.Client? client,
+    String? userAgent,
   }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
     if (credentials == null) {
       httpClient = http.Client();
     } else {
       httpClient = Client(
-        credentials!,
+        credentials,
         identifier: PubAuth.identifier,
         secret: PubAuth.secret,
       );
     }
 
-    _client = PubApiHttpClient(
-      client ?? httpClient,
-      userAgent: userAgent,
-    );
+    userAgent ??= 'default';
+
+    _headers = {
+      'user-agent': 'pub_api_client/$packageVersion ($userAgent)',
+    };
+    _client = client ?? httpClient;
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
-    final response = await _client.get(Uri.parse(url));
+    final response = await _client.get(
+      Uri.parse(url),
+      headers: _headers,
+    );
+
     responseValidOrThrow(response);
+
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> _put(String url) async {
-    final response = await _client.put(Uri.parse(url));
+    final response = await _client.put(
+      Uri.parse(url),
+      headers: _headers,
+    );
+
     responseValidOrThrow(response);
     return jsonDecode(response.body) as Map<String, dynamic>;
   }
 
   Future<void> _delete(String url) async {
-    final response = await _client.delete(Uri.parse(url));
+    final response = await _client.delete(
+      Uri.parse(url),
+      headers: _headers,
+    );
+
     responseValidOrThrow(response);
   }
 
@@ -94,7 +106,6 @@ class PubClient {
   /// Returns the `PackageOptions` for package [packageName]
   Future<PackageOptions> packageOptions(String packageName) async {
     final data = await _fetch(endpoint.packageOptions(packageName));
-
     return PackageOptions.fromMap(data);
   }
 
@@ -235,6 +246,6 @@ class PubClient {
   }
 
   void close() {
-    client?.close();
+    _client.close();
   }
 }

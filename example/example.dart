@@ -4,4 +4,5 @@ void main() async {
   final client = PubClient();
   final packageScore = await client.packageScore('fvm');
   print('Package Score: $packageScore');
+  client.close();
 }
