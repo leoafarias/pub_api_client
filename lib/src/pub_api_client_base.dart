@@ -22,6 +22,7 @@ import 'version.dart';
 class PubClient {
   final Endpoint endpoint;
   final String? pubUrl;
+  final bool debug;
   late http.Client _client;
   late Map<String, String> _headers = {};
 
@@ -29,6 +30,7 @@ class PubClient {
     this.pubUrl,
     Credentials? credentials,
     http.Client? client,
+    this.debug = false,
     String? userAgent,
   }) : endpoint = Endpoint(pubUrl) {
     http.Client httpClient;
@@ -51,6 +53,9 @@ class PubClient {
   }
 
   Future<Map<String, dynamic>> _fetch(String url) async {
+    if (debug) {
+      print('Fetching: $url');
+    }
     final response = await _client.get(
       Uri.parse(url),
       headers: _headers,
@@ -152,10 +157,15 @@ class PubClient {
     int page = 1,
     SearchOrder sort = SearchOrder.top,
     List<String> tags = const [],
+    List<String> topics = const [],
   }) async {
     final buffer = StringBuffer(query);
     for (final tag in tags) {
       buffer.write(' $tag');
+    }
+
+    for (final topic in topics) {
+      buffer.write(' topic:$topic');
     }
     final data = await _fetch(endpoint.search(buffer.toString(), page, sort));
     return SearchResults.fromMap(data);

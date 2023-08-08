@@ -5,7 +5,7 @@ import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
 const packageName = 'fvm';
-final client = PubClient();
+final client = PubClient(debug: true);
 
 void main() {
   group('PubDev Client', () {
@@ -40,8 +40,10 @@ void main() {
 
     test('Get package version info', () async {
       final package = await client.packageInfo(packageName);
-      final version =
-          await client.packageVersionInfo(packageName, package.version);
+      final version = await client.packageVersionInfo(
+        packageName,
+        package.version,
+      );
 
       expect(package.latest.archiveUrl, version.archiveUrl);
       expect(package.version, version.version);
@@ -111,8 +113,10 @@ void main() {
     test('Search for packages of a publisher', () async {
       final payload =
           await client.search('', tags: [PackageTag.publisher('fvm.app')]);
-      final nextPagePayload = await client
-          .search('', tags: [PackageTag.dependency('pub_api_client')]);
+      final nextPagePayload = await client.search(
+        '',
+        tags: [PackageTag.dependency('pub_api_client')],
+      );
       expect(payload.packages.length, greaterThan(0));
       expect(nextPagePayload.packages.length, greaterThan(0));
     });
@@ -125,6 +129,14 @@ void main() {
     test('Get package names', () async {
       final packages = await client.packageNameCompletion();
       expect(packages.length, greaterThan(20000));
+    });
+
+    test('Get package topics', () async {
+      final results = await client.search('', topics: ['ffi']);
+      final zeroResults = await client.search('', topics: ['h8haisd091']);
+
+      expect(results.packages.length, greaterThan(0));
+      expect(zeroResults.packages.length, 0);
     });
 
     // test('Can like, unlike, and view liked packages', () async {
