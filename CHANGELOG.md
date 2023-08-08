@@ -3,8 +3,9 @@
 - Feature: Ability to customize user-agent
 - Fix: Handle invalid json on exception
 - Chore: Set the minimum Dart SDK version to `3.0.0`. by @gmpassos
-- Chore:Update dependencies by @gmpassos 
-- Chore: switched analysis to use `lints` by @gmpassos
+- Chore: Update dependencies by @gmpassos
+- Chore: Switched analysis to use `lints` by @gmpassos
+- Chore: Pub.dev API no longer returns latestStableVersion for documentation endpoint
 
 ## 2.4.0
 
