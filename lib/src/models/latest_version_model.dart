@@ -29,5 +29,5 @@ class LatestVersion {
 
   @override
   String toString() =>
-      'LatestVersion(needUpdate: $needUpdate, latestVersion: $latestVersion, packageInfo: $packageInfo)';
+      '''LatestVersion(needUpdate: $needUpdate, latestVersion: $latestVersion, packageInfo: $packageInfo)''';
 }

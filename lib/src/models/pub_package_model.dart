@@ -87,7 +87,7 @@ class PackageVersion {
 
   @override
   String toString() =>
-      'PackageVersion(version: $version, pubspec: $pubspec, archiveUrl: $archiveUrl, published: $published)';
+      '''PackageVersion(version: $version, pubspec: $pubspec, archiveUrl: $archiveUrl, published: $published)''';
 
   @override
   bool operator ==(Object other) {

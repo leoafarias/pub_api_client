@@ -98,5 +98,5 @@ class PackageDocumentationVersion {
 
   @override
   String toString() =>
-      'PackageDocumentationVersion(version: $version, status: $status, hasDocumentation: $hasDocumentation)';
+      '''PackageDocumentationVersion(version: $version, status: $status, hasDocumentation: $hasDocumentation)''';
 }

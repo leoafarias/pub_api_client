@@ -25,7 +25,7 @@ class PackageOptions {
 
   @override
   String toString() =>
-      'PackageOptions(isDiscontinued: $isDiscontinued, isUnlisted: $isUnlisted, replacedBy: $replacedBy)';
+      '''PackageOptions(isDiscontinued: $isDiscontinued, isUnlisted: $isUnlisted, replacedBy: $replacedBy)''';
 
   @override
   bool operator ==(Object other) {
