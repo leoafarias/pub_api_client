@@ -17,4 +17,19 @@ class PackageLike {
         package: map['package'] as String? ?? '',
         liked: map['liked'] as bool? ?? false,
       );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is PackageLike &&
+        other.package == package &&
+        other.liked == liked;
+  }
+
+  @override
+  int get hashCode => package.hashCode ^ liked.hashCode;
+
+  @override
+  String toString() => 'PackageLike(package: $package, liked: $liked)';
 }

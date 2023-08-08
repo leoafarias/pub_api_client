@@ -26,4 +26,8 @@ class LatestVersion {
   @override
   int get hashCode =>
       needUpdate.hashCode ^ latestVersion.hashCode ^ packageInfo.hashCode;
+
+  @override
+  String toString() =>
+      'LatestVersion(needUpdate: $needUpdate, latestVersion: $latestVersion, packageInfo: $packageInfo)';
 }

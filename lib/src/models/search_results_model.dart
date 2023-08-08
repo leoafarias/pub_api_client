@@ -27,6 +27,9 @@ class SearchResults {
   }
 
   @override
+  String toString() => 'SearchResults(packages: $packages, next: $next)';
+
+  @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     final listEquals = const DeepCollectionEquality().equals;
@@ -52,6 +55,9 @@ class PackageResult {
   factory PackageResult.fromMap(Map<String, dynamic> map) => PackageResult(
         package: map['package'] as String? ?? '',
       );
+
+  @override
+  String toString() => 'PackageResult(package: $package)';
 
   @override
   bool operator ==(Object other) {
