@@ -6,20 +6,15 @@ import 'package:collection/collection.dart';
 
 class PackageDocumentation {
   final String name;
-
-  final String latestStableVersion;
-
   final List<PackageDocumentationVersion> versions;
 
   PackageDocumentation({
     required this.name,
-    required this.latestStableVersion,
     this.versions = const [],
   });
 
   Map<String, dynamic> toMap() => {
         'name': name,
-        'latestStableVersion': latestStableVersion,
         'versions': versions.map((x) => x.toMap()).toList(),
       };
 
@@ -28,7 +23,6 @@ class PackageDocumentation {
 
     return PackageDocumentation(
       name: map['name'] as String? ?? '',
-      latestStableVersion: map['latestStableVersion'] as String? ?? '',
       versions: versionMap
           .map((x) =>
               PackageDocumentationVersion.fromMap(x as Map<String, dynamic>))
@@ -47,13 +41,11 @@ class PackageDocumentation {
 
     return other is PackageDocumentation &&
         other.name == name &&
-        other.latestStableVersion == latestStableVersion &&
         listEquals(other.versions, versions);
   }
 
   @override
-  int get hashCode =>
-      name.hashCode ^ latestStableVersion.hashCode ^ versions.hashCode;
+  int get hashCode => name.hashCode ^ versions.hashCode;
 }
 
 /// Package Documentation Version Model
