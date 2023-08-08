@@ -162,6 +162,7 @@ final results =  await client.search(
     PackageTag.dependency('dependency_name'),
     'another:tag',
   ],
+  topics:['topic_1', 'topic_2'],
 );
 // Returns the packages that match the query
 print(results.packages)
