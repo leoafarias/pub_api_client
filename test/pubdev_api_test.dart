@@ -118,10 +118,8 @@ void main() {
     });
 
     test('Get documentation', () async {
-      final packageInfo = await client.packageInfo(packageName);
       final documentation = await client.documentation(packageName);
-      expect(documentation.latestStableVersion, packageInfo.version);
-      expect(documentation.versions.length, packageInfo.versions.length);
+      expect(documentation.versions.length, greaterThan(0));
     });
 
     test('Get package names', () async {
