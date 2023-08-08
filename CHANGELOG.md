@@ -1,3 +1,9 @@
+## 2.6.0
+
+- Feature: Added topics parameters to search method
+- Chore: Improved models equality and toString methods
+- Fix: Hanging on close [#40](https://github.com/leoafarias/pub_api_client/pull/40)
+
 ## 2.5.0
 
 - Feature: Ability to customize user-agent
