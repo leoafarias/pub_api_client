@@ -73,7 +73,7 @@ class PackageVersion {
   Map<String, dynamic> toMap() => {
         'version': version,
         'pubspec': pubspec.toJson(),
-        'archiveUrl': archiveUrl,
+        'archive_url': archiveUrl,
         'published': published.millisecondsSinceEpoch,
       };
 
@@ -81,7 +81,7 @@ class PackageVersion {
         version: map['version'] as String? ?? '',
         pubspec:
             PubSpec.fromJson(map['pubspec'] as Map<String, dynamic>? ?? {}),
-        archiveUrl: map['archiveUrl'] as String? ?? '',
+        archiveUrl: map['archive_url'] as String? ?? '',
         published: DateTime.parse(map['published'] as String? ?? ''),
       );
 
