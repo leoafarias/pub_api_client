@@ -58,7 +58,7 @@ void main() {
 
     test('Get package publisher', () async {
       final publisher = await client.packagePublisher(packageName);
-      expect(publisher.publisherId, 'fvm.app');
+      expect(publisher.publisherId, 'leoafarias.com');
     });
 
     test('Get package publisher if unregistered', () async {
