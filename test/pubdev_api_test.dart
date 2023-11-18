@@ -127,8 +127,15 @@ void main() {
     });
 
     test('Get package names', () async {
-      final packages = await client.packageNameCompletion();
+      final packages = await client.packageNames();
       expect(packages.length, greaterThan(20000));
+    });
+
+    test('Get package name completion', () async {
+      final packages = await client.packageNameCompletion();
+
+      // Subject to change
+      expect(packages.length, equals(20000));
     });
 
     test('Get package topics', () async {

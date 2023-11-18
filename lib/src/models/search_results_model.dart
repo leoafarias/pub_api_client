@@ -1,12 +1,48 @@
 import 'package:collection/collection.dart';
 
-/// Search Results Model
-class SearchResults {
-  final List<PackageResult> packages;
+/// Base class for results that are paginated
+
+abstract class PaginatedResults<T> {
+  /// The current results
+  List<T> get results;
+
+  /// The URL to the next page of results
   final String? next;
+
+  const PaginatedResults({
+    this.next,
+  });
+}
+
+/// Package Names Model
+class PackageNamesResults extends PaginatedResults<String> {
+  final List<String> packages;
+
+  @override
+  List<String> get results => packages;
+
+  const PackageNamesResults({
+    required this.packages,
+    super.next,
+  });
+
+  factory PackageNamesResults.fromMap(Map<String, dynamic> map) =>
+      PackageNamesResults(
+        packages: (map['packages'] as List).cast<String>(),
+        next: map['nextUrl'] as String?,
+      );
+}
+
+/// Search Results Model
+class SearchResults extends PaginatedResults<PackageResult> {
+  final List<PackageResult> packages;
+
+  @override
+  List<PackageResult> get results => packages;
+
   const SearchResults({
     required this.packages,
-    this.next,
+    super.next,
   });
 
   Map<String, dynamic> toMap() => {
