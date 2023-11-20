@@ -64,8 +64,6 @@ class PackageScoreCard {
   final String packageVersion;
   final String runtimeVersion;
   final DateTime updated;
-  final DateTime packageCreated;
-  final DateTime packageVersionCreated;
   final List<String> derivedTags;
   final List<String> flags;
   final List<String> reportTypes;
@@ -74,8 +72,6 @@ class PackageScoreCard {
     required this.packageVersion,
     required this.runtimeVersion,
     required this.updated,
-    required this.packageCreated,
-    required this.packageVersionCreated,
     this.derivedTags = const [],
     this.flags = const [],
     this.reportTypes = const [],
@@ -86,8 +82,6 @@ class PackageScoreCard {
         'packageVersion': packageVersion,
         'runtimeVersion': runtimeVersion,
         'updated': updated.millisecondsSinceEpoch,
-        'packageCreated': packageCreated.millisecondsSinceEpoch,
-        'packageVersionCreated': packageVersionCreated.millisecondsSinceEpoch,
         'derivedTags': derivedTags,
         'flags': flags,
         'reportTypes': reportTypes,
@@ -99,9 +93,6 @@ class PackageScoreCard {
         packageVersion: map['packageVersion'] as String? ?? '',
         runtimeVersion: map['runtimeVersion'] as String? ?? '',
         updated: DateTime.parse(map['updated'] as String? ?? ''),
-        packageCreated: DateTime.parse(map['packageCreated'] as String? ?? ''),
-        packageVersionCreated:
-            DateTime.parse(map['packageVersionCreated'] as String? ?? ''),
         derivedTags:
             List<String>.from(map['derivedTags'] as List<dynamic>? ?? []),
         flags: List<String>.from(map['flags'] as List<dynamic>? ?? []),
@@ -111,7 +102,7 @@ class PackageScoreCard {
 
   @override
   String toString() =>
-      'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, packageCreated: $packageCreated, packageVersionCreated: $packageVersionCreated, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
+      'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
 
   @override
   bool operator ==(Object other) {
@@ -123,8 +114,6 @@ class PackageScoreCard {
         other.packageVersion == packageVersion &&
         other.runtimeVersion == runtimeVersion &&
         other.updated == updated &&
-        other.packageCreated == packageCreated &&
-        other.packageVersionCreated == packageVersionCreated &&
         listEquals(other.derivedTags, derivedTags) &&
         listEquals(other.flags, flags) &&
         listEquals(other.reportTypes, reportTypes);
@@ -136,8 +125,6 @@ class PackageScoreCard {
       packageVersion.hashCode ^
       runtimeVersion.hashCode ^
       updated.hashCode ^
-      packageCreated.hashCode ^
-      packageVersionCreated.hashCode ^
       derivedTags.hashCode ^
       flags.hashCode ^
       reportTypes.hashCode;
