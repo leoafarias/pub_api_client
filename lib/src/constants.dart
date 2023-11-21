@@ -92,6 +92,8 @@ class EnvironmentNotFoundException implements Exception {
 // ignore: avoid_classes_with_only_static_members
 /// Tags used for filtering package searches
 class PackageTag {
+  PackageTag._();
+
   /// Filter by publisher
   static String publisher(String publisher) => 'publisher:$publisher';
 
