@@ -111,8 +111,8 @@ void main() {
     });
 
     test('Search for packages of a publisher', () async {
-      final payload =
-          await client.search('', tags: [PackageTag.publisher('fvm.app')]);
+      final payload = await client
+          .search('', tags: [PackageTag.publisher('leoafarias.com')]);
       final nextPagePayload = await client.search(
         '',
         tags: [PackageTag.dependency('pub_api_client')],

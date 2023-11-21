@@ -1,4 +1,7 @@
-import 'package:collection/collection.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'search_results_model.freezed.dart';
+part 'search_results_model.g.dart';
 
 /// Base class for results that are paginated
 
@@ -15,93 +18,51 @@ abstract class PaginatedResults<T> {
 }
 
 /// Package Names Model
-class PackageNamesResults extends PaginatedResults<String> {
-  final List<String> packages;
+@freezed
+class PackageNamesResults extends PaginatedResults<String>
+    with _$PackageNamesResults {
+  const PackageNamesResults._();
 
   @override
   List<String> get results => packages;
 
-  const PackageNamesResults({
-    required this.packages,
-    super.next,
-  });
+  const factory PackageNamesResults({
+    required List<String> packages,
+    String? next,
+  }) = _PackageNamesResults;
 
-  factory PackageNamesResults.fromMap(Map<String, dynamic> map) =>
-      PackageNamesResults(
-        packages: (map['packages'] as List).cast<String>(),
-        next: map['nextUrl'] as String?,
-      );
+  /// From json
+  factory PackageNamesResults.fromJson(Map<String, dynamic> json) =>
+      _$PackageNamesResultsFromJson(json);
 }
 
 /// Search Results Model
-class SearchResults extends PaginatedResults<PackageResult> {
-  final List<PackageResult> packages;
+@freezed
+class SearchResults extends PaginatedResults<PackageResult>
+    with _$SearchResults {
+  const SearchResults._();
 
   @override
   List<PackageResult> get results => packages;
 
-  const SearchResults({
-    required this.packages,
-    super.next,
-  });
+  const factory SearchResults({
+    required List<PackageResult> packages,
+    String? next,
+  }) = _SearchResults;
 
-  Map<String, dynamic> toMap() => {
-        'packages': packages.map((x) => x.toMap()).toList(),
-        'next': next,
-      };
-
-  factory SearchResults.fromMap(Map<String, dynamic> map) {
-    final packagesMap = map['packages'] as List<dynamic>? ?? [];
-    return SearchResults(
-      packages: List<PackageResult>.from(
-        packagesMap.map(
-          (x) => PackageResult.fromMap(x as Map<String, dynamic>),
-        ),
-      ),
-      next: map['next'] as String?,
-    );
-  }
-
-  @override
-  String toString() => 'SearchResults(packages: $packages, next: $next)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
-
-    return other is SearchResults &&
-        listEquals(other.packages, packages) &&
-        other.next == next;
-  }
-
-  @override
-  int get hashCode => packages.hashCode ^ next.hashCode;
+  /// From json
+  factory SearchResults.fromJson(Map<String, dynamic> json) =>
+      _$SearchResultsFromJson(json);
 }
 
 /// Package Result Model returns within a `SearchResult`
-class PackageResult {
-  final String package;
-  const PackageResult({required this.package});
+@freezed
+class PackageResult with _$PackageResult {
+  const factory PackageResult({
+    required String package,
+  }) = _PackageResult;
 
-  Map<String, dynamic> toMap() => {
-        'package': package,
-      };
-
-  factory PackageResult.fromMap(Map<String, dynamic> map) => PackageResult(
-        package: map['package'] as String? ?? '',
-      );
-
-  @override
-  String toString() => 'PackageResult(package: $package)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is PackageResult && other.package == package;
-  }
-
-  @override
-  int get hashCode => package.hashCode;
+  /// From json
+  factory PackageResult.fromJson(Map<String, dynamic> json) =>
+      _$PackageResultFromJson(json);
 }

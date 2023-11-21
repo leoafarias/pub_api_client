@@ -88,20 +88,20 @@ class PubClient {
   /// Returns the `PubPackage` information for [packageName]
   Future<PubPackage> packageInfo(String packageName) async {
     final data = await _fetch(endpoint.packageInfo(packageName));
-    return PubPackage.fromMap(data);
+    return PubPackage.fromJson(data);
   }
 
   /// Returns the `PackageScore` for package [packageName]
   Future<PackageScore> packageScore(String packageName) async {
     final data = await _fetch(endpoint.packageScore(packageName));
-    return PackageScore.fromMap(data);
+    return PackageScore.fromJson(data);
   }
 
   /// Returns the `PackageMetrics` for package [packageName]
   Future<PackageMetrics?> packageMetrics(String packageName) async {
     try {
       final data = await _fetch(endpoint.packageMetrics(packageName));
-      return PackageMetrics.fromMap(data);
+      return PackageMetrics.fromJson(data);
     } on NotFoundException {
       // If the package has not been scanned, the server will return 404
       return null;
@@ -111,13 +111,13 @@ class PubClient {
   /// Returns the `PackageOptions` for package [packageName]
   Future<PackageOptions> packageOptions(String packageName) async {
     final data = await _fetch(endpoint.packageOptions(packageName));
-    return PackageOptions.fromMap(data);
+    return PackageOptions.fromJson(data);
   }
 
   /// Returns the `PackagePublisher` for package [packageName]
   Future<PackagePublisher> packagePublisher(String packageName) async {
     final data = await _fetch(endpoint.packagePublisher(packageName));
-    return PackagePublisher.fromMap(data);
+    return PackagePublisher.fromJson(data);
   }
 
   /// Returns a list of versions that are published for package [packageName]
@@ -137,16 +137,16 @@ class PubClient {
     final data = await _fetch(
       endpoint.packageVersionInfo(packageName, version),
     );
-    return PackageVersion.fromMap(data);
+    return PackageVersion.fromJson(data);
   }
 
   /// Returns a `List<String>` of all packages listed on pub.dev
   Future<List<String>> packageNames() async {
     final data = await _fetch(endpoint.packageNames);
-    final results = PackageNamesResults.fromMap(data);
+    final results = PackageNamesResults.fromJson(data);
     return recursivePaging(results, (url) async {
       final data = await _fetch(endpoint.nextPage(url));
-      return PackageNamesResults.fromMap(data);
+      return PackageNamesResults.fromJson(data);
     });
   }
 
@@ -179,32 +179,32 @@ class PubClient {
       buffer.write(' topic:$topic');
     }
     final data = await _fetch(endpoint.search(buffer.toString(), page, sort));
-    return SearchResults.fromMap(data);
+    return SearchResults.fromJson(data);
   }
 
   /// Receives [nextPageUrl]
   /// returns `SearchResults`
   Future<SearchResults> nextPage(String nextPageUrl) async {
     final data = await _fetch(endpoint.nextPage(nextPageUrl));
-    return SearchResults.fromMap(data);
+    return SearchResults.fromJson(data);
   }
 
   /// Returns `PackageDocumentation` for a [packageName]
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
-    return PackageDocumentation.fromMap(data);
+    return PackageDocumentation.fromJson(data);
   }
 
   /// Displays like status of a package
   Future<PackageLike> likePackageStatus(String name) async {
     final data = await _fetch(endpoint.likePackage(name));
-    return PackageLike.fromMap(data);
+    return PackageLike.fromJson(data);
   }
 
   /// Likes a package
   Future<PackageLike> likePackage(String name) async {
     final data = await _put(endpoint.likePackage(name));
-    return PackageLike.fromMap(data);
+    return PackageLike.fromJson(data);
   }
 
   /// Unlikes a package
@@ -217,7 +217,7 @@ class PubClient {
 
     final likes = response['likedPackages'] as List<dynamic>;
     return likes
-        .map((like) => PackageLike.fromMap(like as Map<String, dynamic>))
+        .map((like) => PackageLike.fromJson(like as Map<String, dynamic>))
         .toList();
   }
 

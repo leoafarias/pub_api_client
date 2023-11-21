@@ -1,35 +1,17 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'package_like_model.freezed.dart';
+part 'package_like_model.g.dart';
+
 /// Package like
+@freezed
+class PackageLike with _$PackageLike {
+  const factory PackageLike({
+    required String package,
+    required bool liked,
+  }) = _PackageLike;
 
-class PackageLike {
-  final String package;
-  final bool liked;
-  const PackageLike({
-    required this.package,
-    required this.liked,
-  });
-
-  Map<String, dynamic> toMap() => {
-        'package': package,
-        'liked': liked,
-      };
-
-  factory PackageLike.fromMap(Map<String, dynamic> map) => PackageLike(
-        package: map['package'] as String? ?? '',
-        liked: map['liked'] as bool? ?? false,
-      );
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is PackageLike &&
-        other.package == package &&
-        other.liked == liked;
-  }
-
-  @override
-  int get hashCode => package.hashCode ^ liked.hashCode;
-
-  @override
-  String toString() => 'PackageLike(package: $package, liked: $liked)';
+  /// From json
+  factory PackageLike.fromJson(Map<String, dynamic> json) =>
+      _$PackageLikeFromJson(json);
 }
