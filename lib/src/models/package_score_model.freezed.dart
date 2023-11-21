@@ -283,6 +283,9 @@ mixin _$PackageScoreCard {
   String get packageVersion => throw _privateConstructorUsedError;
   String get runtimeVersion => throw _privateConstructorUsedError;
   DateTime get updated => throw _privateConstructorUsedError;
+  DartdocReport? get dartdocReport => throw _privateConstructorUsedError;
+  PanaReport? get panaReport => throw _privateConstructorUsedError;
+  String get taskStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -300,7 +303,13 @@ abstract class $PackageScoreCardCopyWith<$Res> {
       {String packageName,
       String packageVersion,
       String runtimeVersion,
-      DateTime updated});
+      DateTime updated,
+      DartdocReport? dartdocReport,
+      PanaReport? panaReport,
+      String taskStatus});
+
+  $DartdocReportCopyWith<$Res>? get dartdocReport;
+  $PanaReportCopyWith<$Res>? get panaReport;
 }
 
 /// @nodoc
@@ -320,6 +329,9 @@ class _$PackageScoreCardCopyWithImpl<$Res, $Val extends PackageScoreCard>
     Object? packageVersion = null,
     Object? runtimeVersion = null,
     Object? updated = null,
+    Object? dartdocReport = freezed,
+    Object? panaReport = freezed,
+    Object? taskStatus = null,
   }) {
     return _then(_value.copyWith(
       packageName: null == packageName
@@ -338,7 +350,43 @@ class _$PackageScoreCardCopyWithImpl<$Res, $Val extends PackageScoreCard>
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      dartdocReport: freezed == dartdocReport
+          ? _value.dartdocReport
+          : dartdocReport // ignore: cast_nullable_to_non_nullable
+              as DartdocReport?,
+      panaReport: freezed == panaReport
+          ? _value.panaReport
+          : panaReport // ignore: cast_nullable_to_non_nullable
+              as PanaReport?,
+      taskStatus: null == taskStatus
+          ? _value.taskStatus
+          : taskStatus // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DartdocReportCopyWith<$Res>? get dartdocReport {
+    if (_value.dartdocReport == null) {
+      return null;
+    }
+
+    return $DartdocReportCopyWith<$Res>(_value.dartdocReport!, (value) {
+      return _then(_value.copyWith(dartdocReport: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PanaReportCopyWith<$Res>? get panaReport {
+    if (_value.panaReport == null) {
+      return null;
+    }
+
+    return $PanaReportCopyWith<$Res>(_value.panaReport!, (value) {
+      return _then(_value.copyWith(panaReport: value) as $Val);
+    });
   }
 }
 
@@ -354,7 +402,15 @@ abstract class _$$PackageScoreCardImplCopyWith<$Res>
       {String packageName,
       String packageVersion,
       String runtimeVersion,
-      DateTime updated});
+      DateTime updated,
+      DartdocReport? dartdocReport,
+      PanaReport? panaReport,
+      String taskStatus});
+
+  @override
+  $DartdocReportCopyWith<$Res>? get dartdocReport;
+  @override
+  $PanaReportCopyWith<$Res>? get panaReport;
 }
 
 /// @nodoc
@@ -372,6 +428,9 @@ class __$$PackageScoreCardImplCopyWithImpl<$Res>
     Object? packageVersion = null,
     Object? runtimeVersion = null,
     Object? updated = null,
+    Object? dartdocReport = freezed,
+    Object? panaReport = freezed,
+    Object? taskStatus = null,
   }) {
     return _then(_$PackageScoreCardImpl(
       packageName: null == packageName
@@ -390,6 +449,18 @@ class __$$PackageScoreCardImplCopyWithImpl<$Res>
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      dartdocReport: freezed == dartdocReport
+          ? _value.dartdocReport
+          : dartdocReport // ignore: cast_nullable_to_non_nullable
+              as DartdocReport?,
+      panaReport: freezed == panaReport
+          ? _value.panaReport
+          : panaReport // ignore: cast_nullable_to_non_nullable
+              as PanaReport?,
+      taskStatus: null == taskStatus
+          ? _value.taskStatus
+          : taskStatus // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -401,7 +472,10 @@ class _$PackageScoreCardImpl implements _PackageScoreCard {
       {required this.packageName,
       required this.packageVersion,
       required this.runtimeVersion,
-      required this.updated});
+      required this.updated,
+      this.dartdocReport,
+      this.panaReport,
+      required this.taskStatus});
 
   factory _$PackageScoreCardImpl.fromJson(Map<String, dynamic> json) =>
       _$$PackageScoreCardImplFromJson(json);
@@ -414,10 +488,16 @@ class _$PackageScoreCardImpl implements _PackageScoreCard {
   final String runtimeVersion;
   @override
   final DateTime updated;
+  @override
+  final DartdocReport? dartdocReport;
+  @override
+  final PanaReport? panaReport;
+  @override
+  final String taskStatus;
 
   @override
   String toString() {
-    return 'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated)';
+    return 'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, dartdocReport: $dartdocReport, panaReport: $panaReport, taskStatus: $taskStatus)';
   }
 
   @override
@@ -431,13 +511,19 @@ class _$PackageScoreCardImpl implements _PackageScoreCard {
                 other.packageVersion == packageVersion) &&
             (identical(other.runtimeVersion, runtimeVersion) ||
                 other.runtimeVersion == runtimeVersion) &&
-            (identical(other.updated, updated) || other.updated == updated));
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.dartdocReport, dartdocReport) ||
+                other.dartdocReport == dartdocReport) &&
+            (identical(other.panaReport, panaReport) ||
+                other.panaReport == panaReport) &&
+            (identical(other.taskStatus, taskStatus) ||
+                other.taskStatus == taskStatus));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, packageName, packageVersion, runtimeVersion, updated);
+  int get hashCode => Object.hash(runtimeType, packageName, packageVersion,
+      runtimeVersion, updated, dartdocReport, panaReport, taskStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -459,7 +545,10 @@ abstract class _PackageScoreCard implements PackageScoreCard {
       {required final String packageName,
       required final String packageVersion,
       required final String runtimeVersion,
-      required final DateTime updated}) = _$PackageScoreCardImpl;
+      required final DateTime updated,
+      final DartdocReport? dartdocReport,
+      final PanaReport? panaReport,
+      required final String taskStatus}) = _$PackageScoreCardImpl;
 
   factory _PackageScoreCard.fromJson(Map<String, dynamic> json) =
       _$PackageScoreCardImpl.fromJson;
@@ -473,7 +562,899 @@ abstract class _PackageScoreCard implements PackageScoreCard {
   @override
   DateTime get updated;
   @override
+  DartdocReport? get dartdocReport;
+  @override
+  PanaReport? get panaReport;
+  @override
+  String get taskStatus;
+  @override
   @JsonKey(ignore: true)
   _$$PackageScoreCardImplCopyWith<_$PackageScoreCardImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DartdocReport _$DartdocReportFromJson(Map<String, dynamic> json) {
+  return _DartdocReport.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DartdocReport {
+  String get reportStatus => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DartdocReportCopyWith<DartdocReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DartdocReportCopyWith<$Res> {
+  factory $DartdocReportCopyWith(
+          DartdocReport value, $Res Function(DartdocReport) then) =
+      _$DartdocReportCopyWithImpl<$Res, DartdocReport>;
+  @useResult
+  $Res call({String reportStatus});
+}
+
+/// @nodoc
+class _$DartdocReportCopyWithImpl<$Res, $Val extends DartdocReport>
+    implements $DartdocReportCopyWith<$Res> {
+  _$DartdocReportCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reportStatus = null,
+  }) {
+    return _then(_value.copyWith(
+      reportStatus: null == reportStatus
+          ? _value.reportStatus
+          : reportStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DartdocReportImplCopyWith<$Res>
+    implements $DartdocReportCopyWith<$Res> {
+  factory _$$DartdocReportImplCopyWith(
+          _$DartdocReportImpl value, $Res Function(_$DartdocReportImpl) then) =
+      __$$DartdocReportImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String reportStatus});
+}
+
+/// @nodoc
+class __$$DartdocReportImplCopyWithImpl<$Res>
+    extends _$DartdocReportCopyWithImpl<$Res, _$DartdocReportImpl>
+    implements _$$DartdocReportImplCopyWith<$Res> {
+  __$$DartdocReportImplCopyWithImpl(
+      _$DartdocReportImpl _value, $Res Function(_$DartdocReportImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reportStatus = null,
+  }) {
+    return _then(_$DartdocReportImpl(
+      reportStatus: null == reportStatus
+          ? _value.reportStatus
+          : reportStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DartdocReportImpl implements _DartdocReport {
+  const _$DartdocReportImpl({required this.reportStatus});
+
+  factory _$DartdocReportImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DartdocReportImplFromJson(json);
+
+  @override
+  final String reportStatus;
+
+  @override
+  String toString() {
+    return 'DartdocReport(reportStatus: $reportStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DartdocReportImpl &&
+            (identical(other.reportStatus, reportStatus) ||
+                other.reportStatus == reportStatus));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, reportStatus);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DartdocReportImplCopyWith<_$DartdocReportImpl> get copyWith =>
+      __$$DartdocReportImplCopyWithImpl<_$DartdocReportImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DartdocReportImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DartdocReport implements DartdocReport {
+  const factory _DartdocReport({required final String reportStatus}) =
+      _$DartdocReportImpl;
+
+  factory _DartdocReport.fromJson(Map<String, dynamic> json) =
+      _$DartdocReportImpl.fromJson;
+
+  @override
+  String get reportStatus;
+  @override
+  @JsonKey(ignore: true)
+  _$$DartdocReportImplCopyWith<_$DartdocReportImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PanaReport _$PanaReportFromJson(Map<String, dynamic> json) {
+  return _PanaReport.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PanaReport {
+  DateTime get timestamp => throw _privateConstructorUsedError;
+  PanaRuntimeInfo get panaRuntimeInfo => throw _privateConstructorUsedError;
+  String get reportStatus => throw _privateConstructorUsedError;
+  List<String> get derivedTags => throw _privateConstructorUsedError;
+  List<String> get allDependencies => throw _privateConstructorUsedError;
+  List<License> get licenses =>
+      throw _privateConstructorUsedError; // TODO: Make an object for this
+  Map<String, dynamic> get report =>
+      throw _privateConstructorUsedError; // TODO: Make an object for this
+  Map<String, dynamic> get result => throw _privateConstructorUsedError;
+  List<String> get screenshots => throw _privateConstructorUsedError;
+  List<String> get urlProblems => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PanaReportCopyWith<PanaReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PanaReportCopyWith<$Res> {
+  factory $PanaReportCopyWith(
+          PanaReport value, $Res Function(PanaReport) then) =
+      _$PanaReportCopyWithImpl<$Res, PanaReport>;
+  @useResult
+  $Res call(
+      {DateTime timestamp,
+      PanaRuntimeInfo panaRuntimeInfo,
+      String reportStatus,
+      List<String> derivedTags,
+      List<String> allDependencies,
+      List<License> licenses,
+      Map<String, dynamic> report,
+      Map<String, dynamic> result,
+      List<String> screenshots,
+      List<String> urlProblems});
+
+  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo;
+}
+
+/// @nodoc
+class _$PanaReportCopyWithImpl<$Res, $Val extends PanaReport>
+    implements $PanaReportCopyWith<$Res> {
+  _$PanaReportCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? timestamp = null,
+    Object? panaRuntimeInfo = null,
+    Object? reportStatus = null,
+    Object? derivedTags = null,
+    Object? allDependencies = null,
+    Object? licenses = null,
+    Object? report = null,
+    Object? result = null,
+    Object? screenshots = null,
+    Object? urlProblems = null,
+  }) {
+    return _then(_value.copyWith(
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      panaRuntimeInfo: null == panaRuntimeInfo
+          ? _value.panaRuntimeInfo
+          : panaRuntimeInfo // ignore: cast_nullable_to_non_nullable
+              as PanaRuntimeInfo,
+      reportStatus: null == reportStatus
+          ? _value.reportStatus
+          : reportStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+      derivedTags: null == derivedTags
+          ? _value.derivedTags
+          : derivedTags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allDependencies: null == allDependencies
+          ? _value.allDependencies
+          : allDependencies // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      licenses: null == licenses
+          ? _value.licenses
+          : licenses // ignore: cast_nullable_to_non_nullable
+              as List<License>,
+      report: null == report
+          ? _value.report
+          : report // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      screenshots: null == screenshots
+          ? _value.screenshots
+          : screenshots // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      urlProblems: null == urlProblems
+          ? _value.urlProblems
+          : urlProblems // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo {
+    return $PanaRuntimeInfoCopyWith<$Res>(_value.panaRuntimeInfo, (value) {
+      return _then(_value.copyWith(panaRuntimeInfo: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$PanaReportImplCopyWith<$Res>
+    implements $PanaReportCopyWith<$Res> {
+  factory _$$PanaReportImplCopyWith(
+          _$PanaReportImpl value, $Res Function(_$PanaReportImpl) then) =
+      __$$PanaReportImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {DateTime timestamp,
+      PanaRuntimeInfo panaRuntimeInfo,
+      String reportStatus,
+      List<String> derivedTags,
+      List<String> allDependencies,
+      List<License> licenses,
+      Map<String, dynamic> report,
+      Map<String, dynamic> result,
+      List<String> screenshots,
+      List<String> urlProblems});
+
+  @override
+  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo;
+}
+
+/// @nodoc
+class __$$PanaReportImplCopyWithImpl<$Res>
+    extends _$PanaReportCopyWithImpl<$Res, _$PanaReportImpl>
+    implements _$$PanaReportImplCopyWith<$Res> {
+  __$$PanaReportImplCopyWithImpl(
+      _$PanaReportImpl _value, $Res Function(_$PanaReportImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? timestamp = null,
+    Object? panaRuntimeInfo = null,
+    Object? reportStatus = null,
+    Object? derivedTags = null,
+    Object? allDependencies = null,
+    Object? licenses = null,
+    Object? report = null,
+    Object? result = null,
+    Object? screenshots = null,
+    Object? urlProblems = null,
+  }) {
+    return _then(_$PanaReportImpl(
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      panaRuntimeInfo: null == panaRuntimeInfo
+          ? _value.panaRuntimeInfo
+          : panaRuntimeInfo // ignore: cast_nullable_to_non_nullable
+              as PanaRuntimeInfo,
+      reportStatus: null == reportStatus
+          ? _value.reportStatus
+          : reportStatus // ignore: cast_nullable_to_non_nullable
+              as String,
+      derivedTags: null == derivedTags
+          ? _value._derivedTags
+          : derivedTags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allDependencies: null == allDependencies
+          ? _value._allDependencies
+          : allDependencies // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      licenses: null == licenses
+          ? _value._licenses
+          : licenses // ignore: cast_nullable_to_non_nullable
+              as List<License>,
+      report: null == report
+          ? _value._report
+          : report // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      result: null == result
+          ? _value._result
+          : result // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      screenshots: null == screenshots
+          ? _value._screenshots
+          : screenshots // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      urlProblems: null == urlProblems
+          ? _value._urlProblems
+          : urlProblems // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PanaReportImpl implements _PanaReport {
+  const _$PanaReportImpl(
+      {required this.timestamp,
+      required this.panaRuntimeInfo,
+      required this.reportStatus,
+      required final List<String> derivedTags,
+      required final List<String> allDependencies,
+      required final List<License> licenses,
+      required final Map<String, dynamic> report,
+      required final Map<String, dynamic> result,
+      required final List<String> screenshots,
+      required final List<String> urlProblems})
+      : _derivedTags = derivedTags,
+        _allDependencies = allDependencies,
+        _licenses = licenses,
+        _report = report,
+        _result = result,
+        _screenshots = screenshots,
+        _urlProblems = urlProblems;
+
+  factory _$PanaReportImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PanaReportImplFromJson(json);
+
+  @override
+  final DateTime timestamp;
+  @override
+  final PanaRuntimeInfo panaRuntimeInfo;
+  @override
+  final String reportStatus;
+  final List<String> _derivedTags;
+  @override
+  List<String> get derivedTags {
+    if (_derivedTags is EqualUnmodifiableListView) return _derivedTags;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_derivedTags);
+  }
+
+  final List<String> _allDependencies;
+  @override
+  List<String> get allDependencies {
+    if (_allDependencies is EqualUnmodifiableListView) return _allDependencies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allDependencies);
+  }
+
+  final List<License> _licenses;
+  @override
+  List<License> get licenses {
+    if (_licenses is EqualUnmodifiableListView) return _licenses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_licenses);
+  }
+
+// TODO: Make an object for this
+  final Map<String, dynamic> _report;
+// TODO: Make an object for this
+  @override
+  Map<String, dynamic> get report {
+    if (_report is EqualUnmodifiableMapView) return _report;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_report);
+  }
+
+// TODO: Make an object for this
+  final Map<String, dynamic> _result;
+// TODO: Make an object for this
+  @override
+  Map<String, dynamic> get result {
+    if (_result is EqualUnmodifiableMapView) return _result;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_result);
+  }
+
+  final List<String> _screenshots;
+  @override
+  List<String> get screenshots {
+    if (_screenshots is EqualUnmodifiableListView) return _screenshots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_screenshots);
+  }
+
+  final List<String> _urlProblems;
+  @override
+  List<String> get urlProblems {
+    if (_urlProblems is EqualUnmodifiableListView) return _urlProblems;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_urlProblems);
+  }
+
+  @override
+  String toString() {
+    return 'PanaReport(timestamp: $timestamp, panaRuntimeInfo: $panaRuntimeInfo, reportStatus: $reportStatus, derivedTags: $derivedTags, allDependencies: $allDependencies, licenses: $licenses, report: $report, result: $result, screenshots: $screenshots, urlProblems: $urlProblems)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PanaReportImpl &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.panaRuntimeInfo, panaRuntimeInfo) ||
+                other.panaRuntimeInfo == panaRuntimeInfo) &&
+            (identical(other.reportStatus, reportStatus) ||
+                other.reportStatus == reportStatus) &&
+            const DeepCollectionEquality()
+                .equals(other._derivedTags, _derivedTags) &&
+            const DeepCollectionEquality()
+                .equals(other._allDependencies, _allDependencies) &&
+            const DeepCollectionEquality().equals(other._licenses, _licenses) &&
+            const DeepCollectionEquality().equals(other._report, _report) &&
+            const DeepCollectionEquality().equals(other._result, _result) &&
+            const DeepCollectionEquality()
+                .equals(other._screenshots, _screenshots) &&
+            const DeepCollectionEquality()
+                .equals(other._urlProblems, _urlProblems));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      timestamp,
+      panaRuntimeInfo,
+      reportStatus,
+      const DeepCollectionEquality().hash(_derivedTags),
+      const DeepCollectionEquality().hash(_allDependencies),
+      const DeepCollectionEquality().hash(_licenses),
+      const DeepCollectionEquality().hash(_report),
+      const DeepCollectionEquality().hash(_result),
+      const DeepCollectionEquality().hash(_screenshots),
+      const DeepCollectionEquality().hash(_urlProblems));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PanaReportImplCopyWith<_$PanaReportImpl> get copyWith =>
+      __$$PanaReportImplCopyWithImpl<_$PanaReportImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PanaReportImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PanaReport implements PanaReport {
+  const factory _PanaReport(
+      {required final DateTime timestamp,
+      required final PanaRuntimeInfo panaRuntimeInfo,
+      required final String reportStatus,
+      required final List<String> derivedTags,
+      required final List<String> allDependencies,
+      required final List<License> licenses,
+      required final Map<String, dynamic> report,
+      required final Map<String, dynamic> result,
+      required final List<String> screenshots,
+      required final List<String> urlProblems}) = _$PanaReportImpl;
+
+  factory _PanaReport.fromJson(Map<String, dynamic> json) =
+      _$PanaReportImpl.fromJson;
+
+  @override
+  DateTime get timestamp;
+  @override
+  PanaRuntimeInfo get panaRuntimeInfo;
+  @override
+  String get reportStatus;
+  @override
+  List<String> get derivedTags;
+  @override
+  List<String> get allDependencies;
+  @override
+  List<License> get licenses;
+  @override // TODO: Make an object for this
+  Map<String, dynamic> get report;
+  @override // TODO: Make an object for this
+  Map<String, dynamic> get result;
+  @override
+  List<String> get screenshots;
+  @override
+  List<String> get urlProblems;
+  @override
+  @JsonKey(ignore: true)
+  _$$PanaReportImplCopyWith<_$PanaReportImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PanaRuntimeInfo _$PanaRuntimeInfoFromJson(Map<String, dynamic> json) {
+  return _PanaRuntimeInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PanaRuntimeInfo {
+  String get panaVersion => throw _privateConstructorUsedError;
+  String get sdkVersion => throw _privateConstructorUsedError;
+  Map<String, String> get flutterVersions => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PanaRuntimeInfoCopyWith<PanaRuntimeInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PanaRuntimeInfoCopyWith<$Res> {
+  factory $PanaRuntimeInfoCopyWith(
+          PanaRuntimeInfo value, $Res Function(PanaRuntimeInfo) then) =
+      _$PanaRuntimeInfoCopyWithImpl<$Res, PanaRuntimeInfo>;
+  @useResult
+  $Res call(
+      {String panaVersion,
+      String sdkVersion,
+      Map<String, String> flutterVersions});
+}
+
+/// @nodoc
+class _$PanaRuntimeInfoCopyWithImpl<$Res, $Val extends PanaRuntimeInfo>
+    implements $PanaRuntimeInfoCopyWith<$Res> {
+  _$PanaRuntimeInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? panaVersion = null,
+    Object? sdkVersion = null,
+    Object? flutterVersions = null,
+  }) {
+    return _then(_value.copyWith(
+      panaVersion: null == panaVersion
+          ? _value.panaVersion
+          : panaVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      sdkVersion: null == sdkVersion
+          ? _value.sdkVersion
+          : sdkVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      flutterVersions: null == flutterVersions
+          ? _value.flutterVersions
+          : flutterVersions // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PanaRuntimeInfoImplCopyWith<$Res>
+    implements $PanaRuntimeInfoCopyWith<$Res> {
+  factory _$$PanaRuntimeInfoImplCopyWith(_$PanaRuntimeInfoImpl value,
+          $Res Function(_$PanaRuntimeInfoImpl) then) =
+      __$$PanaRuntimeInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String panaVersion,
+      String sdkVersion,
+      Map<String, String> flutterVersions});
+}
+
+/// @nodoc
+class __$$PanaRuntimeInfoImplCopyWithImpl<$Res>
+    extends _$PanaRuntimeInfoCopyWithImpl<$Res, _$PanaRuntimeInfoImpl>
+    implements _$$PanaRuntimeInfoImplCopyWith<$Res> {
+  __$$PanaRuntimeInfoImplCopyWithImpl(
+      _$PanaRuntimeInfoImpl _value, $Res Function(_$PanaRuntimeInfoImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? panaVersion = null,
+    Object? sdkVersion = null,
+    Object? flutterVersions = null,
+  }) {
+    return _then(_$PanaRuntimeInfoImpl(
+      panaVersion: null == panaVersion
+          ? _value.panaVersion
+          : panaVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      sdkVersion: null == sdkVersion
+          ? _value.sdkVersion
+          : sdkVersion // ignore: cast_nullable_to_non_nullable
+              as String,
+      flutterVersions: null == flutterVersions
+          ? _value._flutterVersions
+          : flutterVersions // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PanaRuntimeInfoImpl implements _PanaRuntimeInfo {
+  const _$PanaRuntimeInfoImpl(
+      {required this.panaVersion,
+      required this.sdkVersion,
+      required final Map<String, String> flutterVersions})
+      : _flutterVersions = flutterVersions;
+
+  factory _$PanaRuntimeInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PanaRuntimeInfoImplFromJson(json);
+
+  @override
+  final String panaVersion;
+  @override
+  final String sdkVersion;
+  final Map<String, String> _flutterVersions;
+  @override
+  Map<String, String> get flutterVersions {
+    if (_flutterVersions is EqualUnmodifiableMapView) return _flutterVersions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_flutterVersions);
+  }
+
+  @override
+  String toString() {
+    return 'PanaRuntimeInfo(panaVersion: $panaVersion, sdkVersion: $sdkVersion, flutterVersions: $flutterVersions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PanaRuntimeInfoImpl &&
+            (identical(other.panaVersion, panaVersion) ||
+                other.panaVersion == panaVersion) &&
+            (identical(other.sdkVersion, sdkVersion) ||
+                other.sdkVersion == sdkVersion) &&
+            const DeepCollectionEquality()
+                .equals(other._flutterVersions, _flutterVersions));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, panaVersion, sdkVersion,
+      const DeepCollectionEquality().hash(_flutterVersions));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PanaRuntimeInfoImplCopyWith<_$PanaRuntimeInfoImpl> get copyWith =>
+      __$$PanaRuntimeInfoImplCopyWithImpl<_$PanaRuntimeInfoImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PanaRuntimeInfoImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PanaRuntimeInfo implements PanaRuntimeInfo {
+  const factory _PanaRuntimeInfo(
+          {required final String panaVersion,
+          required final String sdkVersion,
+          required final Map<String, String> flutterVersions}) =
+      _$PanaRuntimeInfoImpl;
+
+  factory _PanaRuntimeInfo.fromJson(Map<String, dynamic> json) =
+      _$PanaRuntimeInfoImpl.fromJson;
+
+  @override
+  String get panaVersion;
+  @override
+  String get sdkVersion;
+  @override
+  Map<String, String> get flutterVersions;
+  @override
+  @JsonKey(ignore: true)
+  _$$PanaRuntimeInfoImplCopyWith<_$PanaRuntimeInfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+License _$LicenseFromJson(Map<String, dynamic> json) {
+  return _License.fromJson(json);
+}
+
+/// @nodoc
+mixin _$License {
+  String get path => throw _privateConstructorUsedError;
+  String get spdxIdentifier => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LicenseCopyWith<License> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LicenseCopyWith<$Res> {
+  factory $LicenseCopyWith(License value, $Res Function(License) then) =
+      _$LicenseCopyWithImpl<$Res, License>;
+  @useResult
+  $Res call({String path, String spdxIdentifier});
+}
+
+/// @nodoc
+class _$LicenseCopyWithImpl<$Res, $Val extends License>
+    implements $LicenseCopyWith<$Res> {
+  _$LicenseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+    Object? spdxIdentifier = null,
+  }) {
+    return _then(_value.copyWith(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      spdxIdentifier: null == spdxIdentifier
+          ? _value.spdxIdentifier
+          : spdxIdentifier // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LicenseImplCopyWith<$Res> implements $LicenseCopyWith<$Res> {
+  factory _$$LicenseImplCopyWith(
+          _$LicenseImpl value, $Res Function(_$LicenseImpl) then) =
+      __$$LicenseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String path, String spdxIdentifier});
+}
+
+/// @nodoc
+class __$$LicenseImplCopyWithImpl<$Res>
+    extends _$LicenseCopyWithImpl<$Res, _$LicenseImpl>
+    implements _$$LicenseImplCopyWith<$Res> {
+  __$$LicenseImplCopyWithImpl(
+      _$LicenseImpl _value, $Res Function(_$LicenseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+    Object? spdxIdentifier = null,
+  }) {
+    return _then(_$LicenseImpl(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      spdxIdentifier: null == spdxIdentifier
+          ? _value.spdxIdentifier
+          : spdxIdentifier // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LicenseImpl implements _License {
+  const _$LicenseImpl({required this.path, required this.spdxIdentifier});
+
+  factory _$LicenseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LicenseImplFromJson(json);
+
+  @override
+  final String path;
+  @override
+  final String spdxIdentifier;
+
+  @override
+  String toString() {
+    return 'License(path: $path, spdxIdentifier: $spdxIdentifier)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LicenseImpl &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.spdxIdentifier, spdxIdentifier) ||
+                other.spdxIdentifier == spdxIdentifier));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, path, spdxIdentifier);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
+      __$$LicenseImplCopyWithImpl<_$LicenseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LicenseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _License implements License {
+  const factory _License(
+      {required final String path,
+      required final String spdxIdentifier}) = _$LicenseImpl;
+
+  factory _License.fromJson(Map<String, dynamic> json) = _$LicenseImpl.fromJson;
+
+  @override
+  String get path;
+  @override
+  String get spdxIdentifier;
+  @override
+  @JsonKey(ignore: true)
+  _$$LicenseImplCopyWith<_$LicenseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

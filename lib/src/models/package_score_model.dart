@@ -30,9 +30,70 @@ class PackageScoreCard with _$PackageScoreCard {
     required String packageVersion,
     required String runtimeVersion,
     required DateTime updated,
+    DartdocReport? dartdocReport,
+    PanaReport? panaReport,
+    required String taskStatus,
   }) = _PackageScoreCard;
 
   /// From json
   factory PackageScoreCard.fromJson(Map<String, dynamic> json) =>
       _$PackageScoreCardFromJson(json);
+}
+
+@freezed
+class DartdocReport with _$DartdocReport {
+  const factory DartdocReport({
+    required String reportStatus,
+  }) = _DartdocReport;
+
+  /// From json
+  factory DartdocReport.fromJson(Map<String, dynamic> json) =>
+      _$DartdocReportFromJson(json);
+}
+
+@freezed
+class PanaReport with _$PanaReport {
+  const factory PanaReport({
+    required DateTime timestamp,
+    required PanaRuntimeInfo panaRuntimeInfo,
+    required String reportStatus,
+    required List<String> derivedTags,
+    required List<String> allDependencies,
+    required List<License> licenses,
+    // TODO: Make an object for this
+    required Map<String, dynamic> report,
+    // TODO: Make an object for this
+    required Map<String, dynamic> result,
+    required List<String> screenshots,
+    required List<String> urlProblems,
+  }) = _PanaReport;
+
+  /// From json
+  factory PanaReport.fromJson(Map<String, dynamic> json) =>
+      _$PanaReportFromJson(json);
+}
+
+@freezed
+class PanaRuntimeInfo with _$PanaRuntimeInfo {
+  const factory PanaRuntimeInfo({
+    required String panaVersion,
+    required String sdkVersion,
+    required Map<String, String> flutterVersions,
+  }) = _PanaRuntimeInfo;
+
+  /// From json
+  factory PanaRuntimeInfo.fromJson(Map<String, dynamic> json) =>
+      _$PanaRuntimeInfoFromJson(json);
+}
+
+@freezed
+class License with _$License {
+  const factory License({
+    required String path,
+    required String spdxIdentifier,
+  }) = _License;
+
+  /// From json
+  factory License.fromJson(Map<String, dynamic> json) =>
+      _$LicenseFromJson(json);
 }
