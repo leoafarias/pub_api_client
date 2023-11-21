@@ -64,7 +64,7 @@ class PanaReport with _$PanaReport {
     required Map<String, dynamic> report,
     // TODO: Make an object for this
     required Map<String, dynamic> result,
-    required List<String> screenshots,
+    required Map<String, String> screenshots,
     required List<String> urlProblems,
   }) = _PanaReport;
 

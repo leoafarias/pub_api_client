@@ -727,7 +727,7 @@ mixin _$PanaReport {
   Map<String, dynamic> get report =>
       throw _privateConstructorUsedError; // TODO: Make an object for this
   Map<String, dynamic> get result => throw _privateConstructorUsedError;
-  List<String> get screenshots => throw _privateConstructorUsedError;
+  Map<String, String> get screenshots => throw _privateConstructorUsedError;
   List<String> get urlProblems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -751,7 +751,7 @@ abstract class $PanaReportCopyWith<$Res> {
       List<License> licenses,
       Map<String, dynamic> report,
       Map<String, dynamic> result,
-      List<String> screenshots,
+      Map<String, String> screenshots,
       List<String> urlProblems});
 
   $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo;
@@ -817,7 +817,7 @@ class _$PanaReportCopyWithImpl<$Res, $Val extends PanaReport>
       screenshots: null == screenshots
           ? _value.screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<String, String>,
       urlProblems: null == urlProblems
           ? _value.urlProblems
           : urlProblems // ignore: cast_nullable_to_non_nullable
@@ -851,7 +851,7 @@ abstract class _$$PanaReportImplCopyWith<$Res>
       List<License> licenses,
       Map<String, dynamic> report,
       Map<String, dynamic> result,
-      List<String> screenshots,
+      Map<String, String> screenshots,
       List<String> urlProblems});
 
   @override
@@ -916,7 +916,7 @@ class __$$PanaReportImplCopyWithImpl<$Res>
       screenshots: null == screenshots
           ? _value._screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<String, String>,
       urlProblems: null == urlProblems
           ? _value._urlProblems
           : urlProblems // ignore: cast_nullable_to_non_nullable
@@ -937,7 +937,7 @@ class _$PanaReportImpl implements _PanaReport {
       required final List<License> licenses,
       required final Map<String, dynamic> report,
       required final Map<String, dynamic> result,
-      required final List<String> screenshots,
+      required final Map<String, String> screenshots,
       required final List<String> urlProblems})
       : _derivedTags = derivedTags,
         _allDependencies = allDependencies,
@@ -1000,12 +1000,12 @@ class _$PanaReportImpl implements _PanaReport {
     return EqualUnmodifiableMapView(_result);
   }
 
-  final List<String> _screenshots;
+  final Map<String, String> _screenshots;
   @override
-  List<String> get screenshots {
-    if (_screenshots is EqualUnmodifiableListView) return _screenshots;
+  Map<String, String> get screenshots {
+    if (_screenshots is EqualUnmodifiableMapView) return _screenshots;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_screenshots);
+    return EqualUnmodifiableMapView(_screenshots);
   }
 
   final List<String> _urlProblems;
@@ -1084,7 +1084,7 @@ abstract class _PanaReport implements PanaReport {
       required final List<License> licenses,
       required final Map<String, dynamic> report,
       required final Map<String, dynamic> result,
-      required final List<String> screenshots,
+      required final Map<String, String> screenshots,
       required final List<String> urlProblems}) = _$PanaReportImpl;
 
   factory _PanaReport.fromJson(Map<String, dynamic> json) =
@@ -1107,7 +1107,7 @@ abstract class _PanaReport implements PanaReport {
   @override // TODO: Make an object for this
   Map<String, dynamic> get result;
   @override
-  List<String> get screenshots;
+  Map<String, String> get screenshots;
   @override
   List<String> get urlProblems;
   @override

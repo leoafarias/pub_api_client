@@ -82,9 +82,7 @@ _$PanaReportImpl _$$PanaReportImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       report: json['report'] as Map<String, dynamic>,
       result: json['result'] as Map<String, dynamic>,
-      screenshots: (json['screenshots'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      screenshots: Map<String, String>.from(json['screenshots'] as Map),
       urlProblems: (json['urlProblems'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
