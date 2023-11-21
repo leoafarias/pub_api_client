@@ -283,8 +283,8 @@ mixin _$PackageScoreCard {
   String get packageVersion => throw _privateConstructorUsedError;
   String get runtimeVersion => throw _privateConstructorUsedError;
   DateTime get updated => throw _privateConstructorUsedError;
-  DartdocReport? get dartdocReport => throw _privateConstructorUsedError;
-  PanaReport? get panaReport => throw _privateConstructorUsedError;
+  DartdocReport get dartdocReport => throw _privateConstructorUsedError;
+  PanaReport get panaReport => throw _privateConstructorUsedError;
   String get taskStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -304,12 +304,12 @@ abstract class $PackageScoreCardCopyWith<$Res> {
       String packageVersion,
       String runtimeVersion,
       DateTime updated,
-      DartdocReport? dartdocReport,
-      PanaReport? panaReport,
+      DartdocReport dartdocReport,
+      PanaReport panaReport,
       String taskStatus});
 
-  $DartdocReportCopyWith<$Res>? get dartdocReport;
-  $PanaReportCopyWith<$Res>? get panaReport;
+  $DartdocReportCopyWith<$Res> get dartdocReport;
+  $PanaReportCopyWith<$Res> get panaReport;
 }
 
 /// @nodoc
@@ -329,8 +329,8 @@ class _$PackageScoreCardCopyWithImpl<$Res, $Val extends PackageScoreCard>
     Object? packageVersion = null,
     Object? runtimeVersion = null,
     Object? updated = null,
-    Object? dartdocReport = freezed,
-    Object? panaReport = freezed,
+    Object? dartdocReport = null,
+    Object? panaReport = null,
     Object? taskStatus = null,
   }) {
     return _then(_value.copyWith(
@@ -350,14 +350,14 @@ class _$PackageScoreCardCopyWithImpl<$Res, $Val extends PackageScoreCard>
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      dartdocReport: freezed == dartdocReport
+      dartdocReport: null == dartdocReport
           ? _value.dartdocReport
           : dartdocReport // ignore: cast_nullable_to_non_nullable
-              as DartdocReport?,
-      panaReport: freezed == panaReport
+              as DartdocReport,
+      panaReport: null == panaReport
           ? _value.panaReport
           : panaReport // ignore: cast_nullable_to_non_nullable
-              as PanaReport?,
+              as PanaReport,
       taskStatus: null == taskStatus
           ? _value.taskStatus
           : taskStatus // ignore: cast_nullable_to_non_nullable
@@ -367,24 +367,16 @@ class _$PackageScoreCardCopyWithImpl<$Res, $Val extends PackageScoreCard>
 
   @override
   @pragma('vm:prefer-inline')
-  $DartdocReportCopyWith<$Res>? get dartdocReport {
-    if (_value.dartdocReport == null) {
-      return null;
-    }
-
-    return $DartdocReportCopyWith<$Res>(_value.dartdocReport!, (value) {
+  $DartdocReportCopyWith<$Res> get dartdocReport {
+    return $DartdocReportCopyWith<$Res>(_value.dartdocReport, (value) {
       return _then(_value.copyWith(dartdocReport: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PanaReportCopyWith<$Res>? get panaReport {
-    if (_value.panaReport == null) {
-      return null;
-    }
-
-    return $PanaReportCopyWith<$Res>(_value.panaReport!, (value) {
+  $PanaReportCopyWith<$Res> get panaReport {
+    return $PanaReportCopyWith<$Res>(_value.panaReport, (value) {
       return _then(_value.copyWith(panaReport: value) as $Val);
     });
   }
@@ -403,14 +395,14 @@ abstract class _$$PackageScoreCardImplCopyWith<$Res>
       String packageVersion,
       String runtimeVersion,
       DateTime updated,
-      DartdocReport? dartdocReport,
-      PanaReport? panaReport,
+      DartdocReport dartdocReport,
+      PanaReport panaReport,
       String taskStatus});
 
   @override
-  $DartdocReportCopyWith<$Res>? get dartdocReport;
+  $DartdocReportCopyWith<$Res> get dartdocReport;
   @override
-  $PanaReportCopyWith<$Res>? get panaReport;
+  $PanaReportCopyWith<$Res> get panaReport;
 }
 
 /// @nodoc
@@ -428,8 +420,8 @@ class __$$PackageScoreCardImplCopyWithImpl<$Res>
     Object? packageVersion = null,
     Object? runtimeVersion = null,
     Object? updated = null,
-    Object? dartdocReport = freezed,
-    Object? panaReport = freezed,
+    Object? dartdocReport = null,
+    Object? panaReport = null,
     Object? taskStatus = null,
   }) {
     return _then(_$PackageScoreCardImpl(
@@ -449,14 +441,14 @@ class __$$PackageScoreCardImplCopyWithImpl<$Res>
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      dartdocReport: freezed == dartdocReport
+      dartdocReport: null == dartdocReport
           ? _value.dartdocReport
           : dartdocReport // ignore: cast_nullable_to_non_nullable
-              as DartdocReport?,
-      panaReport: freezed == panaReport
+              as DartdocReport,
+      panaReport: null == panaReport
           ? _value.panaReport
           : panaReport // ignore: cast_nullable_to_non_nullable
-              as PanaReport?,
+              as PanaReport,
       taskStatus: null == taskStatus
           ? _value.taskStatus
           : taskStatus // ignore: cast_nullable_to_non_nullable
@@ -473,8 +465,8 @@ class _$PackageScoreCardImpl implements _PackageScoreCard {
       required this.packageVersion,
       required this.runtimeVersion,
       required this.updated,
-      this.dartdocReport,
-      this.panaReport,
+      required this.dartdocReport,
+      required this.panaReport,
       required this.taskStatus});
 
   factory _$PackageScoreCardImpl.fromJson(Map<String, dynamic> json) =>
@@ -489,9 +481,9 @@ class _$PackageScoreCardImpl implements _PackageScoreCard {
   @override
   final DateTime updated;
   @override
-  final DartdocReport? dartdocReport;
+  final DartdocReport dartdocReport;
   @override
-  final PanaReport? panaReport;
+  final PanaReport panaReport;
   @override
   final String taskStatus;
 
@@ -546,8 +538,8 @@ abstract class _PackageScoreCard implements PackageScoreCard {
       required final String packageVersion,
       required final String runtimeVersion,
       required final DateTime updated,
-      final DartdocReport? dartdocReport,
-      final PanaReport? panaReport,
+      required final DartdocReport dartdocReport,
+      required final PanaReport panaReport,
       required final String taskStatus}) = _$PackageScoreCardImpl;
 
   factory _PackageScoreCard.fromJson(Map<String, dynamic> json) =
@@ -562,9 +554,9 @@ abstract class _PackageScoreCard implements PackageScoreCard {
   @override
   DateTime get updated;
   @override
-  DartdocReport? get dartdocReport;
+  DartdocReport get dartdocReport;
   @override
-  PanaReport? get panaReport;
+  PanaReport get panaReport;
   @override
   String get taskStatus;
   @override
@@ -717,18 +709,17 @@ PanaReport _$PanaReportFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PanaReport {
-  DateTime get timestamp => throw _privateConstructorUsedError;
-  PanaRuntimeInfo get panaRuntimeInfo => throw _privateConstructorUsedError;
+  DateTime? get timestamp => throw _privateConstructorUsedError;
+  PanaRuntimeInfo? get panaRuntimeInfo => throw _privateConstructorUsedError;
   String get reportStatus => throw _privateConstructorUsedError;
   List<String> get derivedTags => throw _privateConstructorUsedError;
-  List<String> get allDependencies => throw _privateConstructorUsedError;
-  List<License> get licenses =>
-      throw _privateConstructorUsedError; // TODO: Make an object for this
-  Map<String, dynamic> get report =>
-      throw _privateConstructorUsedError; // TODO: Make an object for this
-  Map<String, dynamic> get result => throw _privateConstructorUsedError;
-  Map<String, String> get screenshots => throw _privateConstructorUsedError;
-  List<String> get urlProblems => throw _privateConstructorUsedError;
+  List<String>? get allDependencies => throw _privateConstructorUsedError;
+  List<License>? get licenses => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get report => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get result => throw _privateConstructorUsedError;
+  List<Map<String, String>>? get screenshots =>
+      throw _privateConstructorUsedError;
+  List<String>? get urlProblems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -743,18 +734,18 @@ abstract class $PanaReportCopyWith<$Res> {
       _$PanaReportCopyWithImpl<$Res, PanaReport>;
   @useResult
   $Res call(
-      {DateTime timestamp,
-      PanaRuntimeInfo panaRuntimeInfo,
+      {DateTime? timestamp,
+      PanaRuntimeInfo? panaRuntimeInfo,
       String reportStatus,
       List<String> derivedTags,
-      List<String> allDependencies,
-      List<License> licenses,
-      Map<String, dynamic> report,
-      Map<String, dynamic> result,
-      Map<String, String> screenshots,
-      List<String> urlProblems});
+      List<String>? allDependencies,
+      List<License>? licenses,
+      Map<String, dynamic>? report,
+      Map<String, dynamic>? result,
+      List<Map<String, String>>? screenshots,
+      List<String>? urlProblems});
 
-  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo;
+  $PanaRuntimeInfoCopyWith<$Res>? get panaRuntimeInfo;
 }
 
 /// @nodoc
@@ -770,26 +761,26 @@ class _$PanaReportCopyWithImpl<$Res, $Val extends PanaReport>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timestamp = null,
-    Object? panaRuntimeInfo = null,
+    Object? timestamp = freezed,
+    Object? panaRuntimeInfo = freezed,
     Object? reportStatus = null,
     Object? derivedTags = null,
-    Object? allDependencies = null,
-    Object? licenses = null,
-    Object? report = null,
-    Object? result = null,
-    Object? screenshots = null,
-    Object? urlProblems = null,
+    Object? allDependencies = freezed,
+    Object? licenses = freezed,
+    Object? report = freezed,
+    Object? result = freezed,
+    Object? screenshots = freezed,
+    Object? urlProblems = freezed,
   }) {
     return _then(_value.copyWith(
-      timestamp: null == timestamp
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      panaRuntimeInfo: null == panaRuntimeInfo
+              as DateTime?,
+      panaRuntimeInfo: freezed == panaRuntimeInfo
           ? _value.panaRuntimeInfo
           : panaRuntimeInfo // ignore: cast_nullable_to_non_nullable
-              as PanaRuntimeInfo,
+              as PanaRuntimeInfo?,
       reportStatus: null == reportStatus
           ? _value.reportStatus
           : reportStatus // ignore: cast_nullable_to_non_nullable
@@ -798,37 +789,41 @@ class _$PanaReportCopyWithImpl<$Res, $Val extends PanaReport>
           ? _value.derivedTags
           : derivedTags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      allDependencies: null == allDependencies
+      allDependencies: freezed == allDependencies
           ? _value.allDependencies
           : allDependencies // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      licenses: null == licenses
+              as List<String>?,
+      licenses: freezed == licenses
           ? _value.licenses
           : licenses // ignore: cast_nullable_to_non_nullable
-              as List<License>,
-      report: null == report
+              as List<License>?,
+      report: freezed == report
           ? _value.report
           : report // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      result: null == result
+              as Map<String, dynamic>?,
+      result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      screenshots: null == screenshots
+              as Map<String, dynamic>?,
+      screenshots: freezed == screenshots
           ? _value.screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-      urlProblems: null == urlProblems
+              as List<Map<String, String>>?,
+      urlProblems: freezed == urlProblems
           ? _value.urlProblems
           : urlProblems // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo {
-    return $PanaRuntimeInfoCopyWith<$Res>(_value.panaRuntimeInfo, (value) {
+  $PanaRuntimeInfoCopyWith<$Res>? get panaRuntimeInfo {
+    if (_value.panaRuntimeInfo == null) {
+      return null;
+    }
+
+    return $PanaRuntimeInfoCopyWith<$Res>(_value.panaRuntimeInfo!, (value) {
       return _then(_value.copyWith(panaRuntimeInfo: value) as $Val);
     });
   }
@@ -843,19 +838,19 @@ abstract class _$$PanaReportImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime timestamp,
-      PanaRuntimeInfo panaRuntimeInfo,
+      {DateTime? timestamp,
+      PanaRuntimeInfo? panaRuntimeInfo,
       String reportStatus,
       List<String> derivedTags,
-      List<String> allDependencies,
-      List<License> licenses,
-      Map<String, dynamic> report,
-      Map<String, dynamic> result,
-      Map<String, String> screenshots,
-      List<String> urlProblems});
+      List<String>? allDependencies,
+      List<License>? licenses,
+      Map<String, dynamic>? report,
+      Map<String, dynamic>? result,
+      List<Map<String, String>>? screenshots,
+      List<String>? urlProblems});
 
   @override
-  $PanaRuntimeInfoCopyWith<$Res> get panaRuntimeInfo;
+  $PanaRuntimeInfoCopyWith<$Res>? get panaRuntimeInfo;
 }
 
 /// @nodoc
@@ -869,26 +864,26 @@ class __$$PanaReportImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? timestamp = null,
-    Object? panaRuntimeInfo = null,
+    Object? timestamp = freezed,
+    Object? panaRuntimeInfo = freezed,
     Object? reportStatus = null,
     Object? derivedTags = null,
-    Object? allDependencies = null,
-    Object? licenses = null,
-    Object? report = null,
-    Object? result = null,
-    Object? screenshots = null,
-    Object? urlProblems = null,
+    Object? allDependencies = freezed,
+    Object? licenses = freezed,
+    Object? report = freezed,
+    Object? result = freezed,
+    Object? screenshots = freezed,
+    Object? urlProblems = freezed,
   }) {
     return _then(_$PanaReportImpl(
-      timestamp: null == timestamp
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      panaRuntimeInfo: null == panaRuntimeInfo
+              as DateTime?,
+      panaRuntimeInfo: freezed == panaRuntimeInfo
           ? _value.panaRuntimeInfo
           : panaRuntimeInfo // ignore: cast_nullable_to_non_nullable
-              as PanaRuntimeInfo,
+              as PanaRuntimeInfo?,
       reportStatus: null == reportStatus
           ? _value.reportStatus
           : reportStatus // ignore: cast_nullable_to_non_nullable
@@ -897,30 +892,30 @@ class __$$PanaReportImplCopyWithImpl<$Res>
           ? _value._derivedTags
           : derivedTags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      allDependencies: null == allDependencies
+      allDependencies: freezed == allDependencies
           ? _value._allDependencies
           : allDependencies // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      licenses: null == licenses
+              as List<String>?,
+      licenses: freezed == licenses
           ? _value._licenses
           : licenses // ignore: cast_nullable_to_non_nullable
-              as List<License>,
-      report: null == report
+              as List<License>?,
+      report: freezed == report
           ? _value._report
           : report // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      result: null == result
+              as Map<String, dynamic>?,
+      result: freezed == result
           ? _value._result
           : result // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      screenshots: null == screenshots
+              as Map<String, dynamic>?,
+      screenshots: freezed == screenshots
           ? _value._screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
-      urlProblems: null == urlProblems
+              as List<Map<String, String>>?,
+      urlProblems: freezed == urlProblems
           ? _value._urlProblems
           : urlProblems // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -929,16 +924,16 @@ class __$$PanaReportImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PanaReportImpl implements _PanaReport {
   const _$PanaReportImpl(
-      {required this.timestamp,
-      required this.panaRuntimeInfo,
+      {this.timestamp,
+      this.panaRuntimeInfo,
       required this.reportStatus,
       required final List<String> derivedTags,
-      required final List<String> allDependencies,
-      required final List<License> licenses,
-      required final Map<String, dynamic> report,
-      required final Map<String, dynamic> result,
-      required final Map<String, String> screenshots,
-      required final List<String> urlProblems})
+      final List<String>? allDependencies,
+      final List<License>? licenses,
+      final Map<String, dynamic>? report,
+      final Map<String, dynamic>? result,
+      final List<Map<String, String>>? screenshots,
+      final List<String>? urlProblems})
       : _derivedTags = derivedTags,
         _allDependencies = allDependencies,
         _licenses = licenses,
@@ -951,9 +946,9 @@ class _$PanaReportImpl implements _PanaReport {
       _$$PanaReportImplFromJson(json);
 
   @override
-  final DateTime timestamp;
+  final DateTime? timestamp;
   @override
-  final PanaRuntimeInfo panaRuntimeInfo;
+  final PanaRuntimeInfo? panaRuntimeInfo;
   @override
   final String reportStatus;
   final List<String> _derivedTags;
@@ -964,56 +959,64 @@ class _$PanaReportImpl implements _PanaReport {
     return EqualUnmodifiableListView(_derivedTags);
   }
 
-  final List<String> _allDependencies;
+  final List<String>? _allDependencies;
   @override
-  List<String> get allDependencies {
+  List<String>? get allDependencies {
+    final value = _allDependencies;
+    if (value == null) return null;
     if (_allDependencies is EqualUnmodifiableListView) return _allDependencies;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_allDependencies);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<License> _licenses;
+  final List<License>? _licenses;
   @override
-  List<License> get licenses {
+  List<License>? get licenses {
+    final value = _licenses;
+    if (value == null) return null;
     if (_licenses is EqualUnmodifiableListView) return _licenses;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_licenses);
+    return EqualUnmodifiableListView(value);
   }
 
-// TODO: Make an object for this
-  final Map<String, dynamic> _report;
-// TODO: Make an object for this
+  final Map<String, dynamic>? _report;
   @override
-  Map<String, dynamic> get report {
+  Map<String, dynamic>? get report {
+    final value = _report;
+    if (value == null) return null;
     if (_report is EqualUnmodifiableMapView) return _report;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_report);
+    return EqualUnmodifiableMapView(value);
   }
 
-// TODO: Make an object for this
-  final Map<String, dynamic> _result;
-// TODO: Make an object for this
+  final Map<String, dynamic>? _result;
   @override
-  Map<String, dynamic> get result {
+  Map<String, dynamic>? get result {
+    final value = _result;
+    if (value == null) return null;
     if (_result is EqualUnmodifiableMapView) return _result;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_result);
+    return EqualUnmodifiableMapView(value);
   }
 
-  final Map<String, String> _screenshots;
+  final List<Map<String, String>>? _screenshots;
   @override
-  Map<String, String> get screenshots {
-    if (_screenshots is EqualUnmodifiableMapView) return _screenshots;
+  List<Map<String, String>>? get screenshots {
+    final value = _screenshots;
+    if (value == null) return null;
+    if (_screenshots is EqualUnmodifiableListView) return _screenshots;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_screenshots);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String> _urlProblems;
+  final List<String>? _urlProblems;
   @override
-  List<String> get urlProblems {
+  List<String>? get urlProblems {
+    final value = _urlProblems;
+    if (value == null) return null;
     if (_urlProblems is EqualUnmodifiableListView) return _urlProblems;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_urlProblems);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -1076,40 +1079,40 @@ class _$PanaReportImpl implements _PanaReport {
 
 abstract class _PanaReport implements PanaReport {
   const factory _PanaReport(
-      {required final DateTime timestamp,
-      required final PanaRuntimeInfo panaRuntimeInfo,
+      {final DateTime? timestamp,
+      final PanaRuntimeInfo? panaRuntimeInfo,
       required final String reportStatus,
       required final List<String> derivedTags,
-      required final List<String> allDependencies,
-      required final List<License> licenses,
-      required final Map<String, dynamic> report,
-      required final Map<String, dynamic> result,
-      required final Map<String, String> screenshots,
-      required final List<String> urlProblems}) = _$PanaReportImpl;
+      final List<String>? allDependencies,
+      final List<License>? licenses,
+      final Map<String, dynamic>? report,
+      final Map<String, dynamic>? result,
+      final List<Map<String, String>>? screenshots,
+      final List<String>? urlProblems}) = _$PanaReportImpl;
 
   factory _PanaReport.fromJson(Map<String, dynamic> json) =
       _$PanaReportImpl.fromJson;
 
   @override
-  DateTime get timestamp;
+  DateTime? get timestamp;
   @override
-  PanaRuntimeInfo get panaRuntimeInfo;
+  PanaRuntimeInfo? get panaRuntimeInfo;
   @override
   String get reportStatus;
   @override
   List<String> get derivedTags;
   @override
-  List<String> get allDependencies;
+  List<String>? get allDependencies;
   @override
-  List<License> get licenses;
-  @override // TODO: Make an object for this
-  Map<String, dynamic> get report;
-  @override // TODO: Make an object for this
-  Map<String, dynamic> get result;
+  List<License>? get licenses;
   @override
-  Map<String, String> get screenshots;
+  Map<String, dynamic>? get report;
   @override
-  List<String> get urlProblems;
+  Map<String, dynamic>? get result;
+  @override
+  List<Map<String, String>>? get screenshots;
+  @override
+  List<String>? get urlProblems;
   @override
   @JsonKey(ignore: true)
   _$$PanaReportImplCopyWith<_$PanaReportImpl> get copyWith =>

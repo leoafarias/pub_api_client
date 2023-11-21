@@ -33,13 +33,10 @@ _$PackageScoreCardImpl _$$PackageScoreCardImplFromJson(
       packageVersion: json['packageVersion'] as String,
       runtimeVersion: json['runtimeVersion'] as String,
       updated: DateTime.parse(json['updated'] as String),
-      dartdocReport: json['dartdocReport'] == null
-          ? null
-          : DartdocReport.fromJson(
-              json['dartdocReport'] as Map<String, dynamic>),
-      panaReport: json['panaReport'] == null
-          ? null
-          : PanaReport.fromJson(json['panaReport'] as Map<String, dynamic>),
+      dartdocReport:
+          DartdocReport.fromJson(json['dartdocReport'] as Map<String, dynamic>),
+      panaReport:
+          PanaReport.fromJson(json['panaReport'] as Map<String, dynamic>),
       taskStatus: json['taskStatus'] as String,
     );
 
@@ -67,30 +64,36 @@ Map<String, dynamic> _$$DartdocReportImplToJson(_$DartdocReportImpl instance) =>
 
 _$PanaReportImpl _$$PanaReportImplFromJson(Map<String, dynamic> json) =>
     _$PanaReportImpl(
-      timestamp: DateTime.parse(json['timestamp'] as String),
-      panaRuntimeInfo: PanaRuntimeInfo.fromJson(
-          json['panaRuntimeInfo'] as Map<String, dynamic>),
+      timestamp: json['timestamp'] == null
+          ? null
+          : DateTime.parse(json['timestamp'] as String),
+      panaRuntimeInfo: json['panaRuntimeInfo'] == null
+          ? null
+          : PanaRuntimeInfo.fromJson(
+              json['panaRuntimeInfo'] as Map<String, dynamic>),
       reportStatus: json['reportStatus'] as String,
       derivedTags: (json['derivedTags'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      allDependencies: (json['allDependencies'] as List<dynamic>)
-          .map((e) => e as String)
+      allDependencies: (json['allDependencies'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
-      licenses: (json['licenses'] as List<dynamic>)
-          .map((e) => License.fromJson(e as Map<String, dynamic>))
+      licenses: (json['licenses'] as List<dynamic>?)
+          ?.map((e) => License.fromJson(e as Map<String, dynamic>))
           .toList(),
-      report: json['report'] as Map<String, dynamic>,
-      result: json['result'] as Map<String, dynamic>,
-      screenshots: Map<String, String>.from(json['screenshots'] as Map),
-      urlProblems: (json['urlProblems'] as List<dynamic>)
-          .map((e) => e as String)
+      report: json['report'] as Map<String, dynamic>?,
+      result: json['result'] as Map<String, dynamic>?,
+      screenshots: (json['screenshots'] as List<dynamic>?)
+          ?.map((e) => Map<String, String>.from(e as Map))
+          .toList(),
+      urlProblems: (json['urlProblems'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
     );
 
 Map<String, dynamic> _$$PanaReportImplToJson(_$PanaReportImpl instance) =>
     <String, dynamic>{
-      'timestamp': instance.timestamp.toIso8601String(),
+      'timestamp': instance.timestamp?.toIso8601String(),
       'panaRuntimeInfo': instance.panaRuntimeInfo,
       'reportStatus': instance.reportStatus,
       'derivedTags': instance.derivedTags,

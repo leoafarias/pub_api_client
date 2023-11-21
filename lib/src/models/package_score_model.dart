@@ -30,8 +30,8 @@ class PackageScoreCard with _$PackageScoreCard {
     required String packageVersion,
     required String runtimeVersion,
     required DateTime updated,
-    DartdocReport? dartdocReport,
-    PanaReport? panaReport,
+    required DartdocReport dartdocReport,
+    required PanaReport panaReport,
     required String taskStatus,
   }) = _PackageScoreCard;
 
@@ -54,18 +54,16 @@ class DartdocReport with _$DartdocReport {
 @freezed
 class PanaReport with _$PanaReport {
   const factory PanaReport({
-    required DateTime timestamp,
-    required PanaRuntimeInfo panaRuntimeInfo,
+    DateTime? timestamp,
+    PanaRuntimeInfo? panaRuntimeInfo,
     required String reportStatus,
     required List<String> derivedTags,
-    required List<String> allDependencies,
-    required List<License> licenses,
-    // TODO: Make an object for this
-    required Map<String, dynamic> report,
-    // TODO: Make an object for this
-    required Map<String, dynamic> result,
-    required Map<String, String> screenshots,
-    required List<String> urlProblems,
+    List<String>? allDependencies,
+    List<License>? licenses,
+    Map<String, dynamic>? report,
+    Map<String, dynamic>? result,
+    List<Map<String, String>>? screenshots,
+    List<String>? urlProblems,
   }) = _PanaReport;
 
   /// From json
