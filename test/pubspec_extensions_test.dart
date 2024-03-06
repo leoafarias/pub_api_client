@@ -1,4 +1,4 @@
-import 'package:pub_api_client/src/models/pubspec_extensions.dart';
+import 'package:pub_api_client/pub_api_client.dart';
 import 'package:pubspec/pubspec.dart';
 import 'package:test/test.dart';
 import 'package:yaml/yaml.dart';
