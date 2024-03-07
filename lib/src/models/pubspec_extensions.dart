@@ -1,5 +1,4 @@
 import 'package:pubspec/pubspec.dart';
-import 'package:yaml/yaml.dart';
 
 /// {@template pubspec_extensions}
 /// Extensions on [PubSpec] to provide additional functionality.
@@ -15,11 +14,11 @@ extension PubspecExtensions on PubSpec {
   String? issueTracker() => unParsedYaml?['issue_tracker'];
 
   /// Optional. List of URLs where users can sponsor development of the package.
-  YamlList? funding() => unParsedYaml?['funding'];
+  List? funding() => unParsedYaml?['funding'];
 
   /// Optional. Specify files to ignore when conducting a pre-publishing search
   /// for potential leaks of secrets.
-  YamlList? falseSecrets() => unParsedYaml?['false_secrets'];
+  List? falseSecrets() => unParsedYaml?['false_secrets'];
 
   /// Optional. Specify a list of screenshot files to display on pub.dev
   List<Screenshot>? screenshots() {
@@ -35,10 +34,10 @@ extension PubspecExtensions on PubSpec {
   }
 
   /// Optional field to list the topics that this packages belongs to.
-  YamlList? topics() => unParsedYaml?['topics'];
+  List? topics() => unParsedYaml?['topics'];
 
   /// Optional. List of ignored security advisories.
-  YamlList? ignoredAdvisories() => unParsedYaml?['ignored_advisories'];
+  List? ignoredAdvisories() => unParsedYaml?['ignored_advisories'];
 }
 
 /// {@template screenshot}

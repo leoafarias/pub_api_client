@@ -12,7 +12,6 @@ dependencies:
   oauth2: ^2.0.2
   path: ^1.8.3
   pubspec: ^2.3.0
-  yaml: ^3.1.2
 
 dev_dependencies:
   build_runner: ^2.4.6
