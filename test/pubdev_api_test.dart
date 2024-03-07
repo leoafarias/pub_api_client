@@ -26,6 +26,16 @@ void main() {
       expect(payload.length, greaterThan(0));
       expect(payload.length, packageInfo.versions.length);
     });
+
+    test('Get package score', () async {
+      final payload = await client.packageScore(packageName);
+
+      expect(payload.lastUpdated, isNotNull);
+      expect(payload.grantedPoints, isNotNull);
+      expect(payload.likeCount, greaterThan(50));
+      expect(payload.maxPoints, greaterThan(100));
+    });
+
     test('Get package metrics', () async {
       final score = await client.packageScore(packageName);
       final metrics = await client.packageMetrics(packageName);
@@ -58,7 +68,7 @@ void main() {
 
     test('Get package publisher', () async {
       final publisher = await client.packagePublisher(packageName);
-      expect(publisher.publisherId, 'fvm.app');
+      expect(publisher.publisherId, 'leoafarias.com');
     });
 
     test('Get package publisher if unregistered', () async {
@@ -111,8 +121,8 @@ void main() {
     });
 
     test('Search for packages of a publisher', () async {
-      final payload =
-          await client.search('', tags: [PackageTag.publisher('fvm.app')]);
+      final payload = await client
+          .search('', tags: [PackageTag.publisher('leoafarias.com')]);
       final nextPagePayload = await client.search(
         '',
         tags: [PackageTag.dependency('pub_api_client')],

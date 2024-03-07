@@ -1,51 +1,79 @@
+import 'dart:convert';
+
 import 'package:collection/collection.dart';
 
-// ignore_for_file: lines_longer_than_80_chars
-
-/// Package Score Model
 class PackageScore {
   final int? grantedPoints;
   final int? maxPoints;
-  final int likeCount;
+  final int? likeCount;
   final double? popularityScore;
+  final List<String>? tags;
   final DateTime lastUpdated;
-  const PackageScore({
+
+  PackageScore({
     required this.grantedPoints,
     required this.maxPoints,
     required this.likeCount,
     required this.popularityScore,
+    required this.tags,
     required this.lastUpdated,
   });
+
+  PackageScore copyWith({
+    int? grantedPoints,
+    int? maxPoints,
+    int? likeCount,
+    double? popularityScore,
+    List<String>? tags,
+    DateTime? lastUpdated,
+  }) =>
+      PackageScore(
+        grantedPoints: grantedPoints ?? this.grantedPoints,
+        maxPoints: maxPoints ?? this.maxPoints,
+        likeCount: likeCount ?? this.likeCount,
+        popularityScore: popularityScore ?? this.popularityScore,
+        tags: tags ?? this.tags,
+        lastUpdated: lastUpdated ?? this.lastUpdated,
+      );
 
   Map<String, dynamic> toMap() => {
         'grantedPoints': grantedPoints,
         'maxPoints': maxPoints,
         'likeCount': likeCount,
         'popularityScore': popularityScore,
+        'tags': tags,
         'lastUpdated': lastUpdated.millisecondsSinceEpoch,
       };
 
   factory PackageScore.fromMap(Map<String, dynamic> map) => PackageScore(
-        grantedPoints: map['grantedPoints'] as int? ?? 0,
-        maxPoints: map['maxPoints'] as int? ?? 0,
-        likeCount: map['likeCount'] as int? ?? 0,
-        popularityScore: map['popularityScore'] as double? ?? 0.0,
-        lastUpdated: DateTime.parse(map['lastUpdated'] as String? ?? ''),
+        grantedPoints: map['grantedPoints']?.toInt(),
+        maxPoints: map['maxPoints']?.toInt(),
+        likeCount: map['likeCount']?.toInt(),
+        popularityScore: map['popularityScore']?.toDouble(),
+        tags: List<String>.from(map['tags']),
+        lastUpdated: DateTime.parse(map['lastUpdated']),
       );
+
+  String toJson() => json.encode(toMap());
+
+  factory PackageScore.fromJson(String source) =>
+      PackageScore.fromMap(json.decode(source));
 
   @override
   String toString() =>
-      'PackageScore(grantedPoints: $grantedPoints, maxPoints: $maxPoints, likeCount: $likeCount, popularityScore: $popularityScore, lastUpdated: $lastUpdated)';
+      'PackageScore(grantedPoints: $grantedPoints, maxPoints: $maxPoints, likeCount: $likeCount, popularityScore: $popularityScore, tags: $tags, lastUpdated: $lastUpdated)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
     return other is PackageScore &&
         other.grantedPoints == grantedPoints &&
         other.maxPoints == maxPoints &&
         other.likeCount == likeCount &&
         other.popularityScore == popularityScore &&
+        listEquals(other.tags, tags) &&
         other.lastUpdated == lastUpdated;
   }
 
@@ -55,90 +83,6 @@ class PackageScore {
       maxPoints.hashCode ^
       likeCount.hashCode ^
       popularityScore.hashCode ^
+      tags.hashCode ^
       lastUpdated.hashCode;
-}
-
-/// Package Score Card Model
-class PackageScoreCard {
-  final String packageName;
-  final String packageVersion;
-  final String runtimeVersion;
-  final DateTime updated;
-  final DateTime packageCreated;
-  final DateTime packageVersionCreated;
-  final List<String> derivedTags;
-  final List<String> flags;
-  final List<String> reportTypes;
-  const PackageScoreCard({
-    required this.packageName,
-    required this.packageVersion,
-    required this.runtimeVersion,
-    required this.updated,
-    required this.packageCreated,
-    required this.packageVersionCreated,
-    this.derivedTags = const [],
-    this.flags = const [],
-    this.reportTypes = const [],
-  });
-
-  Map<String, dynamic> toMap() => {
-        'packageName': packageName,
-        'packageVersion': packageVersion,
-        'runtimeVersion': runtimeVersion,
-        'updated': updated.millisecondsSinceEpoch,
-        'packageCreated': packageCreated.millisecondsSinceEpoch,
-        'packageVersionCreated': packageVersionCreated.millisecondsSinceEpoch,
-        'derivedTags': derivedTags,
-        'flags': flags,
-        'reportTypes': reportTypes,
-      };
-
-  factory PackageScoreCard.fromMap(Map<String, dynamic> map) =>
-      PackageScoreCard(
-        packageName: map['packageName'] as String? ?? '',
-        packageVersion: map['packageVersion'] as String? ?? '',
-        runtimeVersion: map['runtimeVersion'] as String? ?? '',
-        updated: DateTime.parse(map['updated'] as String? ?? ''),
-        packageCreated: DateTime.parse(map['packageCreated'] as String? ?? ''),
-        packageVersionCreated:
-            DateTime.parse(map['packageVersionCreated'] as String? ?? ''),
-        derivedTags:
-            List<String>.from(map['derivedTags'] as List<dynamic>? ?? []),
-        flags: List<String>.from(map['flags'] as List<dynamic>? ?? []),
-        reportTypes:
-            List<String>.from(map['reportTypes'] as List<dynamic>? ?? []),
-      );
-
-  @override
-  String toString() =>
-      'PackageScoreCard(packageName: $packageName, packageVersion: $packageVersion, runtimeVersion: $runtimeVersion, updated: $updated, packageCreated: $packageCreated, packageVersionCreated: $packageVersionCreated, derivedTags: $derivedTags, flags: $flags, reportTypes: $reportTypes)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
-
-    return other is PackageScoreCard &&
-        other.packageName == packageName &&
-        other.packageVersion == packageVersion &&
-        other.runtimeVersion == runtimeVersion &&
-        other.updated == updated &&
-        other.packageCreated == packageCreated &&
-        other.packageVersionCreated == packageVersionCreated &&
-        listEquals(other.derivedTags, derivedTags) &&
-        listEquals(other.flags, flags) &&
-        listEquals(other.reportTypes, reportTypes);
-  }
-
-  @override
-  int get hashCode =>
-      packageName.hashCode ^
-      packageVersion.hashCode ^
-      runtimeVersion.hashCode ^
-      updated.hashCode ^
-      packageCreated.hashCode ^
-      packageVersionCreated.hashCode ^
-      derivedTags.hashCode ^
-      flags.hashCode ^
-      reportTypes.hashCode;
 }

@@ -1,4 +1,5 @@
 import '../../pub_api_client.dart';
+import 'package_score_card.dart';
 
 /// Package Metrics Model
 
