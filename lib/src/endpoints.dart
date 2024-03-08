@@ -2,8 +2,7 @@ import 'models/search_order.dart';
 
 /// Pub.dev api Endpoints
 class Endpoint {
-  static const defaultBaseUrl =
-      'https://pub.dartlang.org'; // Use pub.dev instead?
+  static const defaultBaseUrl = 'https://pub.dev';
 
   final String baseUrl;
   late final String apiUrl;
@@ -60,7 +59,7 @@ class Endpoint {
     int page,
     SearchOrder sort,
   ) =>
-      '$searchUrl?q=$query&page=$page&sort=${sort.value}';
+      '$searchUrl?q=$query&page=$page&sort=${sort.name}';
 
   /// Next search page
   String nextPage(String nextPageUrl) =>
