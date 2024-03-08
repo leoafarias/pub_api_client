@@ -1,7 +1,10 @@
-import 'package:collection/collection.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'search_results_model.mapper.dart';
 
 /// Search Results Model
-class SearchResults {
+@MappableClass()
+class SearchResults with SearchResultsMappable {
   final List<PackageResult> packages;
   final String? next;
   const SearchResults({
@@ -9,63 +12,16 @@ class SearchResults {
     this.next,
   });
 
-  Map<String, dynamic> toMap() => {
-        'packages': packages.map((x) => x.toMap()).toList(),
-        'next': next,
-      };
-
-  factory SearchResults.fromMap(Map<String, dynamic> map) {
-    final packagesMap = map['packages'] as List<dynamic>? ?? [];
-    return SearchResults(
-      packages: List<PackageResult>.from(
-        packagesMap.map(
-          (x) => PackageResult.fromMap(x as Map<String, dynamic>),
-        ),
-      ),
-      next: map['next'] as String?,
-    );
-  }
-
-  @override
-  String toString() => 'SearchResults(packages: $packages, next: $next)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
-
-    return other is SearchResults &&
-        listEquals(other.packages, packages) &&
-        other.next == next;
-  }
-
-  @override
-  int get hashCode => packages.hashCode ^ next.hashCode;
+  static const fromMap = SearchResultsMapper.fromMap;
+  static const fromJson = SearchResultsMapper.fromJson;
 }
 
 /// Package Result Model returns within a `SearchResult`
-class PackageResult {
+@MappableClass()
+class PackageResult with PackageResultMappable {
   final String package;
   const PackageResult({required this.package});
 
-  Map<String, dynamic> toMap() => {
-        'package': package,
-      };
-
-  factory PackageResult.fromMap(Map<String, dynamic> map) => PackageResult(
-        package: map['package'] as String? ?? '',
-      );
-
-  @override
-  String toString() => 'PackageResult(package: $package)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is PackageResult && other.package == package;
-  }
-
-  @override
-  int get hashCode => package.hashCode;
+  static const fromMap = PackageResultMapper.fromMap;
+  static const fromJson = PackageResultMapper.fromJson;
 }

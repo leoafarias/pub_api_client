@@ -26,6 +26,16 @@ void main() {
       expect(payload.length, greaterThan(0));
       expect(payload.length, packageInfo.versions.length);
     });
+
+    test('Get package score', () async {
+      final payload = await client.packageScore(packageName);
+
+      expect(payload.lastUpdated, isNotNull);
+      expect(payload.grantedPoints, isNotNull);
+      expect(payload.likeCount, greaterThan(50));
+      expect(payload.maxPoints, greaterThan(100));
+    });
+
     test('Get package metrics', () async {
       final score = await client.packageScore(packageName);
       final metrics = await client.packageMetrics(packageName);
@@ -58,7 +68,7 @@ void main() {
 
     test('Get package publisher', () async {
       final publisher = await client.packagePublisher(packageName);
-      expect(publisher.publisherId, 'fvm.app');
+      expect(publisher.publisherId, 'leoafarias.com');
     });
 
     test('Get package publisher if unregistered', () async {
@@ -111,8 +121,8 @@ void main() {
     });
 
     test('Search for packages of a publisher', () async {
-      final payload =
-          await client.search('', tags: [PackageTag.publisher('fvm.app')]);
+      final payload = await client
+          .search('', tags: [PackageTag.publisher('leoafarias.com')]);
       final nextPagePayload = await client.search(
         '',
         tags: [PackageTag.dependency('pub_api_client')],
@@ -138,29 +148,6 @@ void main() {
       expect(results.packages.length, greaterThan(0));
       expect(zeroResults.packages.length, 0);
     });
-
-    // test('Can like, unlike, and view liked packages', () async {
-    //   if (pubCredentials == null) {
-    //     print('Skipping test. No credentials found.');
-    //     return;
-    //   }
-    //   final authedClient = PubClient(
-    //     credentials: pubCredentials,
-    //   );
-    //   final unlikeRes = await authedClient.likePackageStatus('fvm');
-
-    //   await authedClient.unlikePackage('fvm');
-
-    //   final likeRes = await authedClient.likePackage('fvm');
-
-    //   expect(unlikeRes.liked, false);
-    //   expect(likeRes.liked, true);
-    //   // Can make an authenticated request
-    //   final likedPackages = await authedClient.listPackageLikes();
-
-    //   expect(likedPackages, isNotNull);
-    //   expect(likedPackages.length, greaterThan(1));
-    // });
 
     test('Exceptions', () async {
       void mockRes(int code) {
