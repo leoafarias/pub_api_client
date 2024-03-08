@@ -149,29 +149,6 @@ void main() {
       expect(zeroResults.packages.length, 0);
     });
 
-    // test('Can like, unlike, and view liked packages', () async {
-    //   if (pubCredentials == null) {
-    //     print('Skipping test. No credentials found.');
-    //     return;
-    //   }
-    //   final authedClient = PubClient(
-    //     credentials: pubCredentials,
-    //   );
-    //   final unlikeRes = await authedClient.likePackageStatus('fvm');
-
-    //   await authedClient.unlikePackage('fvm');
-
-    //   final likeRes = await authedClient.likePackage('fvm');
-
-    //   expect(unlikeRes.liked, false);
-    //   expect(likeRes.liked, true);
-    //   // Can make an authenticated request
-    //   final likedPackages = await authedClient.listPackageLikes();
-
-    //   expect(likedPackages, isNotNull);
-    //   expect(likedPackages.length, greaterThan(1));
-    // });
-
     test('Exceptions', () async {
       void mockRes(int code) {
         final res = Response('{error:{message:"test"}}', code);

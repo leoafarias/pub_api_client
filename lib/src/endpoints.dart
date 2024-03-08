@@ -59,7 +59,7 @@ class Endpoint {
     int page,
     SearchOrder sort,
   ) =>
-      '$searchUrl?q=$query&page=$page&sort=${sort.value}';
+      '$searchUrl?q=$query&page=$page&sort=${sort.name}';
 
   /// Next search page
   String nextPage(String nextPageUrl) =>

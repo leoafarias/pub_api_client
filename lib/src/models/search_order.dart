@@ -1,3 +1,8 @@
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'search_order.mapper.dart';
+
+@MappableEnum()
 enum SearchOrder {
   /// Search score should be a weighted value of [text], [popularity], [points]
   /// and [like], ordered decreasing.
@@ -20,13 +25,9 @@ enum SearchOrder {
   like,
 
   /// Search order should be in decreasing pub points.
-  points,
-}
+  points;
 
-extension SearchOrderExtension on SearchOrder {
-  /// Name of the channel
-  String get value {
-    final self = this;
-    return self.toString().split('.').last;
-  }
+  const SearchOrder();
+
+  String get value => name;
 }

@@ -1,7 +1,12 @@
-import 'pub_package_model.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+
+import '../../pub_api_client.dart';
+
+part 'latest_version_model.mapper.dart';
 
 /// Latest Version update for package
-class LatestVersion {
+@MappableClass()
+class LatestVersion with LatestVersionMappable {
   final bool needUpdate;
   final String latestVersion;
   final PubPackage packageInfo;
@@ -13,21 +18,6 @@ class LatestVersion {
     required this.packageInfo,
   });
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is LatestVersion &&
-        other.needUpdate == needUpdate &&
-        other.latestVersion == latestVersion &&
-        other.packageInfo == packageInfo;
-  }
-
-  @override
-  int get hashCode =>
-      needUpdate.hashCode ^ latestVersion.hashCode ^ packageInfo.hashCode;
-
-  @override
-  String toString() =>
-      '''LatestVersion(needUpdate: $needUpdate, latestVersion: $latestVersion, packageInfo: $packageInfo)''';
+  static const fromMap = LatestVersionMapper.fromMap;
+  static const fromJson = LatestVersionMapper.fromJson;
 }
