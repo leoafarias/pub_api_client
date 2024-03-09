@@ -1,3 +1,8 @@
+## 2.7.0
+
+* Updated schema by @leoafarias
+* Add missing field to pubspec by @jxstxn1
+
 ## 2.6.0
 
 - Feature: Added topics parameters to search method
