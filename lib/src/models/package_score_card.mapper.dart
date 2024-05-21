@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, unnecessary_cast
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
 part of 'package_score_card.dart';
@@ -100,10 +100,8 @@ mixin PackageScoreCardMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PackageScoreCardMapper.ensureInitialized()
-                .isValueEqual(this as PackageScoreCard, other));
+    return PackageScoreCardMapper.ensureInitialized()
+        .equalsValue(this as PackageScoreCard, other);
   }
 
   @override
@@ -245,10 +243,8 @@ mixin DartdocReportMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            DartdocReportMapper.ensureInitialized()
-                .isValueEqual(this as DartdocReport, other));
+    return DartdocReportMapper.ensureInitialized()
+        .equalsValue(this as DartdocReport, other);
   }
 
   @override
@@ -399,10 +395,8 @@ mixin PanaReportMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PanaReportMapper.ensureInitialized()
-                .isValueEqual(this as PanaReport, other));
+    return PanaReportMapper.ensureInitialized()
+        .equalsValue(this as PanaReport, other);
   }
 
   @override
@@ -619,10 +613,8 @@ mixin PanaRuntimeInfoMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PanaRuntimeInfoMapper.ensureInitialized()
-                .isValueEqual(this as PanaRuntimeInfo, other));
+    return PanaRuntimeInfoMapper.ensureInitialized()
+        .equalsValue(this as PanaRuntimeInfo, other);
   }
 
   @override
@@ -792,10 +784,8 @@ mixin FlutterVersionsMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            FlutterVersionsMapper.ensureInitialized()
-                .isValueEqual(this as FlutterVersions, other));
+    return FlutterVersionsMapper.ensureInitialized()
+        .equalsValue(this as FlutterVersions, other);
   }
 
   @override
@@ -946,10 +936,8 @@ mixin LicenseMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            LicenseMapper.ensureInitialized()
-                .isValueEqual(this as License, other));
+    return LicenseMapper.ensureInitialized()
+        .equalsValue(this as License, other);
   }
 
   @override
@@ -1051,10 +1039,7 @@ mixin ReportMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            ReportMapper.ensureInitialized()
-                .isValueEqual(this as Report, other));
+    return ReportMapper.ensureInitialized().equalsValue(this as Report, other);
   }
 
   @override
@@ -1181,10 +1166,8 @@ mixin SectionMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            SectionMapper.ensureInitialized()
-                .isValueEqual(this as Section, other));
+    return SectionMapper.ensureInitialized()
+        .equalsValue(this as Section, other);
   }
 
   @override
@@ -1263,19 +1246,19 @@ class ResultMapper extends ClassMapperBase<Result> {
   @override
   final String id = 'Result';
 
-  static String? _$repositoryUrl(Result v) => v.repositoryUrl;
+  static String _$repositoryUrl(Result v) => v.repositoryUrl;
   static const Field<Result, String> _f$repositoryUrl =
       Field('repositoryUrl', _$repositoryUrl);
-  static String? _$issueTrackerUrl(Result v) => v.issueTrackerUrl;
+  static String _$issueTrackerUrl(Result v) => v.issueTrackerUrl;
   static const Field<Result, String> _f$issueTrackerUrl =
       Field('issueTrackerUrl', _$issueTrackerUrl);
-  static Repository? _$repository(Result v) => v.repository;
+  static Repository _$repository(Result v) => v.repository;
   static const Field<Result, Repository> _f$repository =
       Field('repository', _$repository);
-  static int? _$grantedPoints(Result v) => v.grantedPoints;
+  static int _$grantedPoints(Result v) => v.grantedPoints;
   static const Field<Result, int> _f$grantedPoints =
       Field('grantedPoints', _$grantedPoints);
-  static int? _$maxPoints(Result v) => v.maxPoints;
+  static int _$maxPoints(Result v) => v.maxPoints;
   static const Field<Result, int> _f$maxPoints =
       Field('maxPoints', _$maxPoints);
 
@@ -1327,10 +1310,7 @@ mixin ResultMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            ResultMapper.ensureInitialized()
-                .isValueEqual(this as Result, other));
+    return ResultMapper.ensureInitialized().equalsValue(this as Result, other);
   }
 
   @override
@@ -1346,7 +1326,7 @@ extension ResultValueCopy<$R, $Out> on ObjectCopyWith<$R, Result, $Out> {
 
 abstract class ResultCopyWith<$R, $In extends Result, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  RepositoryCopyWith<$R, Repository, Repository>? get repository;
+  RepositoryCopyWith<$R, Repository, Repository> get repository;
   $R call(
       {String? repositoryUrl,
       String? issueTrackerUrl,
@@ -1363,21 +1343,21 @@ class _ResultCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Result, $Out>
   @override
   late final ClassMapperBase<Result> $mapper = ResultMapper.ensureInitialized();
   @override
-  RepositoryCopyWith<$R, Repository, Repository>? get repository =>
+  RepositoryCopyWith<$R, Repository, Repository> get repository =>
       $value.repository.copyWith.$chain((v) => call(repository: v));
   @override
   $R call(
-          {Object? repositoryUrl = $none,
-          Object? issueTrackerUrl = $none,
-          Object? repository = $none,
-          Object? grantedPoints = $none,
-          Object? maxPoints = $none}) =>
+          {String? repositoryUrl,
+          String? issueTrackerUrl,
+          Repository? repository,
+          int? grantedPoints,
+          int? maxPoints}) =>
       $apply(FieldCopyWithData({
-        if (repositoryUrl != $none) #repositoryUrl: repositoryUrl,
-        if (issueTrackerUrl != $none) #issueTrackerUrl: issueTrackerUrl,
-        if (repository != $none) #repository: repository,
-        if (grantedPoints != $none) #grantedPoints: grantedPoints,
-        if (maxPoints != $none) #maxPoints: maxPoints
+        if (repositoryUrl != null) #repositoryUrl: repositoryUrl,
+        if (issueTrackerUrl != null) #issueTrackerUrl: issueTrackerUrl,
+        if (repository != null) #repository: repository,
+        if (grantedPoints != null) #grantedPoints: grantedPoints,
+        if (maxPoints != null) #maxPoints: maxPoints
       }));
   @override
   Result $make(CopyWithData data) => Result(
@@ -1466,10 +1446,8 @@ mixin RepositoryMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            RepositoryMapper.ensureInitialized()
-                .isValueEqual(this as Repository, other));
+    return RepositoryMapper.ensureInitialized()
+        .equalsValue(this as Repository, other);
   }
 
   @override

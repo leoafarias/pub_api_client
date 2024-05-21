@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, unnecessary_cast
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
 part of 'package_documentation_model.dart';
@@ -75,10 +75,8 @@ mixin PackageDocumentationMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PackageDocumentationMapper.ensureInitialized()
-                .isValueEqual(this as PackageDocumentation, other));
+    return PackageDocumentationMapper.ensureInitialized()
+        .equalsValue(this as PackageDocumentation, other);
   }
 
   @override
@@ -221,10 +219,8 @@ mixin PackageDocumentationVersionMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PackageDocumentationVersionMapper.ensureInitialized()
-                .isValueEqual(this as PackageDocumentationVersion, other));
+    return PackageDocumentationVersionMapper.ensureInitialized()
+        .equalsValue(this as PackageDocumentationVersion, other);
   }
 
   @override

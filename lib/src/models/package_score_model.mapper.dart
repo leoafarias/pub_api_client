@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, unnecessary_cast
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
 part of 'package_score_model.dart';
@@ -32,7 +32,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   static double? _$popularityScore(PackageScore v) => v.popularityScore;
   static const Field<PackageScore, double> _f$popularityScore =
       Field('popularityScore', _$popularityScore);
-  static List<String>? _$tags(PackageScore v) => v.tags;
+  static List<String> _$tags(PackageScore v) => v.tags;
   static const Field<PackageScore, List<String>> _f$tags =
       Field('tags', _$tags);
   static DateTime _$lastUpdated(PackageScore v) => v.lastUpdated;
@@ -92,10 +92,8 @@ mixin PackageScoreMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PackageScoreMapper.ensureInitialized()
-                .isValueEqual(this as PackageScore, other));
+    return PackageScoreMapper.ensureInitialized()
+        .equalsValue(this as PackageScore, other);
   }
 
   @override
@@ -113,7 +111,7 @@ extension PackageScoreValueCopy<$R, $Out>
 
 abstract class PackageScoreCopyWith<$R, $In extends PackageScore, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get tags;
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get tags;
   $R call(
       {int? grantedPoints,
       int? maxPoints,
@@ -133,25 +131,23 @@ class _PackageScoreCopyWithImpl<$R, $Out>
   late final ClassMapperBase<PackageScore> $mapper =
       PackageScoreMapper.ensureInitialized();
   @override
-  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get tags =>
-      $value.tags != null
-          ? ListCopyWith($value.tags, (v, t) => ObjectCopyWith(v, $identity, t),
-              (v) => call(tags: v))
-          : null;
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get tags =>
+      ListCopyWith($value.tags, (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(tags: v));
   @override
   $R call(
           {int? grantedPoints,
           int? maxPoints,
           int? likeCount,
           Object? popularityScore = $none,
-          Object? tags = $none,
+          List<String>? tags,
           DateTime? lastUpdated}) =>
       $apply(FieldCopyWithData({
         if (grantedPoints != null) #grantedPoints: grantedPoints,
         if (maxPoints != null) #maxPoints: maxPoints,
         if (likeCount != null) #likeCount: likeCount,
         if (popularityScore != $none) #popularityScore: popularityScore,
-        if (tags != $none) #tags: tags,
+        if (tags != null) #tags: tags,
         if (lastUpdated != null) #lastUpdated: lastUpdated
       }));
   @override

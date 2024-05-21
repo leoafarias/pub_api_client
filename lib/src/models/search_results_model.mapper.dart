@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, unnecessary_cast
+// ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
 part of 'search_results_model.dart';
@@ -73,10 +73,8 @@ mixin SearchResultsMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            SearchResultsMapper.ensureInitialized()
-                .isValueEqual(this as SearchResults, other));
+    return SearchResultsMapper.ensureInitialized()
+        .equalsValue(this as SearchResults, other);
   }
 
   @override
@@ -191,10 +189,8 @@ mixin PackageResultMappable {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (runtimeType == other.runtimeType &&
-            PackageResultMapper.ensureInitialized()
-                .isValueEqual(this as PackageResult, other));
+    return PackageResultMapper.ensureInitialized()
+        .equalsValue(this as PackageResult, other);
   }
 
   @override
