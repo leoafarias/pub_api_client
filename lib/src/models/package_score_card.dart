@@ -164,18 +164,26 @@ class Section with SectionMappable {
 
 @MappableClass()
 class Result with ResultMappable {
-  final String repositoryUrl;
-  final String issueTrackerUrl;
-  final Repository repository;
-  final int grantedPoints;
-  final int maxPoints;
+  final String? homepageUrl;
+  final String? repositoryUrl;
+  final String? issueTrackerUrl;
+  final String? documentationUrl;
+  final List<String>? fundingUrls;
+  final Repository? repository;
+  final String? contributingUrl;
+  final int? grantedPoints;
+  final int? maxPoints;
 
   Result({
-    required this.repositoryUrl,
-    required this.issueTrackerUrl,
-    required this.repository,
-    required this.grantedPoints,
-    required this.maxPoints,
+    this.homepageUrl,
+    this.repositoryUrl,
+    this.issueTrackerUrl,
+    this.documentationUrl,
+    this.fundingUrls,
+    this.repository,
+    this.contributingUrl,
+    this.grantedPoints,
+    this.maxPoints,
   });
 
   static const fromMap = ResultMapper.fromMap;
