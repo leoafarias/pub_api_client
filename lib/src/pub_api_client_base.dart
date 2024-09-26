@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:oauth2/oauth2.dart';
@@ -54,7 +55,7 @@ class PubClient {
 
   Future<Map<String, dynamic>> _fetch(String url) async {
     if (debug) {
-      print('Fetching: $url');
+      log('Fetching: $url');
     }
     final response = await _client.get(
       Uri.parse(url),
