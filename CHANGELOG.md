@@ -1,3 +1,7 @@
+## 2.7.1
+
+* Fix result data class schema [#50](https://github.com/leoafarias/pub_api_client/pull/50)
+
 ## 2.7.0
 
 * Updated schema by @leoafarias
