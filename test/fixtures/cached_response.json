@@ -5465,8 +5465,8 @@
   "https://pub.dev/api/packages/fvm/score": {
     "grantedPoints": 140,
     "maxPoints": 160,
-    "likeCount": 606,
-    "popularityScore": 0.9167298698015421,
+    "likeCount": 609,
+    "popularityScore": 0.9161596958174905,
     "tags": [
       "publisher:leoafarias.com",
       "sdk:dart",
@@ -5481,14 +5481,14 @@
       "license:osi-approved",
       "has:executable"
     ],
-    "lastUpdated": "2024-09-26T05:12:06.386415"
+    "lastUpdated": "2024-09-30T15:41:39.930752"
   },
   "https://pub.dev/api/packages/fvm/metrics": {
     "score": {
       "grantedPoints": 140,
       "maxPoints": 160,
-      "likeCount": 606,
-      "popularityScore": 0.9167298698015421,
+      "likeCount": 609,
+      "popularityScore": 0.9161596958174905,
       "tags": [
         "publisher:leoafarias.com",
         "sdk:dart",
@@ -5503,31 +5503,31 @@
         "license:osi-approved",
         "has:executable"
       ],
-      "lastUpdated": "2024-09-26T05:12:06.386415"
+      "lastUpdated": "2024-09-30T15:41:39.930752"
     },
     "scorecard": {
       "packageName": "fvm",
       "packageVersion": "3.2.1",
-      "runtimeVersion": "2024.09.10",
-      "updated": "2024-09-26T05:12:06.386415",
+      "runtimeVersion": "2024.09.17",
+      "updated": "2024-09-30T15:41:39.930752",
       "dartdocReport": {
         "reportStatus": "success"
       },
       "panaReport": {
-        "timestamp": "2024-09-26T05:12:06.386415",
+        "timestamp": "2024-09-30T15:41:39.930752",
         "panaRuntimeInfo": {
           "panaVersion": "0.22.12",
-          "sdkVersion": "3.5.2",
+          "sdkVersion": "3.5.3",
           "flutterVersions": {
-            "frameworkVersion": "3.24.2",
+            "frameworkVersion": "3.24.3",
             "channel": "stable",
             "repositoryUrl": "https://github.com/flutter/flutter.git",
-            "frameworkRevision": "4cf269e36de2573851eaef3c763994f8f9be494d",
-            "frameworkCommitDate": "2024-09-03 14:30:00 -0700",
-            "engineRevision": "a6bd3f1de158bb61090e0c8053df93a10cb548e1",
-            "dartSdkVersion": "3.5.2",
-            "devToolsVersion": "2.37.2",
-            "flutterVersion": "3.24.2",
+            "frameworkRevision": "2663184aa79047d0a33a14a3b607954f8fdd8730",
+            "frameworkCommitDate": "2024-09-11 16:27:48 -0500",
+            "engineRevision": "36335019a8eab588c3c2ea783c618d90505be233",
+            "dartSdkVersion": "3.5.3",
+            "devToolsVersion": "2.37.3",
+            "flutterVersion": "3.24.3",
             "flutterRoot": "/home/worker/flutter/stable"
           }
         },
@@ -5647,8 +5647,8 @@
               "title": "Support up-to-date dependencies",
               "grantedPoints": 30,
               "maxPoints": 40,
-              "status": "passed",
-              "summary": "### [*] 0/10 points: All of the package dependencies are supported in the latest version\n\n|Package|Constraint|Compatible|Latest|\n|:-|:-|:-|:-|\n|[`args`]|`^2.4.2`|2.5.0|2.5.0|\n|[`cli_completion`]|`^0.5.0`|0.5.0|0.5.1|\n|[`dart_console`]|`^1.2.0`|1.2.0|**4.1.0**|\n|[`dart_mappable`]|`^4.2.2`|4.2.2|4.2.2|\n|[`date_format`]|`^2.0.7`|2.0.9|2.0.9|\n|[`git`]|`^2.2.1`|2.3.0|2.3.0|\n|[`interact`]|`^2.2.0`|2.2.0|2.2.0|\n|[`io`]|`^1.0.4`|1.0.4|1.0.4|\n|[`jsonc`]|`^0.0.3`|0.0.3|0.0.3|\n|[`mason_logger`]|`^0.2.9`|0.2.16|**0.3.1**|\n|[`meta`]|`^1.10.0`|1.16.0|1.16.0|\n|[`path`]|`^1.9.0`|1.9.0|1.9.0|\n|[`pub_semver`]|`^2.1.4`|2.1.4|2.1.4|\n|[`pub_updater`]|`^0.4.0`|0.4.0|**0.5.0**|\n|[`pubspec`]|`^2.3.0`|2.3.0|2.3.0|\n|[`scope`]|`^5.1.0`|5.1.0|5.1.0|\n|[`stack_trace`]|`^1.11.1`|1.11.1|1.11.1|\n|[`tint`]|`^2.0.1`|2.0.1|2.0.1|\n|[`yaml`]|`^3.1.2`|3.1.2|3.1.2|\n\n<details><summary>Transitive dependencies</summary>\n\n|Package|Constraint|Compatible|Latest|\n|:-|:-|:-|:-|\n|[`async`]|-|2.11.0|2.11.0|\n|[`boolean_selector`]|-|2.1.1|2.1.1|\n|[`characters`]|-|1.3.0|1.3.0|\n|[`clock`]|-|1.1.1|1.1.1|\n|[`collection`]|-|1.19.0|1.19.0|\n|[`equatable`]|-|2.0.5|2.0.5|\n|[`ffi`]|-|2.1.3|2.1.3|\n|[`file`]|-|7.0.0|7.0.0|\n|[`http`]|-|1.2.2|1.2.2|\n|[`http_parser`]|-|4.1.0|4.1.0|\n|[`intl`]|-|0.18.1|0.19.0|\n|[`json_annotation`]|-|4.9.0|4.9.0|\n|[`matcher`]|-|0.12.16+1|0.12.16+1|\n|[`platform`]|-|3.1.5|3.1.5|\n|[`process`]|-|5.0.2|5.0.2|\n|[`quiver`]|-|3.2.2|3.2.2|\n|[`source_span`]|-|1.10.0|1.10.0|\n|[`stream_channel`]|-|2.1.2|2.1.2|\n|[`string_scanner`]|-|1.3.0|1.3.0|\n|[`term_glyph`]|-|1.2.1|1.2.1|\n|[`test_api`]|-|0.7.3|0.7.3|\n|[`type_plus`]|-|2.1.1|2.1.1|\n|[`typed_data`]|-|1.3.2|1.3.2|\n|[`uri`]|-|1.0.0|1.0.0|\n|[`web`]|-|1.1.0|1.1.0|\n|[`win32`]|-|5.5.4|5.5.4|\n</details>\n\nTo reproduce run `dart pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides`.\n\n[`args`]: https://pub.dev/packages/args\n[`cli_completion`]: https://pub.dev/packages/cli_completion\n[`dart_console`]: https://pub.dev/packages/dart_console\n[`dart_mappable`]: https://pub.dev/packages/dart_mappable\n[`date_format`]: https://pub.dev/packages/date_format\n[`git`]: https://pub.dev/packages/git\n[`interact`]: https://pub.dev/packages/interact\n[`io`]: https://pub.dev/packages/io\n[`jsonc`]: https://pub.dev/packages/jsonc\n[`mason_logger`]: https://pub.dev/packages/mason_logger\n[`meta`]: https://pub.dev/packages/meta\n[`path`]: https://pub.dev/packages/path\n[`pub_semver`]: https://pub.dev/packages/pub_semver\n[`pub_updater`]: https://pub.dev/packages/pub_updater\n[`pubspec`]: https://pub.dev/packages/pubspec\n[`scope`]: https://pub.dev/packages/scope\n[`stack_trace`]: https://pub.dev/packages/stack_trace\n[`tint`]: https://pub.dev/packages/tint\n[`yaml`]: https://pub.dev/packages/yaml\n[`async`]: https://pub.dev/packages/async\n[`boolean_selector`]: https://pub.dev/packages/boolean_selector\n[`characters`]: https://pub.dev/packages/characters\n[`clock`]: https://pub.dev/packages/clock\n[`collection`]: https://pub.dev/packages/collection\n[`equatable`]: https://pub.dev/packages/equatable\n[`ffi`]: https://pub.dev/packages/ffi\n[`file`]: https://pub.dev/packages/file\n[`http`]: https://pub.dev/packages/http\n[`http_parser`]: https://pub.dev/packages/http_parser\n[`intl`]: https://pub.dev/packages/intl\n[`json_annotation`]: https://pub.dev/packages/json_annotation\n[`matcher`]: https://pub.dev/packages/matcher\n[`platform`]: https://pub.dev/packages/platform\n[`process`]: https://pub.dev/packages/process\n[`quiver`]: https://pub.dev/packages/quiver\n[`source_span`]: https://pub.dev/packages/source_span\n[`stream_channel`]: https://pub.dev/packages/stream_channel\n[`string_scanner`]: https://pub.dev/packages/string_scanner\n[`term_glyph`]: https://pub.dev/packages/term_glyph\n[`test_api`]: https://pub.dev/packages/test_api\n[`type_plus`]: https://pub.dev/packages/type_plus\n[`typed_data`]: https://pub.dev/packages/typed_data\n[`uri`]: https://pub.dev/packages/uri\n[`web`]: https://pub.dev/packages/web\n[`win32`]: https://pub.dev/packages/win32\n\nFound 3 issues. Showing the first 2:\n\n<details>\n<summary>\nThe constraint `^1.2.0` on dart_console does not support the stable version `4.0.0`.\n</summary>\n\nTry running `dart pub upgrade --major-versions dart_console` to update the constraint.\n</details>\n\n<details>\n<summary>\nThe constraint `^0.2.9` on mason_logger does not support the stable version `0.3.0`.\n</summary>\n\nTry running `dart pub upgrade --major-versions mason_logger` to update the constraint.\n</details>\n\n### [*] 10/10 points: Package supports latest stable Dart and Flutter SDKs\n\n### [*] 20/20 points: Compatible with dependency constraint lower bounds\n\n`pub downgrade` does not expose any static analysis error.\n"
+              "status": "failed",
+              "summary": "### [x] 0/10 points: All of the package dependencies are supported in the latest version\n\n|Package|Constraint|Compatible|Latest|\n|:-|:-|:-|:-|\n|[`args`]|`^2.4.2`|2.5.0|2.5.0|\n|[`cli_completion`]|`^0.5.0`|0.5.0|0.5.1|\n|[`dart_console`]|`^1.2.0`|1.2.0|**4.1.0**|\n|[`dart_mappable`]|`^4.2.2`|4.2.2|4.2.2|\n|[`date_format`]|`^2.0.7`|2.0.9|2.0.9|\n|[`git`]|`^2.2.1`|2.3.0|2.3.0|\n|[`interact`]|`^2.2.0`|2.2.0|2.2.0|\n|[`io`]|`^1.0.4`|1.0.4|1.0.4|\n|[`jsonc`]|`^0.0.3`|0.0.3|0.0.3|\n|[`mason_logger`]|`^0.2.9`|0.2.16|**0.3.1**|\n|[`meta`]|`^1.10.0`|1.16.0|1.16.0|\n|[`path`]|`^1.9.0`|1.9.0|1.9.0|\n|[`pub_semver`]|`^2.1.4`|2.1.4|2.1.4|\n|[`pub_updater`]|`^0.4.0`|0.4.0|**0.5.0**|\n|[`pubspec`]|`^2.3.0`|2.3.0|2.3.0|\n|[`scope`]|`^5.1.0`|5.1.0|5.1.0|\n|[`stack_trace`]|`^1.11.1`|1.12.0|1.12.0|\n|[`tint`]|`^2.0.1`|2.0.1|2.0.1|\n|[`yaml`]|`^3.1.2`|3.1.2|3.1.2|\n\n<details><summary>Transitive dependencies</summary>\n\n|Package|Constraint|Compatible|Latest|\n|:-|:-|:-|:-|\n|[`async`]|-|2.11.0|2.11.0|\n|[`boolean_selector`]|-|2.1.1|2.1.1|\n|[`characters`]|-|1.3.0|1.3.0|\n|[`clock`]|-|1.1.1|1.1.1|\n|[`collection`]|-|1.19.0|1.19.0|\n|[`equatable`]|-|2.0.5|2.0.5|\n|[`ffi`]|-|2.1.3|2.1.3|\n|[`file`]|-|7.0.0|7.0.0|\n|[`http`]|-|1.2.2|1.2.2|\n|[`http_parser`]|-|4.1.0|4.1.0|\n|[`intl`]|-|0.18.1|0.19.0|\n|[`json_annotation`]|-|4.9.0|4.9.0|\n|[`matcher`]|-|0.12.16+1|0.12.16+1|\n|[`platform`]|-|3.1.5|3.1.5|\n|[`process`]|-|5.0.2|5.0.2|\n|[`quiver`]|-|3.2.2|3.2.2|\n|[`source_span`]|-|1.10.0|1.10.0|\n|[`stream_channel`]|-|2.1.2|2.1.2|\n|[`string_scanner`]|-|1.3.0|1.3.0|\n|[`term_glyph`]|-|1.2.1|1.2.1|\n|[`test_api`]|-|0.7.3|0.7.3|\n|[`type_plus`]|-|2.1.1|2.1.1|\n|[`typed_data`]|-|1.3.2|1.3.2|\n|[`uri`]|-|1.0.0|1.0.0|\n|[`web`]|-|1.1.0|1.1.0|\n|[`win32`]|-|5.5.4|5.5.4|\n</details>\n\nTo reproduce run `dart pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides`.\n\n[`args`]: https://pub.dev/packages/args\n[`cli_completion`]: https://pub.dev/packages/cli_completion\n[`dart_console`]: https://pub.dev/packages/dart_console\n[`dart_mappable`]: https://pub.dev/packages/dart_mappable\n[`date_format`]: https://pub.dev/packages/date_format\n[`git`]: https://pub.dev/packages/git\n[`interact`]: https://pub.dev/packages/interact\n[`io`]: https://pub.dev/packages/io\n[`jsonc`]: https://pub.dev/packages/jsonc\n[`mason_logger`]: https://pub.dev/packages/mason_logger\n[`meta`]: https://pub.dev/packages/meta\n[`path`]: https://pub.dev/packages/path\n[`pub_semver`]: https://pub.dev/packages/pub_semver\n[`pub_updater`]: https://pub.dev/packages/pub_updater\n[`pubspec`]: https://pub.dev/packages/pubspec\n[`scope`]: https://pub.dev/packages/scope\n[`stack_trace`]: https://pub.dev/packages/stack_trace\n[`tint`]: https://pub.dev/packages/tint\n[`yaml`]: https://pub.dev/packages/yaml\n[`async`]: https://pub.dev/packages/async\n[`boolean_selector`]: https://pub.dev/packages/boolean_selector\n[`characters`]: https://pub.dev/packages/characters\n[`clock`]: https://pub.dev/packages/clock\n[`collection`]: https://pub.dev/packages/collection\n[`equatable`]: https://pub.dev/packages/equatable\n[`ffi`]: https://pub.dev/packages/ffi\n[`file`]: https://pub.dev/packages/file\n[`http`]: https://pub.dev/packages/http\n[`http_parser`]: https://pub.dev/packages/http_parser\n[`intl`]: https://pub.dev/packages/intl\n[`json_annotation`]: https://pub.dev/packages/json_annotation\n[`matcher`]: https://pub.dev/packages/matcher\n[`platform`]: https://pub.dev/packages/platform\n[`process`]: https://pub.dev/packages/process\n[`quiver`]: https://pub.dev/packages/quiver\n[`source_span`]: https://pub.dev/packages/source_span\n[`stream_channel`]: https://pub.dev/packages/stream_channel\n[`string_scanner`]: https://pub.dev/packages/string_scanner\n[`term_glyph`]: https://pub.dev/packages/term_glyph\n[`test_api`]: https://pub.dev/packages/test_api\n[`type_plus`]: https://pub.dev/packages/type_plus\n[`typed_data`]: https://pub.dev/packages/typed_data\n[`uri`]: https://pub.dev/packages/uri\n[`web`]: https://pub.dev/packages/web\n[`win32`]: https://pub.dev/packages/win32\n\nFound 3 issues. Showing the first 2:\n\n<details>\n<summary>\nThe constraint `^1.2.0` on dart_console does not support the stable version `4.0.0`.\n</summary>\n\nTry running `dart pub upgrade --major-versions dart_console` to update the constraint.\n</details>\n\n<details>\n<summary>\nThe constraint `^0.2.9` on mason_logger does not support the stable version `0.3.0`.\n</summary>\n\nTry running `dart pub upgrade --major-versions mason_logger` to update the constraint.\n</details>\n\n### [*] 10/10 points: Package supports latest stable Dart and Flutter SDKs\n\n### [*] 20/20 points: Compatible with dependency constraint lower bounds\n\n`pub downgrade` does not expose any static analysis error.\n"
             }
           ]
         },
@@ -5756,6 +5756,9 @@
         "package": "json_theme"
       },
       {
+        "package": "dart_json_mapper"
+      },
+      {
         "package": "flutter_json_view"
       },
       {
@@ -5766,9 +5769,6 @@
       },
       {
         "package": "geojson_vi"
-      },
-      {
-        "package": "json_annotation"
       }
     ],
     "next": "https://pub.dev/api/search?q=json&page=2&sort=top"
@@ -5776,13 +5776,13 @@
   "https://pub.dev/api/search?q=json&page=2&sort=top": {
     "packages": [
       {
+        "package": "json_annotation"
+      },
+      {
         "package": "json_serializable"
       },
       {
         "package": "json_store"
-      },
-      {
-        "package": "dart_json_mapper"
       },
       {
         "package": "json_cache"
@@ -5811,34 +5811,34 @@
   "https://pub.dev/api/search?q=&page=1&sort=updated": {
     "packages": [
       {
-        "package": "super_editor"
+        "package": "flutter_phone_lib"
       },
       {
-        "package": "animatrix_cli"
+        "package": "easy_audience_network"
       },
       {
-        "package": "lazy_paginated_data_table"
+        "package": "textify"
       },
       {
-        "package": "refinery89_monetize_app"
+        "package": "mix"
       },
       {
-        "package": "flutter_credit_card_scanner"
+        "package": "typed_monad"
       },
       {
-        "package": "flutter_upi_india"
+        "package": "fanci"
       },
       {
-        "package": "taboola_sdk_beta"
+        "package": "rsa_id_number"
       },
       {
-        "package": "debug_hit_points"
+        "package": "flutter_inappwebview_windows"
       },
       {
-        "package": "live_cache"
+        "package": "optimus"
       },
       {
-        "package": "searchfield"
+        "package": "app_analysis"
       }
     ],
     "next": "https://pub.dev/api/search?q&page=2&sort=updated"
@@ -5881,34 +5881,34 @@
   "https://pub.dev/api/search?q=&page=1&sort=points": {
     "packages": [
       {
-        "package": "flutter_credit_card_scanner"
+        "package": "easy_audience_network"
       },
       {
-        "package": "flutter_upi_india"
+        "package": "textify"
       },
       {
-        "package": "debug_hit_points"
+        "package": "rsa_id_number"
       },
       {
-        "package": "searchfield"
+        "package": "app_analysis"
       },
       {
-        "package": "flutter_cora"
+        "package": "mews_pedantic"
       },
       {
-        "package": "title_widget"
+        "package": "flutter_image_filters"
       },
       {
-        "package": "magic_draw"
+        "package": "quds_formula_parser"
       },
       {
-        "package": "flutter_image_converter"
+        "package": "alh_pdf_view"
       },
       {
-        "package": "cross_file_manager"
+        "package": "dict_reader"
       },
       {
-        "package": "wfile"
+        "package": "dlibphonenumber"
       }
     ],
     "next": "https://pub.dev/api/search?q&page=2&sort=points"
@@ -5916,34 +5916,34 @@
   "https://pub.dev/api/search?q=&page=1&sort=created": {
     "packages": [
       {
-        "package": "taboola_sdk_beta"
+        "package": "typed_monad"
       },
       {
-        "package": "animatrix_cli"
+        "package": "shelf_azure_application_insights"
       },
       {
-        "package": "debug_hit_points"
+        "package": "talker_azure_application_insights_observer"
       },
       {
-        "package": "paxity"
+        "package": "uihub_basic_bottom_sheet"
       },
       {
-        "package": "onix_flutter_bloc"
+        "package": "firebase_messaging_backend_service"
       },
       {
-        "package": "flutter_fx"
+        "package": "translate_local_package"
       },
       {
-        "package": "othr_slider"
+        "package": "opticonnect_sdk"
       },
       {
-        "package": "simple_form_field"
+        "package": "linkpeek_usage_lego"
       },
       {
-        "package": "connection_checker"
+        "package": "uihub_basic_inappwebview2"
       },
       {
-        "package": "json_editor_2"
+        "package": "ig_flutter_commons"
       }
     ],
     "next": "https://pub.dev/api/search?q&page=2&sort=created"
@@ -5969,13 +5969,13 @@
         "package": "permission_handler"
       },
       {
-        "package": "dio"
-      },
-      {
         "package": "geolocator"
       },
       {
         "package": "flutter_bloc"
+      },
+      {
+        "package": "dio"
       },
       {
         "package": "path_provider"
@@ -6004,21 +6004,22 @@
         "package": "remix"
       },
       {
+        "package": "mix_annotations"
+      },
+      {
         "package": "bitrise"
       },
       {
-        "package": "pkg"
+        "package": "mix_generator"
       },
       {
         "package": "libvips"
       },
       {
-        "package": "ai_sdk"
-      },
-      {
-        "package": "openai_sdk"
+        "package": "pkg"
       }
-    ]
+    ],
+    "next": "https://pub.dev/api/search?q=+publisher%3Aleoafarias.com&page=2&sort=top"
   },
   "https://pub.dev/api/search?q=%20dependency:pub_api_client&page=1&sort=top": {
     "packages": [
@@ -6336,6 +6337,7 @@
       "activity",
       "activity_button",
       "activity_calendar",
+      "activity_flow",
       "activity_getmx",
       "activity_rec_flutter",
       "activity_recognition",
@@ -7834,6 +7836,7 @@
       "animated_fractionally_sized_box",
       "animated_gesture_detector",
       "animated_glitch",
+      "animated_glow_border",
       "animated_gradient",
       "animated_gradient_buttons",
       "animated_grid",
@@ -8027,6 +8030,7 @@
       "animation_wrappers",
       "animations",
       "animator",
+      "animatrix_cli",
       "animbutton",
       "anime_pin_code_field",
       "anime_scraping",
@@ -8044,6 +8048,7 @@
       "ann_flutter",
       "ann_html_editor",
       "ann_quill_html_editor",
+      "annas_archive_api",
       "anni_mpris_service",
       "annimation",
       "annisa_pkg",
@@ -8708,6 +8713,7 @@
       "appwrite_ui_auth",
       "appwritex",
       "appwrouter",
+      "appwrouter_dart",
       "appydart",
       "apr_cache_loader",
       "april_assets_hide",
@@ -8888,6 +8894,7 @@
       "ari_utils",
       "aria2",
       "aria2_dart",
+      "aria2c",
       "aries_go_plugin",
       "aries_plugin",
       "arifpay_flutter_sdk",
@@ -9000,6 +9007,7 @@
       "aspose_omr_cloud",
       "aspose_words_cloud",
       "ass_scaled_listview",
+      "assemble",
       "assemblyai_flutter_sdk",
       "assentify_sdk",
       "asserts",
@@ -9230,6 +9238,7 @@
       "atom_extensions",
       "atom_flutter",
       "atom_notifier",
+      "atome_sdk_flutter",
       "atomic",
       "atomic_reaction",
       "atomic_state",
@@ -9767,6 +9776,7 @@
       "awesome_content_filter",
       "awesome_credit_card",
       "awesome_custom_banners",
+      "awesome_custom_dialog",
       "awesome_dart_extensions",
       "awesome_datepicker",
       "awesome_dialog",
@@ -10407,6 +10417,7 @@
       "barcode_image",
       "barcode_input_listener",
       "barcode_keyboard_listener",
+      "barcode_newland_flutter",
       "barcode_parser",
       "barcode_reader",
       "barcode_reader_sdk",
@@ -11079,6 +11090,7 @@
       "bingor_test_plugin",
       "binkap_parsely",
       "binod",
+      "binoxuspay",
       "binpack",
       "binta_model_generator",
       "bio",
@@ -11251,6 +11263,7 @@
       "blake_hash",
       "blank_screen_krishna",
       "blayz_pay",
+      "blaze_sdk_flutter",
       "bld_ui_kit",
       "ble",
       "ble_advert_lib",
@@ -11770,6 +11783,7 @@
       "bottom_sheet_bar",
       "bottom_sheet_draggable",
       "bottom_sheet_expandable_bar",
+      "bottom_sheet_item_selector",
       "bottom_sheet_picker",
       "bottom_sheet_plus",
       "bottom_sheet_scaffold",
@@ -12486,6 +12500,7 @@
       "caesar_cipher",
       "caesar_salad",
       "caf_document_detector",
+      "caf_face_auth",
       "caf_face_liveness",
       "cafebazaar",
       "cafebazaar_auth",
@@ -12718,6 +12733,7 @@
       "canteenlib",
       "canton_ui",
       "cantrip",
+      "canvas",
       "canvas_danmaku",
       "canvas_map",
       "canvas_query",
@@ -13022,6 +13038,7 @@
       "celest_auth",
       "celest_cloud",
       "celest_core",
+      "celest_lints",
       "cell_calendar",
       "cell_calendar_plus",
       "cell_info",
@@ -13288,6 +13305,7 @@
       "chatview2",
       "chatview3",
       "chatweaver_login",
+      "chatwoot",
       "chatwoot_client_sdk",
       "chatwoot_flutter",
       "chatwoot_flutter_webview",
@@ -14377,6 +14395,7 @@
       "commandline_splitter",
       "commandline_splitter2",
       "commandlist",
+      "commands_my",
       "comment_box",
       "comment_sheet",
       "comment_tool",
@@ -15745,6 +15764,7 @@
       "custom_btn",
       "custom_build_tool",
       "custom_button",
+      "custom_button_2",
       "custom_button_builder",
       "custom_button_draxex",
       "custom_button_hai",
@@ -15955,6 +15975,7 @@
       "custom_omni_jitsi_meet_platform_interface",
       "custom_omni_jitsi_meet_web_plugin",
       "custom_osci",
+      "custom_otp_modal",
       "custom_otp_textfield",
       "custom_overlay_popup",
       "custom_package",
@@ -16163,6 +16184,7 @@
       "custom_timeline",
       "custom_timer",
       "custom_toast",
+      "custom_tooltip",
       "custom_top_bar",
       "custom_top_navigator",
       "custom_transition",
@@ -16183,6 +16205,7 @@
       "custom_widget_marquee",
       "custom_widgets",
       "custom_widgets_2",
+      "custom_widgets_library",
       "custom_widgets_trial",
       "custom_will_pop_scope",
       "custom_youtube_player_flutter",
@@ -16872,6 +16895,7 @@
       "dart_meteor",
       "dart_meteor_web",
       "dart_midi",
+      "dart_midi_pro",
       "dart_minecraft",
       "dart_minilog",
       "dart_minimaldata",
@@ -17155,6 +17179,7 @@
       "dart_verse_backend",
       "dart_verse_backend_new",
       "dart_version_switcher",
+      "dart_versioner",
       "dart_vlc",
       "dart_vlc_ffi",
       "dart_vn2000",
@@ -17371,6 +17396,7 @@
       "dartssh4",
       "dartssh4_cli",
       "dartsteem",
+      "dartstr_utils",
       "dartsult",
       "dartsv",
       "darttindie",
@@ -17787,6 +17813,7 @@
       "dbus_client",
       "dbus_onemw",
       "dbutils",
+      "dbx",
       "dbx_platform",
       "dc_audio_picker",
       "dc_datatable",
@@ -17799,6 +17826,7 @@
       "dcc_toolkit",
       "dcdg",
       "dchisel",
+      "dchs_flutter_compass",
       "dchs_motion_sensors",
       "dck",
       "dcli",
@@ -17875,6 +17903,7 @@
       "debug_friend",
       "debug_gate",
       "debug_grid",
+      "debug_hit_points",
       "debug_log_console",
       "debug_logger",
       "debug_mode",
@@ -18052,6 +18081,7 @@
       "demo_peoplelink",
       "demo_pkg",
       "demo_plugin",
+      "demo_poc",
       "demo_scan",
       "demo_splash",
       "demo_switch",
@@ -18144,6 +18174,7 @@
       "design_system_widgets",
       "design_tokens_builder",
       "design_tools",
+      "design_x",
       "designation_typer",
       "designer_container",
       "designflow",
@@ -18225,6 +18256,7 @@
       "dev_icons",
       "dev_menu",
       "dev_pilot",
+      "dev_print",
       "dev_prokit",
       "dev_random",
       "dev_rzp_getway",
@@ -18396,6 +18428,7 @@
       "devla_request",
       "devla_sunmi",
       "devmagic_ui",
+      "devops",
       "devpaul_maps",
       "devpaul_toolkit",
       "devtest1",
@@ -18430,7 +18463,9 @@
       "df_generate_dart_indexes",
       "df_generate_dart_models",
       "df_generate_dart_models_core",
+      "df_generate_screen",
       "df_gps_math",
+      "df_localization",
       "df_log",
       "df_pod",
       "df_scalable",
@@ -19065,6 +19100,7 @@
       "do2template",
       "do2websocket",
       "do_dart",
+      "do_not_disturb",
       "do_progress_bar",
       "do_tween",
       "do_validator",
@@ -19446,6 +19482,7 @@
       "draggable_menu",
       "draggable_panel_flutter",
       "draggable_resizer",
+      "draggable_route",
       "draggable_scrollable_lock_at_top_sheet",
       "draggable_scrollable_sheet",
       "draggable_scrollbar",
@@ -19458,6 +19495,7 @@
       "drago_pos_printer",
       "drago_usb_printer",
       "drago_virtual_keyboard",
+      "drago_whatsapp_flutter",
       "dragon_charts_flutter",
       "dragon_logs",
       "dragonchain_sdk",
@@ -19670,6 +19708,7 @@
       "dss_date_picker_component",
       "dst",
       "dstackspy",
+      "dstash",
       "dstokenbam",
       "dstring_fmt",
       "dswitch",
@@ -20034,6 +20073,7 @@
       "easy_comp_utils_toast",
       "easy_compass",
       "easy_compress_img",
+      "easy_connect",
       "easy_connectivity",
       "easy_contact_picker",
       "easy_container",
@@ -20212,6 +20252,7 @@
       "easy_permission_handler",
       "easy_permission_validator",
       "easy_permissions_handler",
+      "easy_phone_sign_in",
       "easy_physics_2d",
       "easy_picker",
       "easy_pie_chart",
@@ -20651,6 +20692,7 @@
       "elgato_keylight_api",
       "elgin",
       "elgin_sat",
+      "elgin_smart_flutter",
       "elhosaraty_box_images",
       "elhosaraty_image",
       "elite_kit",
@@ -21429,6 +21471,8 @@
       "eventstore_client",
       "eventstore_client_dart",
       "eventstore_client_test",
+      "eventstr",
+      "eventstr_sqflite",
       "eventstreamsdk",
       "eventsubscriber",
       "eventual",
@@ -21439,6 +21483,7 @@
       "ever_cache",
       "everesttoast",
       "evergage_flutter",
+      "everlink_sdk",
       "every_test",
       "everylint",
       "everything_search_engine",
@@ -21857,6 +21902,7 @@
       "faabul_color_picker",
       "faabul_page_indicator",
       "fab_action_menu",
+      "fab_analytics",
       "fab_circular_menu",
       "fab_circular_menu_plus",
       "fab_dialer",
@@ -23066,6 +23112,7 @@
       "firebase_management",
       "firebase_manager",
       "firebase_messaging",
+      "firebase_messaging_backend_service",
       "firebase_messaging_handler",
       "firebase_messaging_platform_interface",
       "firebase_messaging_web",
@@ -23750,6 +23797,7 @@
       "flist",
       "flit_router",
       "flite",
+      "flite_generator",
       "flivver",
       "fliwork_calendar",
       "flkv",
@@ -24640,6 +24688,7 @@
       "flutter_barcode_scan",
       "flutter_barcode_scanner",
       "flutter_barcode_scanner_fork",
+      "flutter_barcode_scanner_sit",
       "flutter_barcode_scanner_test",
       "flutter_barcode_sdk",
       "flutter_bargraph",
@@ -25222,6 +25271,7 @@
       "flutter_converter",
       "flutter_cool_card_swiper",
       "flutter_cora",
+      "flutter_cora_riverpod",
       "flutter_core",
       "flutter_core_ai",
       "flutter_core_appbar",
@@ -25706,6 +25756,7 @@
       "flutter_easy_animations",
       "flutter_easy_barrage",
       "flutter_easy_bloc",
+      "flutter_easy_bugly",
       "flutter_easy_dialogs",
       "flutter_easy_downloader_lib",
       "flutter_easy_drag",
@@ -25846,6 +25897,7 @@
       "flutter_exception_ui_custom",
       "flutter_exceptions_redux",
       "flutter_excle",
+      "flutter_execution_utilities",
       "flutter_exif",
       "flutter_exif_plugin",
       "flutter_exif_rotation",
@@ -26915,6 +26967,7 @@
       "flutter_keyboard_visibility_linux",
       "flutter_keyboard_visibility_macos",
       "flutter_keyboard_visibility_platform_interface",
+      "flutter_keyboard_visibility_temp_fork",
       "flutter_keyboard_visibility_web",
       "flutter_keyboard_visibility_windows",
       "flutter_keychain",
@@ -27779,6 +27832,7 @@
       "flutter_onfido_plus",
       "flutter_onlooker",
       "flutter_onpay_sdk",
+      "flutter_onscreen_logger",
       "flutter_open_app",
       "flutter_open_app_settings",
       "flutter_open_app_store",
@@ -27852,6 +27906,7 @@
       "flutter_overlay_apps",
       "flutter_overlay_kit",
       "flutter_overlay_loader",
+      "flutter_overlay_manager",
       "flutter_overlay_window",
       "flutter_overlay_window_engine",
       "flutter_overlay_window_sdk34",
@@ -29425,6 +29480,7 @@
       "flutter_tencentplayer",
       "flutter_tencentplayer_plus",
       "flutter_tenor_gif_picker",
+      "flutter_tensorflow_lite",
       "flutter_termii",
       "flutter_tesseract_ocr",
       "flutter_test_2673502375_api_beta",
@@ -29531,6 +29587,7 @@
       "flutter_timpage_picker",
       "flutter_tinder_swipe",
       "flutter_tindercard",
+      "flutter_tindercard_2",
       "flutter_tindercard_plus",
       "flutter_tiphone_plugin",
       "flutter_titled_container",
@@ -29868,6 +29925,7 @@
       "flutter_video_player",
       "flutter_video_player_custom",
       "flutter_video_player_plugin",
+      "flutter_video_thumbnail_plus",
       "flutter_video_view",
       "flutter_video_view3",
       "flutter_video_viewer",
@@ -29994,6 +30052,7 @@
       "flutter_webln",
       "flutter_webp",
       "flutter_webrtc",
+      "flutter_webrtc_fix",
       "flutter_webrtc_haoxin",
       "flutter_webrtc_plus",
       "flutter_webrtc_remote_desktop",
@@ -30073,6 +30132,7 @@
       "flutter_window",
       "flutter_window_close",
       "flutter_windowmanager",
+      "flutter_windowmanager_plus",
       "flutter_windows_vault",
       "flutter_wings",
       "flutter_wire",
@@ -30232,6 +30292,7 @@
       "flutterexodrm",
       "flutterexodrmplayer",
       "flutterexpander",
+      "flutterfall",
       "flutterfileselector",
       "flutterfire",
       "flutterfire_auth_dart",
@@ -30265,6 +30326,7 @@
       "flutterfoundation",
       "flutterfreaks_video_player",
       "flutterfullscreenpicker",
+      "flutterfy",
       "fluttergpio",
       "flutterhelloworldlib",
       "fluttericon",
@@ -31810,6 +31872,7 @@
       "get_country_code_by_name",
       "get_cubit",
       "get_database",
+      "get_device_apps",
       "get_devicetype_onex",
       "get_dialog_service",
       "get_env_info",
@@ -32350,6 +32413,7 @@
       "goldenrod",
       "goldens",
       "goldpriceupdate",
+      "golo",
       "golog",
       "gomarketme",
       "gone_board",
@@ -32560,6 +32624,7 @@
       "google_maps_utils",
       "google_maps_webapi",
       "google_maps_webservice",
+      "google_maps_webservice2",
       "google_maps_webservice_ex",
       "google_maps_widget",
       "google_mapsengine_exp2_api",
@@ -32620,6 +32685,7 @@
       "google_place_plus",
       "google_places_android",
       "google_places_api_flutter",
+      "google_places_autocomp",
       "google_places_autocomplete_flutter",
       "google_places_autocomplete_text_field",
       "google_places_dialog",
@@ -34750,6 +34816,7 @@
       "iconswitcher",
       "icontainer",
       "icony",
+      "ict_group_package",
       "ict_group_private_package",
       "icu",
       "icu4d",
@@ -34846,6 +34913,7 @@
       "iframeweb",
       "ift_form",
       "iftech_flutter_update",
+      "ig_flutter_commons",
       "ig_module_dart",
       "ig_module_flutter",
       "ig_story",
@@ -34880,6 +34948,7 @@
       "ilebora_push",
       "ilebora_stk",
       "ilgiz_bloc",
+      "ilkertestwg",
       "illume",
       "illuminare",
       "ilogger",
@@ -36162,6 +36231,8 @@
       "isolate_http",
       "isolate_image_compress",
       "isolate_json",
+      "isolate_json_parser",
+      "isolate_json_parser_generator",
       "isolate_manager",
       "isolate_name_server",
       "isolate_pool",
@@ -36200,6 +36271,7 @@
       "isyumi",
       "italian_tax_identification_number",
       "itbee_nav_bar",
+      "itc_flutter",
       "itc_observability_logger",
       "itch_io",
       "itd_flutter_indicator",
@@ -38352,6 +38424,7 @@
       "libbase_interface",
       "libbase_platform",
       "libbase_web",
+      "libbesign",
       "libc",
       "libcalendar",
       "libclang",
@@ -38572,6 +38645,7 @@
       "line_limit_lint",
       "line_notify",
       "line_notify_d",
+      "line_pattern_matcher",
       "linear_gradient",
       "linear_gradient_container_package",
       "linear_gradient_slider",
@@ -38652,6 +38726,7 @@
       "linkify_text_package",
       "linkpeek",
       "linkpeek_module",
+      "linkpeek_usage_lego",
       "linkr",
       "linkr_api",
       "linkrunner",
@@ -38983,6 +39058,7 @@
       "loading_progress",
       "loading_progress_hud",
       "loading_progress_indicator",
+      "loading_progressbar",
       "loading_provider",
       "loading_pulse",
       "loading_redman_ddur",
@@ -39088,6 +39164,7 @@
       "localino_live",
       "localison",
       "locality_social_cloud",
+      "locality_social_cloud_friendlist",
       "localizable",
       "localizable_annotation",
       "localization",
@@ -39429,6 +39506,7 @@
       "lor_deck_codes",
       "lor_deck_codes_dart",
       "lordicon",
+      "lore",
       "loredart_nn",
       "loredart_tensor",
       "lorem",
@@ -39453,6 +39531,7 @@
       "lottie_flutter",
       "lottie_native",
       "lottie_player",
+      "lottie_screen_onboarding_flutter",
       "lottie_stepper",
       "lottie_tgs",
       "lottie_thorvg",
@@ -40130,6 +40209,7 @@
       "marquee_plus",
       "marquee_text",
       "marquee_vertical",
+      "marquee_view",
       "marquee_widget",
       "marqueer",
       "mars_rover",
@@ -40321,6 +40401,7 @@
       "material_dialogs",
       "material_dropdown_formfield",
       "material_easy",
+      "material_file_icon",
       "material_floating_search_bar",
       "material_floating_search_bar_2",
       "material_forms",
@@ -40377,6 +40458,7 @@
       "material_themes_manager",
       "material_themes_widgets",
       "material_toolbar",
+      "material_toolkit",
       "material_widgets",
       "material_x",
       "material_you",
@@ -41198,6 +41280,7 @@
       "minzip",
       "mio_web_router",
       "mio_web_router_generator",
+      "mioceen_design_system",
       "miodi",
       "miot_spec",
       "mirage",
@@ -41559,6 +41642,7 @@
       "model_map",
       "model_mapper",
       "model_mapper_generator",
+      "model_mate",
       "model_mixer",
       "model_notifier",
       "model_viewer",
@@ -41600,6 +41684,7 @@
       "modifier",
       "modifier_test",
       "modjs_video_player",
+      "modou_dist",
       "modrinth_api",
       "modspace_utils",
       "modular",
@@ -42405,6 +42490,7 @@
       "my_custom_staggered_grid_view",
       "my_custom_textfield",
       "my_dart_utils",
+      "my_data_input_sdk",
       "my_data_state",
       "my_date_picker_textfield",
       "my_debounce",
@@ -42462,6 +42548,7 @@
       "my_package_21031987",
       "my_package_biloljan",
       "my_package_for_everyone",
+      "my_package_for_everyone_revalzi",
       "my_package_jh",
       "my_package_name",
       "my_package_test",
@@ -42742,6 +42829,7 @@
       "native_flutter_fonts",
       "native_flutter_proxy",
       "native_font",
+      "native_geofence",
       "native_http",
       "native_i18n_flutter_plugin",
       "native_id",
@@ -43321,6 +43409,7 @@
       "new_mvvm",
       "new_page_lego",
       "new_pinput",
+      "new_pushy_flutter",
       "new_raven_verification",
       "new_tap_to_expand",
       "new_textfield_search",
@@ -43582,6 +43671,12 @@
       "ninja_pem",
       "ninja_prime",
       "nintendo_progress_indicator",
+      "nip01",
+      "nip04",
+      "nip06",
+      "nip19",
+      "nip24",
+      "nip47",
       "nippon_colors",
       "niralakam_widget",
       "niralanlayout",
@@ -44237,6 +44332,7 @@
       "obopay_dynamic_form",
       "obot_completion_generator",
       "obs",
+      "obs_state_mixin",
       "obs_websocket",
       "obs_websocket_controller",
       "obs_websocket_dart",
@@ -44490,6 +44586,7 @@
       "omicall_flutter_plugin",
       "omikit",
       "omipay_payment_gateway",
+      "omise_dart",
       "omise_flutter",
       "omni_datetime_picker",
       "omni_ellie_test",
@@ -44814,6 +44911,7 @@
       "opencv_3",
       "opencv_4",
       "opencv_awesome",
+      "opencv_core",
       "opencv_dart",
       "opencv_document_detection",
       "opencv_ffi",
@@ -44840,6 +44938,7 @@
       "openidconnect_web",
       "openidconnect_windows",
       "opening_hour_display_widget",
+      "openinstall_flutter_global",
       "openinstall_flutter_plugin",
       "openiothub_api",
       "openiothub_common_pages",
@@ -44911,6 +45010,7 @@
       "opmlparser",
       "opscroll_web",
       "opti_scan_barcode",
+      "opticonnect_sdk",
       "optics",
       "optima",
       "optimization_battery",
@@ -44971,6 +45071,7 @@
       "orderable_stack",
       "ordered_set",
       "ordinal_formatter",
+      "oref",
       "orel",
       "oremi_core",
       "oren_components",
@@ -45378,6 +45479,7 @@
       "pagarme_mpos_flutter",
       "page",
       "page_abler",
+      "page_analytics",
       "page_animation_transition",
       "page_controller_listenable",
       "page_curl",
@@ -45692,6 +45794,7 @@
       "password_checker",
       "password_cipher",
       "password_compromised",
+      "password_confirmation_style",
       "password_credential",
       "password_criteria",
       "password_dart",
@@ -45823,6 +45926,7 @@
       "paw",
       "pawa_pay_flutter",
       "pax_player",
+      "paxity",
       "pay",
       "pay_android",
       "pay_by_bank",
@@ -45995,6 +46099,7 @@
       "pdf_flutter",
       "pdf_fork",
       "pdf_gemini",
+      "pdf_handler",
       "pdf_image_renderer",
       "pdf_js_viewer",
       "pdf_manipulator",
@@ -46151,6 +46256,7 @@
       "permission_ns",
       "permission_policy",
       "permission_request_page",
+      "permission_toggle_button",
       "permission_widget",
       "permissions",
       "permissions_kiosk",
@@ -46229,6 +46335,7 @@
       "peter_kim_sdk_test_test",
       "peter_package_demo",
       "peter_plugin_demo",
+      "petit_bibtex",
       "petit_httpd",
       "petit_lisp",
       "petitparser",
@@ -46894,6 +47001,7 @@
       "plato_bson",
       "plato_mongo_dart",
       "platty",
+      "plaude_flutter",
       "plausible",
       "plausible_analytics",
       "play",
@@ -47655,6 +47763,7 @@
       "progress_dialog2",
       "progress_dialog_fork",
       "progress_dialog_null_safe",
+      "progress_future",
       "progress_hud",
       "progress_hud10",
       "progress_hud_v2",
@@ -47958,6 +48067,7 @@
       "proto_annotations",
       "proto_bytes",
       "proto_generator",
+      "proto_google",
       "proto_x",
       "proto_x_gen",
       "protobuf",
@@ -48385,6 +48495,7 @@
       "pw",
       "pw_edit_field",
       "pwa",
+      "pwa_info",
       "pwa_install",
       "pwa_install_plus",
       "pwa_update_listener",
@@ -48711,7 +48822,10 @@
       "quill_json_to_html",
       "quill_markdown",
       "quill_native_bridge",
+      "quill_native_bridge_android",
+      "quill_native_bridge_ios",
       "quill_native_bridge_linux",
+      "quill_native_bridge_macos",
       "quill_native_bridge_platform_interface",
       "quill_native_bridge_web",
       "quill_native_bridge_windows",
@@ -49023,6 +49137,7 @@
       "raw_context",
       "raw_encoder",
       "raw_gnss",
+      "raw_gnss_flutter",
       "raw_image_provider",
       "raw_scanner",
       "raw_scanner_plus",
@@ -49766,6 +49881,7 @@
       "reservoir",
       "resfluttersdk",
       "residemenu",
+      "resizable_dialog",
       "resizable_draggable_widget",
       "resizable_stack_image",
       "resizable_widget",
@@ -49775,6 +49891,7 @@
       "resize_observer",
       "resize_observer_polyfill_wrapper",
       "resize_sensor_component",
+      "resizer",
       "resolution_detector",
       "resolve",
       "resolve_font_height",
@@ -49834,6 +49951,7 @@
       "responsive_context",
       "responsive_data_grid",
       "responsive_design",
+      "responsive_design_helper",
       "responsive_deva",
       "responsive_elements",
       "responsive_flutter",
@@ -50546,6 +50664,7 @@
       "route_plugin",
       "route_provider",
       "route_stack",
+      "route_stack_manager",
       "route_transaction",
       "route_transiotions_ml",
       "route_transition",
@@ -51029,6 +51148,7 @@
       "sample_package_japan",
       "sample_pks",
       "sample_plugin_flutter",
+      "sample_plugin_flutter_luyennd",
       "sample_plugin_pp",
       "sample_plugin_test_dk",
       "sample_project",
@@ -51782,6 +51902,7 @@
       "security_plus",
       "security_scoped_resource",
       "security_storage",
+      "security_x_snap",
       "secverify",
       "secverify_plugin",
       "see_more",
@@ -52077,6 +52198,7 @@
       "server_universe_dart_http_client",
       "server_universe_flutter",
       "server_universe_scheme",
+      "serverchan_sdk",
       "serverdom",
       "serverpod",
       "serverpod_auth_apple_flutter",
@@ -52155,6 +52277,7 @@
       "set_value",
       "setalpha",
       "seti",
+      "setlary_flutter_module",
       "setmore_client",
       "setting_bottom_sheet",
       "setting_page_plugin",
@@ -52464,6 +52587,7 @@
       "shelf_appengine",
       "shelf_auth",
       "shelf_auth_session",
+      "shelf_azure_application_insights",
       "shelf_bind",
       "shelf_body_parser",
       "shelf_buffer_request",
@@ -52858,6 +52982,7 @@
       "simple_alert_dialog",
       "simple_android_notification",
       "simple_animated_button",
+      "simple_animated_dialog",
       "simple_animated_icon",
       "simple_animated_path",
       "simple_animated_rating_bar",
@@ -53263,6 +53388,22 @@
       "simple_speech_recognition",
       "simple_speed_dial",
       "simple_spell_checker",
+      "simple_spell_checker_ar_lan",
+      "simple_spell_checker_bg_lan",
+      "simple_spell_checker_ca_lan",
+      "simple_spell_checker_da_lan",
+      "simple_spell_checker_de_lan",
+      "simple_spell_checker_en_lan",
+      "simple_spell_checker_es_lan",
+      "simple_spell_checker_et_lan",
+      "simple_spell_checker_fr_lan",
+      "simple_spell_checker_he_lan",
+      "simple_spell_checker_it_lan",
+      "simple_spell_checker_ko_lan",
+      "simple_spell_checker_nl_lan",
+      "simple_spell_checker_no_lan",
+      "simple_spell_checker_pt_lan",
+      "simple_spell_checker_ru_lan",
       "simple_splash",
       "simple_splashscreen",
       "simple_sqflite",
@@ -53355,6 +53496,7 @@
       "simplex",
       "simpleyaml",
       "simpli",
+      "simplified_bloc",
       "simplified_builder",
       "simplified_flutter_animations",
       "simplified_router",
@@ -53878,6 +54020,7 @@
       "smart_scroll_view",
       "smart_sdk",
       "smart_search_dropdown",
+      "smart_searchable_dropdown",
       "smart_select",
       "smart_signal_processing",
       "smart_snackbars",
@@ -53918,6 +54061,7 @@
       "smartlink_flutter",
       "smartlogger",
       "smartlook",
+      "smartotp",
       "smartotp_plugin",
       "smartpos_flutter",
       "smartpush",
@@ -54941,6 +55085,7 @@
       "stacked_slider",
       "stacked_themes",
       "stacked_tools",
+      "stacked_trio_carousel",
       "stacker",
       "stacker2",
       "stackexchange",
@@ -55295,6 +55440,7 @@
       "stone_smart_flutter",
       "stonfi",
       "stonks_date_picker",
+      "stonly_flutter_plugin",
       "stop_watch_timer",
       "stopper",
       "stopwordies",
@@ -55445,6 +55591,7 @@
       "stream_feed_flutter",
       "stream_feed_flutter_core",
       "stream_feed_listener",
+      "stream_feed_unofficial",
       "stream_fluent_validation",
       "stream_graph",
       "stream_handler",
@@ -56008,6 +56155,7 @@
       "surface_duo",
       "surfaceview_snapshot",
       "surfboard_ttp",
+      "surgegrowth_flutter",
       "surrealdb",
       "surrealdb_client",
       "surrealdb_dart",
@@ -56249,6 +56397,7 @@
       "syllables",
       "syllables_split_ru",
       "sylph",
+      "sym454",
       "symbiosis",
       "symbol_rest_client",
       "symbol_sdk",
@@ -56467,6 +56616,7 @@
       "tabnews",
       "taboola",
       "taboola_sdk",
+      "taboola_sdk_beta",
       "tabpanel",
       "tabslidebox",
       "tabular",
@@ -56529,6 +56679,7 @@
       "tale_drawer",
       "talk_core",
       "talker",
+      "talker_azure_application_insights_observer",
       "talker_bloc_logger",
       "talker_dio_logger",
       "talker_error_handler",
@@ -56612,6 +56763,7 @@
       "tapsell_mediation_mintegral",
       "tapsell_mediation_unityads",
       "tapsell_mediation_wortise",
+      "tapsell_mediation_yandex",
       "tapsell_plus",
       "taptune",
       "taquion",
@@ -56812,6 +56964,7 @@
       "tek_flutter_qrscanner",
       "tek_generator",
       "tek_handle_race_condition",
+      "tek_ppm_service_flutter",
       "tekflat_design",
       "tel_input",
       "telbiz",
@@ -57438,6 +57591,7 @@
       "textformfieldcustom",
       "textgo",
       "textifier",
+      "textify",
       "textifynum",
       "textile",
       "textinput_builder",
@@ -57989,6 +58143,7 @@
       "tiny_dialog",
       "tiny_ffmpeg",
       "tiny_forms",
+      "tiny_frame",
       "tiny_invariant",
       "tiny_locator",
       "tiny_logger",
@@ -58358,6 +58513,7 @@
       "tpstreams_player_sdk",
       "tpsutils",
       "tq",
+      "tqdm",
       "tqdrpaysa",
       "tr150",
       "tr_extension",
@@ -58467,6 +58623,7 @@
       "translate_intl",
       "translate_kit",
       "translate_language",
+      "translate_local_package",
       "translatebebasan",
       "translated_text",
       "translatelkt",
@@ -58885,6 +59042,7 @@
       "typed_data",
       "typed_date_pipe",
       "typed_date_time",
+      "typed_error",
       "typed_event_bus",
       "typed_event_emitter",
       "typed_event_notifier",
@@ -58894,6 +59052,7 @@
       "typed_json",
       "typed_messages",
       "typed_mock",
+      "typed_monad",
       "typed_preferences",
       "typed_redux",
       "typed_redux_epics",
@@ -59053,6 +59212,9 @@
       "uigitdev_request_holder",
       "uigitdev_stream_holder",
       "uih",
+      "uihub_basic_bottom_sheet",
+      "uihub_basic_inappwebview",
+      "uihub_basic_inappwebview2",
       "uihub_facebook_home",
       "uihub_facebook_messager_main_view",
       "uihub_insta_style_feed_1",
@@ -60227,6 +60389,7 @@
       "video_transcode_platform_interface",
       "video_trim",
       "video_trimmer",
+      "video_trimmer_pro",
       "video_uploader",
       "video_url_validator",
       "video_viewer",
@@ -60269,6 +60432,7 @@
       "view_model",
       "view_model_divider",
       "view_model_kit",
+      "view_model_macro",
       "view_model_provider",
       "view_model_x",
       "view_more",
@@ -60348,6 +60512,7 @@
       "visual_detector_ai",
       "visual_effect",
       "visualexact_flutter_plugin",
+      "visuals_calendar",
       "vit_combo_box",
       "vit_dart_extensions",
       "vit_logger",
@@ -60628,6 +60793,7 @@
       "wakelock_for_us",
       "wakelock_macos",
       "wakelock_platform_interface",
+      "wakelock_plugin",
       "wakelock_plus",
       "wakelock_plus_ohos",
       "wakelock_plus_platform_interface",
@@ -61218,6 +61384,7 @@
       "whatsapp_business",
       "whatsapp_call",
       "whatsapp_camera",
+      "whatsapp_camera_plus",
       "whatsapp_chatbot",
       "whatsapp_cli",
       "whatsapp_client",
@@ -61524,6 +61691,9 @@
       "win_gamepad",
       "win_toast",
       "win_tracker",
+      "wind",
+      "wind_ui",
+      "wind_utils",
       "windmill",
       "windmillcode_flutter_translate",
       "windmillcode_peerdart",
@@ -61604,6 +61774,7 @@
       "winmd",
       "winrt",
       "winrtgen",
+      "winter_launch",
       "winwheel",
       "wipepp_auth",
       "wirdul_latif",
@@ -62114,6 +62285,7 @@
       "xmrbi_base_design",
       "xmtp",
       "xmtp_bindings_flutter",
+      "xmtp_dart_proto",
       "xmtp_proto",
       "xnavigation",
       "xo",
@@ -62215,6 +62387,7 @@
       "y_crdt",
       "y_debug_tools",
       "y_heic_to_jpg",
+      "y_player",
       "y_router",
       "ya_video_player",
       "ya_websocket",
@@ -62331,6 +62504,7 @@
       "yekonga_database_model",
       "yekonga_form",
       "yellowcontainer",
+      "yelo_icons",
       "yelp_fusion_client",
       "yemenpoint",
       "yenepay_flutter",
@@ -63056,161 +63230,3095 @@
     "packages": []
   },
   "https://pub.dev/api/search?q=%20publisher:dart.dev&page=1&sort=top": {
-    "headers": {
-      "cache-control": "no-store, no-cache, must-revalidate",
-      "transfer-encoding": "chunked",
-      "date": "Thu, 26 Sep 2024 16:42:08 GMT",
-      "x-appengine-flex-applatency": "0.346",
-      "vary": "Accept-Encoding",
-      "content-encoding": "gzip",
-      "strict-transport-security": "max-age=31536000; preload",
-      "content-type": "application/json; charset=\"utf-8\"",
-      "x-xss-protection": "1; mode=block",
-      "x-powered-by": "Dart with package:shelf",
-      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-      "x-frame-options": "SAMEORIGIN",
-      "via": "1.1 google",
-      "x-content-type-options": "nosniff",
-      "expires": "Thu, 26 Sep 2024 16:37:08 GMT"
-    },
-    "body": {
-      "packages": [
-        {
-          "package": "http"
-        },
-        {
-          "package": "path"
-        },
-        {
-          "package": "crypto"
-        },
-        {
-          "package": "logging"
-        },
-        {
-          "package": "ffi"
-        },
-        {
-          "package": "http_parser"
-        },
-        {
-          "package": "grpc"
-        },
-        {
-          "package": "characters"
-        },
-        {
-          "package": "platform"
-        },
-        {
-          "package": "convert"
-        }
-      ],
-      "next": "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=2&sort=top"
-    }
+    "packages": [
+      {
+        "package": "http"
+      },
+      {
+        "package": "path"
+      },
+      {
+        "package": "crypto"
+      },
+      {
+        "package": "logging"
+      },
+      {
+        "package": "ffi"
+      },
+      {
+        "package": "http_parser"
+      },
+      {
+        "package": "grpc"
+      },
+      {
+        "package": "characters"
+      },
+      {
+        "package": "platform"
+      },
+      {
+        "package": "convert"
+      }
+    ],
+    "next": "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=2&sort=top"
   },
   "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=2&sort=top": {
-    "headers": {
-      "cache-control": "no-store, no-cache, must-revalidate",
-      "transfer-encoding": "chunked",
-      "date": "Thu, 26 Sep 2024 16:42:08 GMT",
-      "x-appengine-flex-applatency": "0.270",
-      "vary": "Accept-Encoding",
-      "content-encoding": "gzip",
-      "strict-transport-security": "max-age=31536000; preload",
-      "content-type": "application/json; charset=\"utf-8\"",
-      "x-xss-protection": "1; mode=block",
-      "x-powered-by": "Dart with package:shelf",
-      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-      "x-frame-options": "SAMEORIGIN",
-      "via": "1.1 google",
-      "x-content-type-options": "nosniff",
-      "expires": "Thu, 26 Sep 2024 16:37:08 GMT"
-    },
-    "body": {
-      "packages": [
-        {
-          "package": "cupertino_http"
-        },
-        {
-          "package": "cronet_http"
-        },
-        {
-          "package": "collection"
-        },
-        {
-          "package": "mockito"
-        },
-        {
-          "package": "test"
-        },
-        {
-          "package": "args"
-        },
-        {
-          "package": "fake_async"
-        },
-        {
-          "package": "fixnum"
-        },
-        {
-          "package": "intl_translation"
-        },
-        {
-          "package": "matcher"
-        }
-      ],
-      "next": "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=3&sort=top"
-    }
+    "packages": [
+      {
+        "package": "cupertino_http"
+      },
+      {
+        "package": "cronet_http"
+      },
+      {
+        "package": "collection"
+      },
+      {
+        "package": "mockito"
+      },
+      {
+        "package": "test"
+      },
+      {
+        "package": "args"
+      },
+      {
+        "package": "fake_async"
+      },
+      {
+        "package": "fixnum"
+      },
+      {
+        "package": "intl_translation"
+      },
+      {
+        "package": "matcher"
+      }
+    ],
+    "next": "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=3&sort=top"
   },
   "https://pub.dev/api/search?q=+publisher%3Adart.dev&page=3&sort=top": {
-    "headers": {
-      "cache-control": "no-store, no-cache, must-revalidate",
-      "transfer-encoding": "chunked",
-      "date": "Thu, 26 Sep 2024 16:42:09 GMT",
-      "x-appengine-flex-applatency": "0.138",
-      "vary": "Accept-Encoding",
-      "content-encoding": "gzip",
-      "strict-transport-security": "max-age=31536000; preload",
-      "content-type": "application/json; charset=\"utf-8\"",
-      "x-xss-protection": "1; mode=block",
-      "x-powered-by": "Dart with package:shelf",
-      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-      "x-frame-options": "SAMEORIGIN",
-      "via": "1.1 google",
-      "x-content-type-options": "nosniff",
-      "expires": "Thu, 26 Sep 2024 16:37:09 GMT"
-    },
-    "body": {
-      "packages": [
-        {
-          "package": "typed_data"
+    "packages": [
+      {
+        "package": "typed_data"
+      },
+      {
+        "package": "build"
+      },
+      {
+        "package": "intl"
+      },
+      {
+        "package": "meta"
+      },
+      {
+        "package": "async"
+      },
+      {
+        "package": "js"
+      },
+      {
+        "package": "web"
+      },
+      {
+        "package": "os_detect"
+      },
+      {
+        "package": "http2"
+      }
+    ]
+  },
+  "https://pub.dev/api/packages/sqlite3": {
+    "name": "sqlite3",
+    "latest": {
+      "version": "2.4.6",
+      "pubspec": {
+        "name": "sqlite3",
+        "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+        "version": "2.4.6",
+        "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+        "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+        "environment": {
+          "sdk": ">=3.4.0 <4.0.0"
         },
-        {
-          "package": "build"
+        "platforms": {
+          "android": null,
+          "ios": null,
+          "linux": null,
+          "macos": null,
+          "web": null,
+          "windows": null
         },
-        {
-          "package": "intl"
+        "topics": [
+          "sql",
+          "database",
+          "ffi"
+        ],
+        "dependencies": {
+          "collection": "^1.15.0",
+          "ffi": ">=1.2.1 <3.0.0",
+          "meta": "^1.3.0",
+          "path": "^1.8.0",
+          "web": "^1.0.0"
         },
-        {
-          "package": "meta"
-        },
-        {
-          "package": "async"
-        },
-        {
-          "package": "js"
-        },
-        {
-          "package": "web"
-        },
-        {
-          "package": "os_detect"
-        },
-        {
-          "package": "http2"
+        "dev_dependencies": {
+          "analyzer": "^6.4.1",
+          "build_daemon": "^4.0.0",
+          "build_runner": "^2.1.7",
+          "build_web_compilers": "^4.0.3",
+          "ffigen": "^13.0.0",
+          "http": "^1.2.1",
+          "lints": "^4.0.0",
+          "shelf": "^1.4.0",
+          "shelf_proxy": "^1.0.2",
+          "shelf_static": "^1.1.0",
+          "stream_channel": "^2.1.0",
+          "test": "^1.17.0",
+          "test_descriptor": "^2.0.0"
         }
-      ]
+      },
+      "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.6.tar.gz",
+      "archive_sha256": "45f168ae2213201b54e09429ed0c593dc2c88c924a1488d6f9c523a255d567cb",
+      "published": "2024-08-12T10:12:19.098974Z"
+    },
+    "versions": [
+      {
+        "version": "0.0.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "version": "0.0.0",
+          "homepage": "https://github.com/dart-lang/sdk/tree/master/samples/ffi/sqlite",
+          "description": "Sqlite3 wrapper. Demo for dart:ffi.",
+          "author": "Daco Harkes <dacoharkes@google.com>, Samir Jindel <sjindel@google.com>",
+          "environment": {
+            "sdk": ">=2.1.0 <3.0.0"
+          },
+          "dependencies": {
+            "ffi": "^0.1.2"
+          },
+          "dev_dependencies": {
+            "test": "^1.5.3"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.0.0.tar.gz",
+        "archive_sha256": "c79919b60db7f7ddff211c66ed73f7b43f4c446a50edc96fa21a1d63dea42237",
+        "published": "2019-11-26T17:31:45.453204Z"
+      },
+      {
+        "version": "0.0.0+1",
+        "pubspec": {
+          "name": "sqlite3",
+          "version": "0.0.0+1",
+          "homepage": "https://github.com/dart-lang/sdk/tree/master/samples/ffi/sqlite",
+          "description": "Sqlite3 wrapper. Demo for dart:ffi.",
+          "author": "Daco Harkes <dacoharkes@google.com>, Samir Jindel <sjindel@google.com>",
+          "environment": {
+            "sdk": ">=2.1.0 <3.0.0"
+          },
+          "dependencies": {
+            "ffi": "^0.1.2"
+          },
+          "dev_dependencies": {
+            "test": "^1.5.3"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.0.0%2B1.tar.gz",
+        "archive_sha256": "94198337fca5fd9290f1f701e58a3bb14dc87d523bb89771a2d423e8be2a8035",
+        "published": "2019-11-26T19:17:29.044509Z"
+      },
+      {
+        "version": "0.0.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "version": "0.0.1",
+          "homepage": "https://github.com/dart-lang/sdk/tree/master/samples/ffi/sqlite",
+          "description": "Sqlite3 wrapper. Demo for dart:ffi.",
+          "author": "Daco Harkes <dacoharkes@google.com>, Samir Jindel <sjindel@google.com>",
+          "environment": {
+            "sdk": ">=2.1.0 <3.0.0"
+          },
+          "dependencies": {
+            "ffi": "^0.1.3"
+          },
+          "dev_dependencies": {
+            "test": "^1.5.3"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.0.1.tar.gz",
+        "archive_sha256": "90960c0305d8d447cc8f3b5391e73e1d04548c3d0e7d646608e5d4677f22b089",
+        "published": "2019-11-26T17:05:19.130293Z"
+      },
+      {
+        "version": "0.0.1+1",
+        "pubspec": {
+          "name": "sqlite3",
+          "version": "0.0.1+1",
+          "homepage": "https://github.com/dart-lang/sdk/tree/master/samples/ffi/sqlite",
+          "description": "Sqlite3 wrapper. Demo for dart:ffi.",
+          "author": "Daco Harkes <dacoharkes@google.com>, Samir Jindel <sjindel@google.com>",
+          "environment": {
+            "sdk": ">=2.7.0 <3.0.0"
+          },
+          "dependencies": {
+            "ffi": "^0.1.3"
+          },
+          "dev_dependencies": {
+            "test": "^1.5.3"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.0.1%2B1.tar.gz",
+        "archive_sha256": "aa742acbe297c0140196767d4132342976d3b7b873501d9ed7ce0e095daa63d5",
+        "published": "2019-12-17T13:35:28.191730Z"
+      },
+      {
+        "version": "0.1.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "sqlite3 bindings via dart:ffi",
+          "version": "0.1.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.13",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.0.tar.gz",
+        "archive_sha256": "52559a7311baad4e50552033b65a577f7685666157af8fa7206aa733e04f6ca2",
+        "published": "2020-07-10T10:53:17.394925Z"
+      },
+      {
+        "version": "0.1.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.13",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.1.tar.gz",
+        "archive_sha256": "bb70d6d72c58ea26754251c33a8c20cb42191c8ff7f200fa999783b2b6015cb5",
+        "published": "2020-07-10T11:30:02.413532Z"
+      },
+      {
+        "version": "0.1.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.13",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.2.tar.gz",
+        "archive_sha256": "6c22a07684e52ef27eb0aa8e9352a1b42a8697350409a1b982c0a1b0ad9b7d1c",
+        "published": "2020-07-10T11:51:20.624550Z"
+      },
+      {
+        "version": "0.1.3",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.3",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.3.tar.gz",
+        "archive_sha256": "005f4ab76333c442e35d8de74bda0c7cc4593e80aec06ed6cd7aef424d6f149e",
+        "published": "2020-07-10T14:44:38.406443Z"
+      },
+      {
+        "version": "0.1.4",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.4",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.4.tar.gz",
+        "archive_sha256": "a928a191c50638de1cfed98a9fe65e0a7603d43103d36c3c6e7f60c815116fff",
+        "published": "2020-07-14T16:34:02.016476Z"
+      },
+      {
+        "version": "0.1.5",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.5",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.5.tar.gz",
+        "archive_sha256": "f9af2d68194fbaeb926c663101fa4ae018de52b6211545cae7f38124b1438862",
+        "published": "2020-09-01T09:27:15.565339Z"
+      },
+      {
+        "version": "0.1.6",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.6",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.6.tar.gz",
+        "archive_sha256": "522c4b8d6dc8f140626354b589257f40f243097fddeb615bbc9ca10fc355bf53",
+        "published": "2020-09-30T13:12:41.118523Z"
+      },
+      {
+        "version": "0.1.7",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.7",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.7.tar.gz",
+        "archive_sha256": "b7447ef702cc1fd1874d871e28a1ccc63b9a9b788535693d2b6e732053f65038",
+        "published": "2020-10-16T11:23:32.529317Z"
+      },
+      {
+        "version": "0.1.8",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.8",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.8.1 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.14.0",
+            "ffi": "^0.1.3",
+            "meta": "^1.1.8"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.2.0",
+            "test": "^1.14.4",
+            "build_runner": "^1.10.0",
+            "path": "^1.7.0",
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.8.tar.gz",
+        "archive_sha256": "0f5f5c73b76541797282116e70e516d347589853e33747305543e348bdc6c7f4",
+        "published": "2020-11-13T16:00:32.128002Z"
+      },
+      {
+        "version": "0.1.9-nullsafety.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.9-nullsafety.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0-0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0-nullsafety.5",
+            "ffi": "^0.2.0-nullsafety",
+            "meta": "^1.3.0-nullsafety"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.0",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0-nullsafety",
+            "test": "^1.16.0-nullsafety"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.9-nullsafety.0.tar.gz",
+        "archive_sha256": "85f439637b025c9accbaf911f3f5259496bcec7e8c45b2bf034457057d9370f4",
+        "published": "2020-11-19T20:18:19.241927Z"
+      },
+      {
+        "version": "0.1.9-nullsafety.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.9-nullsafety.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0-0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0-nullsafety.5",
+            "ffi": "^0.2.0-nullsafety",
+            "meta": "^1.3.0-nullsafety"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.0",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0-nullsafety",
+            "test": "^1.16.0-nullsafety"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.9-nullsafety.1.tar.gz",
+        "archive_sha256": "df158568a1b91ab9cc83a54660928d608ea7cb5889e976bb0f706e1fbb955d8b",
+        "published": "2020-11-26T17:39:42.817820Z"
+      },
+      {
+        "version": "0.1.9-nullsafety.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.9-nullsafety.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0-0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0-nullsafety.5",
+            "ffi": "^0.2.0-nullsafety",
+            "meta": "^1.3.0-nullsafety"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.0",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0-nullsafety",
+            "test": "^1.16.0-nullsafety"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.9-nullsafety.2.tar.gz",
+        "archive_sha256": "0028ae865d9e6dad428b1f61ec552de4e7beaffe8dcf1d3dc0abdc0513db41fe",
+        "published": "2020-12-08T15:46:31.018900Z"
+      },
+      {
+        "version": "0.1.10-nullsafety.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "0.1.10-nullsafety.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0-0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^0.3.0-nullsafety",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.4",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0",
+            "test": "^1.16.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-0.1.10-nullsafety.0.tar.gz",
+        "archive_sha256": "463563e6e23fd43ad01f3dd842991e0930875c8ff1e8f8e456aeaa27b640989b",
+        "published": "2021-02-08T13:36:35.641390Z"
+      },
+      {
+        "version": "1.0.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.0.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0-0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.4",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0",
+            "test": "^1.16.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.0.0.tar.gz",
+        "archive_sha256": "e41c802d493ab234cb4d1c8c51f8542f77192038a6f373b886346bad00ba4b84",
+        "published": "2021-02-14T12:02:21.361494Z"
+      },
+      {
+        "version": "1.1.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.1.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "git": {
+                "url": "https://github.com/simolus3/build_ffi_generator.git"
+              }
+            },
+            "build_runner": "^1.10.4",
+            "extra_pedantic": "^1.2.0",
+            "path": "^1.8.0",
+            "test": "^1.16.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.1.0.tar.gz",
+        "archive_sha256": "f8414a0ae4f2b686e58e678fd486652201eb67be307cdceca0e332c691f380c3",
+        "published": "2021-04-25T21:24:30.056198Z"
+      },
+      {
+        "version": "1.1.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.1.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.0.0",
+            "extra_pedantic": "^1.3.0",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.1.1.tar.gz",
+        "archive_sha256": "72682339ad70420c83aa332b7ebfaa94b96ff2c03ea3880b3f9362ff4c607e00",
+        "published": "2021-05-01T15:38:04.060337Z"
+      },
+      {
+        "version": "1.1.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.1.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.12.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "hosted": {
+                "url": "https://simonbinder.eu",
+                "name": "build_ffi_generator"
+              },
+              "version": "^0.1.0"
+            },
+            "build_runner": "^2.0.0",
+            "extra_pedantic": "^1.3.0",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.1.2.tar.gz",
+        "archive_sha256": "6e1085c69acb3f141211dccb16bd539e594b67f28c133bb9d9d4bd97b9b3e7c3",
+        "published": "2021-05-28T21:35:06.792272Z"
+      },
+      {
+        "version": "1.2.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.2.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "hosted": {
+                "url": "https://simonbinder.eu",
+                "name": "build_ffi_generator"
+              },
+              "version": "^0.1.0"
+            },
+            "build_runner": "^2.0.0",
+            "extra_pedantic": "^1.3.0",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.2.0.tar.gz",
+        "archive_sha256": "70c795896fdc7922750ad2eeb3c53765b4451a68bb44b76f3e1c153dd03feef7",
+        "published": "2021-09-17T07:47:48.157478Z"
+      },
+      {
+        "version": "1.3.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.3.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.0.0",
+            "extra_pedantic": "^1.3.0",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.3.0.tar.gz",
+        "archive_sha256": "0f9302d70051fc32fcb3f2ce1ec942e6f5ddacc8e00bbf9a8ecae72371d17af8",
+        "published": "2021-10-18T19:51:59.477643Z"
+      },
+      {
+        "version": "1.3.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.3.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "build_ffi_generator": {
+              "hosted": {
+                "url": "https://simonbinder.eu",
+                "name": "build_ffi_generator"
+              }
+            },
+            "build_runner": "^2.0.0",
+            "extra_pedantic": "^1.3.0",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.3.1.tar.gz",
+        "archive_sha256": "93129f5e14b80ac12fbd87575e590d83e0740468d9b7f1e6ed7a815783620ef6",
+        "published": "2021-10-19T11:12:20.148604Z"
+      },
+      {
+        "version": "1.4.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.4.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.3.0",
+            "ffigen": "^4.1.2",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.4.0.tar.gz",
+        "archive_sha256": "5bc9c56ab527a011aa4c4b5103d369944a87fe479a11140be6e184af9ec351a7",
+        "published": "2021-12-09T15:34:52.735516Z"
+      },
+      {
+        "version": "1.5.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.5.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.3.0",
+            "ffigen": "^4.1.2",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.5.0.tar.gz",
+        "archive_sha256": "bbd8bec96b72b749c61b52682a0bf38f9ad2e6404d7094c7fd5bd33777c503fc",
+        "published": "2022-01-10T12:37:53.677386Z"
+      },
+      {
+        "version": "1.5.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.5.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.14.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "meta": "^1.3.0"
+          },
+          "dev_dependencies": {
+            "extra_pedantic": "^1.3.0",
+            "ffigen": "^4.1.2",
+            "path": "^1.8.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.5.1.tar.gz",
+        "archive_sha256": "88009712a98743bd476111c03d8064aea7ae12650a66ca62f866e121c3380d90",
+        "published": "2022-01-12T16:24:44.897666Z"
+      },
+      {
+        "version": "1.6.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.6.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.15.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.1"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^4.1.2",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.6.0.tar.gz",
+        "archive_sha256": "c51f8e3676774db3bc4836435b51b4233a4d6ad837ccec509c21f98733465323",
+        "published": "2022-03-14T22:23:46.453080Z"
+      },
+      {
+        "version": "1.6.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.6.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.15.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^4.1.2",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.6.1.tar.gz",
+        "archive_sha256": "d2d45144e08ba1dc781c25d4d2c280ed1ef40732cdca902e400048ec5748715a",
+        "published": "2022-04-01T19:40:19.297206Z"
+      },
+      {
+        "version": "1.6.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.6.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.15.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^4.1.2",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.6.2.tar.gz",
+        "archive_sha256": "b3ee4bdd7dd10175b34e467c6c97fa1ef9727953952ba41f2fe6801048a5b68d",
+        "published": "2022-04-04T19:28:16.872246Z"
+      },
+      {
+        "version": "1.6.4",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.6.4",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.15.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^4.1.2",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.6.4.tar.gz",
+        "archive_sha256": "d204d9d7b3c2f1928faebd36b5e9892bb2097402d4aa50a412ad6a76dfa3288d",
+        "published": "2022-04-18T11:52:12.643631Z"
+      },
+      {
+        "version": "1.7.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.7.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.15.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^4.1.2",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.7.0.tar.gz",
+        "archive_sha256": "5b9e8f192aeb0573c1d0e33db4a47041dede29cdc59c70ee3488d8bdbf4c13df",
+        "published": "2022-05-04T18:19:30.328866Z"
+      },
+      {
+        "version": "1.7.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.7.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.17.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": "^1.2.1",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "ffigen": "^5.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.7.1.tar.gz",
+        "archive_sha256": "0d2557206cee81e744e0d8177138c78cf98b43fa6df88dcfd13671a4d3e55b74",
+        "published": "2022-05-14T21:53:08.292234Z"
+      },
+      {
+        "version": "1.7.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.7.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.17.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^2.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.7.2.tar.gz",
+        "archive_sha256": "4eda86c0a56310ba1c4fe2bed50c7dbecde5c354da1f143c2ffb0d3dca6b5170",
+        "published": "2022-06-20T14:05:02.887116Z"
+      },
+      {
+        "version": "1.8.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.8.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.17.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.8.0.tar.gz",
+        "archive_sha256": "0b19d02e196dd8c9fb96622520bcf7b5e2bcf6d7c748649bb36b1ebee821716b",
+        "published": "2022-08-15T20:30:17.889549Z"
+      },
+      {
+        "version": "1.9.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.9.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.9.0.tar.gz",
+        "archive_sha256": "bb6b7c77eeda79a355b6b464244f2a62ddc6b3da1c46a25ea61c5a0ee1a14324",
+        "published": "2022-09-16T13:31:37.931938Z"
+      },
+      {
+        "version": "1.9.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.9.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/master/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.9.1.tar.gz",
+        "archive_sha256": "db6350456720a4088a364bbe02052d43056a5ffbd4816fe9d28310dcfbe0dc05",
+        "published": "2022-10-18T18:09:39.610869Z"
+      },
+      {
+        "version": "1.9.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.9.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.9.2.tar.gz",
+        "archive_sha256": "805cd0b49c0c927b9dbaf92508f33461e83807f9ab76bfbf660ac769b27f90e5",
+        "published": "2023-03-06T21:21:25.229119Z"
+      },
+      {
+        "version": "1.9.3",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.9.3",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "extra_pedantic": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          },
+          "ffigen": {
+            "output": "lib/src/ffi/sqlite3.g.dart",
+            "name": "Bindings",
+            "description": "Auto-generated, internal bindings to sqlite3",
+            "headers": {
+              "entry-points": [
+                "assets/sqlite3.h"
+              ]
+            },
+            "structs": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "macros": {
+              "include": [
+                "sqlite3.*"
+              ]
+            },
+            "globals": {
+              "include": [
+                "sqlite3.*"
+              ]
+            }
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.9.3.tar.gz",
+        "archive_sha256": "0a9f8fe561aad15b94549c98d55dee6825a401efec83bf92956e337e35e68ae5",
+        "published": "2023-03-10T18:20:10.942499Z"
+      },
+      {
+        "version": "1.10.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.10.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.10.0.tar.gz",
+        "archive_sha256": "cab735283879114cef78ee69071d652a7303d8376727c688ad56a2013997a8d0",
+        "published": "2023-03-19T20:08:28.477561Z"
+      },
+      {
+        "version": "1.10.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.10.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.10.1.tar.gz",
+        "archive_sha256": "822d321a008e194d7929357e5b58d2e4a04ab670d137182f9759152aa33180ff",
+        "published": "2023-03-20T14:09:49.434536Z"
+      },
+      {
+        "version": "1.11.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.11.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <3.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.11.0.tar.gz",
+        "archive_sha256": "a3ba4b66a7ab170ce7aa3f5ac43c19ee8d6637afbe7b7c95c94112b4f4d91566",
+        "published": "2023-04-09T20:58:06.730347Z"
+      },
+      {
+        "version": "1.11.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.11.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <4.0.0"
+          },
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.11.1.tar.gz",
+        "archive_sha256": "2cef47b59d310e56f8275b13734ee80a9cf4a48a43172020cb55a620121fbf66",
+        "published": "2023-05-10T16:12:45.836747Z"
+      },
+      {
+        "version": "1.11.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "1.11.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=2.18.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^3.0.0",
+            "ffigen": "^6.0.0",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.2.0",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-1.11.2.tar.gz",
+        "archive_sha256": "281b672749af2edf259fc801f0fcba092257425bcd32a0ce1c8237130bc934c7",
+        "published": "2023-06-02T14:46:59.660136Z"
+      },
+      {
+        "version": "2.0.0-dev.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.0.0-dev.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/v2/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.0.0-dev.0.tar.gz",
+        "archive_sha256": "cd0e1b1bab0338e4d8089276eae3351ddd52e855e4cb18b55da2c4287cf77e28",
+        "published": "2023-05-17T15:01:18.677945Z"
+      },
+      {
+        "version": "2.0.0-dev.1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.0.0-dev.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/v2/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.0.0-dev.1.tar.gz",
+        "archive_sha256": "8cb4898094599a0bda5ba503c56bb774cb4e6527ba3c15c31812f23cdb10a5a1",
+        "published": "2023-05-31T21:05:20.977104Z"
+      },
+      {
+        "version": "2.0.0-dev.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.0.0-dev.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/v2/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.0.0-dev.2.tar.gz",
+        "archive_sha256": "2423b944d3e3c7a93b8528a286c8c3fbfb1a2c794936328f3d01359adf1a9569",
+        "published": "2023-06-04T20:40:59.168906Z"
+      },
+      {
+        "version": "2.0.0-dev.3",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.0.0-dev.3",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/v2/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.0.0-dev.3.tar.gz",
+        "archive_sha256": "c60f14fd81f58e75af575f24708c469b93f86e90ad139d6970400e52d84224eb",
+        "published": "2023-06-13T15:10:00.722565Z"
+      },
+      {
+        "version": "2.0.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.0.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.0.0.tar.gz",
+        "archive_sha256": "f7511ddd6a2dda8ded9d849f8a925bb6020e0faa59db2443debc18d484e59401",
+        "published": "2023-06-17T19:02:06.276647Z"
+      },
+      {
+        "version": "2.1.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.1.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.0.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.1.0.tar.gz",
+        "archive_sha256": "db65233e6b99e99b2548932f55a987961bc06d82a31a0665451fa0b4fff4c3fb",
+        "published": "2023-07-27T20:11:56.821182Z"
+      },
+      {
+        "version": "2.2.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.2.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.2.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.2.0.tar.gz",
+        "archive_sha256": "8922805564b78eb7aa9386c10056d377a541ac7270dc6a1589176277ebb4d15d",
+        "published": "2023-12-04T22:21:32.958237Z"
+      },
+      {
+        "version": "2.3.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.3.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.2.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^2.0.1",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.3.0.tar.gz",
+        "archive_sha256": "c4a4c5a4b2a32e2d0f6837b33d7c91a67903891a5b7dbe706cf4b1f6b0c798c5",
+        "published": "2023-12-21T14:20:31.473996Z"
+      },
+      {
+        "version": "2.4.0",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.0",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.2.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": "^0.6.4",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^8.0.1",
+            "http": "^0.13.4",
+            "lints": "^3.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.0.tar.gz",
+        "archive_sha256": "072128763f1547e3e9b4735ce846bfd226d68019ccda54db4cd427b12dfdedc9",
+        "published": "2024-02-13T21:46:49.395304Z"
+      },
+      {
+        "version": "2.4.1",
+        "retracted": true,
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.2.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": ">=0.6.4 <0.8.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^11.0.0",
+            "http": "^1.2.1",
+            "lints": "^3.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.1.tar.gz",
+        "archive_sha256": "66ccc2117c379616167d44b38969964e47ffaaabc88ba01e57b979c5a0c12d1c",
+        "published": "2024-04-02T11:29:12.746043Z"
+      },
+      {
+        "version": "2.4.1+1",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.1+1",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.3.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": ">=0.6.4 <0.8.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^11.0.0",
+            "http": "^1.2.1",
+            "lints": "^3.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.1%2B1.tar.gz",
+        "archive_sha256": "6d373bf26087a63ebbd1898a07cb681e1c87d4bddb5e0582b67474b24199763c",
+        "published": "2024-04-02T15:06:24.256805Z"
+      },
+      {
+        "version": "2.4.2",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.2",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.3.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "js": ">=0.6.4 <0.8.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^11.0.0",
+            "http": "^1.2.1",
+            "lints": "^3.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.2.tar.gz",
+        "archive_sha256": "1abbeb84bf2b1a10e5e1138c913123c8aa9d83cd64e5f9a0dd847b3c83063202",
+        "published": "2024-04-03T21:13:28.711835Z"
+      },
+      {
+        "version": "2.4.3",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.3",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.3.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0",
+            "web": "^0.5.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^12.0.0",
+            "http": "^1.2.1",
+            "lints": "^4.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.3.tar.gz",
+        "archive_sha256": "b384f598b813b347c5a7e5ffad82cbaff1bec3d1561af267041e66f6f0899295",
+        "published": "2024-05-10T22:21:59.637742Z"
+      },
+      {
+        "version": "2.4.4",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.4",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.4.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0",
+            "web": "^0.5.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^12.0.0",
+            "http": "^1.2.1",
+            "lints": "^4.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.4.tar.gz",
+        "archive_sha256": "6d17989c0b06a5870b2190d391925186f944cb943e5262d0d3f778fcfca3bc6e",
+        "published": "2024-06-23T13:15:03.335314Z"
+      },
+      {
+        "version": "2.4.5",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.5",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.4.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0",
+            "web": "^0.5.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^12.0.0",
+            "http": "^1.2.1",
+            "lints": "^4.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.5.tar.gz",
+        "archive_sha256": "fde692580bee3379374af1f624eb3e113ab2865ecb161dbe2d8ac2de9735dbdb",
+        "published": "2024-07-26T21:07:20.540068Z"
+      },
+      {
+        "version": "2.4.6",
+        "pubspec": {
+          "name": "sqlite3",
+          "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+          "version": "2.4.6",
+          "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+          "environment": {
+            "sdk": ">=3.4.0 <4.0.0"
+          },
+          "platforms": {
+            "android": null,
+            "ios": null,
+            "linux": null,
+            "macos": null,
+            "web": null,
+            "windows": null
+          },
+          "topics": [
+            "sql",
+            "database",
+            "ffi"
+          ],
+          "dependencies": {
+            "collection": "^1.15.0",
+            "ffi": ">=1.2.1 <3.0.0",
+            "meta": "^1.3.0",
+            "path": "^1.8.0",
+            "web": "^1.0.0"
+          },
+          "dev_dependencies": {
+            "analyzer": "^6.4.1",
+            "build_daemon": "^4.0.0",
+            "build_runner": "^2.1.7",
+            "build_web_compilers": "^4.0.3",
+            "ffigen": "^13.0.0",
+            "http": "^1.2.1",
+            "lints": "^4.0.0",
+            "shelf": "^1.4.0",
+            "shelf_proxy": "^1.0.2",
+            "shelf_static": "^1.1.0",
+            "stream_channel": "^2.1.0",
+            "test": "^1.17.0",
+            "test_descriptor": "^2.0.0"
+          }
+        },
+        "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.6.tar.gz",
+        "archive_sha256": "45f168ae2213201b54e09429ed0c593dc2c88c924a1488d6f9c523a255d567cb",
+        "published": "2024-08-12T10:12:19.098974Z"
+      }
+    ]
+  },
+  "https://pub.dev/packages/sqlite3.json": {
+    "name": "sqlite3",
+    "versions": [
+      "2.4.6",
+      "2.4.5",
+      "2.4.4",
+      "2.4.3",
+      "2.4.2",
+      "2.4.1+1",
+      "2.4.1",
+      "2.4.0",
+      "2.3.0",
+      "2.2.0",
+      "2.1.0",
+      "2.0.0",
+      "2.0.0-dev.3",
+      "2.0.0-dev.2",
+      "2.0.0-dev.1",
+      "2.0.0-dev.0",
+      "1.11.2",
+      "1.11.1",
+      "1.11.0",
+      "1.10.1",
+      "1.10.0",
+      "1.9.3",
+      "1.9.2",
+      "1.9.1",
+      "1.9.0",
+      "1.8.0",
+      "1.7.2",
+      "1.7.1",
+      "1.7.0",
+      "1.6.4",
+      "1.6.2",
+      "1.6.1",
+      "1.6.0",
+      "1.5.1",
+      "1.5.0",
+      "1.4.0",
+      "1.3.1",
+      "1.3.0",
+      "1.2.0",
+      "1.1.2",
+      "1.1.1",
+      "1.1.0",
+      "1.0.0",
+      "0.1.10-nullsafety.0",
+      "0.1.9-nullsafety.2",
+      "0.1.9-nullsafety.1",
+      "0.1.9-nullsafety.0",
+      "0.1.8",
+      "0.1.7",
+      "0.1.6",
+      "0.1.5",
+      "0.1.4",
+      "0.1.3",
+      "0.1.2",
+      "0.1.1",
+      "0.1.0",
+      "0.0.1+1",
+      "0.0.1",
+      "0.0.0+1",
+      "0.0.0"
+    ]
+  },
+  "https://pub.dev/api/packages/sqlite3/score": {
+    "grantedPoints": 160,
+    "maxPoints": 160,
+    "likeCount": 333,
+    "popularityScore": 0.9740177439797212,
+    "tags": [
+      "publisher:simonbinder.eu",
+      "has:topic",
+      "sdk:dart",
+      "sdk:flutter",
+      "platform:android",
+      "platform:ios",
+      "platform:windows",
+      "platform:linux",
+      "platform:macos",
+      "platform:web",
+      "runtime:native-aot",
+      "runtime:native-jit",
+      "is:null-safe",
+      "is:dart3-compatible",
+      "license:mit",
+      "license:fsf-libre",
+      "license:osi-approved",
+      "topic:sql",
+      "topic:database",
+      "topic:ffi"
+    ],
+    "lastUpdated": "2024-09-30T21:22:28.984023"
+  },
+  "https://pub.dev/api/packages/sqlite3/metrics": {
+    "score": {
+      "grantedPoints": 160,
+      "maxPoints": 160,
+      "likeCount": 333,
+      "popularityScore": 0.9740177439797212,
+      "tags": [
+        "publisher:simonbinder.eu",
+        "has:topic",
+        "sdk:dart",
+        "sdk:flutter",
+        "platform:android",
+        "platform:ios",
+        "platform:windows",
+        "platform:linux",
+        "platform:macos",
+        "platform:web",
+        "runtime:native-aot",
+        "runtime:native-jit",
+        "is:null-safe",
+        "is:dart3-compatible",
+        "license:mit",
+        "license:fsf-libre",
+        "license:osi-approved",
+        "topic:sql",
+        "topic:database",
+        "topic:ffi"
+      ],
+      "lastUpdated": "2024-09-30T21:22:28.984023"
+    },
+    "scorecard": {
+      "packageName": "sqlite3",
+      "packageVersion": "2.4.6",
+      "runtimeVersion": "2024.09.17",
+      "updated": "2024-09-30T21:22:28.984023",
+      "dartdocReport": {
+        "reportStatus": "success"
+      },
+      "panaReport": {
+        "timestamp": "2024-09-30T21:22:28.984023",
+        "panaRuntimeInfo": {
+          "panaVersion": "0.22.12",
+          "sdkVersion": "3.5.3",
+          "flutterVersions": {
+            "frameworkVersion": "3.24.3",
+            "channel": "stable",
+            "repositoryUrl": "https://github.com/flutter/flutter.git",
+            "frameworkRevision": "2663184aa79047d0a33a14a3b607954f8fdd8730",
+            "frameworkCommitDate": "2024-09-11 16:27:48 -0500",
+            "engineRevision": "36335019a8eab588c3c2ea783c618d90505be233",
+            "dartSdkVersion": "3.5.3",
+            "devToolsVersion": "2.37.3",
+            "flutterVersion": "3.24.3",
+            "flutterRoot": "/home/worker/flutter/stable"
+          }
+        },
+        "reportStatus": "success",
+        "derivedTags": [
+          "sdk:dart",
+          "sdk:flutter",
+          "platform:android",
+          "platform:ios",
+          "platform:windows",
+          "platform:linux",
+          "platform:macos",
+          "platform:web",
+          "runtime:native-aot",
+          "runtime:native-jit",
+          "is:null-safe",
+          "is:dart3-compatible",
+          "license:mit",
+          "license:fsf-libre",
+          "license:osi-approved",
+          "topic:sql",
+          "topic:database",
+          "topic:ffi"
+        ],
+        "allDependencies": [
+          "analyzer",
+          "build_daemon",
+          "build_runner",
+          "build_web_compilers",
+          "collection",
+          "ffi",
+          "ffigen",
+          "http",
+          "lints",
+          "meta",
+          "path",
+          "shelf",
+          "shelf_proxy",
+          "shelf_static",
+          "stream_channel",
+          "test",
+          "test_descriptor",
+          "web"
+        ],
+        "licenses": [
+          {
+            "path": "LICENSE",
+            "spdxIdentifier": "MIT"
+          }
+        ],
+        "report": {
+          "sections": [
+            {
+              "id": "convention",
+              "title": "Follow Dart file conventions",
+              "grantedPoints": 30,
+              "maxPoints": 30,
+              "status": "partial",
+              "summary": "### [~] 10/10 points: Provide a valid `pubspec.yaml`\n\n<details>\n<summary>\nIssue tracker URL doesn't exist.\n</summary>\n\nAt the time of the analysis `https://github.com/simolus3/sqlite3.dart/issues` was unreachable. Make sure that the website is reachable via [`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) requests.\n</details>\n\n### [*] 5/5 points: Provide a valid `README.md`\n\n### [*] 5/5 points: Provide a valid `CHANGELOG.md`\n\n### [*] 10/10 points: Use an OSI-approved license\n\nDetected license: `MIT`.\n"
+            },
+            {
+              "id": "documentation",
+              "title": "Provide documentation",
+              "grantedPoints": 20,
+              "maxPoints": 20,
+              "status": "passed",
+              "summary": "### [*] 10/10 points: 20% or more of the public API has dartdoc comments\n\n358 out of 414 API elements (86.5 %) have documentation comments.\n\nSome symbols that are missing documentation: `open.OperatingSystem`, `sqlite3.SQLITE_DBCONFIG_DQS_DDL`, `sqlite3.SQLITE_DBCONFIG_DQS_DML`, `sqlite3.SQLITE_DELETE`, `sqlite3.SQLITE_INSERT`.\n\n### [*] 10/10 points: Package has an example\n"
+            },
+            {
+              "id": "platform",
+              "title": "Platform support",
+              "grantedPoints": 20,
+              "maxPoints": 20,
+              "status": "failed",
+              "summary": "### [*] 20/20 points: Supports 6 of 6 possible platforms (**iOS**, **Android**, **Web**, **Windows**, **macOS**, **Linux**)\n\n* ✓ Android\n\n* ✓ iOS\n\n* ✓ Windows\n\n* ✓ Linux\n\n* ✓ macOS\n\n* ✓ Web\n\n\nThese issues are present but do not affect the score, because they may not originate in your package:\n\n<details>\n<summary>\nPackage not compatible with platform Web\n</summary>\n\nBecause:\n* `package:sqlite3/sqlite3.dart` that imports:\n* `package:sqlite3/src/ffi/api.dart` that imports:\n* `package:sqlite3/src/ffi/implementation.dart` that imports:\n* `package:sqlite3/src/ffi/sqlite3.g.dart` that imports:\n* `dart:ffi`\n</details>\n\n### [x] 0/0 points: WASM compatibility\n\n<details>\n<summary>\nPackage not compatible with runtime wasm\n</summary>\n\nBecause:\n* `package:sqlite3/sqlite3.dart` that imports:\n* `package:sqlite3/src/ffi/api.dart` that imports:\n* `package:sqlite3/src/ffi/implementation.dart` that imports:\n* `package:sqlite3/src/ffi/sqlite3.g.dart` that imports:\n* `dart:ffi`\n</details>\n\nThis package is not compatible with runtime `wasm`, and will not be rewarded full points in a future version of the scoring model.\n\nSee https://dart.dev/web/wasm for details.\n"
+            },
+            {
+              "id": "analysis",
+              "title": "Pass static analysis",
+              "grantedPoints": 50,
+              "maxPoints": 50,
+              "status": "passed",
+              "summary": "### [*] 50/50 points: code has no errors, warnings, lints, or formatting issues\n"
+            },
+            {
+              "id": "dependency",
+              "title": "Support up-to-date dependencies",
+              "grantedPoints": 40,
+              "maxPoints": 40,
+              "status": "passed",
+              "summary": "### [*] 10/10 points: All of the package dependencies are supported in the latest version\n\n|Package|Constraint|Compatible|Latest|\n|:-|:-|:-|:-|\n|[`collection`]|`^1.15.0`|1.19.0|1.19.0|\n|[`ffi`]|`>=1.2.1 <3.0.0`|2.1.3|2.1.3|\n|[`meta`]|`^1.3.0`|1.16.0|1.16.0|\n|[`path`]|`^1.8.0`|1.9.0|1.9.0|\n|[`web`]|`^1.0.0`|1.1.0|1.1.0|\n\nTo reproduce run `dart pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides`.\n\n[`collection`]: https://pub.dev/packages/collection\n[`ffi`]: https://pub.dev/packages/ffi\n[`meta`]: https://pub.dev/packages/meta\n[`path`]: https://pub.dev/packages/path\n[`web`]: https://pub.dev/packages/web\n\n### [*] 10/10 points: Package supports latest stable Dart and Flutter SDKs\n\n### [*] 20/20 points: Compatible with dependency constraint lower bounds\n\n`pub downgrade` does not expose any static analysis error.\n"
+            }
+          ]
+        },
+        "result": {
+          "repositoryUrl": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+          "repository": {
+            "provider": "github",
+            "host": "github.com",
+            "repository": "simolus3/sqlite3.dart",
+            "branch": "main",
+            "path": "sqlite3"
+          },
+          "licenses": [
+            {
+              "path": "LICENSE",
+              "spdxIdentifier": "MIT"
+            }
+          ],
+          "grantedPoints": 160,
+          "maxPoints": 160
+        },
+        "screenshots": [],
+        "urlProblems": []
+      },
+      "taskStatus": "completed"
     }
+  },
+  "https://pub.dev/api/packages/sqlite3/versions/2.4.6": {
+    "version": "2.4.6",
+    "pubspec": {
+      "name": "sqlite3",
+      "description": "Provides lightweight yet convenient bindings to SQLite by using dart:ffi",
+      "version": "2.4.6",
+      "homepage": "https://github.com/simolus3/sqlite3.dart/tree/main/sqlite3",
+      "issue_tracker": "https://github.com/simolus3/sqlite3.dart/issues",
+      "environment": {
+        "sdk": ">=3.4.0 <4.0.0"
+      },
+      "platforms": {
+        "android": null,
+        "ios": null,
+        "linux": null,
+        "macos": null,
+        "web": null,
+        "windows": null
+      },
+      "topics": [
+        "sql",
+        "database",
+        "ffi"
+      ],
+      "dependencies": {
+        "collection": "^1.15.0",
+        "ffi": ">=1.2.1 <3.0.0",
+        "meta": "^1.3.0",
+        "path": "^1.8.0",
+        "web": "^1.0.0"
+      },
+      "dev_dependencies": {
+        "analyzer": "^6.4.1",
+        "build_daemon": "^4.0.0",
+        "build_runner": "^2.1.7",
+        "build_web_compilers": "^4.0.3",
+        "ffigen": "^13.0.0",
+        "http": "^1.2.1",
+        "lints": "^4.0.0",
+        "shelf": "^1.4.0",
+        "shelf_proxy": "^1.0.2",
+        "shelf_static": "^1.1.0",
+        "stream_channel": "^2.1.0",
+        "test": "^1.17.0",
+        "test_descriptor": "^2.0.0"
+      }
+    },
+    "archive_url": "https://pub.dev/api/archives/sqlite3-2.4.6.tar.gz",
+    "archive_sha256": "45f168ae2213201b54e09429ed0c593dc2c88c924a1488d6f9c523a255d567cb",
+    "published": "2024-08-12T10:12:19.098974Z"
+  },
+  "https://pub.dev/api/packages/sqlite3/options": {
+    "isDiscontinued": false,
+    "replacedBy": null,
+    "isUnlisted": false
+  },
+  "https://pub.dev/api/packages/sqlite3/publisher": {
+    "publisherId": "simonbinder.eu"
+  },
+  "https://pub.dev/api/documentation/sqlite3": {
+    "name": "sqlite3",
+    "versions": [
+      {
+        "version": "2.4.6",
+        "status": "completed",
+        "hasDocumentation": true
+      },
+      {
+        "version": "2.4.5",
+        "status": "completed",
+        "hasDocumentation": true
+      },
+      {
+        "version": "1.11.2",
+        "status": "completed",
+        "hasDocumentation": true
+      },
+      {
+        "version": "0.1.8",
+        "status": "completed",
+        "hasDocumentation": false
+      }
+    ]
   }
 }
