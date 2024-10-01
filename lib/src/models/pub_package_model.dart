@@ -1,10 +1,12 @@
 import 'package:dart_mappable/dart_mappable.dart';
-import 'package:pubspec/pubspec.dart';
+import 'package:pubspec_parse/pubspec_parse.dart';
 
 part 'pub_package_model.mapper.dart';
 
 /// Package Model
-@MappableClass(includeCustomMappers: [PubspecMapper()])
+@MappableClass(includeCustomMappers: [
+  PubspecMapper(),
+])
 class PubPackage with PubPackageMappable {
   final String name;
   final PackageVersion latest;
@@ -19,7 +21,7 @@ class PubPackage with PubPackageMappable {
   String get description => latestPubspec.description ?? '';
   String get url => 'https://pub.dev/packages/$name';
   String get changelogUrl => '$url/changelog';
-  PubSpec get latestPubspec => latest.pubspec;
+  Pubspec get latestPubspec => latest.pubspec;
 
   static const fromMap = PubPackageMapper.fromMap;
   static const fromJson = PubPackageMapper.fromJson;
@@ -29,7 +31,7 @@ class PubPackage with PubPackageMappable {
 @MappableClass(includeCustomMappers: [PubspecMapper()])
 class PackageVersion with PackageVersionMappable {
   final String version;
-  final PubSpec pubspec;
+  final Pubspec pubspec;
   @MappableField(key: 'archive_url')
   final String archiveUrl;
   final DateTime published;
@@ -47,14 +49,14 @@ class PackageVersion with PackageVersionMappable {
   static const fromJson = PackageVersionMapper.fromJson;
 }
 
-class PubspecMapper extends SimpleMapper<PubSpec> {
+class PubspecMapper extends SimpleMapper<Pubspec> {
   const PubspecMapper();
 
   @override
   // ignore: avoid-dynamic
-  PubSpec decode(dynamic value) => PubSpec.fromJson(value);
+  Pubspec decode(dynamic value) => Pubspec.fromJson(value, lenient: true);
 
   @override
   // ignore: avoid-dynamic
-  dynamic encode(PubSpec self) => self.toString();
+  dynamic encode(Pubspec self) => self.toString();
 }

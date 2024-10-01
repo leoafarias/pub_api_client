@@ -89,6 +89,7 @@ class PubClient {
   /// Returns the `PubPackage` information for [packageName]
   Future<PubPackage> packageInfo(String packageName) async {
     final data = await _fetch(endpoint.packageInfo(packageName));
+
     return PubPackage.fromMap(data);
   }
 

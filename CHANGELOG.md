@@ -1,3 +1,8 @@
+## 3.0.0
+
+* Replaced deprecated `pubspec` to `pubspec_parse` package
+* Extensions for Pubspec, repository, issueTracker, screenshots, and issueTracker are now properties and not methods, for consistency with `pubspec_parse`
+
 ## 2.7.1
 
 * Fix result data class schema [#50](https://github.com/leoafarias/pub_api_client/pull/50)
@@ -24,7 +29,7 @@
 
 ## 2.4.0
 
-* Added the ability to search with any tags [32](https://github.com/fluttertools/pub_api_client/pull/32) thanks @Rexios80
+* Added the ability to search with any tags [#32](https://github.com/fluttertools/pub_api_client/pull/32) thanks @Rexios80
 
 ## 2.3.0
 
