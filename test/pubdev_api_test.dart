@@ -5,6 +5,7 @@ import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
 const packageName = 'fvm';
+const packageName2 = 'sqlite3';
 final _client = PubClient(
   debug: true,
   // client: LocalJsonClient('./test/fixtures', true),
@@ -20,6 +21,15 @@ void main() {
       expect(packageInfo.description, lastPubspec.description);
       expect(packageInfo.url, 'https://pub.dev/packages/$packageName');
       expect(packageInfo.name, packageName);
+
+      // Test for packageName2
+      final packageInfo2 = await _client.packageInfo(packageName2);
+
+      final lastPubspec2 = packageInfo2.latestPubspec;
+      expect(packageInfo2.version, lastPubspec2.version.toString());
+      expect(packageInfo2.description, lastPubspec2.description);
+      expect(packageInfo2.url, 'https://pub.dev/packages/$packageName2');
+      expect(packageInfo2.name, packageName2);
     });
 
     test('Get package versions', () async {
@@ -28,6 +38,13 @@ void main() {
 
       expect(payload.length, greaterThan(0));
       expect(payload.length, packageInfo.versions.length);
+
+      // Test for packageName2
+      final packageInfo2 = await _client.packageInfo(packageName2);
+      final payload2 = await _client.packageVersions(packageName2);
+
+      expect(payload2.length, greaterThan(0));
+      expect(payload2.length, packageInfo2.versions.length);
     });
 
     test('Get package score', () async {
@@ -37,6 +54,14 @@ void main() {
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
+
+      // Test for packageName2
+      final payload2 = await _client.packageScore(packageName2);
+
+      expect(payload2.lastUpdated, isNotNull);
+      expect(payload2.grantedPoints, isNotNull);
+      expect(payload2.likeCount, greaterThan(50));
+      expect(payload2.maxPoints, greaterThan(100));
     });
 
     test('Get package metrics', () async {
@@ -49,6 +74,17 @@ void main() {
         expect(metrics.score.maxPoints, greaterThan(100));
         expect(metrics.score.maxPoints, score.maxPoints);
       }
+
+      // Test for packageName2
+      final score2 = await _client.packageScore(packageName2);
+      final metrics2 = await _client.packageMetrics(packageName2);
+
+      if (metrics2 != null) {
+        expect(metrics2.score, score2);
+        expect(metrics2.scorecard.packageName, 'sqlite3');
+        expect(metrics2.score.maxPoints, greaterThan(100));
+        expect(metrics2.score.maxPoints, score2.maxPoints);
+      }
     });
 
     test('Get package version info', () async {
@@ -60,18 +96,40 @@ void main() {
 
       expect(package.latest.archiveUrl, version.archiveUrl);
       expect(package.version, version.version);
+
+      // Test for packageName2
+      final package2 = await _client.packageInfo(packageName2);
+      final version2 = await _client.packageVersionInfo(
+        packageName2,
+        package2.version,
+      );
+
+      expect(package2.latest.archiveUrl, version2.archiveUrl);
+      expect(package2.version, version2.version);
     });
+
     test('Get package options', () async {
       final options = await _client.packageOptions(packageName);
 
       expect(options.isUnlisted, false);
       expect(options.isDiscontinued, false);
       expect(options.replacedBy, null);
+
+      // Test for packageName2
+      final options2 = await _client.packageOptions(packageName2);
+
+      expect(options2.isUnlisted, false);
+      expect(options2.isDiscontinued, false);
+      expect(options2.replacedBy, null);
     });
 
     test('Get package publisher', () async {
       final publisher = await _client.packagePublisher(packageName);
       expect(publisher.publisherId, 'leoafarias.com');
+
+      // Test for packageName2
+      final publisher2 = await _client.packagePublisher(packageName2);
+      expect(publisher2.publisherId, isNotNull);
     });
 
     test('Get package publisher if unregistered', () async {
@@ -86,6 +144,14 @@ void main() {
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
+
+      // Test for packageName2
+      final payload2 = await _client.packageScore(packageName2);
+
+      expect(payload2.lastUpdated, isNotNull);
+      expect(payload2.grantedPoints, isNotNull);
+      expect(payload2.likeCount, greaterThan(50));
+      expect(payload2.maxPoints, greaterThan(100));
     });
 
     test('Search for packages', () async {
@@ -137,6 +203,10 @@ void main() {
     test('Get documentation', () async {
       final documentation = await _client.documentation(packageName);
       expect(documentation.versions.length, greaterThan(0));
+
+      // Test for packageName2
+      final documentation2 = await _client.documentation(packageName2);
+      expect(documentation2.versions.length, greaterThan(0));
     });
 
     test('Get package names', () async {
