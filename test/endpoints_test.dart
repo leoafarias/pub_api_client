@@ -62,7 +62,7 @@ void main() {
     });
 
     test('packageNames returns correct URL', () {
-      expect(endpoint.packageNameCompletion,
+      expect(endpoint.packageNames,
           equals('${Endpoint.defaultBaseUrl}/api/package-names'));
     });
 

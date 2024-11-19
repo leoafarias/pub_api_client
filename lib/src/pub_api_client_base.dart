@@ -144,7 +144,7 @@ class PubClient {
 
   /// Package names for name completion
   Future<List<String>> packageNameCompletion() async {
-    final data = await _fetch(endpoint.packageNameCompletion);
+    final data = await _fetch(endpoint.packageNames);
     // This result is not paginated
     final packages = data['packages'] as List;
 
