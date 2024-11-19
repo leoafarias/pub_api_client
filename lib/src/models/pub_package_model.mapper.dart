@@ -160,8 +160,8 @@ class PackageVersionMapper extends ClassMapperBase<PackageVersion> {
   static String _$version(PackageVersion v) => v.version;
   static const Field<PackageVersion, String> _f$version =
       Field('version', _$version);
-  static PubSpec _$pubspec(PackageVersion v) => v.pubspec;
-  static const Field<PackageVersion, PubSpec> _f$pubspec =
+  static Pubspec _$pubspec(PackageVersion v) => v.pubspec;
+  static const Field<PackageVersion, Pubspec> _f$pubspec =
       Field('pubspec', _$pubspec);
   static String _$archiveUrl(PackageVersion v) => v.archiveUrl;
   static const Field<PackageVersion, String> _f$archiveUrl =
@@ -246,7 +246,7 @@ abstract class PackageVersionCopyWith<$R, $In extends PackageVersion, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call(
       {String? version,
-      PubSpec? pubspec,
+      Pubspec? pubspec,
       String? archiveUrl,
       DateTime? published,
       String? archiveSha256});
@@ -265,7 +265,7 @@ class _PackageVersionCopyWithImpl<$R, $Out>
   @override
   $R call(
           {String? version,
-          PubSpec? pubspec,
+          Pubspec? pubspec,
           String? archiveUrl,
           DateTime? published,
           String? archiveSha256}) =>
