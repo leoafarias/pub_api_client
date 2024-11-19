@@ -142,9 +142,19 @@ class PubClient {
     return PackageVersion.fromMap(data);
   }
 
+  /// Returns a `List<String>` of all packages listed on pub.dev
+  Future<List<String>> packageNames() async {
+    final data = await _fetch(endpoint.packageNames);
+    final results = PackageNamesResults.fromMap(data);
+    return recursivePaging(results, (url) async {
+      final data = await _fetch(endpoint.nextPage(url));
+      return PackageNamesResults.fromMap(data);
+    });
+  }
+
   /// Package names for name completion
   Future<List<String>> packageNameCompletion() async {
-    final data = await _fetch(endpoint.packageNames);
+    final data = await _fetch(endpoint.packageNameCompletion);
     // This result is not paginated
     final packages = data['packages'] as List;
 
