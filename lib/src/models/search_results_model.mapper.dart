@@ -6,6 +6,128 @@
 
 part of 'search_results_model.dart';
 
+class PackageNamesResultsMapper extends ClassMapperBase<PackageNamesResults> {
+  PackageNamesResultsMapper._();
+
+  static PackageNamesResultsMapper? _instance;
+  static PackageNamesResultsMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = PackageNamesResultsMapper._());
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'PackageNamesResults';
+
+  static List<String> _$packages(PackageNamesResults v) => v.packages;
+  static const Field<PackageNamesResults, List<String>> _f$packages =
+      Field('packages', _$packages);
+  static String? _$nextUrl(PackageNamesResults v) => v.nextUrl;
+  static const Field<PackageNamesResults, String> _f$nextUrl =
+      Field('nextUrl', _$nextUrl, opt: true);
+
+  @override
+  final MappableFields<PackageNamesResults> fields = const {
+    #packages: _f$packages,
+    #nextUrl: _f$nextUrl,
+  };
+
+  static PackageNamesResults _instantiate(DecodingData data) {
+    return PackageNamesResults(
+        packages: data.dec(_f$packages), nextUrl: data.dec(_f$nextUrl));
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static PackageNamesResults fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<PackageNamesResults>(map);
+  }
+
+  static PackageNamesResults fromJson(String json) {
+    return ensureInitialized().decodeJson<PackageNamesResults>(json);
+  }
+}
+
+mixin PackageNamesResultsMappable {
+  String toJson() {
+    return PackageNamesResultsMapper.ensureInitialized()
+        .encodeJson<PackageNamesResults>(this as PackageNamesResults);
+  }
+
+  Map<String, dynamic> toMap() {
+    return PackageNamesResultsMapper.ensureInitialized()
+        .encodeMap<PackageNamesResults>(this as PackageNamesResults);
+  }
+
+  PackageNamesResultsCopyWith<PackageNamesResults, PackageNamesResults,
+          PackageNamesResults>
+      get copyWith => _PackageNamesResultsCopyWithImpl(
+          this as PackageNamesResults, $identity, $identity);
+  @override
+  String toString() {
+    return PackageNamesResultsMapper.ensureInitialized()
+        .stringifyValue(this as PackageNamesResults);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return PackageNamesResultsMapper.ensureInitialized()
+        .equalsValue(this as PackageNamesResults, other);
+  }
+
+  @override
+  int get hashCode {
+    return PackageNamesResultsMapper.ensureInitialized()
+        .hashValue(this as PackageNamesResults);
+  }
+}
+
+extension PackageNamesResultsValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, PackageNamesResults, $Out> {
+  PackageNamesResultsCopyWith<$R, PackageNamesResults, $Out>
+      get $asPackageNamesResults =>
+          $base.as((v, t, t2) => _PackageNamesResultsCopyWithImpl(v, t, t2));
+}
+
+abstract class PackageNamesResultsCopyWith<$R, $In extends PackageNamesResults,
+    $Out> implements ClassCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get packages;
+  $R call({List<String>? packages, String? nextUrl});
+  PackageNamesResultsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+      Then<$Out2, $R2> t);
+}
+
+class _PackageNamesResultsCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, PackageNamesResults, $Out>
+    implements PackageNamesResultsCopyWith<$R, PackageNamesResults, $Out> {
+  _PackageNamesResultsCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<PackageNamesResults> $mapper =
+      PackageNamesResultsMapper.ensureInitialized();
+  @override
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get packages =>
+      ListCopyWith($value.packages, (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(packages: v));
+  @override
+  $R call({List<String>? packages, Object? nextUrl = $none}) =>
+      $apply(FieldCopyWithData({
+        if (packages != null) #packages: packages,
+        if (nextUrl != $none) #nextUrl: nextUrl
+      }));
+  @override
+  PackageNamesResults $make(CopyWithData data) => PackageNamesResults(
+      packages: data.get(#packages, or: $value.packages),
+      nextUrl: data.get(#nextUrl, or: $value.nextUrl));
+
+  @override
+  PackageNamesResultsCopyWith<$R2, PackageNamesResults, $Out2>
+      $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+          _PackageNamesResultsCopyWithImpl($value, $cast, t);
+}
+
 class SearchResultsMapper extends ClassMapperBase<SearchResults> {
   SearchResultsMapper._();
 

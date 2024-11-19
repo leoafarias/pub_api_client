@@ -2,11 +2,51 @@ import 'package:dart_mappable/dart_mappable.dart';
 
 part 'search_results_model.mapper.dart';
 
+/// Base class for results that are paginated
+abstract class PaginatedResults<T> {
+  /// The current results
+  List<T> get results;
+
+  /// The URL to the next page of results
+  String? get next;
+
+  const PaginatedResults();
+}
+
+/// Package Names Model
+@MappableClass()
+class PackageNamesResults extends PaginatedResults<String> {
+  final List<String> packages;
+
+  @override
+  List<String> get results => packages;
+
+  final String? nextUrl;
+
+  @override
+  String? get next => nextUrl;
+
+  const PackageNamesResults({
+    required this.packages,
+    this.nextUrl,
+  });
+
+  static const fromMap = PackageNamesResultsMapper.fromMap;
+  static const fromJson = PackageNamesResultsMapper.fromJson;
+}
+
 /// Search Results Model
 @MappableClass()
-class SearchResults with SearchResultsMappable {
+class SearchResults extends PaginatedResults<PackageResult>
+    with SearchResultsMappable {
   final List<PackageResult> packages;
+
+  @override
+  List<PackageResult> get results => packages;
+
+  @override
   final String? next;
+
   const SearchResults({
     required this.packages,
     this.next,
