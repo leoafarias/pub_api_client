@@ -140,13 +140,14 @@ class PubClient {
     return PackageVersion.fromMap(data);
   }
 
-  /// Returns a `List<String>` of all packages listed on pub.dev
+  /// Package names for name completion
   Future<List<String>> packageNameCompletion() async {
-    final data = await _fetch(endpoint.packageNames);
-    final packages = data['packages'] as List<dynamic>;
+    final data = await _fetch(endpoint.packageNameCompletion);
+    // This result is not paginated
+    final packages = data['packages'] as List;
 
     /// Need to map to convert dynamic into String
-    return packages.map((item) => item as String).toList();
+    return packages.cast<String>();
   }
 
   /// Searches pub for [query] and can [page] results.
@@ -210,6 +211,15 @@ class PubClient {
         .toList();
   }
 
+  /// Get all packages that match the query
+  Future<List<PackageResult>> fetchAllPackages(
+    String query, {
+    List<String> tags = const [],
+  }) async {
+    final results = await search(query, tags: tags);
+    return recursivePaging(results, nextPage);
+  }
+
   /// Retrieves all Google packages from pub.dev
   /// Mostly used as an internal tool to generate
   /// google_packages_list.dart
@@ -238,22 +248,19 @@ class PubClient {
 
   /// Retrieves all the flutter favorites
   Future<List<String>> fetchFlutterFavorites() async {
-    final searchResults =
-        await search('', tags: [PackageTag.isFlutterFavorite]);
-    final results = await recursivePaging(this, searchResults);
+    final results =
+        await fetchAllPackages('', tags: [PackageTag.isFlutterFavorite]);
     return results.map((r) => r.package).toList();
   }
 
   Future<List<PackageResult>> fetchPublisherPackages(
     String publisherName, {
     List<String> tags = const [],
-  }) async {
-    final results = await search('', tags: [
-      PackageTag.publisher(publisherName),
-      ...tags,
-    ]);
-    return recursivePaging(this, results);
-  }
+  }) =>
+      fetchAllPackages('', tags: [
+        PackageTag.publisher(publisherName),
+        ...tags,
+      ]);
 
   void close() {
     _client.close();
