@@ -1246,36 +1246,56 @@ class ResultMapper extends ClassMapperBase<Result> {
   @override
   final String id = 'Result';
 
-  static String _$repositoryUrl(Result v) => v.repositoryUrl;
+  static String? _$homepageUrl(Result v) => v.homepageUrl;
+  static const Field<Result, String> _f$homepageUrl =
+      Field('homepageUrl', _$homepageUrl, opt: true);
+  static String? _$repositoryUrl(Result v) => v.repositoryUrl;
   static const Field<Result, String> _f$repositoryUrl =
-      Field('repositoryUrl', _$repositoryUrl);
-  static String _$issueTrackerUrl(Result v) => v.issueTrackerUrl;
+      Field('repositoryUrl', _$repositoryUrl, opt: true);
+  static String? _$issueTrackerUrl(Result v) => v.issueTrackerUrl;
   static const Field<Result, String> _f$issueTrackerUrl =
-      Field('issueTrackerUrl', _$issueTrackerUrl);
-  static Repository _$repository(Result v) => v.repository;
+      Field('issueTrackerUrl', _$issueTrackerUrl, opt: true);
+  static String? _$documentationUrl(Result v) => v.documentationUrl;
+  static const Field<Result, String> _f$documentationUrl =
+      Field('documentationUrl', _$documentationUrl, opt: true);
+  static List<String>? _$fundingUrls(Result v) => v.fundingUrls;
+  static const Field<Result, List<String>> _f$fundingUrls =
+      Field('fundingUrls', _$fundingUrls, opt: true);
+  static Repository? _$repository(Result v) => v.repository;
   static const Field<Result, Repository> _f$repository =
-      Field('repository', _$repository);
-  static int _$grantedPoints(Result v) => v.grantedPoints;
+      Field('repository', _$repository, opt: true);
+  static String? _$contributingUrl(Result v) => v.contributingUrl;
+  static const Field<Result, String> _f$contributingUrl =
+      Field('contributingUrl', _$contributingUrl, opt: true);
+  static int? _$grantedPoints(Result v) => v.grantedPoints;
   static const Field<Result, int> _f$grantedPoints =
-      Field('grantedPoints', _$grantedPoints);
-  static int _$maxPoints(Result v) => v.maxPoints;
+      Field('grantedPoints', _$grantedPoints, opt: true);
+  static int? _$maxPoints(Result v) => v.maxPoints;
   static const Field<Result, int> _f$maxPoints =
-      Field('maxPoints', _$maxPoints);
+      Field('maxPoints', _$maxPoints, opt: true);
 
   @override
   final MappableFields<Result> fields = const {
+    #homepageUrl: _f$homepageUrl,
     #repositoryUrl: _f$repositoryUrl,
     #issueTrackerUrl: _f$issueTrackerUrl,
+    #documentationUrl: _f$documentationUrl,
+    #fundingUrls: _f$fundingUrls,
     #repository: _f$repository,
+    #contributingUrl: _f$contributingUrl,
     #grantedPoints: _f$grantedPoints,
     #maxPoints: _f$maxPoints,
   };
 
   static Result _instantiate(DecodingData data) {
     return Result(
+        homepageUrl: data.dec(_f$homepageUrl),
         repositoryUrl: data.dec(_f$repositoryUrl),
         issueTrackerUrl: data.dec(_f$issueTrackerUrl),
+        documentationUrl: data.dec(_f$documentationUrl),
+        fundingUrls: data.dec(_f$fundingUrls),
         repository: data.dec(_f$repository),
+        contributingUrl: data.dec(_f$contributingUrl),
         grantedPoints: data.dec(_f$grantedPoints),
         maxPoints: data.dec(_f$maxPoints));
   }
@@ -1326,11 +1346,16 @@ extension ResultValueCopy<$R, $Out> on ObjectCopyWith<$R, Result, $Out> {
 
 abstract class ResultCopyWith<$R, $In extends Result, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  RepositoryCopyWith<$R, Repository, Repository> get repository;
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get fundingUrls;
+  RepositoryCopyWith<$R, Repository, Repository>? get repository;
   $R call(
-      {String? repositoryUrl,
+      {String? homepageUrl,
+      String? repositoryUrl,
       String? issueTrackerUrl,
+      String? documentationUrl,
+      List<String>? fundingUrls,
       Repository? repository,
+      String? contributingUrl,
       int? grantedPoints,
       int? maxPoints});
   ResultCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -1343,27 +1368,48 @@ class _ResultCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Result, $Out>
   @override
   late final ClassMapperBase<Result> $mapper = ResultMapper.ensureInitialized();
   @override
-  RepositoryCopyWith<$R, Repository, Repository> get repository =>
-      $value.repository.copyWith.$chain((v) => call(repository: v));
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>?
+      get fundingUrls => $value.fundingUrls != null
+          ? ListCopyWith(
+              $value.fundingUrls!,
+              (v, t) => ObjectCopyWith(v, $identity, t),
+              (v) => call(fundingUrls: v))
+          : null;
+  @override
+  RepositoryCopyWith<$R, Repository, Repository>? get repository =>
+      $value.repository?.copyWith.$chain((v) => call(repository: v));
   @override
   $R call(
-          {String? repositoryUrl,
-          String? issueTrackerUrl,
-          Repository? repository,
-          int? grantedPoints,
-          int? maxPoints}) =>
+          {Object? homepageUrl = $none,
+          Object? repositoryUrl = $none,
+          Object? issueTrackerUrl = $none,
+          Object? documentationUrl = $none,
+          Object? fundingUrls = $none,
+          Object? repository = $none,
+          Object? contributingUrl = $none,
+          Object? grantedPoints = $none,
+          Object? maxPoints = $none}) =>
       $apply(FieldCopyWithData({
-        if (repositoryUrl != null) #repositoryUrl: repositoryUrl,
-        if (issueTrackerUrl != null) #issueTrackerUrl: issueTrackerUrl,
-        if (repository != null) #repository: repository,
-        if (grantedPoints != null) #grantedPoints: grantedPoints,
-        if (maxPoints != null) #maxPoints: maxPoints
+        if (homepageUrl != $none) #homepageUrl: homepageUrl,
+        if (repositoryUrl != $none) #repositoryUrl: repositoryUrl,
+        if (issueTrackerUrl != $none) #issueTrackerUrl: issueTrackerUrl,
+        if (documentationUrl != $none) #documentationUrl: documentationUrl,
+        if (fundingUrls != $none) #fundingUrls: fundingUrls,
+        if (repository != $none) #repository: repository,
+        if (contributingUrl != $none) #contributingUrl: contributingUrl,
+        if (grantedPoints != $none) #grantedPoints: grantedPoints,
+        if (maxPoints != $none) #maxPoints: maxPoints
       }));
   @override
   Result $make(CopyWithData data) => Result(
+      homepageUrl: data.get(#homepageUrl, or: $value.homepageUrl),
       repositoryUrl: data.get(#repositoryUrl, or: $value.repositoryUrl),
       issueTrackerUrl: data.get(#issueTrackerUrl, or: $value.issueTrackerUrl),
+      documentationUrl:
+          data.get(#documentationUrl, or: $value.documentationUrl),
+      fundingUrls: data.get(#fundingUrls, or: $value.fundingUrls),
       repository: data.get(#repository, or: $value.repository),
+      contributingUrl: data.get(#contributingUrl, or: $value.contributingUrl),
       grantedPoints: data.get(#grantedPoints, or: $value.grantedPoints),
       maxPoints: data.get(#maxPoints, or: $value.maxPoints));
 
