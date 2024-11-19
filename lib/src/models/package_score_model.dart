@@ -4,8 +4,8 @@ part 'package_score_model.mapper.dart';
 
 @MappableClass()
 class PackageScore with PackageScoreMappable {
-  final int grantedPoints;
-  final int maxPoints;
+  final int? grantedPoints;
+  final int? maxPoints;
   final int likeCount;
   final double? popularityScore;
   final List<String> tags;
