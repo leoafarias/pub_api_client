@@ -116,6 +116,9 @@ class PackageTag {
   /// Filter packages that have something
   static String has(String has) => 'has:$has';
 
+  /// Topic
+  static String topic(String topic) => 'topic:$topic';
+
   /// Supports android platform
   static String platformAndroid = platform('android');
 
