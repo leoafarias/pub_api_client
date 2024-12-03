@@ -20,10 +20,10 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   @override
   final String id = 'PackageScore';
 
-  static int _$grantedPoints(PackageScore v) => v.grantedPoints;
+  static int? _$grantedPoints(PackageScore v) => v.grantedPoints;
   static const Field<PackageScore, int> _f$grantedPoints =
       Field('grantedPoints', _$grantedPoints);
-  static int _$maxPoints(PackageScore v) => v.maxPoints;
+  static int? _$maxPoints(PackageScore v) => v.maxPoints;
   static const Field<PackageScore, int> _f$maxPoints =
       Field('maxPoints', _$maxPoints);
   static int _$likeCount(PackageScore v) => v.likeCount;
@@ -136,15 +136,15 @@ class _PackageScoreCopyWithImpl<$R, $Out>
           (v) => call(tags: v));
   @override
   $R call(
-          {int? grantedPoints,
-          int? maxPoints,
+          {Object? grantedPoints = $none,
+          Object? maxPoints = $none,
           int? likeCount,
           Object? popularityScore = $none,
           List<String>? tags,
           DateTime? lastUpdated}) =>
       $apply(FieldCopyWithData({
-        if (grantedPoints != null) #grantedPoints: grantedPoints,
-        if (maxPoints != null) #maxPoints: maxPoints,
+        if (grantedPoints != $none) #grantedPoints: grantedPoints,
+        if (maxPoints != $none) #maxPoints: maxPoints,
         if (likeCount != null) #likeCount: likeCount,
         if (popularityScore != $none) #popularityScore: popularityScore,
         if (tags != null) #tags: tags,
