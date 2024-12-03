@@ -142,14 +142,13 @@ class PubClient {
     return PackageVersion.fromMap(data);
   }
 
-  /// Package names for name completion
+  /// Returns a `List<String>` of all packages listed on pub.dev
   Future<List<String>> packageNameCompletion() async {
     final data = await _fetch(endpoint.packageNames);
-    // This result is not paginated
-    final packages = data['packages'] as List;
+    final packages = data['packages'] as List<dynamic>;
 
     /// Need to map to convert dynamic into String
-    return packages.cast<String>();
+    return packages.map((item) => item as String).toList();
   }
 
   /// Searches pub for [query] and can [page] results.
