@@ -27,6 +27,7 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
   - [Flutter Favorites](#flutter-favorites)
   - [Google Packages](#google-packages)
   - [Publisher Packages](#publisher-packages)
+  - [All Packages](#all-packages)
 
 ## Usage
 
@@ -231,7 +232,6 @@ print(results.packages)
 Returns all Flutter favorites on pub.dev
 
 ```dart
-
 final results = await client.fetchFlutterFavorites();
 ```
 
@@ -240,7 +240,6 @@ final results = await client.fetchFlutterFavorites();
 Returns all official Google packages. This will be a large payload with hundreds of packages.
 
 ```dart
-
 final results = await client.fetchGooglePackages();
 ```
 
@@ -251,4 +250,12 @@ Returns all packages for a specific publisher
 ```dart
 
 final results = await client.fetchPublisherPackages();
+```
+
+### All Packages
+
+Returns all packages that match a given query
+
+```dart
+final results = await fetchAllPackages('', tags: [PackageTag.publisher('leoafarias.com')])
 ```

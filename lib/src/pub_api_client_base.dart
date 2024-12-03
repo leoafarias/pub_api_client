@@ -212,6 +212,15 @@ class PubClient {
         .toList();
   }
 
+  /// Get all packages that match the query
+  Future<List<PackageResult>> fetchAllPackages(
+    String query, {
+    List<String> tags = const [],
+  }) async {
+    final results = await search(query, tags: tags);
+    return recursivePaging(results, nextPage);
+  }
+
   /// Retrieves all Google packages from pub.dev
   /// Mostly used as an internal tool to generate
   /// google_packages_list.dart
@@ -240,22 +249,19 @@ class PubClient {
 
   /// Retrieves all the flutter favorites
   Future<List<String>> fetchFlutterFavorites() async {
-    final searchResults =
-        await search('', tags: [PackageTag.isFlutterFavorite]);
-    final results = await recursivePaging(this, searchResults);
+    final results =
+        await fetchAllPackages('', tags: [PackageTag.isFlutterFavorite]);
     return results.map((r) => r.package).toList();
   }
 
   Future<List<PackageResult>> fetchPublisherPackages(
     String publisherName, {
     List<String> tags = const [],
-  }) async {
-    final results = await search('', tags: [
-      PackageTag.publisher(publisherName),
-      ...tags,
-    ]);
-    return recursivePaging(this, results);
-  }
+  }) =>
+      fetchAllPackages('', tags: [
+        PackageTag.publisher(publisherName),
+        ...tags,
+      ]);
 
   void close() {
     _client.close();
