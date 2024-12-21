@@ -54,6 +54,7 @@ void main() {
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
+      expect(payload.downloadCount30Days, greaterThan(100));
 
       // Test for packageName2
       final payload2 = await _client.packageScore(packageName2);
@@ -62,6 +63,7 @@ void main() {
       expect(payload2.grantedPoints, isNotNull);
       expect(payload2.likeCount, greaterThan(50));
       expect(payload2.maxPoints, greaterThan(100));
+      expect(payload2.downloadCount30Days, greaterThan(100));
     });
 
     test('Get package metrics', () async {
@@ -164,6 +166,7 @@ void main() {
     test('Sort search results for packages', () async {
       final updated = await _client.search('', sort: SearchOrder.updated);
       final popularity = await _client.search('', sort: SearchOrder.popularity);
+      final downloads = await _client.search('', sort: SearchOrder.downloads);
       final points = await _client.search('', sort: SearchOrder.points);
       final created = await _client.search('', sort: SearchOrder.created);
       final text = await _client.search('', sort: SearchOrder.text);
@@ -173,6 +176,7 @@ void main() {
 
       expect(updated, isNot(popularity));
       expect(popularity, isNot(points));
+      expect(downloads, isNot(popularity));
       expect(points, isNot(updated));
       expect(updated, isNot(created));
       expect(created, isNot(text));
@@ -183,6 +187,7 @@ void main() {
 
       expect(SearchOrder.points.value, 'points');
       expect(SearchOrder.popularity.value, 'popularity');
+      expect(SearchOrder.downloads.value, 'downloads');
       expect(SearchOrder.created.value, 'created');
       expect(SearchOrder.text.value, 'text');
       expect(SearchOrder.top.value, 'top');
