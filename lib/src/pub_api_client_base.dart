@@ -143,12 +143,23 @@ class PubClient {
   }
 
   /// Returns a `List<String>` of all packages listed on pub.dev
-  Future<List<String>> packageNameCompletion() async {
+  Future<List<String>> packageNames() async {
     final data = await _fetch(endpoint.packageNames);
-    final packages = data['packages'] as List<dynamic>;
+    final results = PackageNamesResults.fromMap(data);
+    return recursivePaging(results, (url) async {
+      final data = await _fetch(endpoint.nextPage(url));
+      return PackageNamesResults.fromMap(data);
+    });
+  }
+
+  /// Package names for name completion
+  Future<List<String>> packageNameCompletion() async {
+    final data = await _fetch(endpoint.packageNameCompletion);
+    // This result is not paginated
+    final packages = data['packages'] as List;
 
     /// Need to map to convert dynamic into String
-    return packages.map((item) => item as String).toList();
+    return packages.cast<String>();
   }
 
   /// Searches pub for [query] and can [page] results.
