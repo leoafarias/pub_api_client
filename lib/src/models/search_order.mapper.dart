@@ -35,6 +35,8 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
         return SearchOrder.updated;
       case 'popularity':
         return SearchOrder.popularity;
+      case 'downloads':
+        return SearchOrder.downloads;
       case 'like':
         return SearchOrder.like;
       case 'points':
@@ -57,6 +59,8 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
         return 'updated';
       case SearchOrder.popularity:
         return 'popularity';
+      case SearchOrder.downloads:
+        return 'downloads';
       case SearchOrder.like:
         return 'like';
       case SearchOrder.points:
