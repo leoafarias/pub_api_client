@@ -20,10 +20,10 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   @override
   final String id = 'PackageScore';
 
-  static int _$grantedPoints(PackageScore v) => v.grantedPoints;
+  static int? _$grantedPoints(PackageScore v) => v.grantedPoints;
   static const Field<PackageScore, int> _f$grantedPoints =
       Field('grantedPoints', _$grantedPoints);
-  static int _$maxPoints(PackageScore v) => v.maxPoints;
+  static int? _$maxPoints(PackageScore v) => v.maxPoints;
   static const Field<PackageScore, int> _f$maxPoints =
       Field('maxPoints', _$maxPoints);
   static int _$likeCount(PackageScore v) => v.likeCount;
@@ -32,6 +32,9 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   static double? _$popularityScore(PackageScore v) => v.popularityScore;
   static const Field<PackageScore, double> _f$popularityScore =
       Field('popularityScore', _$popularityScore);
+  static int _$downloadCount30Days(PackageScore v) => v.downloadCount30Days;
+  static const Field<PackageScore, int> _f$downloadCount30Days =
+      Field('downloadCount30Days', _$downloadCount30Days);
   static List<String> _$tags(PackageScore v) => v.tags;
   static const Field<PackageScore, List<String>> _f$tags =
       Field('tags', _$tags);
@@ -45,6 +48,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
     #maxPoints: _f$maxPoints,
     #likeCount: _f$likeCount,
     #popularityScore: _f$popularityScore,
+    #downloadCount30Days: _f$downloadCount30Days,
     #tags: _f$tags,
     #lastUpdated: _f$lastUpdated,
   };
@@ -55,6 +59,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
         maxPoints: data.dec(_f$maxPoints),
         likeCount: data.dec(_f$likeCount),
         popularityScore: data.dec(_f$popularityScore),
+        downloadCount30Days: data.dec(_f$downloadCount30Days),
         tags: data.dec(_f$tags),
         lastUpdated: data.dec(_f$lastUpdated));
   }
@@ -117,6 +122,7 @@ abstract class PackageScoreCopyWith<$R, $In extends PackageScore, $Out>
       int? maxPoints,
       int? likeCount,
       double? popularityScore,
+      int? downloadCount30Days,
       List<String>? tags,
       DateTime? lastUpdated});
   PackageScoreCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -136,17 +142,20 @@ class _PackageScoreCopyWithImpl<$R, $Out>
           (v) => call(tags: v));
   @override
   $R call(
-          {int? grantedPoints,
-          int? maxPoints,
+          {Object? grantedPoints = $none,
+          Object? maxPoints = $none,
           int? likeCount,
           Object? popularityScore = $none,
+          int? downloadCount30Days,
           List<String>? tags,
           DateTime? lastUpdated}) =>
       $apply(FieldCopyWithData({
-        if (grantedPoints != null) #grantedPoints: grantedPoints,
-        if (maxPoints != null) #maxPoints: maxPoints,
+        if (grantedPoints != $none) #grantedPoints: grantedPoints,
+        if (maxPoints != $none) #maxPoints: maxPoints,
         if (likeCount != null) #likeCount: likeCount,
         if (popularityScore != $none) #popularityScore: popularityScore,
+        if (downloadCount30Days != null)
+          #downloadCount30Days: downloadCount30Days,
         if (tags != null) #tags: tags,
         if (lastUpdated != null) #lastUpdated: lastUpdated
       }));
@@ -156,6 +165,8 @@ class _PackageScoreCopyWithImpl<$R, $Out>
       maxPoints: data.get(#maxPoints, or: $value.maxPoints),
       likeCount: data.get(#likeCount, or: $value.likeCount),
       popularityScore: data.get(#popularityScore, or: $value.popularityScore),
+      downloadCount30Days:
+          data.get(#downloadCount30Days, or: $value.downloadCount30Days),
       tags: data.get(#tags, or: $value.tags),
       lastUpdated: data.get(#lastUpdated, or: $value.lastUpdated));
 
