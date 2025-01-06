@@ -214,8 +214,13 @@ void main() {
       expect(documentation2.versions.length, greaterThan(0));
     });
 
-    test('Get package names', () async {
+    test('Get package name completion', () async {
       final packages = await _client.packageNameCompletion();
+      expect(packages.length, equals(20000));
+    });
+
+    test('Get package names', () async {
+      final packages = await _client.packageNames();
       expect(packages.length, greaterThan(20000));
     });
 
