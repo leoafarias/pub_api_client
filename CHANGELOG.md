@@ -1,3 +1,11 @@
+## 3.1.0
+
+* Adds topic tag by @Rexios80 in [#53](https://github.com/leoafarias/pub_api_client/pull/53)
+* Make granted/max points nullable again by @Rexios80 in [#56](https://github.com/leoafarias/pub_api_client/pull/56)
+* Add support for download counts by @Rexios80 in [#58](https://github.com/leoafarias/pub_api_client/pull/58)
+* Better recursive paging by @Rexios80 in [#54](https://github.com/leoafarias/pub_api_client/pull/54)
+* Add package names endpoint by @Rexios80 in [#55](https://github.com/leoafarias/pub_api_client/pull/55)
+
 ## 3.0.0
 
 * Replaced deprecated `pubspec` to `pubspec_parse` package
