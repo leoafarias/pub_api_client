@@ -8,7 +8,7 @@ class PackageScore with PackageScoreMappable {
   final int? maxPoints;
   final int likeCount;
   final double? popularityScore;
-  final int downloadCount30Days;
+  final int? downloadCount30Days;
   final List<String> tags;
   final DateTime lastUpdated;
 
