@@ -32,7 +32,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   static double? _$popularityScore(PackageScore v) => v.popularityScore;
   static const Field<PackageScore, double> _f$popularityScore =
       Field('popularityScore', _$popularityScore);
-  static int _$downloadCount30Days(PackageScore v) => v.downloadCount30Days;
+  static int? _$downloadCount30Days(PackageScore v) => v.downloadCount30Days;
   static const Field<PackageScore, int> _f$downloadCount30Days =
       Field('downloadCount30Days', _$downloadCount30Days);
   static List<String> _$tags(PackageScore v) => v.tags;
@@ -146,7 +146,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
           Object? maxPoints = $none,
           int? likeCount,
           Object? popularityScore = $none,
-          int? downloadCount30Days,
+          Object? downloadCount30Days = $none,
           List<String>? tags,
           DateTime? lastUpdated}) =>
       $apply(FieldCopyWithData({
@@ -154,7 +154,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
         if (maxPoints != $none) #maxPoints: maxPoints,
         if (likeCount != null) #likeCount: likeCount,
         if (popularityScore != $none) #popularityScore: popularityScore,
-        if (downloadCount30Days != null)
+        if (downloadCount30Days != $none)
           #downloadCount30Days: downloadCount30Days,
         if (tags != null) #tags: tags,
         if (lastUpdated != null) #lastUpdated: lastUpdated
