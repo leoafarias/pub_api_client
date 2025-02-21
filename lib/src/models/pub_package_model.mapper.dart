@@ -165,13 +165,13 @@ class PackageVersionMapper extends ClassMapperBase<PackageVersion> {
       Field('pubspec', _$pubspec);
   static String _$archiveUrl(PackageVersion v) => v.archiveUrl;
   static const Field<PackageVersion, String> _f$archiveUrl =
-      Field('archiveUrl', _$archiveUrl, key: 'archive_url');
+      Field('archiveUrl', _$archiveUrl, key: r'archive_url');
   static DateTime _$published(PackageVersion v) => v.published;
   static const Field<PackageVersion, DateTime> _f$published =
       Field('published', _$published);
   static String _$archiveSha256(PackageVersion v) => v.archiveSha256;
   static const Field<PackageVersion, String> _f$archiveSha256 =
-      Field('archiveSha256', _$archiveSha256, key: 'archive_sha256');
+      Field('archiveSha256', _$archiveSha256, key: r'archive_sha256');
 
   @override
   final MappableFields<PackageVersion> fields = const {

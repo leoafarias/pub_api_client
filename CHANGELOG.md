@@ -1,3 +1,7 @@
+## 3.1.1
+
+- Download count is nullable by @Rexios80 in [#59](https://github.com/leoafarias/pub_api_client/pull/59)
+
 ## 3.1.0
 
 * Adds topic tag by @Rexios80 in [#53](https://github.com/leoafarias/pub_api_client/pull/53)

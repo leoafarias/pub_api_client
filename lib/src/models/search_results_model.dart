@@ -15,7 +15,8 @@ abstract class PaginatedResults<T> {
 
 /// Package Names Model
 @MappableClass()
-class PackageNamesResults extends PaginatedResults<String> {
+class PackageNamesResults extends PaginatedResults<String>
+    with PackageNamesResultsMappable {
   final List<String> packages;
 
   @override
