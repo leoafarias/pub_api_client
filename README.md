@@ -213,7 +213,10 @@ You are able to page search results.
 
 ```dart
 final results =  await client.search('query');
-final nextResults = await results.nextPage();
+final nextPage = results.next;
+if (nextPage != null) {
+  final nextResults = await client.nextPage(nextPage);
+}
 
 print(nextResults.packages)
 ```
