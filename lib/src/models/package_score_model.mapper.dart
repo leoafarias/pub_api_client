@@ -38,7 +38,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   static List<String> _$tags(PackageScore v) => v.tags;
   static const Field<PackageScore, List<String>> _f$tags =
       Field('tags', _$tags);
-  static DateTime _$lastUpdated(PackageScore v) => v.lastUpdated;
+  static DateTime? _$lastUpdated(PackageScore v) => v.lastUpdated;
   static const Field<PackageScore, DateTime> _f$lastUpdated =
       Field('lastUpdated', _$lastUpdated);
 
@@ -148,7 +148,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
           Object? popularityScore = $none,
           Object? downloadCount30Days = $none,
           List<String>? tags,
-          DateTime? lastUpdated}) =>
+          Object? lastUpdated = $none}) =>
       $apply(FieldCopyWithData({
         if (grantedPoints != $none) #grantedPoints: grantedPoints,
         if (maxPoints != $none) #maxPoints: maxPoints,
@@ -157,7 +157,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
         if (downloadCount30Days != $none)
           #downloadCount30Days: downloadCount30Days,
         if (tags != null) #tags: tags,
-        if (lastUpdated != null) #lastUpdated: lastUpdated
+        if (lastUpdated != $none) #lastUpdated: lastUpdated
       }));
   @override
   PackageScore $make(CopyWithData data) => PackageScore(

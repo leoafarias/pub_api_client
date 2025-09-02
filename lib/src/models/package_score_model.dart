@@ -10,7 +10,7 @@ class PackageScore with PackageScoreMappable {
   final double? popularityScore;
   final int? downloadCount30Days;
   final List<String> tags;
-  final DateTime lastUpdated;
+  final DateTime? lastUpdated;
 
   PackageScore({
     required this.grantedPoints,
