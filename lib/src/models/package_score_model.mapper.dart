@@ -38,9 +38,6 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
   static List<String> _$tags(PackageScore v) => v.tags;
   static const Field<PackageScore, List<String>> _f$tags =
       Field('tags', _$tags);
-  static DateTime? _$lastUpdated(PackageScore v) => v.lastUpdated;
-  static const Field<PackageScore, DateTime> _f$lastUpdated =
-      Field('lastUpdated', _$lastUpdated);
 
   @override
   final MappableFields<PackageScore> fields = const {
@@ -50,7 +47,6 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
     #popularityScore: _f$popularityScore,
     #downloadCount30Days: _f$downloadCount30Days,
     #tags: _f$tags,
-    #lastUpdated: _f$lastUpdated,
   };
 
   static PackageScore _instantiate(DecodingData data) {
@@ -60,8 +56,7 @@ class PackageScoreMapper extends ClassMapperBase<PackageScore> {
         likeCount: data.dec(_f$likeCount),
         popularityScore: data.dec(_f$popularityScore),
         downloadCount30Days: data.dec(_f$downloadCount30Days),
-        tags: data.dec(_f$tags),
-        lastUpdated: data.dec(_f$lastUpdated));
+        tags: data.dec(_f$tags));
   }
 
   @override
@@ -123,8 +118,7 @@ abstract class PackageScoreCopyWith<$R, $In extends PackageScore, $Out>
       int? likeCount,
       double? popularityScore,
       int? downloadCount30Days,
-      List<String>? tags,
-      DateTime? lastUpdated});
+      List<String>? tags});
   PackageScoreCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -147,8 +141,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
           int? likeCount,
           Object? popularityScore = $none,
           Object? downloadCount30Days = $none,
-          List<String>? tags,
-          Object? lastUpdated = $none}) =>
+          List<String>? tags}) =>
       $apply(FieldCopyWithData({
         if (grantedPoints != $none) #grantedPoints: grantedPoints,
         if (maxPoints != $none) #maxPoints: maxPoints,
@@ -156,8 +149,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
         if (popularityScore != $none) #popularityScore: popularityScore,
         if (downloadCount30Days != $none)
           #downloadCount30Days: downloadCount30Days,
-        if (tags != null) #tags: tags,
-        if (lastUpdated != $none) #lastUpdated: lastUpdated
+        if (tags != null) #tags: tags
       }));
   @override
   PackageScore $make(CopyWithData data) => PackageScore(
@@ -167,8 +159,7 @@ class _PackageScoreCopyWithImpl<$R, $Out>
       popularityScore: data.get(#popularityScore, or: $value.popularityScore),
       downloadCount30Days:
           data.get(#downloadCount30Days, or: $value.downloadCount30Days),
-      tags: data.get(#tags, or: $value.tags),
-      lastUpdated: data.get(#lastUpdated, or: $value.lastUpdated));
+      tags: data.get(#tags, or: $value.tags));
 
   @override
   PackageScoreCopyWith<$R2, PackageScore, $Out2> $chain<$R2, $Out2>(

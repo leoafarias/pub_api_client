@@ -10,7 +10,6 @@ class PackageScore with PackageScoreMappable {
   final double? popularityScore;
   final int? downloadCount30Days;
   final List<String> tags;
-  final DateTime? lastUpdated;
 
   PackageScore({
     required this.grantedPoints,
@@ -19,7 +18,6 @@ class PackageScore with PackageScoreMappable {
     required this.popularityScore,
     required this.downloadCount30Days,
     required this.tags,
-    required this.lastUpdated,
   });
 
   static const fromMap = PackageScoreMapper.fromMap;
