@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
@@ -21,8 +22,11 @@ class PackagePublisherMapper extends ClassMapperBase<PackagePublisher> {
   final String id = 'PackagePublisher';
 
   static String? _$publisherId(PackagePublisher v) => v.publisherId;
-  static const Field<PackagePublisher, String> _f$publisherId =
-      Field('publisherId', _$publisherId, opt: true);
+  static const Field<PackagePublisher, String> _f$publisherId = Field(
+    'publisherId',
+    _$publisherId,
+    opt: true,
+  );
 
   @override
   final MappableFields<PackagePublisher> fields = const {
@@ -57,39 +61,48 @@ mixin PackagePublisherMappable {
   }
 
   PackagePublisherCopyWith<PackagePublisher, PackagePublisher, PackagePublisher>
-      get copyWith => _PackagePublisherCopyWithImpl(
-          this as PackagePublisher, $identity, $identity);
+  get copyWith =>
+      _PackagePublisherCopyWithImpl<PackagePublisher, PackagePublisher>(
+        this as PackagePublisher,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
-    return PackagePublisherMapper.ensureInitialized()
-        .stringifyValue(this as PackagePublisher);
+    return PackagePublisherMapper.ensureInitialized().stringifyValue(
+      this as PackagePublisher,
+    );
   }
 
   @override
   bool operator ==(Object other) {
-    return PackagePublisherMapper.ensureInitialized()
-        .equalsValue(this as PackagePublisher, other);
+    return PackagePublisherMapper.ensureInitialized().equalsValue(
+      this as PackagePublisher,
+      other,
+    );
   }
 
   @override
   int get hashCode {
-    return PackagePublisherMapper.ensureInitialized()
-        .hashValue(this as PackagePublisher);
+    return PackagePublisherMapper.ensureInitialized().hashValue(
+      this as PackagePublisher,
+    );
   }
 }
 
 extension PackagePublisherValueCopy<$R, $Out>
     on ObjectCopyWith<$R, PackagePublisher, $Out> {
   PackagePublisherCopyWith<$R, PackagePublisher, $Out>
-      get $asPackagePublisher =>
-          $base.as((v, t, t2) => _PackagePublisherCopyWithImpl(v, t, t2));
+  get $asPackagePublisher =>
+      $base.as((v, t, t2) => _PackagePublisherCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class PackagePublisherCopyWith<$R, $In extends PackagePublisher, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   $R call({String? publisherId});
   PackagePublisherCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
-      Then<$Out2, $R2> t);
+    Then<$Out2, $R2> t,
+  );
 }
 
 class _PackagePublisherCopyWithImpl<$R, $Out>
@@ -102,13 +115,16 @@ class _PackagePublisherCopyWithImpl<$R, $Out>
       PackagePublisherMapper.ensureInitialized();
   @override
   $R call({Object? publisherId = $none}) => $apply(
-      FieldCopyWithData({if (publisherId != $none) #publisherId: publisherId}));
+    FieldCopyWithData({if (publisherId != $none) #publisherId: publisherId}),
+  );
   @override
   PackagePublisher $make(CopyWithData data) => PackagePublisher(
-      publisherId: data.get(#publisherId, or: $value.publisherId));
+    publisherId: data.get(#publisherId, or: $value.publisherId),
+  );
 
   @override
   PackagePublisherCopyWith<$R2, PackagePublisher, $Out2> $chain<$R2, $Out2>(
-          Then<$Out2, $R2> t) =>
-      _PackagePublisherCopyWithImpl($value, $cast, t);
+    Then<$Out2, $R2> t,
+  ) => _PackagePublisherCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
+

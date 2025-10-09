@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
@@ -25,21 +26,21 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
   @override
   SearchOrder decode(dynamic value) {
     switch (value) {
-      case 'top':
+      case r'top':
         return SearchOrder.top;
-      case 'text':
+      case r'text':
         return SearchOrder.text;
-      case 'created':
+      case r'created':
         return SearchOrder.created;
-      case 'updated':
+      case r'updated':
         return SearchOrder.updated;
-      case 'popularity':
+      case r'popularity':
         return SearchOrder.popularity;
-      case 'downloads':
+      case r'downloads':
         return SearchOrder.downloads;
-      case 'like':
+      case r'like':
         return SearchOrder.like;
-      case 'points':
+      case r'points':
         return SearchOrder.points;
       default:
         throw MapperException.unknownEnumValue(value);
@@ -50,21 +51,21 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
   dynamic encode(SearchOrder self) {
     switch (self) {
       case SearchOrder.top:
-        return 'top';
+        return r'top';
       case SearchOrder.text:
-        return 'text';
+        return r'text';
       case SearchOrder.created:
-        return 'created';
+        return r'created';
       case SearchOrder.updated:
-        return 'updated';
+        return r'updated';
       case SearchOrder.popularity:
-        return 'popularity';
+        return r'popularity';
       case SearchOrder.downloads:
-        return 'downloads';
+        return r'downloads';
       case SearchOrder.like:
-        return 'like';
+        return r'like';
       case SearchOrder.points:
-        return 'points';
+        return r'points';
     }
   }
 }
@@ -75,3 +76,4 @@ extension SearchOrderMapperExtension on SearchOrder {
     return MapperContainer.globals.toValue<SearchOrder>(this) as String;
   }
 }
+

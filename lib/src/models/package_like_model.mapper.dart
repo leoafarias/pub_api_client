@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
@@ -21,8 +22,10 @@ class PackageLikeMapper extends ClassMapperBase<PackageLike> {
   final String id = 'PackageLike';
 
   static String _$package(PackageLike v) => v.package;
-  static const Field<PackageLike, String> _f$package =
-      Field('package', _$package);
+  static const Field<PackageLike, String> _f$package = Field(
+    'package',
+    _$package,
+  );
   static bool _$liked(PackageLike v) => v.liked;
   static const Field<PackageLike, bool> _f$liked = Field('liked', _$liked);
 
@@ -34,7 +37,9 @@ class PackageLikeMapper extends ClassMapperBase<PackageLike> {
 
   static PackageLike _instantiate(DecodingData data) {
     return PackageLike(
-        package: data.dec(_f$package), liked: data.dec(_f$liked));
+      package: data.dec(_f$package),
+      liked: data.dec(_f$liked),
+    );
   }
 
   @override
@@ -51,27 +56,36 @@ class PackageLikeMapper extends ClassMapperBase<PackageLike> {
 
 mixin PackageLikeMappable {
   String toJson() {
-    return PackageLikeMapper.ensureInitialized()
-        .encodeJson<PackageLike>(this as PackageLike);
+    return PackageLikeMapper.ensureInitialized().encodeJson<PackageLike>(
+      this as PackageLike,
+    );
   }
 
   Map<String, dynamic> toMap() {
-    return PackageLikeMapper.ensureInitialized()
-        .encodeMap<PackageLike>(this as PackageLike);
+    return PackageLikeMapper.ensureInitialized().encodeMap<PackageLike>(
+      this as PackageLike,
+    );
   }
 
   PackageLikeCopyWith<PackageLike, PackageLike, PackageLike> get copyWith =>
-      _PackageLikeCopyWithImpl(this as PackageLike, $identity, $identity);
+      _PackageLikeCopyWithImpl<PackageLike, PackageLike>(
+        this as PackageLike,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
-    return PackageLikeMapper.ensureInitialized()
-        .stringifyValue(this as PackageLike);
+    return PackageLikeMapper.ensureInitialized().stringifyValue(
+      this as PackageLike,
+    );
   }
 
   @override
   bool operator ==(Object other) {
-    return PackageLikeMapper.ensureInitialized()
-        .equalsValue(this as PackageLike, other);
+    return PackageLikeMapper.ensureInitialized().equalsValue(
+      this as PackageLike,
+      other,
+    );
   }
 
   @override
@@ -83,7 +97,7 @@ mixin PackageLikeMappable {
 extension PackageLikeValueCopy<$R, $Out>
     on ObjectCopyWith<$R, PackageLike, $Out> {
   PackageLikeCopyWith<$R, PackageLike, $Out> get $asPackageLike =>
-      $base.as((v, t, t2) => _PackageLikeCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _PackageLikeCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class PackageLikeCopyWith<$R, $In extends PackageLike, $Out>
@@ -101,17 +115,21 @@ class _PackageLikeCopyWithImpl<$R, $Out>
   late final ClassMapperBase<PackageLike> $mapper =
       PackageLikeMapper.ensureInitialized();
   @override
-  $R call({String? package, bool? liked}) => $apply(FieldCopyWithData({
-        if (package != null) #package: package,
-        if (liked != null) #liked: liked
-      }));
+  $R call({String? package, bool? liked}) => $apply(
+    FieldCopyWithData({
+      if (package != null) #package: package,
+      if (liked != null) #liked: liked,
+    }),
+  );
   @override
   PackageLike $make(CopyWithData data) => PackageLike(
-      package: data.get(#package, or: $value.package),
-      liked: data.get(#liked, or: $value.liked));
+    package: data.get(#package, or: $value.package),
+    liked: data.get(#liked, or: $value.liked),
+  );
 
   @override
   PackageLikeCopyWith<$R2, PackageLike, $Out2> $chain<$R2, $Out2>(
-          Then<$Out2, $R2> t) =>
-      _PackageLikeCopyWithImpl($value, $cast, t);
+    Then<$Out2, $R2> t,
+  ) => _PackageLikeCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
+

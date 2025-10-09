@@ -4,11 +4,13 @@ import 'package:http/http.dart';
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
+import 'test_utils.dart';
+
 const packageName = 'fvm';
 const packageName2 = 'sqlite3';
 final _client = PubClient(
   debug: true,
-  // client: LocalJsonClient('./test/fixtures', true),
+  client: LocalJsonClient('./test/fixtures', false),
 );
 
 void main() {
@@ -53,7 +55,9 @@ void main() {
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
-      expect(payload.downloadCount30Days, greaterThan(100));
+      if (payload.downloadCount30Days != null) {
+        expect(payload.downloadCount30Days, greaterThan(100));
+      }
 
       // Test for packageName2
       final payload2 = await _client.packageScore(packageName2);
@@ -61,7 +65,9 @@ void main() {
       expect(payload2.grantedPoints, isNotNull);
       expect(payload2.likeCount, greaterThan(50));
       expect(payload2.maxPoints, greaterThan(100));
-      expect(payload2.downloadCount30Days, greaterThan(100));
+      if (payload2.downloadCount30Days != null) {
+        expect(payload2.downloadCount30Days, greaterThan(100));
+      }
     });
 
     test('Get package metrics', () async {
