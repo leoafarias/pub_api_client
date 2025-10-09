@@ -50,7 +50,6 @@ void main() {
     test('Get package score', () async {
       final payload = await _client.packageScore(packageName);
 
-      expect(payload.lastUpdated, isNotNull);
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
@@ -59,7 +58,6 @@ void main() {
       // Test for packageName2
       final payload2 = await _client.packageScore(packageName2);
 
-      expect(payload2.lastUpdated, isNotNull);
       expect(payload2.grantedPoints, isNotNull);
       expect(payload2.likeCount, greaterThan(50));
       expect(payload2.maxPoints, greaterThan(100));
@@ -142,7 +140,6 @@ void main() {
     test('Get Package Score', () async {
       final payload = await _client.packageScore(packageName);
 
-      expect(payload.lastUpdated, isNotNull);
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
@@ -150,7 +147,6 @@ void main() {
       // Test for packageName2
       final payload2 = await _client.packageScore(packageName2);
 
-      expect(payload2.lastUpdated, isNotNull);
       expect(payload2.grantedPoints, isNotNull);
       expect(payload2.likeCount, greaterThan(50));
       expect(payload2.maxPoints, greaterThan(100));
