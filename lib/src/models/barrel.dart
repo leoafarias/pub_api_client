@@ -1,4 +1,5 @@
 export 'package:pub_api_client/src/models/latest_version_model.dart';
+export 'package:pub_api_client/src/models/package_advisories_model.dart';
 export 'package:pub_api_client/src/models/package_documentation_model.dart';
 export 'package:pub_api_client/src/models/package_like_model.dart';
 export 'package:pub_api_client/src/models/package_metrics_model.dart';
