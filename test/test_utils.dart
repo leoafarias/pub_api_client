@@ -111,3 +111,8 @@ String _prettyJson(Map<String, dynamic> json) {
   const encoder = JsonEncoder.withIndent('  ');
   return encoder.convert(json);
 }
+
+/// Delay to avoid rate limiting from pub.dev API
+Future<void> rateLimit() async {
+  await Future.delayed(const Duration(milliseconds: 500));
+}

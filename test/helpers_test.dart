@@ -5,11 +5,14 @@ import 'package:pub_api_client/src/version.dart';
 import 'package:pubspec_parse/pubspec_parse.dart';
 import 'package:test/test.dart';
 
+import 'test_utils.dart';
+
 const packageName = 'fvm';
 
 void main() {
   group('Helpers', () {
     test('Get all Google packages', () async {
+      await rateLimit();
       final latestGoogleDeps = await PubClient().fetchGooglePackages();
 
       expect(latestGoogleDeps.length, greaterThan(230));
