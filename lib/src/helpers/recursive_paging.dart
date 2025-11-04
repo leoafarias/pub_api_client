@@ -9,8 +9,6 @@ Future<List<T>> recursivePaging<T>(
   if (nextPage == null) {
     return results;
   }
-  // Add delay to avoid rate limiting
-  await Future.delayed(const Duration(milliseconds: 300));
   final next = await getNext(nextPage);
   return results + await recursivePaging(next, getNext);
 }

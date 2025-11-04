@@ -10,13 +10,13 @@ const packageName = 'fvm';
 const packageName2 = 'sqlite3';
 final _client = PubClient(
   debug: true,
+  client: RateLimitedClient(),
   // client: LocalJsonClient('./test/fixtures', true),
 );
 
 void main() {
   group('PubDev Client', () {
     test('Can Fetch package info', () async {
-      await rateLimit();
       final packageInfo = await _client.packageInfo(packageName);
 
       final lastPubspec = packageInfo.latestPubspec;
@@ -26,7 +26,6 @@ void main() {
       expect(packageInfo.name, packageName);
 
       // Test for packageName2
-      await rateLimit();
       final packageInfo2 = await _client.packageInfo(packageName2);
 
       final lastPubspec2 = packageInfo2.latestPubspec;
@@ -37,18 +36,14 @@ void main() {
     });
 
     test('Get package versions', () async {
-      await rateLimit();
       final packageInfo = await _client.packageInfo(packageName);
-      await rateLimit();
       final payload = await _client.packageVersions(packageName);
 
       expect(payload.length, greaterThan(0));
       expect(payload.length, packageInfo.versions.length);
 
       // Test for packageName2
-      await rateLimit();
       final packageInfo2 = await _client.packageInfo(packageName2);
-      await rateLimit();
       final payload2 = await _client.packageVersions(packageName2);
 
       expect(payload2.length, greaterThan(0));
@@ -56,7 +51,6 @@ void main() {
     });
 
     test('Get package score', () async {
-      await rateLimit();
       final payload = await _client.packageScore(packageName);
 
       expect(payload.grantedPoints, isNotNull);
@@ -65,7 +59,6 @@ void main() {
       expect(payload.downloadCount30Days, greaterThan(100));
 
       // Test for packageName2
-      await rateLimit();
       final payload2 = await _client.packageScore(packageName2);
 
       expect(payload2.grantedPoints, isNotNull);
@@ -75,9 +68,7 @@ void main() {
     });
 
     test('Get package metrics', () async {
-      await rateLimit();
       final score = await _client.packageScore(packageName);
-      await rateLimit();
       final metrics = await _client.packageMetrics(packageName);
 
       if (metrics != null) {
@@ -88,9 +79,7 @@ void main() {
       }
 
       // Test for packageName2
-      await rateLimit();
       final score2 = await _client.packageScore(packageName2);
-      await rateLimit();
       final metrics2 = await _client.packageMetrics(packageName2);
 
       if (metrics2 != null) {
@@ -102,9 +91,7 @@ void main() {
     });
 
     test('Get package version info', () async {
-      await rateLimit();
       final package = await _client.packageInfo(packageName);
-      await rateLimit();
       final version = await _client.packageVersionInfo(
         packageName,
         package.version,
@@ -114,9 +101,7 @@ void main() {
       expect(package.version, version.version);
 
       // Test for packageName2
-      await rateLimit();
       final package2 = await _client.packageInfo(packageName2);
-      await rateLimit();
       final version2 = await _client.packageVersionInfo(
         packageName2,
         package2.version,
@@ -127,7 +112,6 @@ void main() {
     });
 
     test('Get package options', () async {
-      await rateLimit();
       final options = await _client.packageOptions(packageName);
 
       expect(options.isUnlisted, false);
@@ -135,7 +119,6 @@ void main() {
       expect(options.replacedBy, null);
 
       // Test for packageName2
-      await rateLimit();
       final options2 = await _client.packageOptions(packageName2);
 
       expect(options2.isUnlisted, false);
@@ -144,24 +127,20 @@ void main() {
     });
 
     test('Get package publisher', () async {
-      await rateLimit();
       final publisher = await _client.packagePublisher(packageName);
       expect(publisher.publisherId, 'leoafarias.com');
 
       // Test for packageName2
-      await rateLimit();
       final publisher2 = await _client.packagePublisher(packageName2);
       expect(publisher2.publisherId, isNotNull);
     });
 
     test('Get package publisher if unregistered', () async {
-      await rateLimit();
       final unregisterPublisher = await _client.packagePublisher('p');
       expect(unregisterPublisher.publisherId, null);
     });
 
     test('Get Package Score', () async {
-      await rateLimit();
       final payload = await _client.packageScore(packageName);
 
       expect(payload.grantedPoints, isNotNull);
@@ -169,7 +148,6 @@ void main() {
       expect(payload.maxPoints, greaterThan(100));
 
       // Test for packageName2
-      await rateLimit();
       final payload2 = await _client.packageScore(packageName2);
 
       expect(payload2.grantedPoints, isNotNull);
@@ -178,31 +156,21 @@ void main() {
     });
 
     test('Search for packages', () async {
-      await rateLimit();
       final payload = await _client.search('json');
-      await rateLimit();
       final nextPagePayload = await _client.nextPage(payload.next ?? '');
       expect(payload.packages.length, greaterThan(1));
       expect(nextPagePayload.packages.length, greaterThan(1));
     });
 
     test('Sort search results for packages', () async {
-      await rateLimit();
       final updated = await _client.search('', sort: SearchOrder.updated);
-      await rateLimit();
       final popularity = await _client.search('', sort: SearchOrder.popularity);
-      await rateLimit();
       final downloads = await _client.search('', sort: SearchOrder.downloads);
-      await rateLimit();
       final points = await _client.search('', sort: SearchOrder.points);
-      await rateLimit();
       final created = await _client.search('', sort: SearchOrder.created);
-      await rateLimit();
       final text = await _client.search('', sort: SearchOrder.text);
-      await rateLimit();
       final top = await _client.search('');
 
-      await rateLimit();
       final updatedCopy = await _client.search('', sort: SearchOrder.updated);
 
       expect(updated, isNot(popularity));
@@ -226,10 +194,8 @@ void main() {
     });
 
     test('Search for packages of a publisher', () async {
-      await rateLimit();
       final payload = await _client
           .search('', tags: [PackageTag.publisher('leoafarias.com')]);
-      await rateLimit();
       final nextPagePayload = await _client.search(
         '',
         tags: [PackageTag.dependency('pub_api_client')],
@@ -239,32 +205,26 @@ void main() {
     });
 
     test('Get documentation', () async {
-      await rateLimit();
       final documentation = await _client.documentation(packageName);
       expect(documentation.versions.length, greaterThan(0));
 
       // Test for packageName2
-      await rateLimit();
       final documentation2 = await _client.documentation(packageName2);
       expect(documentation2.versions.length, greaterThan(0));
     });
 
     test('Get package name completion', () async {
-      await rateLimit();
       final packages = await _client.packageNameCompletion();
       expect(packages.length, equals(20000));
     });
 
     test('Get package names', () async {
-      await rateLimit();
       final packages = await _client.packageNames();
       expect(packages.length, greaterThan(20000));
     });
 
     test('Get package topics', () async {
-      await rateLimit();
       final results = await _client.search('', topics: ['ffi']);
-      await rateLimit();
       final zeroResults = await _client.search('', topics: ['h8haisd091']);
 
       expect(results.packages.length, greaterThan(0));
@@ -296,7 +256,6 @@ void main() {
   });
 
   test('Fetch publisher packages', () async {
-    await rateLimit();
     final packages = await _client.fetchPublisherPackages('dart.dev');
     expect(packages.length, greaterThan(0));
   });

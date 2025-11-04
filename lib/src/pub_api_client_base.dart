@@ -249,16 +249,13 @@ class PubClient {
       'tools.dart.dev ',
     ];
 
-    final allResults = <PackageResult>[];
+    final futures = <Future<List<PackageResult>>>[];
     for (var publisher in publishers) {
-      // Add delay to avoid rate limiting
-      if (allResults.isNotEmpty) {
-        await Future.delayed(const Duration(milliseconds: 500));
-      }
-      final results = await fetchPublisherPackages(publisher, tags: tags);
-      allResults.addAll(results);
+      futures.add(fetchPublisherPackages(publisher, tags: tags));
     }
-    return allResults.map((r) => r.package).toList();
+    final results = await Future.wait(futures);
+    final flatResults = results.expand((r) => r).toList();
+    return flatResults.map((r) => r.package).toList();
   }
 
   /// Retrieves all the flutter favorites
