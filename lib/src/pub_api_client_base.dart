@@ -49,6 +49,7 @@ class PubClient {
 
     _headers = {
       'user-agent': 'pub_api_client/$packageVersion ($userAgent)',
+      'Accept': 'application/vnd.pub.v2+json',
     };
     _client = client ?? httpClient;
   }
