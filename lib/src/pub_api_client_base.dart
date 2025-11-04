@@ -62,6 +62,7 @@ class PubClient {
 
     _headers = {
       'user-agent': _buildUserAgentHeader(normalizedUserAgent),
+      'Accept': 'application/vnd.pub.v2+json',
     };
     _client = client ?? httpClient;
   }
