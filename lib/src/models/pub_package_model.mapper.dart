@@ -217,6 +217,13 @@ class PackageVersionMapper extends ClassMapperBase<PackageVersion> {
     _$archiveSha256,
     key: r'archive_sha256',
   );
+  static bool _$retracted(PackageVersion v) => v.retracted;
+  static const Field<PackageVersion, bool> _f$retracted = Field(
+    'retracted',
+    _$retracted,
+    opt: true,
+    def: false,
+  );
 
   @override
   final MappableFields<PackageVersion> fields = const {
@@ -225,6 +232,7 @@ class PackageVersionMapper extends ClassMapperBase<PackageVersion> {
     #archiveUrl: _f$archiveUrl,
     #published: _f$published,
     #archiveSha256: _f$archiveSha256,
+    #retracted: _f$retracted,
   };
 
   static PackageVersion _instantiate(DecodingData data) {
@@ -234,6 +242,7 @@ class PackageVersionMapper extends ClassMapperBase<PackageVersion> {
       archiveUrl: data.dec(_f$archiveUrl),
       published: data.dec(_f$published),
       archiveSha256: data.dec(_f$archiveSha256),
+      retracted: data.dec(_f$retracted),
     );
   }
 
@@ -305,6 +314,7 @@ abstract class PackageVersionCopyWith<$R, $In extends PackageVersion, $Out>
     String? archiveUrl,
     DateTime? published,
     String? archiveSha256,
+    bool? retracted,
   });
   PackageVersionCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -326,6 +336,7 @@ class _PackageVersionCopyWithImpl<$R, $Out>
     String? archiveUrl,
     DateTime? published,
     String? archiveSha256,
+    bool? retracted,
   }) => $apply(
     FieldCopyWithData({
       if (version != null) #version: version,
@@ -333,6 +344,7 @@ class _PackageVersionCopyWithImpl<$R, $Out>
       if (archiveUrl != null) #archiveUrl: archiveUrl,
       if (published != null) #published: published,
       if (archiveSha256 != null) #archiveSha256: archiveSha256,
+      if (retracted != null) #retracted: retracted,
     }),
   );
   @override
@@ -342,6 +354,7 @@ class _PackageVersionCopyWithImpl<$R, $Out>
     archiveUrl: data.get(#archiveUrl, or: $value.archiveUrl),
     published: data.get(#published, or: $value.published),
     archiveSha256: data.get(#archiveSha256, or: $value.archiveSha256),
+    retracted: data.get(#retracted, or: $value.retracted),
   );
 
   @override
