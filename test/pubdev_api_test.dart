@@ -10,7 +10,8 @@ const packageName = 'fvm';
 const packageName2 = 'sqlite3';
 final _client = PubClient(
   debug: true,
-  client: LocalJsonClient('./test/fixtures', false),
+  client: RateLimitedClient(),
+  // client: LocalJsonClient('./test/fixtures', true),
 );
 
 void main() {

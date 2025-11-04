@@ -134,3 +134,37 @@ String _prettyJson(Map<String, dynamic> json) {
   const encoder = JsonEncoder.withIndent('  ');
   return encoder.convert(json);
 }
+
+/// HTTP Client wrapper that adds delays between requests to avoid rate limiting
+/// This is only used in tests
+class RateLimitedClient extends http.BaseClient {
+  final http.Client _innerClient;
+  DateTime? _lastRequestTime;
+  final Duration _minDelay;
+
+  RateLimitedClient({
+    http.Client? innerClient,
+    Duration minDelay = const Duration(milliseconds: 600),
+  })  : _innerClient = innerClient ?? http.Client(),
+        _minDelay = minDelay;
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) async {
+    // Add delay if needed to avoid rate limiting
+    if (_lastRequestTime != null) {
+      final timeSinceLastRequest = DateTime.now().difference(_lastRequestTime!);
+      if (timeSinceLastRequest < _minDelay) {
+        await Future.delayed(_minDelay - timeSinceLastRequest);
+      }
+    }
+    _lastRequestTime = DateTime.now();
+
+    return _innerClient.send(request);
+  }
+
+  @override
+  void close() {
+    _innerClient.close();
+    super.close();
+  }
+}
