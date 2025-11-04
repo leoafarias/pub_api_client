@@ -19,6 +19,19 @@ import 'models/search_order.dart';
 import 'models/search_results_model.dart';
 import 'version.dart';
 
+const _repositoryUrl = 'https://github.com/leoafarias/pub_api_client';
+
+String _normalizeUserAgent(String? userAgent) {
+  final normalized = userAgent?.trim();
+  if (normalized == null || normalized.isEmpty) {
+    return 'default';
+  }
+  return normalized;
+}
+
+String _buildUserAgentHeader(String userAgentMetadata) =>
+    'pub_api_client/$packageVersion ($userAgentMetadata; +$_repositoryUrl)';
+
 /// Pub API Client
 class PubClient {
   final Endpoint endpoint;
@@ -45,10 +58,10 @@ class PubClient {
       );
     }
 
-    userAgent ??= 'default';
+    final normalizedUserAgent = _normalizeUserAgent(userAgent);
 
     _headers = {
-      'user-agent': 'pub_api_client/$packageVersion ($userAgent)',
+      'user-agent': _buildUserAgentHeader(normalizedUserAgent),
     };
     _client = client ?? httpClient;
   }

@@ -1,3 +1,7 @@
+## Unreleased
+
+- Include the GitHub repository URL in the default `User-Agent` header [#69](https://github.com/leoafarias/pub_api_client/issues/69)
+
 ## 3.2.0
 
 - Make `lastUpdated` optional by @Rexios80 in [#61](https://github.com/leoafarias/pub_api_client/pull/61)
