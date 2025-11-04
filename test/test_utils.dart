@@ -121,7 +121,7 @@ class RateLimitedClient extends http.BaseClient {
 
   RateLimitedClient({
     http.Client? innerClient,
-    Duration minDelay = const Duration(milliseconds: 500),
+    Duration minDelay = const Duration(milliseconds: 600),
   })  : _innerClient = innerClient ?? http.Client(),
         _minDelay = minDelay;
 

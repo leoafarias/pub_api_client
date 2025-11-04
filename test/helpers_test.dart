@@ -12,12 +12,14 @@ const packageName = 'fvm';
 void main() {
   group('Helpers', () {
     test('Get all Google packages', () async {
-      final client = PubClient(client: RateLimitedClient());
+      final client = PubClient(client: RateLimitedClient(
+        minDelay: const Duration(milliseconds: 800),
+      ));
       final latestGoogleDeps = await client.fetchGooglePackages();
 
       expect(latestGoogleDeps.length, greaterThan(230));
       client.close();
-    });
+    }, retry: 2);
 
     test('Does Package version match', () async {
       final pubspec = Pubspec.parse(File(
