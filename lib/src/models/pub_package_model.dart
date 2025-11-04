@@ -37,12 +37,14 @@ class PackageVersion with PackageVersionMappable {
   final DateTime published;
   @MappableField(key: 'archive_sha256')
   final String archiveSha256;
+  final bool retracted;
   const PackageVersion({
     required this.version,
     required this.pubspec,
     required this.archiveUrl,
     required this.published,
     required this.archiveSha256,
+    this.retracted = false,
   });
 
   static const fromMap = PackageVersionMapper.fromMap;
