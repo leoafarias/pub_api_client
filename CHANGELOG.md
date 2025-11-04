@@ -1,3 +1,7 @@
+## 3.2.0
+
+- Make `lastUpdated` optional by @Rexios80 in [#61](https://github.com/leoafarias/pub_api_client/pull/61)
+
 ## 3.1.1
 
 - Download count is nullable by @Rexios80 in [#59](https://github.com/leoafarias/pub_api_client/pull/59)

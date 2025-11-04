@@ -56,7 +56,9 @@ void main() {
       expect(payload.grantedPoints, isNotNull);
       expect(payload.likeCount, greaterThan(50));
       expect(payload.maxPoints, greaterThan(100));
-      expect(payload.downloadCount30Days, greaterThan(100));
+      if (payload.downloadCount30Days != null) {
+        expect(payload.downloadCount30Days, greaterThan(100));
+      }
 
       // Test for packageName2
       final payload2 = await _client.packageScore(packageName2);
@@ -64,7 +66,9 @@ void main() {
       expect(payload2.grantedPoints, isNotNull);
       expect(payload2.likeCount, greaterThan(50));
       expect(payload2.maxPoints, greaterThan(100));
-      expect(payload2.downloadCount30Days, greaterThan(100));
+      if (payload2.downloadCount30Days != null) {
+        expect(payload2.downloadCount30Days, greaterThan(100));
+      }
     });
 
     test('Get package metrics', () async {

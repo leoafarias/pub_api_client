@@ -64,31 +64,54 @@ class LocalJsonClient extends http.BaseClient {
   Future<http.StreamedResponse> send(http.BaseRequest request) async {
     await _loadCachedResponses();
 
-    if (storeJsonResponses) {
-      final response = await _innerClient.send(request);
+    final cached = _cachedResponses[request.url.toString()];
 
+    // If we have a cached response, use it
+    if (cached != null && !storeJsonResponses) {
+      final response = http.Response(
+        jsonEncode(cached),
+        headers: {
+          "content-type": "application/json; charset=\"utf-8\"",
+        },
+        200,
+      );
+
+      return http.StreamedResponse(
+        request: request,
+        Stream.value(response.bodyBytes),
+        response.statusCode,
+      );
+    }
+
+    // Otherwise, make a real request (and optionally cache it)
+    final response = await _innerClient.send(request);
+
+    if (storeJsonResponses) {
       final result = await response.stream.bytesToString();
 
       _cachedResponses[request.url.toString()] = jsonDecode(result);
 
       _saveCacheResponse();
+
+      // Return the cached response
+      final cachedPayload = _cachedResponses[request.url.toString()]!;
+      final cachedResponse = http.Response(
+        jsonEncode(cachedPayload),
+        headers: {
+          "content-type": "application/json; charset=\"utf-8\"",
+        },
+        200,
+      );
+
+      return http.StreamedResponse(
+        request: request,
+        Stream.value(cachedResponse.bodyBytes),
+        cachedResponse.statusCode,
+      );
     }
 
-    final payload = _cachedResponses[request.url.toString()]!;
-
-    final response = http.Response(
-      jsonEncode(payload),
-      headers: {
-        "content-type": "application/json; charset=\"utf-8\"",
-      },
-      200,
-    );
-
-    return http.StreamedResponse(
-      request: request,
-      Stream.value(response.bodyBytes),
-      response.statusCode,
-    );
+    // Just return the real response
+    return response;
   }
 }
 
