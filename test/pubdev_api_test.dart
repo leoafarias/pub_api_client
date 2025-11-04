@@ -4,10 +4,13 @@ import 'package:http/http.dart';
 import 'package:pub_api_client/pub_api_client.dart';
 import 'package:test/test.dart';
 
+import 'test_utils.dart';
+
 const packageName = 'fvm';
 const packageName2 = 'sqlite3';
 final _client = PubClient(
   debug: true,
+  client: RateLimitedClient(),
   // client: LocalJsonClient('./test/fixtures', true),
 );
 
