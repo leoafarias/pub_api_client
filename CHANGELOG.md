@@ -1,6 +1,7 @@
 ## Unreleased
 
 - Include the GitHub repository URL in the default `User-Agent` header [#69](https://github.com/leoafarias/pub_api_client/issues/69)
+- Improve WWW-Authenticate header parsing for authorization errors [#70](https://github.com/leoafarias/pub_api_client/issues/70)
 
 ## 3.2.0
 
