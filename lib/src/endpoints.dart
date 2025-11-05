@@ -36,6 +36,9 @@ class Endpoint {
   /// Package documentation endpoint
   String packageDocumentation(String name) => '$apiUrl/documentation/$name';
 
+  /// Security advisories endpoint
+  String packageAdvisories(String name) => '$packageUrl/$name/advisories';
+
   // Not part of API endpoint
   /// Package versions endpoint
   String packageVersions(String name) => '$baseUrl/packages/$name.json';
