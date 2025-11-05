@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Expose discontinued/advisory metadata on `PubPackage` and drop the large cached fixture from version control [#75](https://github.com/leoafarias/pub_api_client/pull/75)
 - Include the GitHub repository URL in the default `User-Agent` header [#69](https://github.com/leoafarias/pub_api_client/issues/69)
 
 ## 3.2.0

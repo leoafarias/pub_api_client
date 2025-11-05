@@ -34,3 +34,4 @@ coverage/lcov.info
 _notes.md
 .env
 test/.test_cov.dart
+test/fixtures/cached_response.json

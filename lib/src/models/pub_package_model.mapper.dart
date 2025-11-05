@@ -37,12 +37,33 @@ class PubPackageMapper extends ClassMapperBase<PubPackage> {
     opt: true,
     def: const [],
   );
+  static bool? _$isDiscontinued(PubPackage v) => v.isDiscontinued;
+  static const Field<PubPackage, bool> _f$isDiscontinued = Field(
+    'isDiscontinued',
+    _$isDiscontinued,
+    opt: true,
+  );
+  static String? _$replacedBy(PubPackage v) => v.replacedBy;
+  static const Field<PubPackage, String> _f$replacedBy = Field(
+    'replacedBy',
+    _$replacedBy,
+    opt: true,
+  );
+  static DateTime? _$advisoriesUpdated(PubPackage v) => v.advisoriesUpdated;
+  static const Field<PubPackage, DateTime> _f$advisoriesUpdated = Field(
+    'advisoriesUpdated',
+    _$advisoriesUpdated,
+    opt: true,
+  );
 
   @override
   final MappableFields<PubPackage> fields = const {
     #name: _f$name,
     #latest: _f$latest,
     #versions: _f$versions,
+    #isDiscontinued: _f$isDiscontinued,
+    #replacedBy: _f$replacedBy,
+    #advisoriesUpdated: _f$advisoriesUpdated,
   };
 
   static PubPackage _instantiate(DecodingData data) {
@@ -50,6 +71,9 @@ class PubPackageMapper extends ClassMapperBase<PubPackage> {
       name: data.dec(_f$name),
       latest: data.dec(_f$latest),
       versions: data.dec(_f$versions),
+      isDiscontinued: data.dec(_f$isDiscontinued),
+      replacedBy: data.dec(_f$replacedBy),
+      advisoriesUpdated: data.dec(_f$advisoriesUpdated),
     );
   }
 
@@ -124,6 +148,9 @@ abstract class PubPackageCopyWith<$R, $In extends PubPackage, $Out>
     String? name,
     PackageVersion? latest,
     List<PackageVersion>? versions,
+    bool? isDiscontinued,
+    String? replacedBy,
+    DateTime? advisoriesUpdated,
   });
   PubPackageCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -155,11 +182,17 @@ class _PubPackageCopyWithImpl<$R, $Out>
     String? name,
     PackageVersion? latest,
     List<PackageVersion>? versions,
+    Object? isDiscontinued = $none,
+    Object? replacedBy = $none,
+    Object? advisoriesUpdated = $none,
   }) => $apply(
     FieldCopyWithData({
       if (name != null) #name: name,
       if (latest != null) #latest: latest,
       if (versions != null) #versions: versions,
+      if (isDiscontinued != $none) #isDiscontinued: isDiscontinued,
+      if (replacedBy != $none) #replacedBy: replacedBy,
+      if (advisoriesUpdated != $none) #advisoriesUpdated: advisoriesUpdated,
     }),
   );
   @override
@@ -167,6 +200,12 @@ class _PubPackageCopyWithImpl<$R, $Out>
     name: data.get(#name, or: $value.name),
     latest: data.get(#latest, or: $value.latest),
     versions: data.get(#versions, or: $value.versions),
+    isDiscontinued: data.get(#isDiscontinued, or: $value.isDiscontinued),
+    replacedBy: data.get(#replacedBy, or: $value.replacedBy),
+    advisoriesUpdated: data.get(
+      #advisoriesUpdated,
+      or: $value.advisoriesUpdated,
+    ),
   );
 
   @override
