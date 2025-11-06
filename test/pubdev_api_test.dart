@@ -8,6 +8,7 @@ import 'test_utils.dart';
 
 const packageName = 'fvm';
 const packageName2 = 'sqlite3';
+const discontinuedPackageName = 'firebase_admob';
 final _client = PubClient(
   debug: true,
   client: RateLimitedClient(),
@@ -24,6 +25,12 @@ void main() {
       expect(packageInfo.description, lastPubspec.description);
       expect(packageInfo.url, 'https://pub.dev/packages/$packageName');
       expect(packageInfo.name, packageName);
+      expect(packageInfo.isDiscontinued, isNull);
+      expect(packageInfo.replacedBy, isNull);
+      expect(
+        packageInfo.advisoriesUpdated,
+        anyOf(isNull, isA<DateTime>()),
+      );
 
       // Test for packageName2
       final packageInfo2 = await _client.packageInfo(packageName2);
@@ -33,6 +40,23 @@ void main() {
       expect(packageInfo2.description, lastPubspec2.description);
       expect(packageInfo2.url, 'https://pub.dev/packages/$packageName2');
       expect(packageInfo2.name, packageName2);
+      expect(packageInfo2.isDiscontinued, isNull);
+      expect(packageInfo2.replacedBy, isNull);
+      expect(
+        packageInfo2.advisoriesUpdated,
+        anyOf(isNull, isA<DateTime>()),
+      );
+    });
+
+    test('Detect discontinued packages', () async {
+      final discontinued = await _client.packageInfo(discontinuedPackageName);
+
+      expect(discontinued.isDiscontinued, isTrue);
+      expect(discontinued.replacedBy, 'google_mobile_ads');
+      expect(
+        discontinued.advisoriesUpdated,
+        anyOf(isNull, isA<DateTime>()),
+      );
     });
 
     test('Get package versions', () async {

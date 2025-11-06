@@ -11,10 +11,16 @@ class PubPackage with PubPackageMappable {
   final String name;
   final PackageVersion latest;
   final List<PackageVersion> versions;
+  final bool? isDiscontinued;
+  final String? replacedBy;
+  final DateTime? advisoriesUpdated;
   const PubPackage({
     required this.name,
     required this.latest,
     this.versions = const [],
+    this.isDiscontinued,
+    this.replacedBy,
+    this.advisoriesUpdated,
   });
 
   String get version => latest.version;
