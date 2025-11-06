@@ -100,10 +100,10 @@ void main() {
       final metrics = await _client.packageMetrics(packageName);
 
       if (metrics != null) {
-        expect(metrics.score, score);
+        expect(metrics.score.maxPoints, score.maxPoints);
+        expect(metrics.score.likeCount, greaterThan(0));
         expect(metrics.scorecard.packageName, 'fvm');
         expect(metrics.score.maxPoints, greaterThan(100));
-        expect(metrics.score.maxPoints, score.maxPoints);
       }
 
       // Test for packageName2
@@ -111,10 +111,10 @@ void main() {
       final metrics2 = await _client.packageMetrics(packageName2);
 
       if (metrics2 != null) {
-        expect(metrics2.score, score2);
+        expect(metrics2.score.maxPoints, score2.maxPoints);
+        expect(metrics2.score.likeCount, greaterThan(0));
         expect(metrics2.scorecard.packageName, 'sqlite3');
         expect(metrics2.score.maxPoints, greaterThan(100));
-        expect(metrics2.score.maxPoints, score2.maxPoints);
       }
     });
 

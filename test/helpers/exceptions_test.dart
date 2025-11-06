@@ -17,6 +17,17 @@ void main() {
       final exception = PubClientException(response);
       expect(exception.toString(), 'Bad Request');
     });
+
+    test('toString appends server message when provided', () {
+      final response =
+          Response('Invalid JSON', 401, reasonPhrase: 'Unauthorized');
+      final exception =
+          UnauthorizedException(response, serverMessage: 'Auth failed.');
+      expect(
+        exception.toString(),
+        'Unauthorized\nServer: Auth failed.',
+      );
+    });
   });
 
   group('responseValidOrThrow', () {
@@ -59,6 +70,55 @@ void main() {
       final response = Response('', 418);
       expect(() => responseValidOrThrow(response),
           throwsA(isA<UnknownException>()));
+    });
+
+    test('attaches server message for unauthorized responses', () {
+      final response = Response(
+        '',
+        401,
+        reasonPhrase: 'Unauthorized',
+        headers: {
+          'www-authenticate':
+              'Bearer realm="pub", message="Authentication failed."',
+        },
+      );
+      expect(
+        () => responseValidOrThrow(response),
+        throwsA(
+          isA<UnauthorizedException>().having((e) => e.serverMessage,
+              'serverMessage', 'Authentication failed.'),
+        ),
+      );
+    });
+
+    test('attaches server message for forbidden responses', () {
+      final response = Response(
+        '',
+        403,
+        reasonPhrase: 'Forbidden',
+        headers: {
+          'WWW-Authenticate':
+              'Bearer realm="pub", message="Insufficient permissions."',
+        },
+      );
+      expect(
+        () => responseValidOrThrow(response),
+        throwsA(
+          isA<ForbiddenException>().having((e) => e.serverMessage,
+              'serverMessage', 'Insufficient permissions.'),
+        ),
+      );
+    });
+
+    test('gracefully handles missing WWW-Authenticate header', () {
+      final response = Response('', 401, reasonPhrase: 'Unauthorized');
+      expect(
+        () => responseValidOrThrow(response),
+        throwsA(
+          isA<UnauthorizedException>()
+              .having((e) => e.serverMessage, 'serverMessage', isNull),
+        ),
+      );
     });
   });
 }
