@@ -8,6 +8,7 @@ import 'constants.dart';
 import 'endpoints.dart';
 import 'helpers/exceptions.dart';
 import 'helpers/recursive_paging.dart';
+import 'models/package_advisories_model.dart';
 import 'models/package_documentation_model.dart';
 import 'models/package_like_model.dart';
 import 'models/package_metrics_model.dart';
@@ -209,6 +210,18 @@ class PubClient {
   Future<PackageDocumentation> documentation(String packageName) async {
     final data = await _fetch(endpoint.packageDocumentation(packageName));
     return PackageDocumentation.fromMap(data);
+  }
+
+  /// Returns security advisories for [packageName]
+  /// Returns null if the advisories endpoint is not supported by the server
+  Future<PackageAdvisories?> packageAdvisories(String packageName) async {
+    try {
+      final data = await _fetch(endpoint.packageAdvisories(packageName));
+      return PackageAdvisories.fromMap(data);
+    } on NotFoundException {
+      // If advisories endpoint is not supported, return null
+      return null;
+    }
   }
 
   /// Displays like status of a package

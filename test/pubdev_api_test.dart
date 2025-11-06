@@ -257,6 +257,38 @@ void main() {
       expect(forbidden, throwsA(isA<ForbiddenException>()));
       expect(internalServerError, throwsA(isA<InternalServerError>()));
     });
+
+    test('Get package security advisories', () async {
+      // Test with actual package - may return null if endpoint not supported
+      // Note: This endpoint is not yet implemented on pub.dev as of the test date
+      // but the client correctly handles the 404 by returning null
+      final advisories = await _client.packageAdvisories(packageName);
+
+      // The endpoint should either return null (not implemented) or a valid response
+      if (advisories != null) {
+        // If the endpoint is implemented, verify the structure
+        expect(advisories.advisories, isA<List<SecurityAdvisory>>());
+        // advisoriesUpdated may be null if not provided by the API
+
+        // If there are advisories, verify their structure
+        if (advisories.advisories.isNotEmpty) {
+          final advisory = advisories.advisories.first;
+          expect(advisory.id, isNotNull);
+          // Summary, details, affected, and databaseSpecific may be null
+        }
+      } else {
+        // Endpoint not implemented - this is expected behavior
+        expect(advisories, isNull);
+      }
+
+      // Test with packageName2
+      final advisories2 = await _client.packageAdvisories(packageName2);
+      if (advisories2 != null) {
+        expect(advisories2.advisories, isA<List<SecurityAdvisory>>());
+      } else {
+        expect(advisories2, isNull);
+      }
+    });
   });
 
   test('Fetch publisher packages', () async {

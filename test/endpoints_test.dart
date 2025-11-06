@@ -49,6 +49,11 @@ void main() {
           equals('${Endpoint.defaultBaseUrl}/api/documentation/provider'));
     });
 
+    test('packageAdvisories returns correct URL', () {
+      expect(endpoint.packageAdvisories('http'),
+          equals('${Endpoint.defaultBaseUrl}/api/packages/http/advisories'));
+    });
+
     test('packageVersions returns correct URL', () {
       expect(endpoint.packageVersions('rxdart'),
           equals('${Endpoint.defaultBaseUrl}/packages/rxdart.json'));
