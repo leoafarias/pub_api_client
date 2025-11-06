@@ -1,11 +1,12 @@
 ## Unreleased
 
-- Expose discontinued/advisory metadata on `PubPackage` and drop the large cached fixture from version control [#75](https://github.com/leoafarias/pub_api_client/pull/75)
-- Include the GitHub repository URL in the default `User-Agent` header [#69](https://github.com/leoafarias/pub_api_client/issues/69)
-- Improve WWW-Authenticate header parsing for authorization errors [#70](https://github.com/leoafarias/pub_api_client/issues/70)
+- No changes yet.
 
 ## 3.2.0
 
+- Expose discontinued/advisory metadata on `PubPackage` and drop the large cached fixture from version control [#75](https://github.com/leoafarias/pub_api_client/pull/75)
+- Include the GitHub repository URL in the default `User-Agent` header [#69](https://github.com/leoafarias/pub_api_client/issues/69)
+- Improve WWW-Authenticate header parsing for authorization errors [#70](https://github.com/leoafarias/pub_api_client/issues/70)
 - Make `lastUpdated` optional by @Rexios80 in [#61](https://github.com/leoafarias/pub_api_client/pull/61)
 
 ## 3.1.1
