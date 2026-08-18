@@ -2,6 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 // ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_protected_member
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
@@ -16,6 +17,7 @@ class PackageScoreCardMapper extends ClassMapperBase<PackageScoreCard> {
       MapperContainer.globals.use(_instance = PackageScoreCardMapper._());
       DartdocReportMapper.ensureInitialized();
       PanaReportMapper.ensureInitialized();
+      WeeklyVersionDownloadsMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -58,6 +60,14 @@ class PackageScoreCardMapper extends ClassMapperBase<PackageScoreCard> {
     'taskStatus',
     _$taskStatus,
   );
+  static WeeklyVersionDownloads? _$weeklyVersionDownloads(PackageScoreCard v) =>
+      v.weeklyVersionDownloads;
+  static const Field<PackageScoreCard, WeeklyVersionDownloads>
+  _f$weeklyVersionDownloads = Field(
+    'weeklyVersionDownloads',
+    _$weeklyVersionDownloads,
+    opt: true,
+  );
 
   @override
   final MappableFields<PackageScoreCard> fields = const {
@@ -68,6 +78,7 @@ class PackageScoreCardMapper extends ClassMapperBase<PackageScoreCard> {
     #dartdocReport: _f$dartdocReport,
     #panaReport: _f$panaReport,
     #taskStatus: _f$taskStatus,
+    #weeklyVersionDownloads: _f$weeklyVersionDownloads,
   };
 
   static PackageScoreCard _instantiate(DecodingData data) {
@@ -79,6 +90,7 @@ class PackageScoreCardMapper extends ClassMapperBase<PackageScoreCard> {
       dartdocReport: data.dec(_f$dartdocReport),
       panaReport: data.dec(_f$panaReport),
       taskStatus: data.dec(_f$taskStatus),
+      weeklyVersionDownloads: data.dec(_f$weeklyVersionDownloads),
     );
   }
 
@@ -146,6 +158,12 @@ abstract class PackageScoreCardCopyWith<$R, $In extends PackageScoreCard, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   DartdocReportCopyWith<$R, DartdocReport, DartdocReport>? get dartdocReport;
   PanaReportCopyWith<$R, PanaReport, PanaReport>? get panaReport;
+  WeeklyVersionDownloadsCopyWith<
+    $R,
+    WeeklyVersionDownloads,
+    WeeklyVersionDownloads
+  >?
+  get weeklyVersionDownloads;
   $R call({
     String? packageName,
     String? packageVersion,
@@ -154,6 +172,7 @@ abstract class PackageScoreCardCopyWith<$R, $In extends PackageScoreCard, $Out>
     DartdocReport? dartdocReport,
     PanaReport? panaReport,
     String? taskStatus,
+    WeeklyVersionDownloads? weeklyVersionDownloads,
   });
   PackageScoreCardCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -175,6 +194,15 @@ class _PackageScoreCardCopyWithImpl<$R, $Out>
   PanaReportCopyWith<$R, PanaReport, PanaReport>? get panaReport =>
       $value.panaReport?.copyWith.$chain((v) => call(panaReport: v));
   @override
+  WeeklyVersionDownloadsCopyWith<
+    $R,
+    WeeklyVersionDownloads,
+    WeeklyVersionDownloads
+  >?
+  get weeklyVersionDownloads => $value.weeklyVersionDownloads?.copyWith.$chain(
+    (v) => call(weeklyVersionDownloads: v),
+  );
+  @override
   $R call({
     String? packageName,
     String? packageVersion,
@@ -183,6 +211,7 @@ class _PackageScoreCardCopyWithImpl<$R, $Out>
     Object? dartdocReport = $none,
     Object? panaReport = $none,
     Object? taskStatus = $none,
+    Object? weeklyVersionDownloads = $none,
   }) => $apply(
     FieldCopyWithData({
       if (packageName != null) #packageName: packageName,
@@ -192,6 +221,8 @@ class _PackageScoreCardCopyWithImpl<$R, $Out>
       if (dartdocReport != $none) #dartdocReport: dartdocReport,
       if (panaReport != $none) #panaReport: panaReport,
       if (taskStatus != $none) #taskStatus: taskStatus,
+      if (weeklyVersionDownloads != $none)
+        #weeklyVersionDownloads: weeklyVersionDownloads,
     }),
   );
   @override
@@ -203,6 +234,10 @@ class _PackageScoreCardCopyWithImpl<$R, $Out>
     dartdocReport: data.get(#dartdocReport, or: $value.dartdocReport),
     panaReport: data.get(#panaReport, or: $value.panaReport),
     taskStatus: data.get(#taskStatus, or: $value.taskStatus),
+    weeklyVersionDownloads: data.get(
+      #weeklyVersionDownloads,
+      or: $value.weeklyVersionDownloads,
+    ),
   );
 
   @override
@@ -490,9 +525,9 @@ abstract class PanaReportCopyWith<$R, $In extends PanaReport, $Out>
   get licenses;
   ReportCopyWith<$R, Report, Report>? get report;
   ResultCopyWith<$R, Result, Result>? get result;
-  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
   get screenshots;
-  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
   get urlProblems;
   $R call({
     DateTime? timestamp,
@@ -555,7 +590,7 @@ class _PanaReportCopyWithImpl<$R, $Out>
   ResultCopyWith<$R, Result, Result>? get result =>
       $value.result?.copyWith.$chain((v) => call(result: v));
   @override
-  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
   get screenshots => $value.screenshots != null
       ? ListCopyWith(
           $value.screenshots!,
@@ -564,7 +599,7 @@ class _PanaReportCopyWithImpl<$R, $Out>
         )
       : null;
   @override
-  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
+  ListCopyWith<$R, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
   get urlProblems => $value.urlProblems != null
       ? ListCopyWith(
           $value.urlProblems!,
@@ -1764,5 +1799,473 @@ class _RepositoryCopyWithImpl<$R, $Out>
   RepositoryCopyWith<$R2, Repository, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
   ) => _RepositoryCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+
+class WeeklyVersionDownloadsMapper
+    extends ClassMapperBase<WeeklyVersionDownloads> {
+  WeeklyVersionDownloadsMapper._();
+
+  static WeeklyVersionDownloadsMapper? _instance;
+  static WeeklyVersionDownloadsMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = WeeklyVersionDownloadsMapper._());
+      VersionRangeWeeklyDownloadsMapper.ensureInitialized();
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'WeeklyVersionDownloads';
+
+  static List<int> _$totalWeeklyDownloads(WeeklyVersionDownloads v) =>
+      v.totalWeeklyDownloads;
+  static const Field<WeeklyVersionDownloads, List<int>>
+  _f$totalWeeklyDownloads = Field(
+    'totalWeeklyDownloads',
+    _$totalWeeklyDownloads,
+    opt: true,
+    def: const [],
+  );
+  static List<VersionRangeWeeklyDownloads> _$majorRangeWeeklyDownloads(
+    WeeklyVersionDownloads v,
+  ) => v.majorRangeWeeklyDownloads;
+  static const Field<WeeklyVersionDownloads, List<VersionRangeWeeklyDownloads>>
+  _f$majorRangeWeeklyDownloads = Field(
+    'majorRangeWeeklyDownloads',
+    _$majorRangeWeeklyDownloads,
+    opt: true,
+    def: const [],
+  );
+  static List<VersionRangeWeeklyDownloads> _$minorRangeWeeklyDownloads(
+    WeeklyVersionDownloads v,
+  ) => v.minorRangeWeeklyDownloads;
+  static const Field<WeeklyVersionDownloads, List<VersionRangeWeeklyDownloads>>
+  _f$minorRangeWeeklyDownloads = Field(
+    'minorRangeWeeklyDownloads',
+    _$minorRangeWeeklyDownloads,
+    opt: true,
+    def: const [],
+  );
+  static List<VersionRangeWeeklyDownloads> _$patchRangeWeeklyDownloads(
+    WeeklyVersionDownloads v,
+  ) => v.patchRangeWeeklyDownloads;
+  static const Field<WeeklyVersionDownloads, List<VersionRangeWeeklyDownloads>>
+  _f$patchRangeWeeklyDownloads = Field(
+    'patchRangeWeeklyDownloads',
+    _$patchRangeWeeklyDownloads,
+    opt: true,
+    def: const [],
+  );
+  static DateTime? _$newestDate(WeeklyVersionDownloads v) => v.newestDate;
+  static const Field<WeeklyVersionDownloads, DateTime> _f$newestDate = Field(
+    'newestDate',
+    _$newestDate,
+    opt: true,
+  );
+
+  @override
+  final MappableFields<WeeklyVersionDownloads> fields = const {
+    #totalWeeklyDownloads: _f$totalWeeklyDownloads,
+    #majorRangeWeeklyDownloads: _f$majorRangeWeeklyDownloads,
+    #minorRangeWeeklyDownloads: _f$minorRangeWeeklyDownloads,
+    #patchRangeWeeklyDownloads: _f$patchRangeWeeklyDownloads,
+    #newestDate: _f$newestDate,
+  };
+
+  static WeeklyVersionDownloads _instantiate(DecodingData data) {
+    return WeeklyVersionDownloads(
+      totalWeeklyDownloads: data.dec(_f$totalWeeklyDownloads),
+      majorRangeWeeklyDownloads: data.dec(_f$majorRangeWeeklyDownloads),
+      minorRangeWeeklyDownloads: data.dec(_f$minorRangeWeeklyDownloads),
+      patchRangeWeeklyDownloads: data.dec(_f$patchRangeWeeklyDownloads),
+      newestDate: data.dec(_f$newestDate),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static WeeklyVersionDownloads fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<WeeklyVersionDownloads>(map);
+  }
+
+  static WeeklyVersionDownloads fromJson(String json) {
+    return ensureInitialized().decodeJson<WeeklyVersionDownloads>(json);
+  }
+}
+
+mixin WeeklyVersionDownloadsMappable {
+  String toJson() {
+    return WeeklyVersionDownloadsMapper.ensureInitialized()
+        .encodeJson<WeeklyVersionDownloads>(this as WeeklyVersionDownloads);
+  }
+
+  Map<String, dynamic> toMap() {
+    return WeeklyVersionDownloadsMapper.ensureInitialized()
+        .encodeMap<WeeklyVersionDownloads>(this as WeeklyVersionDownloads);
+  }
+
+  WeeklyVersionDownloadsCopyWith<
+    WeeklyVersionDownloads,
+    WeeklyVersionDownloads,
+    WeeklyVersionDownloads
+  >
+  get copyWith =>
+      _WeeklyVersionDownloadsCopyWithImpl<
+        WeeklyVersionDownloads,
+        WeeklyVersionDownloads
+      >(this as WeeklyVersionDownloads, $identity, $identity);
+  @override
+  String toString() {
+    return WeeklyVersionDownloadsMapper.ensureInitialized().stringifyValue(
+      this as WeeklyVersionDownloads,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return WeeklyVersionDownloadsMapper.ensureInitialized().equalsValue(
+      this as WeeklyVersionDownloads,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return WeeklyVersionDownloadsMapper.ensureInitialized().hashValue(
+      this as WeeklyVersionDownloads,
+    );
+  }
+}
+
+extension WeeklyVersionDownloadsValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, WeeklyVersionDownloads, $Out> {
+  WeeklyVersionDownloadsCopyWith<$R, WeeklyVersionDownloads, $Out>
+  get $asWeeklyVersionDownloads => $base.as(
+    (v, t, t2) => _WeeklyVersionDownloadsCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class WeeklyVersionDownloadsCopyWith<
+  $R,
+  $In extends WeeklyVersionDownloads,
+  $Out
+>
+    implements ClassCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>> get totalWeeklyDownloads;
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get majorRangeWeeklyDownloads;
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get minorRangeWeeklyDownloads;
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get patchRangeWeeklyDownloads;
+  $R call({
+    List<int>? totalWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? majorRangeWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? minorRangeWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? patchRangeWeeklyDownloads,
+    DateTime? newestDate,
+  });
+  WeeklyVersionDownloadsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _WeeklyVersionDownloadsCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, WeeklyVersionDownloads, $Out>
+    implements
+        WeeklyVersionDownloadsCopyWith<$R, WeeklyVersionDownloads, $Out> {
+  _WeeklyVersionDownloadsCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<WeeklyVersionDownloads> $mapper =
+      WeeklyVersionDownloadsMapper.ensureInitialized();
+  @override
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>>
+  get totalWeeklyDownloads => ListCopyWith(
+    $value.totalWeeklyDownloads,
+    (v, t) => ObjectCopyWith(v, $identity, t),
+    (v) => call(totalWeeklyDownloads: v),
+  );
+  @override
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get majorRangeWeeklyDownloads => ListCopyWith(
+    $value.majorRangeWeeklyDownloads,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(majorRangeWeeklyDownloads: v),
+  );
+  @override
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get minorRangeWeeklyDownloads => ListCopyWith(
+    $value.minorRangeWeeklyDownloads,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(minorRangeWeeklyDownloads: v),
+  );
+  @override
+  ListCopyWith<
+    $R,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloadsCopyWith<
+      $R,
+      VersionRangeWeeklyDownloads,
+      VersionRangeWeeklyDownloads
+    >
+  >
+  get patchRangeWeeklyDownloads => ListCopyWith(
+    $value.patchRangeWeeklyDownloads,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(patchRangeWeeklyDownloads: v),
+  );
+  @override
+  $R call({
+    List<int>? totalWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? majorRangeWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? minorRangeWeeklyDownloads,
+    List<VersionRangeWeeklyDownloads>? patchRangeWeeklyDownloads,
+    Object? newestDate = $none,
+  }) => $apply(
+    FieldCopyWithData({
+      if (totalWeeklyDownloads != null)
+        #totalWeeklyDownloads: totalWeeklyDownloads,
+      if (majorRangeWeeklyDownloads != null)
+        #majorRangeWeeklyDownloads: majorRangeWeeklyDownloads,
+      if (minorRangeWeeklyDownloads != null)
+        #minorRangeWeeklyDownloads: minorRangeWeeklyDownloads,
+      if (patchRangeWeeklyDownloads != null)
+        #patchRangeWeeklyDownloads: patchRangeWeeklyDownloads,
+      if (newestDate != $none) #newestDate: newestDate,
+    }),
+  );
+  @override
+  WeeklyVersionDownloads $make(CopyWithData data) => WeeklyVersionDownloads(
+    totalWeeklyDownloads: data.get(
+      #totalWeeklyDownloads,
+      or: $value.totalWeeklyDownloads,
+    ),
+    majorRangeWeeklyDownloads: data.get(
+      #majorRangeWeeklyDownloads,
+      or: $value.majorRangeWeeklyDownloads,
+    ),
+    minorRangeWeeklyDownloads: data.get(
+      #minorRangeWeeklyDownloads,
+      or: $value.minorRangeWeeklyDownloads,
+    ),
+    patchRangeWeeklyDownloads: data.get(
+      #patchRangeWeeklyDownloads,
+      or: $value.patchRangeWeeklyDownloads,
+    ),
+    newestDate: data.get(#newestDate, or: $value.newestDate),
+  );
+
+  @override
+  WeeklyVersionDownloadsCopyWith<$R2, WeeklyVersionDownloads, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _WeeklyVersionDownloadsCopyWithImpl<$R2, $Out2>($value, $cast, t);
+}
+
+class VersionRangeWeeklyDownloadsMapper
+    extends ClassMapperBase<VersionRangeWeeklyDownloads> {
+  VersionRangeWeeklyDownloadsMapper._();
+
+  static VersionRangeWeeklyDownloadsMapper? _instance;
+  static VersionRangeWeeklyDownloadsMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(
+        _instance = VersionRangeWeeklyDownloadsMapper._(),
+      );
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'VersionRangeWeeklyDownloads';
+
+  static List<int> _$counts(VersionRangeWeeklyDownloads v) => v.counts;
+  static const Field<VersionRangeWeeklyDownloads, List<int>> _f$counts = Field(
+    'counts',
+    _$counts,
+    opt: true,
+    def: const [],
+  );
+  static String _$versionRange(VersionRangeWeeklyDownloads v) => v.versionRange;
+  static const Field<VersionRangeWeeklyDownloads, String> _f$versionRange =
+      Field('versionRange', _$versionRange);
+
+  @override
+  final MappableFields<VersionRangeWeeklyDownloads> fields = const {
+    #counts: _f$counts,
+    #versionRange: _f$versionRange,
+  };
+
+  static VersionRangeWeeklyDownloads _instantiate(DecodingData data) {
+    return VersionRangeWeeklyDownloads(
+      counts: data.dec(_f$counts),
+      versionRange: data.dec(_f$versionRange),
+    );
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static VersionRangeWeeklyDownloads fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<VersionRangeWeeklyDownloads>(map);
+  }
+
+  static VersionRangeWeeklyDownloads fromJson(String json) {
+    return ensureInitialized().decodeJson<VersionRangeWeeklyDownloads>(json);
+  }
+}
+
+mixin VersionRangeWeeklyDownloadsMappable {
+  String toJson() {
+    return VersionRangeWeeklyDownloadsMapper.ensureInitialized()
+        .encodeJson<VersionRangeWeeklyDownloads>(
+          this as VersionRangeWeeklyDownloads,
+        );
+  }
+
+  Map<String, dynamic> toMap() {
+    return VersionRangeWeeklyDownloadsMapper.ensureInitialized()
+        .encodeMap<VersionRangeWeeklyDownloads>(
+          this as VersionRangeWeeklyDownloads,
+        );
+  }
+
+  VersionRangeWeeklyDownloadsCopyWith<
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloads,
+    VersionRangeWeeklyDownloads
+  >
+  get copyWith =>
+      _VersionRangeWeeklyDownloadsCopyWithImpl<
+        VersionRangeWeeklyDownloads,
+        VersionRangeWeeklyDownloads
+      >(this as VersionRangeWeeklyDownloads, $identity, $identity);
+  @override
+  String toString() {
+    return VersionRangeWeeklyDownloadsMapper.ensureInitialized().stringifyValue(
+      this as VersionRangeWeeklyDownloads,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return VersionRangeWeeklyDownloadsMapper.ensureInitialized().equalsValue(
+      this as VersionRangeWeeklyDownloads,
+      other,
+    );
+  }
+
+  @override
+  int get hashCode {
+    return VersionRangeWeeklyDownloadsMapper.ensureInitialized().hashValue(
+      this as VersionRangeWeeklyDownloads,
+    );
+  }
+}
+
+extension VersionRangeWeeklyDownloadsValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, VersionRangeWeeklyDownloads, $Out> {
+  VersionRangeWeeklyDownloadsCopyWith<$R, VersionRangeWeeklyDownloads, $Out>
+  get $asVersionRangeWeeklyDownloads => $base.as(
+    (v, t, t2) => _VersionRangeWeeklyDownloadsCopyWithImpl<$R, $Out>(v, t, t2),
+  );
+}
+
+abstract class VersionRangeWeeklyDownloadsCopyWith<
+  $R,
+  $In extends VersionRangeWeeklyDownloads,
+  $Out
+>
+    implements ClassCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>> get counts;
+  $R call({List<int>? counts, String? versionRange});
+  VersionRangeWeeklyDownloadsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
+    Then<$Out2, $R2> t,
+  );
+}
+
+class _VersionRangeWeeklyDownloadsCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, VersionRangeWeeklyDownloads, $Out>
+    implements
+        VersionRangeWeeklyDownloadsCopyWith<
+          $R,
+          VersionRangeWeeklyDownloads,
+          $Out
+        > {
+  _VersionRangeWeeklyDownloadsCopyWithImpl(
+    super.value,
+    super.then,
+    super.then2,
+  );
+
+  @override
+  late final ClassMapperBase<VersionRangeWeeklyDownloads> $mapper =
+      VersionRangeWeeklyDownloadsMapper.ensureInitialized();
+  @override
+  ListCopyWith<$R, int, ObjectCopyWith<$R, int, int>> get counts =>
+      ListCopyWith(
+        $value.counts,
+        (v, t) => ObjectCopyWith(v, $identity, t),
+        (v) => call(counts: v),
+      );
+  @override
+  $R call({List<int>? counts, String? versionRange}) => $apply(
+    FieldCopyWithData({
+      if (counts != null) #counts: counts,
+      if (versionRange != null) #versionRange: versionRange,
+    }),
+  );
+  @override
+  VersionRangeWeeklyDownloads $make(CopyWithData data) =>
+      VersionRangeWeeklyDownloads(
+        counts: data.get(#counts, or: $value.counts),
+        versionRange: data.get(#versionRange, or: $value.versionRange),
+      );
+
+  @override
+  VersionRangeWeeklyDownloadsCopyWith<$R2, VersionRangeWeeklyDownloads, $Out2>
+  $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
+      _VersionRangeWeeklyDownloadsCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 

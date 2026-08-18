@@ -53,6 +53,11 @@ Retrieves all available information about an specific package.
 final package =  await client.packageInfo('pkg_name');
 ```
 
+Package pubspec dependencies retain their typed source metadata. The public
+library exports `HostedDependency`, `GitDependency`, `PathDependency`, and
+`SdkDependency` so consumers can inspect constraints, URLs, refs, subpaths, and
+SDK names without importing an implementation dependency separately.
+
 #### Get Package Score
 
 Returns the following score information about a package.
@@ -70,8 +75,15 @@ final score =  await client.packageScore('pkg_name');
 The method 'packageMetrics' returns the package 'score' together with a 'scorecard'
 
 ```dart
-final metrics =  await client.packageMetrics('pkg_name');
+final metrics = await client.packageMetrics('pkg_name');
+final weekly = metrics?.scorecard.weeklyVersionDownloads;
+if (weekly != null && weekly.totalWeeklyDownloads.isNotEmpty) {
+  print('Latest weekly downloads: ${weekly.totalWeeklyDownloads.last}');
+}
 ```
+
+When supplied by the server, the scorecard includes total weekly downloads and
+major, minor, and patch version-range histories.
 
 #### Get Package Versions
 
