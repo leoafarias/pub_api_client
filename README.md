@@ -53,6 +53,11 @@ Retrieves all available information about an specific package.
 final package =  await client.packageInfo('pkg_name');
 ```
 
+Package pubspec dependencies retain their typed source metadata. The public
+library exports `HostedDependency`, `GitDependency`, `PathDependency`, and
+`SdkDependency` so consumers can inspect constraints, URLs, refs, subpaths, and
+SDK names without importing an implementation dependency separately.
+
 #### Get Package Score
 
 Returns the following score information about a package.
