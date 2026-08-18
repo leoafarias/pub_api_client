@@ -11,6 +11,7 @@ class PackageScoreCard with PackageScoreCardMappable {
   final DartdocReport? dartdocReport;
   final PanaReport? panaReport;
   final String? taskStatus;
+  final WeeklyVersionDownloads? weeklyVersionDownloads;
 
   PackageScoreCard({
     required this.packageName,
@@ -20,10 +21,47 @@ class PackageScoreCard with PackageScoreCardMappable {
     required this.dartdocReport,
     required this.panaReport,
     required this.taskStatus,
+    this.weeklyVersionDownloads,
   });
 
   static const fromMap = PackageScoreCardMapper.fromMap;
   static const fromJson = PackageScoreCardMapper.fromJson;
+}
+
+/// Weekly download histories for a package and its active version ranges.
+@MappableClass()
+class WeeklyVersionDownloads with WeeklyVersionDownloadsMappable {
+  final List<int> totalWeeklyDownloads;
+  final List<VersionRangeWeeklyDownloads> majorRangeWeeklyDownloads;
+  final List<VersionRangeWeeklyDownloads> minorRangeWeeklyDownloads;
+  final List<VersionRangeWeeklyDownloads> patchRangeWeeklyDownloads;
+  final DateTime? newestDate;
+
+  const WeeklyVersionDownloads({
+    this.totalWeeklyDownloads = const [],
+    this.majorRangeWeeklyDownloads = const [],
+    this.minorRangeWeeklyDownloads = const [],
+    this.patchRangeWeeklyDownloads = const [],
+    this.newestDate,
+  });
+
+  static const fromMap = WeeklyVersionDownloadsMapper.fromMap;
+  static const fromJson = WeeklyVersionDownloadsMapper.fromJson;
+}
+
+/// Weekly downloads attributed to a semantic-version range.
+@MappableClass()
+class VersionRangeWeeklyDownloads with VersionRangeWeeklyDownloadsMappable {
+  final List<int> counts;
+  final String versionRange;
+
+  const VersionRangeWeeklyDownloads({
+    this.counts = const [],
+    required this.versionRange,
+  });
+
+  static const fromMap = VersionRangeWeeklyDownloadsMapper.fromMap;
+  static const fromJson = VersionRangeWeeklyDownloadsMapper.fromJson;
 }
 
 @MappableClass()

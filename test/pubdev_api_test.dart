@@ -104,6 +104,10 @@ void main() {
         expect(metrics.score.likeCount, greaterThan(0));
         expect(metrics.scorecard.packageName, 'fvm');
         expect(metrics.score.maxPoints, greaterThan(100));
+        final weekly = metrics.scorecard.weeklyVersionDownloads;
+        expect(weekly, isNotNull);
+        expect(weekly!.totalWeeklyDownloads, isNotEmpty);
+        expect(weekly.newestDate, isNotNull);
       }
 
       // Test for packageName2
@@ -115,6 +119,10 @@ void main() {
         expect(metrics2.score.likeCount, greaterThan(0));
         expect(metrics2.scorecard.packageName, 'sqlite3');
         expect(metrics2.score.maxPoints, greaterThan(100));
+        final weekly = metrics2.scorecard.weeklyVersionDownloads;
+        expect(weekly, isNotNull);
+        expect(weekly!.totalWeeklyDownloads, isNotEmpty);
+        expect(weekly.newestDate, isNotNull);
       }
     });
 

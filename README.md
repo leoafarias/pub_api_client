@@ -70,8 +70,15 @@ final score =  await client.packageScore('pkg_name');
 The method 'packageMetrics' returns the package 'score' together with a 'scorecard'
 
 ```dart
-final metrics =  await client.packageMetrics('pkg_name');
+final metrics = await client.packageMetrics('pkg_name');
+final weekly = metrics?.scorecard.weeklyVersionDownloads;
+if (weekly != null && weekly.totalWeeklyDownloads.isNotEmpty) {
+  print('Latest weekly downloads: ${weekly.totalWeeklyDownloads.last}');
+}
 ```
+
+When supplied by the server, the scorecard includes total weekly downloads and
+major, minor, and patch version-range histories.
 
 #### Get Package Versions
 
