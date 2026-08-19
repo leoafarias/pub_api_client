@@ -35,13 +35,15 @@
 
 - `SearchOrder.popularity` — pub.dev retired the popularity score and serves
   these requests as `SearchOrder.top`. Use `SearchOrder.downloads`
+- `PackageScore.popularityScore` — pub.dev no longer returns this field. Use
+  `PackageScore.downloadCount30Days`
 - `LatestVersion` — unreachable model; no endpoint returns it and no client
   method produces it. Scheduled for removal in 4.0.0
 
 ### Changed
 
-- `PackageScore.popularityScore` is documented as always `null`; pub.dev no
-  longer returns the field
+- Adding `SearchOrder.trending` extends the public enum. Consumers with an
+  exhaustive switch over `SearchOrder` must add a `trending` case
 - Documented that search paging is capped at 10 pages (100 results) by
   pub.dev, which bounds `fetchAllPackages`, `fetchPublisherPackages`,
   `fetchFlutterFavorites`, and `fetchGooglePackages`

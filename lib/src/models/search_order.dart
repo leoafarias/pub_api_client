@@ -4,12 +4,13 @@ part 'search_order.mapper.dart';
 
 /// Mirrors the `SearchOrder` enum pub.dev accepts on `sort=`.
 ///
-/// pub.dev silently falls back to [top] for values it does not recognize,
-/// so unknown orders fail quietly rather than erroring.
+/// pub.dev silently falls back to [SearchOrder.top] for values it does not
+/// recognize, so unknown orders fail quietly rather than erroring.
 @MappableEnum()
 enum SearchOrder {
-  /// Search score should be a weighted value of [text], [downloads], [points]
-  /// and [like], ordered decreasing.
+  /// Search score should be a weighted value of [SearchOrder.text],
+  /// [SearchOrder.downloads], [SearchOrder.points], and [SearchOrder.like],
+  /// ordered decreasing.
   top,
 
   /// Search score should depend only on text match similarity, ordered
@@ -25,8 +26,9 @@ enum SearchOrder {
   /// Search order should be in decreasing popularity score.
   ///
   /// pub.dev retired the popularity score and no longer accepts this value;
-  /// requests using it are served as [top]. Use [downloads] instead.
-  @Deprecated('pub.dev no longer supports `popularity`; use `downloads`')
+  /// requests using it are served as [SearchOrder.top]. Use
+  /// [SearchOrder.downloads] instead.
+  @Deprecated('Use SearchOrder.downloads instead.')
   popularity,
 
   /// Search order should be in decreasing download count.
@@ -43,5 +45,6 @@ enum SearchOrder {
 
   const SearchOrder();
 
+  /// The value sent in pub.dev's `sort` query parameter.
   String get value => name;
 }

@@ -4,23 +4,24 @@ part 'package_likes_model.mapper.dart';
 
 /// Public like count of a package.
 ///
-/// Returned by `GET /api/packages/<package>/likes`, which does not require
-/// authentication. See `PackageLike` for the authenticated per-user status.
-///
-/// pub.dev's `PackageLikesCount` declares both fields nullable, but the
-/// handler always populates them and neither was null across every package
-/// probed. Kept non-nullable so consumers do not have to null-check a value
-/// the server always sends.
+/// Unlike the authenticated like-status API, this information is public.
 @MappableClass()
 class PackageLikes with PackageLikesMappable {
+  /// The package whose likes were counted.
   final String package;
+
+  /// The package's public like count.
   final int likes;
 
+  /// Creates a package-like count.
   const PackageLikes({
     required this.package,
     required this.likes,
   });
 
+  /// Decodes a package-like count from a map.
   static const fromMap = PackageLikesMapper.fromMap;
+
+  /// Decodes a package-like count from JSON.
   static const fromJson = PackageLikesMapper.fromJson;
 }

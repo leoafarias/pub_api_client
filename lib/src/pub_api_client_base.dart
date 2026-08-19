@@ -38,12 +38,21 @@ String _buildUserAgentHeader(String userAgentMetadata) =>
 
 /// Pub API Client
 class PubClient {
+  /// The resolved pub.dev endpoint URLs used by this client.
   final Endpoint endpoint;
+
+  /// The custom pub server URL, or `null` when using pub.dev.
   final String? pubUrl;
+
+  /// Whether to log request URLs through `dart:developer`.
   final bool debug;
   late http.Client _client;
   late Map<String, String> _headers = {};
 
+  /// Creates a client for pub.dev or the custom [pubUrl].
+  ///
+  /// Supplying [credentials] enables authenticated endpoints. An injected
+  /// [client] is used for every request and is closed by [close].
   PubClient({
     this.pubUrl,
     Credentials? credentials,
@@ -161,13 +170,14 @@ class PubClient {
   }
 
   /// Returns the public like count for package [packageName].
+  ///
   /// Unlike [likePackageStatus] this does not require authentication.
   Future<PackageLikes> packageLikes(String packageName) async {
     final data = await _fetch(endpoint.packageLikes(packageName));
     return PackageLikes.fromMap(data);
   }
 
-  /// Returns the `PublisherInfo` for [publisherId]
+  /// Returns public profile information for [publisherId].
   Future<PublisherInfo> publisherInfo(String publisherId) async {
     final data = await _fetch(endpoint.publisherInfo(publisherId));
     return PublisherInfo.fromMap(data);
@@ -193,7 +203,7 @@ class PubClient {
     return PackageVersion.fromMap(data);
   }
 
-  /// Returns the `PackageScore` of a single [version] of [packageName]
+  /// Returns the score for [version] of [packageName].
   Future<PackageScore> packageVersionScore(
       String packageName, String version) async {
     final data = await _fetch(
@@ -202,8 +212,7 @@ class PubClient {
     return PackageScore.fromMap(data);
   }
 
-  /// Returns the `PackageVersionOptions` of a single [version]
-  /// of [packageName], which tells whether that version is retracted.
+  /// Returns whether [version] of [packageName] is retracted.
   Future<PackageVersionOptions> packageVersionOptions(
       String packageName, String version) async {
     final data = await _fetch(
@@ -373,6 +382,7 @@ class PubClient {
     return results.map((r) => r.package).toList();
   }
 
+  /// Returns packages published by [publisherName], with optional [tags].
   Future<List<PackageResult>> fetchPublisherPackages(
     String publisherName, {
     List<String> tags = const [],
@@ -382,6 +392,7 @@ class PubClient {
         ...tags,
       ]);
 
+  /// Closes the underlying HTTP client.
   void close() {
     _client.close();
   }

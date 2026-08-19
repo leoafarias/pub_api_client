@@ -35,8 +35,7 @@ class Endpoint {
   /// Package publisher endpoint
   String packagePublisher(String name) => '$packageUrl/$name/publisher';
 
-  /// Package like count endpoint. Unlike the `account` like endpoints this
-  /// one is public and does not require authentication.
+  /// The public package-like count endpoint.
   String packageLikes(String name) => '$packageUrl/$name/likes';
 
   /// Package documentation endpoint
@@ -53,15 +52,15 @@ class Endpoint {
   String packageVersionInfo(String name, String version) =>
       '$packageUrl/$name/versions/$version';
 
-  /// Package version score endpoint
+  /// The score endpoint for one package version.
   String packageVersionScore(String name, String version) =>
       '${packageVersionInfo(name, version)}/score';
 
-  /// Package version options endpoint
+  /// The options endpoint for one package version.
   String packageVersionOptions(String name, String version) =>
       '${packageVersionInfo(name, version)}/options';
 
-  /// Publisher info endpoint
+  /// The public publisher-profile endpoint.
   String publisherInfo(String publisherId) => '$publisherUrl/$publisherId';
 
   /// Retrieve all package names on pub.dev
@@ -70,7 +69,7 @@ class Endpoint {
   /// Package names for name completion
   String get packageNameCompletion => '$apiUrl/package-name-completion-data';
 
-  /// Topic names, with the number of packages using each topic
+  /// Topic names, with the number of packages using each topic.
   String get topicNameCompletion => '$apiUrl/topic-name-completion-data';
 
   /// Url to add and remove likes
