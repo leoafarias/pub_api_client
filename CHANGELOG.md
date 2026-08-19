@@ -1,3 +1,53 @@
+## 3.3.0
+
+### Added
+
+- `packageLikes` — public like count of a package, no authentication required
+  (`GET /api/packages/<package>/likes`)
+- `publisherInfo` — public publisher profile
+  (`GET /api/publishers/<publisherId>`)
+- `packageVersionScore` — score of a single package version
+  (`GET /api/packages/<package>/versions/<version>/score`)
+- `packageVersionOptions` — retraction status of a single package version
+  (`GET /api/packages/<package>/versions/<version>/options`)
+- `topicNameCompletion` — every topic mapped to its package count
+  (`GET /api/topic-name-completion-data`)
+- `SearchOrder.trending`, matching pub.dev's trend-score ordering
+- `SearchResults.message`, set when pub.dev could not fully honour the query
+- `PackageScoreCard.weeklyVersionDownloads` — total weekly downloads plus
+  major/minor/patch version-range histories
+  [#78](https://github.com/leoafarias/pub_api_client/pull/78)
+- Re-export the `pubspec_parse` dependency types (`Dependency`,
+  `HostedDependency`, `GitDependency`, `PathDependency`, `SdkDependency`,
+  `HostedDetails`, `Pubspec`) so consumers can name the types reachable from
+  `PubPackage.latestPubspec`
+  [#78](https://github.com/leoafarias/pub_api_client/pull/78)
+
+### Fixed
+
+- Search queries are now percent-encoded. Previously a `#` or `&` in the query
+  or in a tag silently truncated the request, so searches like `c# & c++`
+  returned results for `c`
+- `fetchGooglePackages` no longer sends a malformed `tools.dart.dev ` publisher
+  tag, and now includes the `labs.dart.dev` publisher
+
+### Deprecated
+
+- `SearchOrder.popularity` — pub.dev retired the popularity score and serves
+  these requests as `SearchOrder.top`. Use `SearchOrder.downloads`
+- `LatestVersion` — unreachable model; no endpoint returns it and no client
+  method produces it. Scheduled for removal in 4.0.0
+
+### Changed
+
+- `PackageScore.popularityScore` is documented as always `null`; pub.dev no
+  longer returns the field
+- Documented that search paging is capped at 10 pages (100 results) by
+  pub.dev, which bounds `fetchAllPackages`, `fetchPublisherPackages`,
+  `fetchFlutterFavorites`, and `fetchGooglePackages`
+- Generated `*.mapper.dart` files are excluded from analysis, and three lint
+  rules removed from the Dart SDK were dropped from `analysis_options.yaml`
+
 ## 3.2.0
 
 - Expose discontinued/advisory metadata on `PubPackage` and drop the large cached fixture from version control [#75](https://github.com/leoafarias/pub_api_client/pull/75)

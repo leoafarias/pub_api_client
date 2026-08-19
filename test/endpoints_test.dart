@@ -44,6 +44,16 @@ void main() {
           equals('${Endpoint.defaultBaseUrl}/api/packages/bloc/publisher'));
     });
 
+    test('packageLikes returns correct URL', () {
+      expect(endpoint.packageLikes('bloc'),
+          equals('${Endpoint.defaultBaseUrl}/api/packages/bloc/likes'));
+    });
+
+    test('publisherInfo returns correct URL', () {
+      expect(endpoint.publisherInfo('dart.dev'),
+          equals('${Endpoint.defaultBaseUrl}/api/publishers/dart.dev'));
+    });
+
     test('packageDocumentation returns correct URL', () {
       expect(endpoint.packageDocumentation('provider'),
           equals('${Endpoint.defaultBaseUrl}/api/documentation/provider'));
@@ -66,9 +76,28 @@ void main() {
               '${Endpoint.defaultBaseUrl}/api/packages/get_it/versions/1.0.0'));
     });
 
+    test('packageVersionScore returns correct URL', () {
+      expect(
+          endpoint.packageVersionScore('get_it', '1.0.0'),
+          equals('${Endpoint.defaultBaseUrl}'
+              '/api/packages/get_it/versions/1.0.0/score'));
+    });
+
+    test('packageVersionOptions returns correct URL', () {
+      expect(
+          endpoint.packageVersionOptions('get_it', '1.0.0'),
+          equals('${Endpoint.defaultBaseUrl}'
+              '/api/packages/get_it/versions/1.0.0/options'));
+    });
+
     test('packageNames returns correct URL', () {
       expect(endpoint.packageNames,
           equals('${Endpoint.defaultBaseUrl}/api/package-names'));
+    });
+
+    test('topicNameCompletion returns correct URL', () {
+      expect(endpoint.topicNameCompletion,
+          equals('${Endpoint.defaultBaseUrl}/api/topic-name-completion-data'));
     });
 
     test('likePackage returns correct URL', () {
@@ -86,6 +115,17 @@ void main() {
           endpoint.search('flutter', 1, SearchOrder.top),
           equals(
               '${Endpoint.defaultBaseUrl}/api/search?q=flutter&page=1&sort=top'));
+    });
+
+    test('search percent-encodes the query', () {
+      final url = endpoint.search(
+          'c# & c++ publisher:dart.dev', 2, SearchOrder.downloads);
+
+      expect(Uri.parse(url).queryParameters, {
+        'q': 'c# & c++ publisher:dart.dev',
+        'page': '2',
+        'sort': 'downloads',
+      });
     });
 
     test('nextPage returns correct URL with custom base URL', () {

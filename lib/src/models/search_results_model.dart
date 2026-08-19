@@ -48,9 +48,14 @@ class SearchResults extends PaginatedResults<PackageResult>
   @override
   final String? next;
 
+  /// Set when pub.dev could not fully honour the query, e.g. when a tag in
+  /// the query is unknown. Results are still returned alongside it.
+  final String? message;
+
   const SearchResults({
     required this.packages,
     this.next,
+    this.message,
   });
 
   static const fromMap = SearchResultsMapper.fromMap;

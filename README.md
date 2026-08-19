@@ -17,12 +17,20 @@ Aims to be the most complete and stable pub.dev API client. If any particular en
     - [Metrics](#get-package-metrics)
     - [Versions](#get-package-versions)
     - [Version Info](#get-package-version-info)
+    - [Version Score](#get-package-version-score)
+    - [Version Options](#get-package-version-options)
     - [Publisher](#get-package-publisher)
+    - [Likes](#get-package-likes)
     - [Options](#get-package-options)
     - [Documentation](#get-documentation)
+    - [Security Advisories](#get-security-advisories)
+  - [Publishers](#publishers)
+    - [Publisher Info](#get-publisher-info)
   - [Search Packages](#search-packages)
+    - [Sorting search results](#sorting-search-results)
     - [Paging Search Results](#paging-search-results)
   - [Like Packages](#like-packages)
+  - [Completion Data](#completion-data)
 - [Utilities](#utilities)
   - [Flutter Favorites](#flutter-favorites)
   - [Google Packages](#google-packages)
@@ -62,13 +70,17 @@ SDK names without importing an implementation dependency separately.
 
 Returns the following score information about a package.
 
-- Pub Points
-- Popularity
-- Likes
+- Pub Points (`grantedPoints` / `maxPoints`)
+- Likes (`likeCount`)
+- 30-day downloads (`downloadCount30Days`)
+- Tags
 
 ```dart
 final score =  await client.packageScore('pkg_name');
 ```
+
+> `popularityScore` is always `null` — pub.dev retired the popularity score.
+> Use `downloadCount30Days` instead.
 
 #### Get Package Metrics
 
@@ -101,6 +113,24 @@ The method `packageVersionInfo` returns information about a version of a specifi
 final version =  await client.packageVersionInfo('pkg_name', 'version');
 ```
 
+#### Get Package Version Score
+
+The method `packageVersionScore` returns the score of a single version.
+
+```dart
+final score =  await client.packageVersionScore('pkg_name', 'version');
+```
+
+#### Get Package Version Options
+
+The method `packageVersionOptions` tells whether a specific version has been
+retracted.
+
+```dart
+final options =  await client.packageVersionOptions('pkg_name', 'version');
+// options.isRetracted
+```
+
 #### Get Package Publisher
 
 The method `packagePublisher` returns the publisherId of a specific package.
@@ -108,6 +138,16 @@ The method `packagePublisher` returns the publisherId of a specific package.
 ```dart
 final publisher =  await client.packagePublisher('pkg_name');
 // publisher.publisherId
+```
+
+#### Get Package Likes
+
+The method `packageLikes` returns the public like count of a package. Unlike
+the [like endpoints](#like-packages) this does not require authentication.
+
+```dart
+final likes =  await client.packageLikes('pkg_name');
+// likes.likes
 ```
 
 #### Get Package Options
@@ -125,6 +165,28 @@ The method `documentation` returns all versions and their respective documentati
 ```dart
 final documentation =  await client.documentation('pkg_name');
 
+```
+
+#### Get Security Advisories
+
+The method `packageAdvisories` returns the security advisories affecting a
+package, in [OSV format](https://ossf.github.io/osv-schema/). Returns `null`
+when the server does not implement the endpoint.
+
+```dart
+final advisories =  await client.packageAdvisories('pkg_name');
+// advisories?.advisories.first.pubDisplayUrl
+```
+
+### Publishers
+
+#### Get Publisher Info
+
+The method `publisherInfo` returns the public profile of a publisher.
+
+```dart
+final publisher =  await client.publisherInfo('dart.dev');
+// publisher.description, publisher.websiteUrl, publisher.contactEmail
 ```
 
 ### Like Packages
@@ -201,9 +263,9 @@ Search order should be in decreasing last package creation time.
 
 Search order should be in decreasing last package updated time.
 
-##### Popularity
+##### Downloads
 
-Search order should be in decreasing popularity score.
+Search order should be in decreasing download count.
 
 ##### Like
 
@@ -213,11 +275,19 @@ Search order should be in decreasing like count.
 
 Search order should be in decreasing pub points.
 
+##### Trending
+
+Search order should be in decreasing trend score.
+
 ```dart
 final results =  await client.search('query', sort: SearchOrder.updated);
 
 print(results.packages)
 ```
+
+> `SearchOrder.popularity` is deprecated. pub.dev no longer accepts it and
+> silently serves those requests as `SearchOrder.top`. Use
+> `SearchOrder.downloads`.
 
 #### Paging Search Results
 
@@ -240,6 +310,31 @@ final results =  await client.search('query',page:2);
 print(results.packages)
 ```
 
+> pub.dev stops returning a `next` link after page 10, so paging through a
+> search yields at most 100 packages.
+
+### Completion Data
+
+#### Package names
+
+`packageNameCompletion` returns the top package names on pub.dev, and
+`packageNames` returns every package name (paged for you).
+
+```dart
+final top = await client.packageNameCompletion();
+final all = await client.packageNames();
+```
+
+#### Topics
+
+`topicNameCompletion` returns every topic mapped to the number of packages
+using it.
+
+```dart
+final topics = await client.topicNameCompletion();
+// {'flutter': 1234, 'http': 567, ...}
+```
+
 ## Utilities
 
 ### Flutter Favorites
@@ -252,7 +347,7 @@ final results = await client.fetchFlutterFavorites();
 
 ### Google Packages
 
-Returns all official Google packages. This will be a large payload with hundreds of packages.
+Returns official Google packages across the known Google publishers.
 
 ```dart
 final results = await client.fetchGooglePackages();
@@ -274,3 +369,6 @@ Returns all packages that match a given query
 ```dart
 final results = await fetchAllPackages('', tags: [PackageTag.publisher('leoafarias.com')])
 ```
+
+> These three helpers page through search, which pub.dev caps at 10 pages, so
+> each returns at most 100 packages per query/publisher.

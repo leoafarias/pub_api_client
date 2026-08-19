@@ -2,6 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 // ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_protected_member
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
@@ -42,6 +43,8 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
         return SearchOrder.like;
       case r'points':
         return SearchOrder.points;
+      case r'trending':
+        return SearchOrder.trending;
       default:
         throw MapperException.unknownEnumValue(value);
     }
@@ -66,6 +69,8 @@ class SearchOrderMapper extends EnumMapper<SearchOrder> {
         return r'like';
       case SearchOrder.points:
         return r'points';
+      case SearchOrder.trending:
+        return r'trending';
     }
   }
 }

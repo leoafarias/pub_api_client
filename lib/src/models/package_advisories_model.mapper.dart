@@ -2,6 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 // ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_protected_member
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
@@ -70,14 +71,17 @@ mixin PackageAdvisoriesMappable {
         .encodeMap<PackageAdvisories>(this as PackageAdvisories);
   }
 
-  PackageAdvisoriesCopyWith<PackageAdvisories, PackageAdvisories,
-          PackageAdvisories>
-      get copyWith =>
-          _PackageAdvisoriesCopyWithImpl<PackageAdvisories, PackageAdvisories>(
-            this as PackageAdvisories,
-            $identity,
-            $identity,
-          );
+  PackageAdvisoriesCopyWith<
+    PackageAdvisories,
+    PackageAdvisories,
+    PackageAdvisories
+  >
+  get copyWith =>
+      _PackageAdvisoriesCopyWithImpl<PackageAdvisories, PackageAdvisories>(
+        this as PackageAdvisories,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
     return PackageAdvisoriesMapper.ensureInitialized().stringifyValue(
@@ -104,16 +108,23 @@ mixin PackageAdvisoriesMappable {
 extension PackageAdvisoriesValueCopy<$R, $Out>
     on ObjectCopyWith<$R, PackageAdvisories, $Out> {
   PackageAdvisoriesCopyWith<$R, PackageAdvisories, $Out>
-      get $asPackageAdvisories => $base.as(
-            (v, t, t2) => _PackageAdvisoriesCopyWithImpl<$R, $Out>(v, t, t2),
-          );
+  get $asPackageAdvisories => $base.as(
+    (v, t, t2) => _PackageAdvisoriesCopyWithImpl<$R, $Out>(v, t, t2),
+  );
 }
 
-abstract class PackageAdvisoriesCopyWith<$R, $In extends PackageAdvisories,
-    $Out> implements ClassCopyWith<$R, $In, $Out> {
-  ListCopyWith<$R, SecurityAdvisory,
-          SecurityAdvisoryCopyWith<$R, SecurityAdvisory, SecurityAdvisory>>
-      get advisories;
+abstract class PackageAdvisoriesCopyWith<
+  $R,
+  $In extends PackageAdvisories,
+  $Out
+>
+    implements ClassCopyWith<$R, $In, $Out> {
+  ListCopyWith<
+    $R,
+    SecurityAdvisory,
+    SecurityAdvisoryCopyWith<$R, SecurityAdvisory, SecurityAdvisory>
+  >
+  get advisories;
   $R call({List<SecurityAdvisory>? advisories, DateTime? advisoriesUpdated});
   PackageAdvisoriesCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
@@ -129,38 +140,39 @@ class _PackageAdvisoriesCopyWithImpl<$R, $Out>
   late final ClassMapperBase<PackageAdvisories> $mapper =
       PackageAdvisoriesMapper.ensureInitialized();
   @override
-  ListCopyWith<$R, SecurityAdvisory,
-          SecurityAdvisoryCopyWith<$R, SecurityAdvisory, SecurityAdvisory>>
-      get advisories => ListCopyWith(
-            $value.advisories,
-            (v, t) => v.copyWith.$chain(t),
-            (v) => call(advisories: v),
-          );
+  ListCopyWith<
+    $R,
+    SecurityAdvisory,
+    SecurityAdvisoryCopyWith<$R, SecurityAdvisory, SecurityAdvisory>
+  >
+  get advisories => ListCopyWith(
+    $value.advisories,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(advisories: v),
+  );
   @override
   $R call({
     List<SecurityAdvisory>? advisories,
     Object? advisoriesUpdated = $none,
-  }) =>
-      $apply(
-        FieldCopyWithData({
-          if (advisories != null) #advisories: advisories,
-          if (advisoriesUpdated != $none) #advisoriesUpdated: advisoriesUpdated,
-        }),
-      );
+  }) => $apply(
+    FieldCopyWithData({
+      if (advisories != null) #advisories: advisories,
+      if (advisoriesUpdated != $none) #advisoriesUpdated: advisoriesUpdated,
+    }),
+  );
   @override
   PackageAdvisories $make(CopyWithData data) => PackageAdvisories(
-        advisories: data.get(#advisories, or: $value.advisories),
-        advisoriesUpdated: data.get(
-          #advisoriesUpdated,
-          or: $value.advisoriesUpdated,
-        ),
-      );
+    advisories: data.get(#advisories, or: $value.advisories),
+    advisoriesUpdated: data.get(
+      #advisoriesUpdated,
+      or: $value.advisoriesUpdated,
+    ),
+  );
 
   @override
   PackageAdvisoriesCopyWith<$R2, PackageAdvisories, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
-  ) =>
-      _PackageAdvisoriesCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  ) => _PackageAdvisoriesCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
 class SecurityAdvisoryMapper extends ClassMapperBase<SecurityAdvisory> {
@@ -201,7 +213,7 @@ class SecurityAdvisoryMapper extends ClassMapperBase<SecurityAdvisory> {
   static Map<String, dynamic>? _$databaseSpecific(SecurityAdvisory v) =>
       v.databaseSpecific;
   static const Field<SecurityAdvisory, Map<String, dynamic>>
-      _f$databaseSpecific = Field(
+  _f$databaseSpecific = Field(
     'databaseSpecific',
     _$databaseSpecific,
     key: r'database_specific',
@@ -251,12 +263,12 @@ mixin SecurityAdvisoryMappable {
   }
 
   SecurityAdvisoryCopyWith<SecurityAdvisory, SecurityAdvisory, SecurityAdvisory>
-      get copyWith =>
-          _SecurityAdvisoryCopyWithImpl<SecurityAdvisory, SecurityAdvisory>(
-            this as SecurityAdvisory,
-            $identity,
-            $identity,
-          );
+  get copyWith =>
+      _SecurityAdvisoryCopyWithImpl<SecurityAdvisory, SecurityAdvisory>(
+        this as SecurityAdvisory,
+        $identity,
+        $identity,
+      );
   @override
   String toString() {
     return SecurityAdvisoryMapper.ensureInitialized().stringifyValue(
@@ -283,16 +295,16 @@ mixin SecurityAdvisoryMappable {
 extension SecurityAdvisoryValueCopy<$R, $Out>
     on ObjectCopyWith<$R, SecurityAdvisory, $Out> {
   SecurityAdvisoryCopyWith<$R, SecurityAdvisory, $Out>
-      get $asSecurityAdvisory => $base
-          .as((v, t, t2) => _SecurityAdvisoryCopyWithImpl<$R, $Out>(v, t, t2));
+  get $asSecurityAdvisory =>
+      $base.as((v, t, t2) => _SecurityAdvisoryCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class SecurityAdvisoryCopyWith<$R, $In extends SecurityAdvisory, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
   ListCopyWith<$R, Affected, AffectedCopyWith<$R, Affected, Affected>>?
-      get affected;
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
-      get databaseSpecific;
+  get affected;
+  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
+  get databaseSpecific;
   $R call({
     String? id,
     String? summary,
@@ -315,22 +327,22 @@ class _SecurityAdvisoryCopyWithImpl<$R, $Out>
       SecurityAdvisoryMapper.ensureInitialized();
   @override
   ListCopyWith<$R, Affected, AffectedCopyWith<$R, Affected, Affected>>?
-      get affected => $value.affected != null
-          ? ListCopyWith(
-              $value.affected!,
-              (v, t) => v.copyWith.$chain(t),
-              (v) => call(affected: v),
-            )
-          : null;
+  get affected => $value.affected != null
+      ? ListCopyWith(
+          $value.affected!,
+          (v, t) => v.copyWith.$chain(t),
+          (v) => call(affected: v),
+        )
+      : null;
   @override
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>?
-      get databaseSpecific => $value.databaseSpecific != null
-          ? MapCopyWith(
-              $value.databaseSpecific!,
-              (v, t) => ObjectCopyWith(v, $identity, t),
-              (v) => call(databaseSpecific: v),
-            )
-          : null;
+  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>?>?
+  get databaseSpecific => $value.databaseSpecific != null
+      ? MapCopyWith(
+          $value.databaseSpecific!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(databaseSpecific: v),
+        )
+      : null;
   @override
   $R call({
     String? id,
@@ -338,31 +350,28 @@ class _SecurityAdvisoryCopyWithImpl<$R, $Out>
     Object? details = $none,
     Object? affected = $none,
     Object? databaseSpecific = $none,
-  }) =>
-      $apply(
-        FieldCopyWithData({
-          if (id != null) #id: id,
-          if (summary != $none) #summary: summary,
-          if (details != $none) #details: details,
-          if (affected != $none) #affected: affected,
-          if (databaseSpecific != $none) #databaseSpecific: databaseSpecific,
-        }),
-      );
+  }) => $apply(
+    FieldCopyWithData({
+      if (id != null) #id: id,
+      if (summary != $none) #summary: summary,
+      if (details != $none) #details: details,
+      if (affected != $none) #affected: affected,
+      if (databaseSpecific != $none) #databaseSpecific: databaseSpecific,
+    }),
+  );
   @override
   SecurityAdvisory $make(CopyWithData data) => SecurityAdvisory(
-        id: data.get(#id, or: $value.id),
-        summary: data.get(#summary, or: $value.summary),
-        details: data.get(#details, or: $value.details),
-        affected: data.get(#affected, or: $value.affected),
-        databaseSpecific:
-            data.get(#databaseSpecific, or: $value.databaseSpecific),
-      );
+    id: data.get(#id, or: $value.id),
+    summary: data.get(#summary, or: $value.summary),
+    details: data.get(#details, or: $value.details),
+    affected: data.get(#affected, or: $value.affected),
+    databaseSpecific: data.get(#databaseSpecific, or: $value.databaseSpecific),
+  );
 
   @override
   SecurityAdvisoryCopyWith<$R2, SecurityAdvisory, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
-  ) =>
-      _SecurityAdvisoryCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  ) => _SecurityAdvisoryCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
 class AffectedMapper extends ClassMapperBase<Affected> {
@@ -466,12 +475,12 @@ class _AffectedCopyWithImpl<$R, $Out>
   @override
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get versions =>
       $value.versions != null
-          ? ListCopyWith(
-              $value.versions!,
-              (v, t) => ObjectCopyWith(v, $identity, t),
-              (v) => call(versions: v),
-            )
-          : null;
+      ? ListCopyWith(
+          $value.versions!,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(versions: v),
+        )
+      : null;
   @override
   $R call({Object? versions = $none}) =>
       $apply(FieldCopyWithData({if (versions != $none) #versions: versions}));
@@ -482,6 +491,6 @@ class _AffectedCopyWithImpl<$R, $Out>
   @override
   AffectedCopyWith<$R2, Affected, $Out2> $chain<$R2, $Out2>(
     Then<$Out2, $R2> t,
-  ) =>
-      _AffectedCopyWithImpl<$R2, $Out2>($value, $cast, t);
+  ) => _AffectedCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
+
