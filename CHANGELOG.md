@@ -1,4 +1,9 @@
-## 3.3.0
+## 4.0.0
+
+### Breaking changes
+
+- Added `SearchOrder.trending` for pub.dev's trend-score ordering. Consumers
+  with an exhaustive switch over `SearchOrder` must add a `trending` case
 
 ### Added
 
@@ -12,11 +17,12 @@
   (`GET /api/packages/<package>/versions/<version>/options`)
 - `topicNameCompletion` — every topic mapped to its package count
   (`GET /api/topic-name-completion-data`)
-- `SearchOrder.trending`, matching pub.dev's trend-score ordering
 - `SearchResults.message`, set when pub.dev could not fully honour the query
-- `PackageScoreCard.weeklyVersionDownloads` — total weekly downloads plus
-  major/minor/patch version-range histories
+- `PackageScoreCard.weeklyVersionDownloads`, `WeeklyVersionDownloads`, and
+  `VersionRangeWeeklyDownloads` — total weekly downloads plus major, minor,
+  and patch version-range histories
   [#78](https://github.com/leoafarias/pub_api_client/pull/78)
+- `Repository.fromMap` and `Repository.fromJson`, matching the other models
 - Re-export the `pubspec_parse` dependency types (`Dependency`,
   `HostedDependency`, `GitDependency`, `PathDependency`, `SdkDependency`,
   `HostedDetails`, `Pubspec`) so consumers can name the types reachable from
@@ -38,15 +44,14 @@
 - `PackageScore.popularityScore` — pub.dev no longer returns this field. Use
   `PackageScore.downloadCount30Days`
 - `LatestVersion` — unreachable model; no endpoint returns it and no client
-  method produces it. Scheduled for removal in 4.0.0
+  method produces it. Scheduled for removal in 5.0.0
 
 ### Changed
 
-- Adding `SearchOrder.trending` extends the public enum. Consumers with an
-  exhaustive switch over `SearchOrder` must add a `trending` case
 - Documented that search paging is capped at 10 pages (100 results) by
-  pub.dev, which bounds `fetchAllPackages`, `fetchPublisherPackages`,
-  `fetchFlutterFavorites`, and `fetchGooglePackages`
+  pub.dev. The cap applies once to `fetchAllPackages`,
+  `fetchPublisherPackages`, and `fetchFlutterFavorites`, and separately for
+  each publisher queried by `fetchGooglePackages`
 - Generated `*.mapper.dart` files are excluded from analysis, and three lint
   rules removed from the Dart SDK were dropped from `analysis_options.yaml`
 

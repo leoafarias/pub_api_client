@@ -10,7 +10,7 @@ part 'latest_version_model.mapper.dart';
 /// it is unreachable API surface kept only for source compatibility.
 /// Compare [PubPackage.version] against the installed version instead.
 @Deprecated(
-  'Use PubPackage.version instead. Scheduled for removal in 4.0.0.',
+  'Use PubPackage.version instead. Scheduled for removal in 5.0.0.',
 )
 @MappableClass()
 class LatestVersion with LatestVersionMappable {
