@@ -154,7 +154,7 @@ class RateLimitedClient extends http.BaseClient {
     if (_lastRequestTime != null) {
       final timeSinceLastRequest = DateTime.now().difference(_lastRequestTime!);
       if (timeSinceLastRequest < _minDelay) {
-        await Future.delayed(_minDelay - timeSinceLastRequest);
+        await Future<void>.delayed(_minDelay - timeSinceLastRequest);
       }
     }
     _lastRequestTime = DateTime.now();

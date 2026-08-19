@@ -1,32 +1,14 @@
-# Do not run workflow for now
-name: Publish
+name: Publish to pub.dev
+
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-
-    container:
-      image: dart:latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: dart pub get
-      - name: Install Cider
-        run: dart pub global activate cider
-      - name: Set new version
-        run: dart pub global run cider version ${{ github.event.release.tag_name }}
-      - name: Set a new release
-        run: dart pub global run cider release
-      - name: Build Runner
-        run: dart pub run build_runner build --delete-conflicting-outputs
-      - name: Run tests
-        run: dart pub run test
-      - name: Publish Dart/Flutter package
-        uses: sakebook/actions-flutter-pub-publisher@v1.3.1
-        with:
-          credential: ${{ secrets.PUB_CREDENTIALS }}
-          flutter_package: false
+    permissions:
+      id-token: write
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      environment: pub.dev

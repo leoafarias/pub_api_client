@@ -2,6 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 // ignore_for_file: type=lint
+// ignore_for_file: invalid_use_of_protected_member
 // ignore_for_file: unused_element, unnecessary_cast, override_on_non_overriding_member
 // ignore_for_file: strict_raw_type, inference_failure_on_untyped_parameter
 
@@ -183,17 +184,25 @@ class SearchResultsMapper extends ClassMapperBase<SearchResults> {
     _$next,
     opt: true,
   );
+  static String? _$message(SearchResults v) => v.message;
+  static const Field<SearchResults, String> _f$message = Field(
+    'message',
+    _$message,
+    opt: true,
+  );
 
   @override
   final MappableFields<SearchResults> fields = const {
     #packages: _f$packages,
     #next: _f$next,
+    #message: _f$message,
   };
 
   static SearchResults _instantiate(DecodingData data) {
     return SearchResults(
       packages: data.dec(_f$packages),
       next: data.dec(_f$next),
+      message: data.dec(_f$message),
     );
   }
 
@@ -265,7 +274,7 @@ abstract class SearchResultsCopyWith<$R, $In extends SearchResults, $Out>
     PackageResultCopyWith<$R, PackageResult, PackageResult>
   >
   get packages;
-  $R call({List<PackageResult>? packages, String? next});
+  $R call({List<PackageResult>? packages, String? next, String? message});
   SearchResultsCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -289,16 +298,22 @@ class _SearchResultsCopyWithImpl<$R, $Out>
     (v) => call(packages: v),
   );
   @override
-  $R call({List<PackageResult>? packages, Object? next = $none}) => $apply(
+  $R call({
+    List<PackageResult>? packages,
+    Object? next = $none,
+    Object? message = $none,
+  }) => $apply(
     FieldCopyWithData({
       if (packages != null) #packages: packages,
       if (next != $none) #next: next,
+      if (message != $none) #message: message,
     }),
   );
   @override
   SearchResults $make(CopyWithData data) => SearchResults(
     packages: data.get(#packages, or: $value.packages),
     next: data.get(#next, or: $value.next),
+    message: data.get(#message, or: $value.message),
   );
 
   @override

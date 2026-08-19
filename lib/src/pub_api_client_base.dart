@@ -11,11 +11,14 @@ import 'helpers/recursive_paging.dart';
 import 'models/package_advisories_model.dart';
 import 'models/package_documentation_model.dart';
 import 'models/package_like_model.dart';
+import 'models/package_likes_model.dart';
 import 'models/package_metrics_model.dart';
 import 'models/package_options_model.dart';
 import 'models/package_publisher_model.dart';
 import 'models/package_score_model.dart';
+import 'models/package_version_options_model.dart';
 import 'models/pub_package_model.dart';
+import 'models/publisher_info_model.dart';
 import 'models/search_order.dart';
 import 'models/search_results_model.dart';
 import 'version.dart';
@@ -35,12 +38,21 @@ String _buildUserAgentHeader(String userAgentMetadata) =>
 
 /// Pub API Client
 class PubClient {
+  /// The resolved pub.dev endpoint URLs used by this client.
   final Endpoint endpoint;
+
+  /// The custom pub server URL, or `null` when using pub.dev.
   final String? pubUrl;
+
+  /// Whether to log request URLs through `dart:developer`.
   final bool debug;
   late http.Client _client;
   late Map<String, String> _headers = {};
 
+  /// Creates a client for pub.dev or the custom [pubUrl].
+  ///
+  /// Supplying [credentials] enables authenticated endpoints. An injected
+  /// [client] is used for every request and is closed by [close].
   PubClient({
     this.pubUrl,
     Credentials? credentials,
@@ -68,13 +80,33 @@ class PubClient {
     _client = client ?? httpClient;
   }
 
-  Future<Map<String, dynamic>> _fetch(String url) async {
+  /// Merges [overrides] over the default headers.
+  ///
+  /// HTTP header names are case-insensitive, so a plain map spread would send
+  /// both `Accept` and `accept` rather than replacing one with the other.
+  Map<String, String> _headersWith(Map<String, String>? overrides) {
+    if (overrides == null || overrides.isEmpty) {
+      return _headers;
+    }
+    final overridden = overrides.keys.map((key) => key.toLowerCase()).toSet();
+    return {
+      for (final entry in _headers.entries)
+        if (!overridden.contains(entry.key.toLowerCase()))
+          entry.key: entry.value,
+      ...overrides,
+    };
+  }
+
+  Future<Map<String, dynamic>> _fetch(
+    String url, {
+    Map<String, String>? headers,
+  }) async {
     if (debug) {
       log('Fetching: $url');
     }
     final response = await _client.get(
       Uri.parse(url),
-      headers: _headers,
+      headers: _headersWith(headers),
     );
 
     responseValidOrThrow(response);
@@ -137,6 +169,20 @@ class PubClient {
     return PackagePublisher.fromMap(data);
   }
 
+  /// Returns the public like count for package [packageName].
+  ///
+  /// Unlike [likePackageStatus] this does not require authentication.
+  Future<PackageLikes> packageLikes(String packageName) async {
+    final data = await _fetch(endpoint.packageLikes(packageName));
+    return PackageLikes.fromMap(data);
+  }
+
+  /// Returns public profile information for [publisherId].
+  Future<PublisherInfo> publisherInfo(String publisherId) async {
+    final data = await _fetch(endpoint.publisherInfo(publisherId));
+    return PublisherInfo.fromMap(data);
+  }
+
   /// Returns a list of versions that are published for package [packageName]
   Future<List<String>> packageVersions(String packageName) async {
     final data = await _fetch(endpoint.packageVersions(packageName));
@@ -157,7 +203,29 @@ class PubClient {
     return PackageVersion.fromMap(data);
   }
 
+  /// Returns the score for [version] of [packageName].
+  Future<PackageScore> packageVersionScore(
+      String packageName, String version) async {
+    final data = await _fetch(
+      endpoint.packageVersionScore(packageName, version),
+    );
+    return PackageScore.fromMap(data);
+  }
+
+  /// Returns whether [version] of [packageName] is retracted.
+  Future<PackageVersionOptions> packageVersionOptions(
+      String packageName, String version) async {
+    final data = await _fetch(
+      endpoint.packageVersionOptions(packageName, version),
+    );
+    return PackageVersionOptions.fromMap(data);
+  }
+
   /// Returns a `List<String>` of all packages listed on pub.dev
+  ///
+  /// pub.dev answers 406 unless the request accepts gzip. `package:http`
+  /// negotiates and decodes that transparently, so an injected [http.Client]
+  /// must not disable it.
   Future<List<String>> packageNames() async {
     final data = await _fetch(endpoint.packageNames);
     final results = PackageNamesResults.fromMap(data);
@@ -175,6 +243,21 @@ class PubClient {
 
     /// Need to map to convert dynamic into String
     return packages.cast<String>();
+  }
+
+  /// Returns every topic on pub.dev mapped to the number of packages
+  /// using it, ordered by pub.dev's own ranking.
+  ///
+  /// Like [packageNames] this endpoint requires a gzip-accepting request;
+  /// pub.dev returns gzipped bytes regardless of `Accept-Encoding`.
+  Future<Map<String, int>> topicNameCompletion() async {
+    // This endpoint rejects the `application/vnd.pub.v2+json` Accept header
+    // that every other endpoint requires.
+    final data = await _fetch(
+      endpoint.topicNameCompletion,
+      headers: {'Accept': 'application/json'},
+    );
+    return data.map((topic, count) => MapEntry(topic, (count as num).toInt()));
   }
 
   /// Searches pub for [query] and can [page] results.
@@ -251,6 +334,9 @@ class PubClient {
   }
 
   /// Get all packages that match the query
+  ///
+  /// pub.dev stops returning a `next` link after page 10, so this is
+  /// capped at 100 results regardless of how many packages match.
   Future<List<PackageResult>> fetchAllPackages(
     String query, {
     List<String> tags = const [],
@@ -263,6 +349,9 @@ class PubClient {
   /// Mostly used as an internal tool to generate
   /// google_packages_list.dart
   /// You should probably use that instead
+  ///
+  /// Each publisher is paged through [fetchAllPackages], so this returns at
+  /// most 100 packages per publisher.
   Future<List<String>> fetchGooglePackages({
     List<String> tags = const [],
   }) async {
@@ -273,7 +362,8 @@ class PubClient {
       'material.io',
       'firebase.google.com',
       'google.dev',
-      'tools.dart.dev ',
+      'tools.dart.dev',
+      'labs.dart.dev',
     ];
 
     final futures = <Future<List<PackageResult>>>[];
@@ -292,6 +382,7 @@ class PubClient {
     return results.map((r) => r.package).toList();
   }
 
+  /// Returns packages published by [publisherName], with optional [tags].
   Future<List<PackageResult>> fetchPublisherPackages(
     String publisherName, {
     List<String> tags = const [],
@@ -301,6 +392,7 @@ class PubClient {
         ...tags,
       ]);
 
+  /// Closes the underlying HTTP client.
   void close() {
     _client.close();
   }

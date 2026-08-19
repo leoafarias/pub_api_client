@@ -176,6 +176,57 @@ void main() {
       expect(unregisterPublisher.publisherId, null);
     });
 
+    test('Get publisher info', () async {
+      final publisher = await _client.publisherInfo('dart.dev');
+
+      expect(publisher.description, isNotEmpty);
+      expect(publisher.websiteUrl, isNotEmpty);
+      expect(publisher.contactEmail, isNotEmpty);
+    });
+
+    test('Get publisher info for unknown publisher throws', () async {
+      expect(
+        () => _client.publisherInfo('does-not-exist-xyz.dev'),
+        throwsA(isA<NotFoundException>()),
+      );
+    });
+
+    test('Get package likes', () async {
+      final likes = await _client.packageLikes(packageName);
+
+      expect(likes.package, packageName);
+      expect(likes.likes, greaterThanOrEqualTo(0));
+    });
+
+    test('Get package version score', () async {
+      final package = await _client.packageInfo(packageName);
+      final score = await _client.packageVersionScore(
+        packageName,
+        package.version,
+      );
+
+      expect(score.likeCount, greaterThan(50));
+      expect(score.tags, isNotEmpty);
+    });
+
+    test('Get package version options', () async {
+      final package = await _client.packageInfo(packageName);
+      final options = await _client.packageVersionOptions(
+        packageName,
+        package.version,
+      );
+
+      expect(options.isRetracted, package.latest.retracted);
+    });
+
+    test('Get package version options for a retracted version', () async {
+      // sqlite3 2.4.1 is retracted on pub.dev; without a known-retracted
+      // version the test above only ever exercises `isRetracted: false`.
+      final options = await _client.packageVersionOptions('sqlite3', '2.4.1');
+
+      expect(options.isRetracted, isTrue);
+    });
+
     test('Get Package Score', () async {
       final payload = await _client.packageScore(packageName);
 
@@ -200,33 +251,42 @@ void main() {
 
     test('Sort search results for packages', () async {
       final updated = await _client.search('', sort: SearchOrder.updated);
-      final popularity = await _client.search('', sort: SearchOrder.popularity);
       final downloads = await _client.search('', sort: SearchOrder.downloads);
       final points = await _client.search('', sort: SearchOrder.points);
       final created = await _client.search('', sort: SearchOrder.created);
       final text = await _client.search('', sort: SearchOrder.text);
+      final trending = await _client.search('', sort: SearchOrder.trending);
       final top = await _client.search('');
 
       final updatedCopy = await _client.search('', sort: SearchOrder.updated);
 
-      expect(updated, isNot(popularity));
-      expect(popularity, isNot(points));
-      expect(downloads, isNot(popularity));
+      expect(updated, isNot(downloads));
+      expect(downloads, isNot(points));
       expect(points, isNot(updated));
       expect(updated, isNot(created));
       expect(created, isNot(text));
       expect(text, isNot(top));
       expect(top, isNot(updated));
+      expect(trending, isNot(top));
 
       expect(updated, updatedCopy);
+    });
 
-      expect(SearchOrder.points.value, 'points');
-      expect(SearchOrder.popularity.value, 'popularity');
-      expect(SearchOrder.downloads.value, 'downloads');
-      expect(SearchOrder.created.value, 'created');
-      expect(SearchOrder.text.value, 'text');
-      expect(SearchOrder.top.value, 'top');
-      expect(SearchOrder.like.value, 'like');
+    test('Search order serializes to the pub.dev `sort` parameter', () {
+      expect(
+        SearchOrder.values.map((order) => order.value),
+        [
+          'top',
+          'text',
+          'created',
+          'updated',
+          'popularity',
+          'downloads',
+          'like',
+          'points',
+          'trending',
+        ],
+      );
     });
 
     test('Search for packages of a publisher', () async {
@@ -267,6 +327,23 @@ void main() {
       expect(zeroResults.packages.length, 0);
     });
 
+    test('Get topic name completion', () async {
+      final topics = await _client.topicNameCompletion();
+
+      expect(topics.length, greaterThan(100));
+      expect(topics['flutter'], greaterThan(0));
+    });
+
+    test('Search encodes reserved characters in the query', () async {
+      // An unencoded `#` opens a URI fragment, silently truncating the query.
+      // Both searches would collapse to `q=flutter` and return identical
+      // results if the query were not percent-encoded.
+      final plain = await _client.search('flutter');
+      final withHash = await _client.search('flutter#zzzz');
+
+      expect(withHash.packages, isNot(plain.packages));
+    });
+
     test('Exceptions', () async {
       void mockRes(int code) {
         final res = Response('{error:{message:"test"}}', code);
@@ -291,12 +368,10 @@ void main() {
     });
 
     test('Get package security advisories', () async {
-      // Test with actual package - may return null if endpoint not supported
-      // Note: This endpoint is not yet implemented on pub.dev as of the test date
-      // but the client correctly handles the 404 by returning null
+      // Servers that do not implement the endpoint answer 404, which the
+      // client maps to null.
       final advisories = await _client.packageAdvisories(packageName);
 
-      // The endpoint should either return null (not implemented) or a valid response
       if (advisories != null) {
         // If the endpoint is implemented, verify the structure
         expect(advisories.advisories, isA<List<SecurityAdvisory>>());

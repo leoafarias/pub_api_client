@@ -8,6 +8,7 @@ class Endpoint {
   late final String apiUrl;
   late final String searchUrl;
   late final String packageUrl;
+  late final String publisherUrl;
   late final String accountUrl;
 
   /// Constructor for API endpoints based on an [url]
@@ -15,6 +16,7 @@ class Endpoint {
     apiUrl = '$baseUrl/api';
     searchUrl = '$apiUrl/search';
     packageUrl = '$apiUrl/packages';
+    publisherUrl = '$apiUrl/publishers';
     accountUrl = '$apiUrl/account';
   }
 
@@ -33,6 +35,9 @@ class Endpoint {
   /// Package publisher endpoint
   String packagePublisher(String name) => '$packageUrl/$name/publisher';
 
+  /// The public package-like count endpoint.
+  String packageLikes(String name) => '$packageUrl/$name/likes';
+
   /// Package documentation endpoint
   String packageDocumentation(String name) => '$apiUrl/documentation/$name';
 
@@ -47,11 +52,25 @@ class Endpoint {
   String packageVersionInfo(String name, String version) =>
       '$packageUrl/$name/versions/$version';
 
+  /// The score endpoint for one package version.
+  String packageVersionScore(String name, String version) =>
+      '${packageVersionInfo(name, version)}/score';
+
+  /// The options endpoint for one package version.
+  String packageVersionOptions(String name, String version) =>
+      '${packageVersionInfo(name, version)}/options';
+
+  /// The public publisher-profile endpoint.
+  String publisherInfo(String publisherId) => '$publisherUrl/$publisherId';
+
   /// Retrieve all package names on pub.dev
   String get packageNames => '$apiUrl/package-names';
 
   /// Package names for name completion
   String get packageNameCompletion => '$apiUrl/package-name-completion-data';
+
+  /// Topic names, with the number of packages using each topic.
+  String get topicNameCompletion => '$apiUrl/topic-name-completion-data';
 
   /// Url to add and remove likes
   String likePackage(String name) => '$accountUrl/likes/$name';
@@ -60,12 +79,20 @@ class Endpoint {
   String get likedPackages => '$accountUrl/likes';
 
   /// Search endpoint
+  ///
+  /// [query] carries the free text along with any `tag:value` filters, so it
+  /// is percent-encoded here. Interpolating it raw would let characters like
+  /// `#` and `&` terminate the query string.
   String search(
     String query,
     int page,
     SearchOrder sort,
   ) =>
-      '$searchUrl?q=$query&page=$page&sort=${sort.name}';
+      Uri.parse(searchUrl).replace(queryParameters: {
+        'q': query,
+        'page': '$page',
+        'sort': sort.name,
+      }).toString();
 
   /// Next search page
   String nextPage(String nextPageUrl) =>

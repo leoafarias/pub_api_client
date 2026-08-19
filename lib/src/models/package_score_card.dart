@@ -241,4 +241,7 @@ class Repository with RepositoryMappable {
     required this.repository,
     required this.branch,
   });
+
+  static const fromMap = RepositoryMapper.fromMap;
+  static const fromJson = RepositoryMapper.fromJson;
 }

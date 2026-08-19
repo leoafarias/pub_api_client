@@ -1,3 +1,60 @@
+## 4.0.0
+
+### Breaking changes
+
+- Added `SearchOrder.trending` for pub.dev's trend-score ordering. Consumers
+  with an exhaustive switch over `SearchOrder` must add a `trending` case
+
+### Added
+
+- `packageLikes` — public like count of a package, no authentication required
+  (`GET /api/packages/<package>/likes`)
+- `publisherInfo` — public publisher profile
+  (`GET /api/publishers/<publisherId>`)
+- `packageVersionScore` — score of a single package version
+  (`GET /api/packages/<package>/versions/<version>/score`)
+- `packageVersionOptions` — retraction status of a single package version
+  (`GET /api/packages/<package>/versions/<version>/options`)
+- `topicNameCompletion` — every topic mapped to its package count
+  (`GET /api/topic-name-completion-data`)
+- `SearchResults.message`, set when pub.dev could not fully honour the query
+- `PackageScoreCard.weeklyVersionDownloads`, `WeeklyVersionDownloads`, and
+  `VersionRangeWeeklyDownloads` — total weekly downloads plus major, minor,
+  and patch version-range histories
+  [#78](https://github.com/leoafarias/pub_api_client/pull/78)
+- `Repository.fromMap` and `Repository.fromJson`, matching the other models
+- Re-export the `pubspec_parse` dependency types (`Dependency`,
+  `HostedDependency`, `GitDependency`, `PathDependency`, `SdkDependency`,
+  `HostedDetails`, `Pubspec`) so consumers can name the types reachable from
+  `PubPackage.latestPubspec`
+  [#78](https://github.com/leoafarias/pub_api_client/pull/78)
+
+### Fixed
+
+- Search queries are now percent-encoded. Previously a `#` or `&` in the query
+  or in a tag silently truncated the request, so searches like `c# & c++`
+  returned results for `c`
+- `fetchGooglePackages` no longer sends a malformed `tools.dart.dev ` publisher
+  tag, and now includes the `labs.dart.dev` publisher
+
+### Deprecated
+
+- `SearchOrder.popularity` — pub.dev retired the popularity score and serves
+  these requests as `SearchOrder.top`. Use `SearchOrder.downloads`
+- `PackageScore.popularityScore` — pub.dev no longer returns this field. Use
+  `PackageScore.downloadCount30Days`
+- `LatestVersion` — unreachable model; no endpoint returns it and no client
+  method produces it. Scheduled for removal in 5.0.0
+
+### Changed
+
+- Documented that search paging is capped at 10 pages (100 results) by
+  pub.dev. The cap applies once to `fetchAllPackages`,
+  `fetchPublisherPackages`, and `fetchFlutterFavorites`, and separately for
+  each publisher queried by `fetchGooglePackages`
+- Generated `*.mapper.dart` files are excluded from analysis, and three lint
+  rules removed from the Dart SDK were dropped from `analysis_options.yaml`
+
 ## 3.2.0
 
 - Expose discontinued/advisory metadata on `PubPackage` and drop the large cached fixture from version control [#75](https://github.com/leoafarias/pub_api_client/pull/75)
