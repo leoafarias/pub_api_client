@@ -220,6 +220,14 @@ void main() {
       expect(options.isRetracted, package.latest.retracted);
     });
 
+    test('Get package version options for a retracted version', () async {
+      // sqlite3 2.4.1 is retracted on pub.dev; without a known-retracted
+      // version the test above only ever exercises `isRetracted: false`.
+      final options = await _client.packageVersionOptions('sqlite3', '2.4.1');
+
+      expect(options.isRetracted, isTrue);
+    });
+
     test('Get Package Score', () async {
       final payload = await _client.packageScore(packageName);
 

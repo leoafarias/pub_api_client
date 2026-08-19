@@ -213,6 +213,10 @@ class PubClient {
   }
 
   /// Returns a `List<String>` of all packages listed on pub.dev
+  ///
+  /// pub.dev answers 406 unless the request accepts gzip. `package:http`
+  /// negotiates and decodes that transparently, so an injected [http.Client]
+  /// must not disable it.
   Future<List<String>> packageNames() async {
     final data = await _fetch(endpoint.packageNames);
     final results = PackageNamesResults.fromMap(data);
@@ -234,6 +238,9 @@ class PubClient {
 
   /// Returns every topic on pub.dev mapped to the number of packages
   /// using it, ordered by pub.dev's own ranking.
+  ///
+  /// Like [packageNames] this endpoint requires a gzip-accepting request;
+  /// pub.dev returns gzipped bytes regardless of `Accept-Encoding`.
   Future<Map<String, int>> topicNameCompletion() async {
     // This endpoint rejects the `application/vnd.pub.v2+json` Accept header
     // that every other endpoint requires.
