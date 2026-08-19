@@ -25,7 +25,8 @@ void main() {
       expect(captured?['accept'], 'application/vnd.pub.v2+json');
     });
 
-    test('topic completion replaces the Accept header instead of adding '
+    test(
+        'topic completion replaces the Accept header instead of adding '
         'a second one', () async {
       // pub.dev answers 406 for `application/vnd.pub.v2+json` on this
       // endpoint, so the override has to replace it, not append to it.
